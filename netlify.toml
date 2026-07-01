@@ -1,0 +1,16 @@
+# Netlify configuration for the Aadit Technologies Next.js app.
+# This is a pnpm workspace monorepo; the app lives in artifacts/aadit-tech.
+# The build runs from the repo root so pnpm can resolve the workspace,
+# then filters the build to the single package.
+
+[build]
+  command = "pnpm --filter @workspace/aadit-tech run build"
+  publish = "artifacts/aadit-tech/.next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Required for Next.js App Router (server components / SSR) to run on Netlify.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
