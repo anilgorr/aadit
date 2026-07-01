@@ -63,27 +63,35 @@ export function TestimonialCarousel() {
         
         <button 
           onClick={prev}
+          aria-label="Previous testimonial"
           className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 md:ml-0 bg-background border shadow-sm p-2 rounded-full hover:bg-muted transition-colors z-10"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button 
           onClick={next}
+          aria-label="Next testimonial"
           className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 md:mr-0 bg-background border shadow-sm p-2 rounded-full hover:bg-muted transition-colors z-10"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
       </div>
       
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-1 mt-8">
         {TESTIMONIALS.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrentIndex(i)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              i === currentIndex ? "bg-primary" : "bg-muted-foreground/30"
-            }`}
-          />
+            aria-label={`Go to testimonial ${i + 1} of ${TESTIMONIALS.length}`}
+            aria-current={i === currentIndex}
+            className="flex h-6 w-6 items-center justify-center rounded-full"
+          >
+            <span
+              className={`h-2 w-2 rounded-full transition-colors ${
+                i === currentIndex ? "bg-primary" : "bg-muted-foreground/30"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

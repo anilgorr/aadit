@@ -31,7 +31,7 @@ description: Key facts about the aadit-tech Next.js app — location, workflow, 
 
 **Brand assets:** real logo added at `public/logo.png` (blue, transparent, for light bg — used in header), `public/logo-white.png` (for dark footer), `public/favicon.png`, and `app/icon.png` (Next.js auto favicon). Use `next/image` with `h-9 w-auto`; keep width/height props at true ratios (logo.png 2.25:1, logo-white.png 2.46:1) to avoid distortion.
 
-**Accessibility notes:** header dropdowns are keyboard-accessible (click toggle + `onFocus` open + group `onBlur` close + `Escape`); all class-based animations (incl. `radar-ring`, `animate-marquee`) are disabled under `prefers-reduced-motion`; dark-section body text uses `white/70`+ for AA contrast. Button primitive has NO `asChild` (plain `<button>`).
+**Accessibility notes:** header dropdowns are keyboard-accessible (click toggle + `onFocus` open + group `onBlur` close + `Escape`); all class-based animations (incl. `radar-ring`, `animate-marquee`) are disabled under `prefers-reduced-motion`; dark-section body text uses `white/70`+ for AA contrast. Button primitive has NO `asChild` (plain `<button>`). Lighthouse a11y was 86 — fixed by: every icon-only control (carousel arrows/dots, footer social links) needs an `aria-label`; repeated links with identical text ("Learn More") need per-item `aria-label` to disambiguate; touch targets need ≥24px hit area (dots wrap an 8px span in an h-6 w-6 button). Keep these conventions when adding new icon controls.
 
 **Dev config:** `next.config.ts` sets `allowedDevOrigins: ['*.replit.dev', '*.repl.co']` (silences Replit proxy cross-origin dev warning). Must NOT use top-level await (see `nextjs-config-toplevel-await.md`).
 

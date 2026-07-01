@@ -187,6 +187,7 @@ export default function Home() {
                   <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
                   <Link
                     href={service.href}
+                    aria-label={`Learn more about ${service.title}`}
                     className="mt-2 flex items-center font-semibold text-primary"
                   >
                     Learn More

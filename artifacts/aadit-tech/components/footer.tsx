@@ -55,11 +55,16 @@ export function Footer() {
               managed IT for the modern enterprise.
             </p>
             <div className="mt-6 flex gap-3">
-              {[Linkedin, Twitter, Github].map((Icon, i) => (
+              {[
+                { Icon: Linkedin, label: "LinkedIn" },
+                { Icon: Twitter, label: "Twitter" },
+                { Icon: Github, label: "GitHub" },
+              ].map(({ Icon, label }) => (
                 <Link
-                  key={i}
+                  key={label}
                   href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-primary/50 hover:bg-primary/20 hover:text-white"
+                  aria-label={`Aadit Technologies on ${label}`}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-primary/50 hover:bg-primary/20 hover:text-white"
                 >
                   <Icon className="h-4 w-4" />
                 </Link>
@@ -70,10 +75,13 @@ export function Footer() {
           {COLUMNS.map((col) => (
             <div key={col.heading}>
               <h3 className="mb-4 text-sm font-semibold text-white">{col.heading}</h3>
-              <ul className="flex flex-col gap-2.5 text-sm text-white/70">
+              <ul className="flex flex-col gap-1 text-sm text-white/70">
                 {col.links.map((link) => (
                   <li key={link}>
-                    <Link href="#" className="transition-colors hover:text-primary">
+                    <Link
+                      href="#"
+                      className="inline-block py-1 transition-colors hover:text-primary"
+                    >
                       {link}
                     </Link>
                   </li>

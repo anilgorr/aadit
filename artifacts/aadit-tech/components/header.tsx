@@ -178,9 +178,14 @@ export function Header() {
                 <div className="mb-3 text-xs font-bold uppercase tracking-wider text-muted-foreground">
                   {menu.label}
                 </div>
-                <div className="flex flex-col gap-3 border-l border-border pl-4">
+                <div className="flex flex-col border-l border-border pl-4">
                   {menu.items.map((item) => (
-                    <Link key={item.title} href="#" onClick={() => setMobileOpen(false)}>
+                    <Link
+                      key={item.title}
+                      href="#"
+                      onClick={() => setMobileOpen(false)}
+                      className="py-2"
+                    >
                       {item.title}
                     </Link>
                   ))}
