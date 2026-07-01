@@ -1,0 +1,35 @@
+Build a modern, professional design system for a B2B cybersecurity/compliance company
+(think: clean, technical, trustworthy — similar aesthetic to Vanta or Drata's marketing
+site, not a generic template). Use a LIGHT color scheme: white / very light gray
+(#F8FAFC or similar) as the primary background across the entire site — do not use a
+black or dark background anywhere, including the header, footer, or hero sections.
+Use navy or slate as a secondary text/heading color and a single accent color (electric
+blue or teal) for CTAs and highlights. Do not use a dark or black background for CTA
+banners either — use the accent color (or a light tint of it) with dark text, not a
+black/near-black panel.
+
+Before hand-building each piece, check the 21st.dev component registry (21st.dev) for
+a shadcn-compatible component that already fits — mega-menu headers, animated hero
+sections, logo-cloud/testimonial carousels, FAQ accordions, and stat blocks are all
+common categories there. Install matches with the shadcn CLI
+(`npx shadcn@latest add <21st.dev component url>`) and then re-theme them to this
+project's light color palette and content — don't leave any imported component on its
+original dark theme or placeholder copy.
+
+Build these shared components in /components:
+- Header with a mega-menu navigation: Cybersecurity, Compliance, IT Managed Services,
+  Industries, Resources (dropdown), About — plus a "Book a Call" CTA button on the right,
+  logo on the left linking to homepage. Make dropdowns keyboard-accessible.
+- Footer with columns: Cybersecurity, Compliance & Audits, IT Managed Services,
+  Resources (Blog, Glossary, Whitepapers, EBooks), Company (About, Contact),
+  Legal (Privacy Policy). Include a copyright line.
+- Reusable components: Button (primary/secondary/ghost variants), Card, Section wrapper
+  with consistent vertical spacing, Breadcrumbs component (must render BreadcrumbList
+  structured data — I'll wire the schema in a later phase, just build the visual +
+  semantic HTML now), Badge, StatBlock (for displaying numbers like "50+ organizations
+  protected"), Testimonial/LogoCloud carousel.
+- A ServicePageTemplate layout component: hero with H1 + subhead + CTA, "what's included"
+  section, benefits grid, FAQ accordion section, related services section, closing CTA
+  banner. This template will be reused across every Cybersecurity/Compliance/IT services page.
+
+Make everything responsive and test at 375px, 768px, and 1440px widths.

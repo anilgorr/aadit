@@ -1,0 +1,3 @@
+- [Next.js config top-level await](nextjs-config-toplevel-await.md) — next.config.ts cannot use top-level await; Next.js loads it via require() which breaks async modules
+- [Velite + Next.js integration](velite-nextjs-integration.md) — Velite build must run via npm scripts (prebuild/predev), not inside next.config.ts
+- [Aadit Technologies project](aadit-tech-project.md) — Next.js 15 app at artifacts/aadit-tech/, workflow "Aadit Technologies" on port 3000, not a registered Replit artifact
