@@ -1,6 +1,6 @@
-# [Project name]
+# Aadit Technologies
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A B2B marketing website for Aadit Technologies — a cybersecurity, compliance, and IT managed-services provider. Built with Next.js 15 (App Router) and lives at `artifacts/aadit-tech/`.
 
 ## Run & Operate
 
@@ -20,25 +20,34 @@ _Replace the heading above with the project's name, and this line with one sente
 - API codegen: Orval (from OpenAPI spec)
 - Build: esbuild (CJS bundle)
 
+## Product
+
+Marketing site for a cybersecurity/compliance/IT managed-services firm: dark "command-center" hero + CTA + footer (with a glass Threat-Monitor console) alternating with light content sections, mega-menu navigation, service pages, testimonials, and stats. Brand logo + favicon are in `artifacts/aadit-tech/public` and `app/icon.png`.
+
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- App: `artifacts/aadit-tech/` (package `@workspace/aadit-tech`), workflow `artifacts/aadit-tech: Next.js` on port 3000
+- Theme tokens & animation utilities: `artifacts/aadit-tech/styles/globals.css` (Tailwind v4, OKLCH vars)
+- Layout components: `artifacts/aadit-tech/components/` (header, footer, ui/*)
+- MDX content (Velite): `services` and `posts` collections → `.velite/`
+- Deploy config: root `netlify.toml`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+- **Deployment is via GitHub → Netlify, NOT Replit Publish.** User commits/pushes from the Replit Git pane; Netlify builds `pnpm --filter @workspace/aadit-tech run build` and publishes `artifacts/aadit-tech/.next` via `@netlify/plugin-nextjs`.
+- Velite runs via npm `predev`/`prebuild` scripts, never inside `next.config.ts` (which cannot use top-level await).
+- Design uses dark + light sections for depth/contrast (an earlier "all-light" constraint was intentionally reversed).
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Ship via GitHub → Netlify; do not rely on Replit Publish for this site.
+- Design should feel unique and beautiful with real depth/contrast (dark sections are welcome).
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Git writes are performed by the user from the Replit Git pane, not the agent.
+- Keep `next/image` width/height at true logo ratios (logo.png 2.25:1, logo-white.png 2.46:1) to avoid distortion.
+- Verify with `pnpm --filter @workspace/aadit-tech run typecheck`, not `build` (build needs workflow-provided env).
 
 ## Pointers
 

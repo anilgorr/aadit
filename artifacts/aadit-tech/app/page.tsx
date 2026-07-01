@@ -5,100 +5,230 @@ import { Section } from "@/components/ui/section"
 import { StatBlock } from "@/components/ui/stat-block"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { ShieldCheck, FileCheck, Server, ArrowRight } from "lucide-react"
+import {
+  ShieldCheck,
+  FileCheck,
+  Server,
+  ArrowRight,
+  Lock,
+  Activity,
+  Radar,
+} from "lucide-react"
 import { LogoCloud } from "@/components/logo-cloud"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
 import Link from "next/link"
 
+const SERVICES = [
+  {
+    icon: ShieldCheck,
+    title: "Cybersecurity",
+    desc: "Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.",
+    href: "/services/cybersecurity",
+  },
+  {
+    icon: FileCheck,
+    title: "Compliance",
+    desc: "Streamlined certification for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.",
+    href: "/services/compliance",
+  },
+  {
+    icon: Server,
+    title: "IT Managed Services",
+    desc: "Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.",
+    href: "/services/managed-it",
+  },
+]
+
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen w-full">
+    <div className="flex min-h-screen w-full flex-col">
       <Header />
-      
-      <main className="flex-1 w-full">
-        <Section className="py-24 md:py-32 text-center md:text-left relative overflow-hidden">
-          <div className="absolute inset-0 bg-grid-slate-100/[0.04] bg-[size:3rem_3rem] pointer-events-none" />
-          <div className="max-w-4xl mx-auto md:mx-0 relative z-10">
-            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-sm font-medium text-primary mb-8">
-              New: Comprehensive DPDP Act Compliance Services
+
+      <main className="w-full flex-1">
+        {/* ---------- HERO ---------- */}
+        <section className="relative overflow-hidden bg-midnight text-midnight-foreground">
+          {/* ambient glow */}
+          <div
+            className="glow-blob animate-drift-slow absolute -left-32 -top-24 h-96 w-96 opacity-40"
+            style={{ background: "oklch(0.53 0.22 262)" }}
+          />
+          <div
+            className="glow-blob animate-drift absolute -right-24 top-32 h-80 w-80 opacity-30"
+            style={{ background: "oklch(0.72 0.15 220)" }}
+          />
+          {/* security grid */}
+          <div className="grid-lines mask-radial pointer-events-none absolute inset-0" />
+
+          <div className="container relative mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-32">
+            <div className="animate-fade-up text-center md:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
+                </span>
+                New: Comprehensive DPDP Act Compliance Services
+              </div>
+
+              <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
+                The security partner you{" "}
+                <span className="text-gradient">trust before</span> regulators knock.
+              </h1>
+
+              <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65 md:mx-0 md:text-xl">
+                Technically precise, clean, and trustworthy cybersecurity, compliance, and IT managed
+                services for the modern enterprise.
+              </p>
+
+              <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
+                <Button size="lg" variant="light">
+                  Get a Free Assessment
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+                <Button size="lg" variant="outlineLight">
+                  Explore Services
+                </Button>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70 md:justify-start">
+                <span className="flex items-center gap-2">
+                  <Lock className="h-4 w-4 text-cyan" /> ISO 27001 certified
+                </span>
+                <span className="flex items-center gap-2">
+                  <ShieldCheck className="h-4 w-4 text-cyan" /> SOC 2 aligned
+                </span>
+                <span className="flex items-center gap-2">
+                  <Activity className="h-4 w-4 text-cyan" /> 24/7 SOC monitoring
+                </span>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-              The security partner you trust before regulators knock.
-            </h1>
-            <p className="mt-6 text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              Technically precise, clean, and trustworthy cybersecurity, compliance, and IT managed services for the modern enterprise.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button size="lg" variant="primary">Get a Free Assessment</Button>
-              <Button size="lg" variant="secondary">Explore Services</Button>
+
+            {/* Hero visual: glass security console */}
+            <div className="animate-fade-up relative mx-auto w-full max-w-md [animation-delay:120ms] md:mx-0">
+              <div className="relative rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-2xl backdrop-blur-md">
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                    <Radar className="h-5 w-5 text-cyan" /> Threat Monitor
+                  </div>
+                  <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
+                    Secure
+                  </span>
+                </div>
+
+                {/* concentric radar rings */}
+                <div className="relative mx-auto mb-6 flex h-40 w-40 items-center justify-center">
+                  {[0, 1, 2].map((i) => (
+                    <span
+                      key={i}
+                      className="radar-ring absolute rounded-full border border-cyan/30"
+                      style={{
+                        width: `${(i + 1) * 33}%`,
+                        height: `${(i + 1) * 33}%`,
+                        animationDelay: `${i}s`,
+                      }}
+                    />
+                  ))}
+                  <ShieldCheck className="h-12 w-12 text-cyan" />
+                </div>
+
+                <div className="space-y-3">
+                  {[
+                    { label: "Endpoints protected", value: "1,284" },
+                    { label: "Threats blocked (24h)", value: "37" },
+                    { label: "Compliance score", value: "98%" },
+                  ].map((row) => (
+                    <div
+                      key={row.label}
+                      className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-sm"
+                    >
+                      <span className="text-white/60">{row.label}</span>
+                      <span className="font-semibold text-white">{row.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </Section>
+        </section>
 
         <LogoCloud />
 
-        <Section background="muted" className="border-b">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-border">
+        {/* ---------- STATS ---------- */}
+        <Section background="muted" className="border-b border-border">
+          <div className="grid grid-cols-1 divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
             <StatBlock stat="50+" label="Organizations Protected" subtext="Across healthcare, BFSI & fintech" />
             <StatBlock stat="99.9%" label="Uptime SLA" subtext="Guaranteed reliability" />
             <StatBlock stat="100%" label="Compliance Readiness" subtext="ISO 27001, SOC 2, HIPAA" />
           </div>
         </Section>
 
+        {/* ---------- SERVICES ---------- */}
         <Section>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold">Comprehensive Protection</h2>
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to secure your infrastructure, pass audits, and manage IT operations smoothly.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8 flex flex-col gap-4 group">
-              <ShieldCheck className="w-12 h-12 text-primary" />
-              <h3 className="text-xl font-bold">Cybersecurity</h3>
-              <p className="text-muted-foreground flex-1 leading-relaxed">
-                Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.
+          <div className="relative">
+            <div className="grid-lines-light mask-radial pointer-events-none absolute inset-0 -z-10 opacity-70" />
+            <div className="mx-auto mb-16 max-w-2xl text-center reveal">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                What we do
+              </span>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
+                Comprehensive protection, end to end
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Everything you need to secure your infrastructure, pass audits, and run IT
+                operations smoothly.
               </p>
-              <Link href="/services/cybersecurity" className="flex items-center text-primary font-medium mt-4">
-                Learn More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Card>
-            <Card className="p-8 flex flex-col gap-4 group">
-              <FileCheck className="w-12 h-12 text-primary" />
-              <h3 className="text-xl font-bold">Compliance</h3>
-              <p className="text-muted-foreground flex-1 leading-relaxed">
-                Streamlined certification processes for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.
-              </p>
-              <Link href="/services/compliance" className="flex items-center text-primary font-medium mt-4">
-                Learn More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Card>
-            <Card className="p-8 flex flex-col gap-4 group">
-              <Server className="w-12 h-12 text-primary" />
-              <h3 className="text-xl font-bold">IT Managed Services</h3>
-              <p className="text-muted-foreground flex-1 leading-relaxed">
-                Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.
-              </p>
-              <Link href="/services/managed-it" className="flex items-center text-primary font-medium mt-4">
-                Learn More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Card>
+            </div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              {SERVICES.map((service) => (
+                <Card key={service.title} className="group reveal flex flex-col gap-5 p-8">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-[oklch(0.62_0.2_262)] text-white shadow-lg shadow-primary/25">
+                    <service.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-xl font-bold">{service.title}</h3>
+                  <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
+                  <Link
+                    href={service.href}
+                    className="mt-2 flex items-center font-semibold text-primary"
+                  >
+                    Learn More
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Card>
+              ))}
+            </div>
           </div>
         </Section>
 
-        <Section background="muted" className="border-y">
+        {/* ---------- TESTIMONIALS ---------- */}
+        <Section background="muted" className="border-y border-border">
           <TestimonialCarousel />
         </Section>
 
-        <Section className="bg-primary/5 border-b border-primary/10">
-          <div className="text-center max-w-3xl mx-auto py-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">Ready to secure your business?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Speak with one of our certified security architects today to discuss your compliance and cybersecurity needs.
+        {/* ---------- CTA ---------- */}
+        <section className="relative overflow-hidden bg-midnight text-midnight-foreground">
+          <div className="grid-lines mask-radial pointer-events-none absolute inset-0" />
+          <div
+            className="glow-blob animate-drift absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 opacity-40"
+            style={{ background: "oklch(0.53 0.22 262)" }}
+          />
+          <div className="container relative mx-auto max-w-3xl px-4 py-24 text-center md:px-6">
+            <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
+              Ready to secure your business?
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-lg text-white/65">
+              Speak with one of our certified security architects today to discuss your compliance
+              and cybersecurity needs.
             </p>
-            <Button size="lg" variant="primary">Book a Free Consultation</Button>
+            <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+              <Button size="lg" variant="light">
+                Book a Free Consultation
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outlineLight">
+                Talk to Sales
+              </Button>
+            </div>
           </div>
-        </Section>
+        </section>
       </main>
 
       <Footer />

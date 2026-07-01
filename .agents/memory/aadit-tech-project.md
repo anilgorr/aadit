@@ -25,6 +25,14 @@ description: Key facts about the aadit-tech Next.js app — location, workflow, 
 - `components/service-page-template.tsx` — reusable layout for all service pages
 - `components/ui/button.tsx`, `card.tsx`, `section.tsx`, `breadcrumbs.tsx`, `badge.tsx`, `stat-block.tsx`, `accordion.tsx`
 
-**Color scheme:** Electric blue accent (`#2563EB`), white/`#F8FAFC` backgrounds, slate headings — defined via OKLCH CSS variables in `styles/globals.css`.
+**Color scheme:** Electric blue accent (`#2563EB`) + `cyan` highlight, on a mix of light (`#F8FAFC`/white) and dark **`midnight`** sections. All tokens are OKLCH CSS variables in `styles/globals.css` (`--color-midnight`, `--color-midnight-2`, `--color-cyan`, radius `0.75rem`), plus utilities: `grid-lines`, `mask-radial`, `glow-blob`, `text-gradient`, `btn-glow`, `card-lift`, `radar-ring`, and keyframes drift/fade-up/pulse-ring/marquee.
+
+**Design direction (IMPORTANT — reverses earlier constraint):** The site now uses dark "command-center" sections (hero, CTA, footer) with a glass Threat-Monitor console, alternating with light content sections. The earlier "all-light / no dark backgrounds" rule is **obsolete** — depth/contrast is now wanted.
+
+**Brand assets:** real logo added at `public/logo.png` (blue, transparent, for light bg — used in header), `public/logo-white.png` (for dark footer), `public/favicon.png`, and `app/icon.png` (Next.js auto favicon). Use `next/image` with `h-9 w-auto`; keep width/height props at true ratios (logo.png 2.25:1, logo-white.png 2.46:1) to avoid distortion.
+
+**Accessibility notes:** header dropdowns are keyboard-accessible (click toggle + `onFocus` open + group `onBlur` close + `Escape`); all class-based animations (incl. `radar-ring`, `animate-marquee`) are disabled under `prefers-reduced-motion`; dark-section body text uses `white/70`+ for AA contrast. Button primitive has NO `asChild` (plain `<button>`).
+
+**Dev config:** `next.config.ts` sets `allowedDevOrigins: ['*.replit.dev', '*.repl.co']` (silences Replit proxy cross-origin dev warning). Must NOT use top-level await (see `nextjs-config-toplevel-await.md`).
 
 **Velite integration:** `velite build` runs before `next dev` and `next build` via npm scripts (see `velite-nextjs-integration.md`).
