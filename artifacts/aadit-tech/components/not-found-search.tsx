@@ -22,7 +22,6 @@ const INDEX: Entry[] = [
     href: "/it-managed-services",
     desc: "Cloud operations, help desk, backup & disaster recovery",
   },
-  { title: "About Us", href: "/about", desc: "Our story, team, and certifications" },
   { title: "Contact", href: "/contact", desc: "Talk to a certified security architect" },
   { title: "Blog", href: "/blog", desc: "Security insights, guides, and updates" },
   { title: "Home", href: "/", desc: "Back to the homepage" },

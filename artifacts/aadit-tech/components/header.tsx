@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "./ui/button"
+import { buttonVariants } from "./ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 const MENUS: Record<
@@ -152,16 +152,12 @@ export function Header() {
             </div>
           ))}
 
-          <Link
-            href="/about"
-            className="rounded-md px-3 py-2 text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
-          >
-            About
-          </Link>
         </nav>
 
         <div className="hidden md:flex">
-          <Button variant="primary">Book a Call</Button>
+          <Link href="/contact" className={buttonVariants({ variant: "primary" })}>
+            Book a Call
+          </Link>
         </div>
 
         <button
@@ -195,17 +191,14 @@ export function Header() {
                 </div>
               </div>
             ))}
-            <Link
-              href="/about"
-              className="border-t border-border py-2 font-bold"
-              onClick={() => setMobileOpen(false)}
-            >
-              About
-            </Link>
             <div className="border-t border-border pt-4">
-              <Button variant="primary" className="w-full" size="lg">
+              <Link
+                href="/contact"
+                onClick={() => setMobileOpen(false)}
+                className={buttonVariants({ variant: "primary", size: "lg", className: "w-full" })}
+              >
                 Book a Call
-              </Button>
+              </Link>
             </div>
           </div>
         </div>

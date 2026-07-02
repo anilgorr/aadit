@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify Form Detection</title>
+  </head>
+  <body>
+    <!--
+      Static form for Netlify's build-time form detection. The live /contact page
+      renders a React form (components/contact-form.tsx) that submits via fetch to
+      this endpoint. Keep the field names in sync with that component.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="tel" name="phone" />
+      <select name="topic">
+        <option>General enquiry</option>
+        <option>Cybersecurity</option>
+        <option>Compliance &amp; Audit</option>
+        <option>IT Managed Services</option>
+        <option>Partnership</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+  </body>
+</html>
