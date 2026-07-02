@@ -27,15 +27,19 @@ export const SITE_COUNTRY = "IN"
 export const ORG_LOGO_PATH = "/logo.png"
 
 /**
- * Social profile URLs for Organization `sameAs`. Intentionally empty: no real
- * profile URLs have been provided. Supply them via NEXT_PUBLIC_SOCIAL_PROFILES
- * (comma-separated) and they flow into structured data automatically. We do not
- * invent profile URLs — an incorrect sameAs can mislink the brand entity.
+ * Social profile URLs for Organization `sameAs`. The LinkedIn URL is confirmed.
+ * Additional profiles can be appended via NEXT_PUBLIC_SOCIAL_PROFILES
+ * (comma-separated) without a code change.
  */
-export const SOCIAL_PROFILES: string[] = (process.env.NEXT_PUBLIC_SOCIAL_PROFILES ?? "")
+const EXTRA_PROFILES = (process.env.NEXT_PUBLIC_SOCIAL_PROFILES ?? "")
   .split(",")
   .map((s) => s.trim())
   .filter(Boolean)
+
+export const SOCIAL_PROFILES: string[] = [
+  "https://www.linkedin.com/company/aadit-technologies/",
+  ...EXTRA_PROFILES,
+]
 
 /** Build an absolute URL from a path. Passes through already-absolute URLs. */
 export function absoluteUrl(path = "/"): string {
