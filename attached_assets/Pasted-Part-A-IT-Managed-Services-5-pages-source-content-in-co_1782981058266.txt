@@ -1,0 +1,64 @@
+Part A — IT Managed Services (5 pages), source content in
+content-source/it-managed-and-company-pages.md:
+
+1. /it-managed-services/ (hub) — use "managed-it-services" as the base (it's
+   the full deep-dive page with benefits/pricing models/FAQs). Ignore
+   "managed-it-services-india" — it's a thin 4-card teaser duplicate with a
+   garbled sentence fragment ("malwCloud infrastructure...") and adds nothing
+   the deeper page doesn't already cover. Remove the "How to Choose a
+   Cybersecurity Consulting Firm" section pasted in by mistake.
+
+2. /it-managed-services/helpdesk-support/ — from "it-support-services", but
+   TRIM IT DOWN — the source page currently covers 6 different service areas
+   including a full Backup & Disaster Recovery "Why Choose Us" section pasted
+   in verbatim by mistake. Keep only the helpdesk/remote-support/on-site
+   support scope for this page; the BDR content belongs on page 5 below, not
+   here. This page also has unfilled "[mention price]" and "[mention average
+   resolution time, e.g., 30 minutes]" placeholders — fill with a "contact us
+   for SLA details" pattern instead of inventing numbers.
+
+3. /it-managed-services/cloud-infrastructure/ — from
+   "cloud-infrastructure-solutions". It has a heading duplicated word-for-word
+   ("Cloud Infrastructure Management and Optimization") used for two different
+   sections, the second time for GRC content — retitle the second occurrence
+   to actually describe GRC/governance content.
+
+4. /it-managed-services/cloud-migration/ — from "cloud-migration-services".
+   Its "Why Choose [Us]" header currently reads "...for Cloud Optimization" —
+   fix the heading to say Cloud Migration.
+
+5. /it-managed-services/cloud-optimization/ — from
+   "cloud-optimization-services".
+
+6. /it-managed-services/backup-disaster-recovery/ — from
+   "backup-and-disaster-recovery-solutions", PLUS the BDR "Why Choose Us"
+   content you pulled out of the IT Support Services page in step 2 above —
+   consolidate it here where it actually belongs.
+
+Part B — Contact page fix: the current Contact page only lists Bengaluru. Add
+all 3 real office locations exactly as follows, don't paraphrase:
+- India (HQ): #21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank,
+  New BEL Road, Bangalore-560094. Mobile: +91 9663445445
+- USA: 4139 164th AVE SE, Bellevue, WA 98006-8906
+- Dubai: Aadit Technologies FZCO, Building A1, Dubai Digital Park, Silicon
+  Oasis, Dubai. Phone: +971 52 184 7477
+Keep the existing contact form as-is, just add/expand the office locations
+section to show all three.
+
+Part C — About page: this route currently returns blank/broken on the live
+site. Build it using the "about-us" content from
+content-source/it-managed-and-company-pages.md — company story, certifications,
+mission, and mention the 3-office global presence from Part B.
+
+Part D — Privacy Policy: the current "privacy-policy" source content is 100%
+unedited WordPress placeholder boilerplate (every section literally starts
+with "Suggested text:") — it was never actually written. Do not migrate it.
+Instead draft a real privacy policy appropriate for a company handling
+customer data across India, US, and UAE operations, covering data collection,
+use, third-party sharing, cookies, and contact-for-data-requests. Flag clearly
+that this should get a legal review before publishing — an AI-drafted privacy
+policy is a starting point, not a final legal document.
+
+Part E — Careers page: build a simple version (open roles list or "no current
+openings, check back" state plus a way to submit a general application) —
+this page doesn't exist yet and is linked from every page's footer.

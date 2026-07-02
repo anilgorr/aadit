@@ -1,0 +1,56 @@
+Using the ServicePageTemplate and MDX services collection, build these 7
+Compliance pages. Source content is in content-source/compliance-pages.md.
+Apply these specific edits — this cluster has heavy cross-contamination
+between pages, don't paste any of it verbatim without the fixes below:
+
+1. /compliance/ (hub) — from "compliance-audit-services-india". Its current
+   teaser links almost all point to /cybersecurity/ instead of their own
+   pages — fix every teaser to link to its correct new Compliance child page.
+
+2. /compliance/iso-27001/ — merge "iso-27001-certification-services" (a
+   long-form educational guide: process, INR cost breakdown, ISO 27000 vs
+   27001 explainer) with "iso-27001-consulting-india" (a services/consulting-
+   offer page: 8-phase engagement process, deliverables list). These are
+   genuinely different, not duplicates — cherry-pick the strongest material
+   from both rather than discarding either. Drop the "– Manufacturing Company"
+   generic testimonial and the content that sounds like VAPT rather than
+   ISO 27001.
+
+3. /compliance/iso-42001/ — from "iso-42001-certification". Remove the stray
+   "Key Components of HIPAA Compliance" heading (wrong topic, left in by
+   mistake) and the cybersecurity "Cost Savings" bullet that doesn't belong
+   here — replace with real ISO 42001 (AI governance) content from the rest
+   of the source page.
+
+4. /compliance/iso-9001/ — from "iso-9001-certification". This page has
+   literal unreplaced "[Your Company Name]" placeholder text (twice) — remove
+   it. Also drop the two testimonials about SOC services (wrong topic for
+   ISO 9001) and the "Bronze/Silver/Gold" generic tier pricing — use a custom
+   quote CTA instead.
+
+5. /compliance/gdpr/ — from "gdpr-compliance-solutions". Drop the generic
+   "– IT Industry" testimonial. The USD pricing is explicitly marked as
+   estimates in the source — keep that framing, don't present as fixed price.
+
+6. /compliance/pci-dss/ — from "pci-dss-compliance-solutions". Its hero
+   subhead currently describes SOC monitoring, not PCI DSS — rewrite it.
+   Remove the entire "SOC Compliance/SOC Reports" section, which is
+   copy-pasted from elsewhere and unrelated to PCI DSS. Drop both generic
+   testimonials.
+
+7. /compliance/hipaa/ — from "hipaa-compliance-solutions". Remove the stray
+   "Benefits of Managed SOC Services" heading/fragment. The Breach
+   Notification Rule section currently duplicates the Privacy Rule section
+   verbatim — rewrite Breach Notification with its actual, distinct content
+   requirements. Drop the "– Manufacturing Industry" testimonial.
+
+8. /compliance/soc2/ — from "soc2-certification". Remove the "Global Market
+   Access / Achieve ISO 9001 Certification" step that's been pasted into the
+   SOC 2 process list by mistake. The two "case studies" are anonymized/
+   unnamed — either get real ones from me or present as illustrative
+   scenarios, not case studies. Drop the "– Healthcare Company" testimonial
+   about unrelated managed IT services.
+
+Note: the SOC2 page's meta description wasn't cleanly captured during
+extraction — write a fresh 150-160 character meta description for it rather
+than reusing anything malformed from the source file.
