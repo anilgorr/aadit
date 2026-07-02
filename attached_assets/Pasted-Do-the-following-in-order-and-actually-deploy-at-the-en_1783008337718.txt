@@ -1,0 +1,38 @@
+Do the following, in order, and actually deploy at the end — don't leave
+this in a "should work" state, I need it live on Netlify so it can be
+re-verified against the real URL.
+
+1. Set revalidate = false (or convert to full static generation via
+   generateStaticParams) on the service, compliance, IT managed services,
+   blog, and glossary pages, so Netlify serves them from the CDN edge
+   instead of invoking a serverless function per request. This is the fix
+   for the 620-680ms TTFB and the 4+ second cold-start issue found on
+   /cybersecurity/vapt.
+
+2. Replace the FAQ Accordion component (currently Radix UI) on service
+   pages with a native HTML <details>/<summary> accordion. This removes
+   the ~1,980ms of mobile Total Blocking Time that's dragging VAPT mobile
+   down to 68 — the worst score on the site. Keep the same visual styling
+   (chevron icon, expand/collapse animation via CSS if possible using the
+   ::details-content or a simple max-height transition) — just eliminate
+   the JS-heavy interactive library for something the browser handles
+   natively. Apply this to every service/compliance/IT page that uses the
+   FAQ accordion pattern, not just VAPT.
+
+3. Confirm the testimonial-carousel-to-static-component change and the
+   will-change: transform / mobile-hidden glow blob changes from earlier
+   are committed and included in this deploy.
+
+4. Push and deploy to Netlify. Confirm the deploy succeeded and give me
+   the live deploy URL/timestamp.
+
+5. Once deployed, re-run Lighthouse against the ACTUAL LIVE
+   https://aadit-tech.netlify.app/ URL (not a dev server, not a cached
+   run) for: homepage, VAPT service page, one blog post, glossary — both
+   mobile and desktop. Report the full Performance/Accessibility/Best
+   Practices/SEO grid, plus TTFB for homepage and VAPT specifically so we
+   can confirm the cold-start fix actually worked (should now be near
+   instant, not 600+ms).
+
+Don't estimate or project scores — only report numbers from an actual
+post-deploy Lighthouse run against the live URL.

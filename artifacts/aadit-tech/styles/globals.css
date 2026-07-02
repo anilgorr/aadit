@@ -234,3 +234,30 @@ body {
 .animate-drift-slow {
   will-change: transform;
 }
+
+/* Native <details> accordion — fade-in when content opens, no JS needed  */
+details > summary {
+  list-style: none;
+}
+details > summary::marker,
+details > summary::-webkit-details-marker {
+  display: none;
+}
+.faq-content {
+  animation: faq-open 0.18s ease both;
+}
+@keyframes faq-open {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq-content {
+    animation: none;
+  }
+}
