@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/services-vapt-understanding-vapt', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       { source: '/blog/vapt-in-cyber-security-protecting-your-digital-assets', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       { source: '/blog/services-vapt-vapt-report', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
+      { source: '/blog/services-vapt-network-vapt', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       // Managed SOC cluster → canonical Managed SOC post
       { source: '/blog/managed-soc-services-managed-soc-for-banks', destination: '/blog/managed-soc-services-in-india', permanent: true },
       { source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
@@ -91,6 +92,16 @@ const nextConfig: NextConfig = {
       // consolidates these into single hub pages.
       { source: '/ebook/:slug*', destination: '/ebook', permanent: true },
       { source: '/whitepaper/:slug*', destination: '/whitepapers', permanent: true },
+
+      // ─── GSC Page Indexing 404 fixes ──────────────────────────────────────
+      // Root-level slug identical to a blog post (missing /blog/ prefix —
+      // this was a broken internal link on the old site itself).
+      { source: '/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
+      // Old root-level service page URLs surfaced in GSC "Not found" report
+      { source: '/managed-soc-services-managed-security-services-with-soc', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/soc-services-in-india', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/managed-it-service-providers-india', destination: '/it-managed-services/managed-it-services', permanent: true },
+      { source: '/iso-42001-certification-consulting-in-india-aadit-technologies', destination: '/compliance/iso-42001', permanent: true },
     ]
   },
 }

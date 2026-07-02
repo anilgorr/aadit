@@ -57,7 +57,7 @@ export default function NotFound() {
                 This page went off the grid.
               </h1>
               <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">
-                The page you’re looking for may have moved or no longer exists. Search below or jump
+                The page you&apos;re looking for may have moved or no longer exists. Search below or jump
                 straight to one of our service hubs.
               </p>
 
@@ -90,7 +90,7 @@ export default function NotFound() {
               <Link href="/contact" className="font-semibold text-cyan hover:underline">
                 Contact our team
               </Link>{" "}
-              and we’ll point you in the right direction.
+              and we&apos;ll point you in the right direction.
             </p>
           </div>
         </section>

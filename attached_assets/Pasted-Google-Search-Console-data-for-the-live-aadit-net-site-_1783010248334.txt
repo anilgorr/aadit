@@ -1,0 +1,61 @@
+Google Search Console data for the live aadit.net site surfaced a few gaps.
+Handle each:
+
+1. CONTEXT ONLY, NO ACTION NEEDED: GSC's Core Web Vitals report confirms
+   the old site had a real, field-measured mobile LCP problem (~30 URL
+   groups in "Poor" territory, over 4 seconds, from real Chrome users).
+   This is exactly what the recent performance fixes (static generation,
+   FAQ accordion swap, glow-blob optimization) addressed — the new site
+   now measures 1.4s mobile LCP via PageSpeed Insights. Just confirm this
+   understanding is correct and move on.
+
+2. ADD THESE MISSING URLS TO THE REDIRECT MAP: GSC's Page Indexing report
+   shows these are currently returning 404 on the live aadit.net site
+   (they are NOT in the previous redirect map, which only covered known
+   live pages). Add 301 redirects for each to whichever new page covers
+   the same topic:
+
+   /vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies/ → the new VAPT blog post
+     (IMPORTANT: this old root-level URL has the EXACT SAME SLUG as the
+     new blog post at /blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies
+     — just missing the /blog/ prefix. This is likely an existing broken
+     internal link on the old site itself, not just an old indexed URL.
+     Redirect it to the new /blog/... post.)
+   /managed-soc-services-managed-security-services-with-soc/ → /cybersecurity/managed-soc/
+   /managed-it-service-providers-india/ → /it-managed-services/managed-it-services/
+   /soc-services-in-india/ → /cybersecurity/managed-soc/
+   /iso-42001-certification-consulting-in-india-aadit-technologies → /compliance/iso-42001/
+   /it-managed-services/ → /it-managed-services/ (confirm this now resolves
+     correctly since it's already the real new hub path — it was 404 on
+     the OLD site, so no old-to-new mapping needed, just confirm the new
+     site itself serves this path with no issue)
+
+   There are 15 total 404s in GSC; the above are the real content ones
+   from the first page of results. Check the remaining ones too (GSC
+   Page Indexing > Not found (404) > Examples, rows 11-15) and add
+   redirects for any that are real content rather than bot/spam noise —
+   ignore anything that looks like a random hash path, a video player
+   template URL with unrendered {placeholder} syntax, or similar junk.
+
+3. ADD A CATCH-ALL FALLBACK: for any old aadit.net URL not explicitly
+   covered by the redirect map (including ones not yet discovered), redirect
+   to the homepage rather than serving a hard 404. This protects against
+   any legacy URLs from GSC's "Page with redirect" or other buckets that
+   weren't individually mapped. Don't let this catch-all override any of
+   the specific redirects already defined — it should only catch what's
+   left unmatched.
+
+4. CONFIRM: the "Crawled – currently not indexed" bucket in GSC (117
+   pages) is dominated by two things — WordPress's auto-generated image
+   attachment pages (/wp-content/uploads/.../*.avif, which simply won't
+   exist in the new Next.js architecture, no action needed) and blog
+   posts that are part of the near-duplicate clusters already being
+   consolidated per the blog migration plan. Confirm the blog redirect
+   mapping already implemented covers these specific examples:
+   /blog/managed-soc-services-in-india/ and /blog/services-vapt-network-vapt/
+   — both should already redirect to their respective consolidated posts.
+   If they don't yet, add them.
+
+After making these changes, give me the final complete redirect map
+(old URL → new URL) so I can do one last check against GSC before we
+talk about domain cutover.
