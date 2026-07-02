@@ -1,47 +1,57 @@
-import React from "react"
-import { BadgeCheck, ShieldCheck, Radar, Globe } from "lucide-react"
+import Image from "next/image"
 
-type Credential = {
-  icon: React.ComponentType<{ className?: string }>
-  label: string
-  sublabel?: string
-}
-
-const CREDENTIALS: Credential[] = [
-  { icon: BadgeCheck, label: "ISO 27001 Certified" },
-  { icon: ShieldCheck, label: "SOC 2 Aligned" },
-  { icon: Radar, label: "24/7 SOC Monitoring" },
-  {
-    icon: Globe,
-    label: "3 Global Offices",
-    sublabel: "Bengaluru · Bellevue, WA · Dubai",
-  },
+const CLIENTS = [
+  { name: "Sunrise", src: "/clients/sunrise.png", width: 200, height: 108 },
+  { name: "Infodrive", src: "/clients/infodrive.png", width: 200, height: 78 },
+  { name: "Netradyne", src: "/clients/netradyne.png", width: 707, height: 127 },
+  { name: "Alphastream", src: "/clients/alphastream.webp", width: 500, height: 112 },
+  { name: "Aditi", src: "/clients/aditi.webp", width: 377, height: 134 },
+  { name: "Sycomp", src: "/clients/sycomp.png", width: 444, height: 113 },
+  { name: "Motherhood", src: "/clients/motherhood.png", width: 200, height: 108 },
 ]
 
 export function LogoCloud() {
   return (
-    <div className="flex w-full flex-col items-center border-b border-border bg-background py-12">
-      <p className="mb-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Certified expertise, around-the-clock coverage
+    <div className="w-full overflow-hidden border-b border-border bg-background py-12">
+      <p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        Trusted by leading organizations
       </p>
-      <div className="flex max-w-5xl flex-wrap items-center justify-center gap-3 px-4 md:gap-4">
-        {CREDENTIALS.map(({ icon: Icon, label, sublabel }) => (
-          <span
-            key={label}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2 text-sm font-semibold text-foreground/70 transition-colors hover:border-primary/40 hover:text-primary"
+
+      <div className="relative flex">
+        {/* duplicate list for seamless loop */}
+        {[0, 1].map((pass) => (
+          <ul
+            key={pass}
+            aria-hidden={pass === 1}
+            className="marquee-track flex shrink-0 items-center gap-12 px-6"
           >
-            <Icon className="h-4 w-4 text-primary/70" />
-            <span className="flex flex-col leading-tight">
-              {label}
-              {sublabel ? (
-                <span className="text-xs font-medium text-muted-foreground">
-                  {sublabel}
-                </span>
-              ) : null}
-            </span>
-          </span>
+            {CLIENTS.map((client) => (
+              <li key={client.name} className="flex shrink-0 items-center">
+                <Image
+                  src={client.src}
+                  alt={client.name}
+                  width={client.width}
+                  height={client.height}
+                  className="h-10 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
+                />
+              </li>
+            ))}
+          </ul>
         ))}
       </div>
+
+      <style>{`
+        .marquee-track {
+          animation: marquee-scroll 28s linear infinite;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .marquee-track { animation: none; }
+        }
+        @keyframes marquee-scroll {
+          from { transform: translateX(0); }
+          to   { transform: translateX(-100%); }
+        }
+      `}</style>
     </div>
   )
 }
