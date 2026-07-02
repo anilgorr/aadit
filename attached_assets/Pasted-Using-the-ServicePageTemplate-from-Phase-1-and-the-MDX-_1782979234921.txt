@@ -1,0 +1,69 @@
+Using the ServicePageTemplate from Phase 1 and the MDX "services" content
+collection, build these 7 Cybersecurity pages. Source content for each is in
+content-source/cybersecurity-pages.md, organized by old URL — read that file
+and use it as your source material, but apply these specific edits, don't
+paste it verbatim:
+
+1. /cybersecurity/ (hub) — from "cybersecurity-services-india". List and link
+   to the 5 children below with short descriptions.
+
+2. /cybersecurity/managed-soc/ — merge "managed-soc" and "managed-soc-services"
+   (these two are identical, just use one as the base). Do NOT pull in
+   "security-as-a-service-india" — despite its URL, that page's actual content
+   is an off-topic "Top Cybersecurity Companies in India" listicle profiling
+   competitors (TCS, Wipro, Infosys, HCL) and has nothing to do with managed
+   SOC; leave it out entirely. Also fold in the pricing content from
+   "24x7-managed-soc-services" as a "24/7 Coverage" highlight section on this
+   same page — don't publish it as a separate competing URL, that recreates
+   the exact duplicate-page problem this migration is fixing. Only these 3
+   stats are confirmed real — include ONLY these: starting price
+   ₹99,000/month, 50+ clients, 4.9/5 rating. Do NOT include "50+ experts,"
+   "<15 min response time," or "100% audit success rate" — those were not
+   confirmed and must not be published anywhere on the new site.
+   Do NOT include the named testimonials from that page (Rajesh Kumar, Priya
+   Sharma, Amit Patel) — these are unverified/unpermissioned and must not be
+   used anywhere on the new site. Leave the testimonial slot on this page
+   empty or use one of the already-approved real-name testimonials from the
+   homepage if one fits, rather than inventing a replacement.
+
+3. /cybersecurity/soc-as-a-service/ — from "soc-as-a-service". Strip out its
+   "Why Choose Us" and "Conclusion" sections entirely — both are copy-pasted
+   from the Firewall/Cloud Infrastructure pages and are off-topic. Write a
+   short, genuine closing section instead based on what's actually on this
+   page (SOC report types, SOC components).
+
+4. /cybersecurity/vapt/ — from "vulnerability-assessment-penetration-testing-
+   vapt-services". Open with the definition paragraph tightened to 40-60 words.
+   The INR pricing tiers on this page are confirmed real current pricing —
+   surface them directly on the page rather than replacing with a
+   custom-quote CTA (this is the one page where the pricing table should stay).
+
+5. /cybersecurity/endpoint-security/ — from "endpoint-security-solutions". Fix
+   the pricing section intro, which currently says "Our VAPT service pricing
+   varies..." (copy-paste error) — rewrite to describe endpoint security
+   pricing instead.
+
+6. /cybersecurity/firewall-network-security/ — from
+   "firewall-network-security-solutions". Its "Why Choose Us" section is
+   Cloud Infrastructure copy and its firewall FAQ answer is actually the
+   managed-IT-services pricing answer — replace both with real
+   firewall/network-security content, don't carry the mismatches forward.
+
+7. /cybersecurity/email-security/ — from "email-security-solutions". Build
+   this as its own page, not folded into Endpoint Security — it covers a
+   distinct attack surface (its own product, Secure Email Gateway, a
+   six-layer defense model, and an FAQ set that barely overlaps with
+   Endpoint Security — only "DLP" is shared). Before publishing, fix the
+   heading/content swap found during extraction — this page's H2s got mixed
+   up with the "security-as-a-service-india" listicle page during the
+   original site's editing; confirm every heading on this page actually
+   describes email-security content and correct any that don't.
+
+Every generic testimonial you encounter (labeled "– IT Company," "– Healthcare
+Industry," "– Retail Industry," "John Doe, CTO, ABC Company," etc.) — do not
+migrate as-is. Either flag it for me to provide a real one, or drop that
+testimonial block from the page.
+
+Every placeholder-style pricing table (round numbers like "$500/$1000/$2000,"
+unpriced "Basic/Standard/Premium" tiers) — replace with a "Request a custom
+quote" CTA pattern instead of migrating fake numbers.
