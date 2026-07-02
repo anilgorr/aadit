@@ -1,47 +1,32 @@
 import React from "react"
+import { ShieldCheck } from "lucide-react"
 
-const LOGOS = [
-  "Acme Corp",
-  "Globex",
-  "Soylent",
-  "Initech",
-  "Umbrella",
-  "Stark Ind.",
-  "Wayne Ent.",
-  "Cyberdyne",
+const FRAMEWORKS = [
+  "ISO 27001",
+  "SOC 2",
+  "HIPAA",
+  "PCI-DSS",
+  "GDPR",
+  "DPDP Act",
 ]
 
 export function LogoCloud() {
   return (
-    <div className="flex w-full flex-col items-center overflow-hidden border-b border-border bg-background py-12">
+    <div className="flex w-full flex-col items-center border-b border-border bg-background py-12">
       <p className="mb-8 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Trusted by security-conscious teams
+        Security &amp; compliance frameworks we work with
       </p>
-      <div className="relative flex w-full max-w-6xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_12%,#000_88%,transparent)]">
-        <div className="animate-marquee flex whitespace-nowrap">
-          {LOGOS.concat(LOGOS).map((logo, i) => (
-            <div
-              key={i}
-              className="mx-10 flex items-center justify-center text-xl font-bold text-foreground/25 transition-colors hover:text-primary/70"
-            >
-              {logo}
-            </div>
-          ))}
-        </div>
+      <div className="flex max-w-5xl flex-wrap items-center justify-center gap-3 px-4 md:gap-4">
+        {FRAMEWORKS.map((name) => (
+          <span
+            key={name}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2 text-sm font-semibold text-foreground/70 transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <ShieldCheck className="h-4 w-4 text-primary/70" />
+            {name}
+          </span>
+        ))}
       </div>
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 28s linear infinite;
-        }
-        `,
-        }}
-      />
     </div>
   )
 }
