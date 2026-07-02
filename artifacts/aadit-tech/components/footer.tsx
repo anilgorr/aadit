@@ -3,30 +3,58 @@ import Link from "next/link"
 import Image from "next/image"
 import { Linkedin, Twitter, Github } from "lucide-react"
 
-const COLUMNS: { heading: string; links: string[] }[] = [
+const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
   {
     heading: "Cybersecurity",
-    links: ["Penetration Testing", "Vulnerability Assessment", "Security Architecture", "Incident Response"],
+    links: [
+      { label: "Penetration Testing", href: "#" },
+      { label: "Vulnerability Assessment", href: "#" },
+      { label: "Security Architecture", href: "#" },
+      { label: "Incident Response", href: "#" },
+    ],
   },
   {
     heading: "Compliance & Audits",
-    links: ["ISO 27001", "SOC 2", "HIPAA", "PCI-DSS", "RBI Guidelines"],
+    links: [
+      { label: "ISO 27001", href: "#" },
+      { label: "SOC 2", href: "#" },
+      { label: "HIPAA", href: "#" },
+      { label: "PCI-DSS", href: "#" },
+      { label: "RBI Guidelines", href: "#" },
+    ],
   },
   {
     heading: "IT Managed Services",
-    links: ["Infrastructure Management", "Cloud Operations", "Help Desk"],
+    links: [
+      { label: "Infrastructure Management", href: "#" },
+      { label: "Cloud Operations", href: "#" },
+      { label: "Help Desk", href: "#" },
+    ],
   },
   {
     heading: "Resources",
-    links: ["Blog", "Glossary", "Whitepapers", "EBooks"],
+    links: [
+      { label: "Blog", href: "/blog" },
+      { label: "Glossary", href: "/glossary" },
+      { label: "Whitepapers", href: "/whitepapers" },
+      { label: "eBooks", href: "/ebook" },
+    ],
+  },
+  {
+    heading: "Industries",
+    links: [
+      { label: "Startups & Scaleups", href: "/industries/startups" },
+      { label: "Healthcare & BFSI", href: "/industries/healthcare-bfsi" },
+      { label: "E-commerce & Fintech", href: "/industries/ecommerce-fintech" },
+    ],
   },
   {
     heading: "Company",
-    links: ["About Us", "Careers", "Contact"],
-  },
-  {
-    heading: "Legal",
-    links: ["Privacy Policy", "Terms of Service", "Cookie Policy"],
+    links: [
+      { label: "About Us", href: "#" },
+      { label: "Careers", href: "#" },
+      { label: "Contact", href: "#" },
+    ],
   },
 ]
 
@@ -77,12 +105,12 @@ export function Footer() {
               <h3 className="mb-4 text-sm font-semibold text-white">{col.heading}</h3>
               <ul className="flex flex-col gap-1 text-sm text-white/70">
                 {col.links.map((link) => (
-                  <li key={link}>
+                  <li key={link.label}>
                     <Link
-                      href="#"
+                      href={link.href}
                       className="inline-block py-1 transition-colors hover:text-primary"
                     >
-                      {link}
+                      {link.label}
                     </Link>
                   </li>
                 ))}

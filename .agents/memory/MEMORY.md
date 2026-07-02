@@ -1,5 +1,6 @@
 - [Next.js config top-level await](nextjs-config-toplevel-await.md) — next.config.ts cannot use top-level await; Next.js loads it via require() which breaks async modules
 - [Velite + Next.js integration](velite-nextjs-integration.md) — Velite build must run via npm scripts (prebuild/predev), not inside next.config.ts
 - [Aadit Technologies project](aadit-tech-project.md) — Next.js 15 app at artifacts/aadit-tech/, workflow "Aadit Technologies" on port 3000, not a registered Replit artifact
+- [Aadit content sections](aadit-content-sections.md) — blog/glossary/industries/resources; Velite s.toc()+s.metadata()+rehype-slug for TOC anchors; /contact & /about are a site-wide dead-link gap
 - [Aadit service-page architecture](aadit-service-architecture.md) — hub-based `/{hub}/{slug}` routes, MDX+frontmatter content model, conditional template sections, Velite MDX renderer
 - [Aadit Technologies Netlify deploy](aadit-tech-netlify-deploy.md) — deploys to Netlify from the pnpm monorepo via root netlify.toml + @netlify/plugin-nextjs; user must push from Git pane

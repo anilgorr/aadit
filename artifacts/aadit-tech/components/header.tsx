@@ -8,7 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react"
 
 const MENUS: Record<
   string,
-  { label: string; items: { title: string; desc?: string }[] }
+  { label: string; items: { title: string; desc?: string; href?: string }[] }
 > = {
   cyber: {
     label: "Cybersecurity",
@@ -40,16 +40,19 @@ const MENUS: Record<
   industries: {
     label: "Industries",
     items: [
-      { title: "Healthcare" },
-      { title: "BFSI" },
-      { title: "Fintech" },
-      { title: "SaaS" },
-      { title: "Enterprise" },
+      { title: "Startups & Scaleups", href: "/industries/startups", desc: "Security that closes enterprise deals." },
+      { title: "Healthcare & BFSI", href: "/industries/healthcare-bfsi", desc: "Regulatory-grade security for regulated sectors." },
+      { title: "E-commerce & Fintech", href: "/industries/ecommerce-fintech", desc: "Secure every transaction, at any scale." },
     ],
   },
   resources: {
     label: "Resources",
-    items: [{ title: "Blog" }, { title: "Glossary" }, { title: "Whitepapers" }, { title: "EBooks" }],
+    items: [
+      { title: "Blog", href: "/blog", desc: "Insights on security, compliance & IT." },
+      { title: "Glossary", href: "/glossary", desc: "Plain-English security & compliance terms." },
+      { title: "Whitepapers", href: "/whitepapers", desc: "In-depth research and guidance." },
+      { title: "eBooks", href: "/ebook", desc: "Practical guides you can download." },
+    ],
   },
 }
 
@@ -131,7 +134,7 @@ export function Header() {
                       {menu.items.map((item) => (
                         <Link
                           key={item.title}
-                          href="#"
+                          href={item.href ?? "#"}
                           className="group/link rounded-lg p-3 transition-colors hover:bg-accent"
                         >
                           <div className="font-semibold text-foreground group-hover/link:text-primary">
@@ -182,7 +185,7 @@ export function Header() {
                   {menu.items.map((item) => (
                     <Link
                       key={item.title}
-                      href="#"
+                      href={item.href ?? "#"}
                       onClick={() => setMobileOpen(false)}
                       className="py-2"
                     >

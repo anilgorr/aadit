@@ -1,13 +1,5 @@
 import { defineConfig, s } from 'velite'
-
-const postSchema = {
-  title: s.string().min(1),
-  description: s.string().min(1),
-  slug: s.slug('post'),
-  publishedAt: s.isodate(),
-  updatedAt: s.isodate().optional(),
-  author: s.string().optional(),
-}
+import rehypeSlug from 'rehype-slug'
 
 const serviceSchema = {
   title: s.string().min(1),
@@ -49,6 +41,23 @@ const serviceSchema = {
   content: s.mdx(),
 }
 
+const postSchema = {
+  title: s.string().min(1),
+  description: s.string().min(1),
+  slug: s.slug('post'),
+  publishedAt: s.isodate(),
+  updatedAt: s.isodate().optional(),
+  author: s.object({
+    name: s.string(),
+    role: s.string().optional(),
+  }),
+  tags: s.array(s.string()).optional().default([]),
+  cover: s.image().optional(),
+  metadata: s.metadata(),
+  toc: s.toc(),
+  content: s.mdx(),
+}
+
 export default defineConfig({
   root: 'content',
   output: {
@@ -57,6 +66,9 @@ export default defineConfig({
     base: '/static/',
     name: '[name]-[hash:6].[ext]',
     clean: true,
+  },
+  mdx: {
+    rehypePlugins: [rehypeSlug],
   },
   collections: {
     services: {
@@ -73,10 +85,7 @@ export default defineConfig({
       name: 'Post',
       pattern: 'posts/**/*.mdx',
       schema: s
-        .object({
-          ...postSchema,
-          content: s.mdx(),
-        })
+        .object(postSchema)
         .transform((data) => ({
           ...data,
           permalink: `/blog/${data.slug}`,
