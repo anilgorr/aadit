@@ -1,0 +1,303 @@
+Work through the following 6 phases in order, committing to git after each
+phase completes. Don't skip ahead — later phases assume earlier ones are done.
+Content sources referenced below are in the content-source/ folder I've
+uploaded to the project root.
+
+=====================================================================
+PHASE 1 — Complete the Cybersecurity hub (7 pages)
+=====================================================================
+Source: content-source/cybersecurity-pages.md
+
+Using the ServicePageTemplate and the MDX "services" content collection,
+build these 7 pages. Read the source file for raw material but apply these
+specific edits — don't paste any of it verbatim:
+
+1. /cybersecurity/ (hub) — from "cybersecurity-services-india". List and link
+   to the 5 children below with short descriptions.
+
+2. /cybersecurity/managed-soc/ — merge "managed-soc" and "managed-soc-
+   services" (identical, use one as base). Do NOT pull in "security-as-a-
+   service-india" — despite its URL, its actual content is an off-topic "Top
+   Cybersecurity Companies in India" listicle profiling competitors (TCS,
+   Wipro, Infosys, HCL); leave it out entirely. Fold in the pricing content
+   from "24x7-managed-soc-services" as a "24/7 Coverage" highlight section on
+   this same page, not a separate URL. Only these 3 stats are confirmed real
+   — include ONLY these: starting price ₹99,000/month, 50+ clients, 4.9/5
+   rating. Do NOT include "50+ experts," "<15 min response time," or "100%
+   audit success rate" — unconfirmed, must not be published. Do NOT include
+   the named testimonials from that page (Rajesh Kumar, Priya Sharma, Amit
+   Patel) — unverified/unpermissioned, must not be used anywhere on the site.
+   Leave the testimonial slot empty or reuse an approved homepage testimonial
+   if one fits.
+
+3. /cybersecurity/soc-as-a-service/ — from "soc-as-a-service". Strip the "Why
+   Choose Us" and "Conclusion" sections — both are copy-pasted from Firewall/
+   Cloud Infrastructure pages. Write a genuine closing section based on what's
+   actually on this page (SOC report types, SOC components).
+
+4. /cybersecurity/vapt/ — from "vulnerability-assessment-penetration-testing-
+   vapt-services". Open with a tightened 40-60 word definition. The INR
+   pricing tiers are confirmed real — surface them directly, this is the one
+   page that keeps a visible pricing table instead of a custom-quote CTA.
+
+5. /cybersecurity/endpoint-security/ — from "endpoint-security-solutions".
+   Fix the pricing section intro, which currently says "Our VAPT service
+   pricing varies..." (copy-paste error) — rewrite for endpoint security.
+
+6. /cybersecurity/firewall-network-security/ — from "firewall-network-
+   security-solutions". Its "Why Choose Us" is Cloud Infrastructure copy and
+   its FAQ answer is actually the managed-IT-services pricing answer —
+   replace both with real firewall/network-security content.
+
+7. /cybersecurity/email-security/ — from "email-security-solutions". Its own
+   page, not folded into Endpoint Security (distinct product: Secure Email
+   Gateway, six-layer defense model, FAQ barely overlaps Endpoint). Before
+   publishing, check every H2 on this page — some got swapped with the
+   "security-as-a-service-india" listicle page during the original site's
+   editing; correct any heading that doesn't actually describe email-security
+   content.
+
+Every generic testimonial ("– IT Company," "– Healthcare Industry," "John
+Doe, CTO, ABC Company," etc.) — flag it for me or drop the block, don't
+migrate as-is. Every placeholder-style pricing table (round numbers, unpriced
+"Basic/Standard/Premium" tiers) — replace with a "Request a custom quote" CTA.
+
+=====================================================================
+PHASE 2 — Complete the Compliance hub (7 pages)
+=====================================================================
+Source: content-source/compliance-pages.md
+
+This cluster has heavy cross-contamination between pages — apply these fixes,
+don't paste verbatim:
+
+1. /compliance/ (hub) — from "compliance-audit-services-india". Fix every
+   teaser link currently pointing to /cybersecurity/ instead of its own
+   correct Compliance child page.
+
+2. /compliance/iso-27001/ — merge "iso-27001-certification-services" (long-
+   form educational guide: process, INR cost breakdown, ISO 27000 vs 27001)
+   with "iso-27001-consulting-india" (consulting-offer page: 8-phase
+   engagement, deliverables). Genuinely different, not duplicates — cherry-
+   pick from both. Drop the "– Manufacturing Company" testimonial and any
+   content that sounds like VAPT rather than ISO 27001.
+
+3. /compliance/iso-42001/ — from "iso-42001-certification". Remove the stray
+   "Key Components of HIPAA Compliance" heading and the cybersecurity "Cost
+   Savings" bullet — replace with real ISO 42001 (AI governance) content.
+
+4. /compliance/iso-9001/ — from "iso-9001-certification". Remove literal
+   unreplaced "[Your Company Name]" placeholders (appears twice). Drop the
+   two SOC-services testimonials (wrong topic) and the "Bronze/Silver/Gold"
+   generic pricing — use a custom quote CTA.
+
+5. /compliance/gdpr/ — from "gdpr-compliance-solutions". Drop the generic
+   "– IT Industry" testimonial. Keep the USD pricing framed as estimates,
+   per the source, not fixed price.
+
+6. /compliance/pci-dss/ — from "pci-dss-compliance-solutions". Rewrite the
+   hero subhead, which currently describes SOC monitoring, not PCI DSS.
+   Remove the entire "SOC Compliance/SOC Reports" section (copy-pasted,
+   unrelated). Drop both generic testimonials.
+
+7. /compliance/hipaa/ — from "hipaa-compliance-solutions". Remove the stray
+   "Benefits of Managed SOC Services" fragment. The Breach Notification Rule
+   section currently duplicates the Privacy Rule section verbatim — rewrite
+   Breach Notification with its actual distinct requirements. Drop the
+   "– Manufacturing Industry" testimonial.
+
+8. /compliance/soc2/ — from "soc2-certification". Remove the "Global Market
+   Access / Achieve ISO 9001 Certification" step pasted into the SOC 2
+   process list by mistake. The two "case studies" are anonymized — present
+   as illustrative scenarios, not case studies, unless I provide real ones.
+   Drop the "– Healthcare Company" testimonial. Write a fresh 150-160
+   character meta description for this page (the source one is malformed).
+
+=====================================================================
+PHASE 3 — IT Managed Services hub (5 pages) + Contact, About, Privacy, Careers
+=====================================================================
+Source: content-source/it-managed-and-company-pages.md
+
+Part A — IT Managed Services:
+
+1. /it-managed-services/ (hub) — use "managed-it-services" as base (the full
+   deep-dive page). Ignore "managed-it-services-india" (thin duplicate with a
+   garbled fragment "malwCloud infrastructure..."). Remove the "How to Choose
+   a Cybersecurity Consulting Firm" section pasted in by mistake.
+
+2. /it-managed-services/helpdesk-support/ — from "it-support-services", but
+   TRIM IT DOWN. The source currently covers 6 service areas including a full
+   Backup & Disaster Recovery "Why Choose Us" section pasted in by mistake —
+   keep only helpdesk/remote-support/on-site scope here; BDR content belongs
+   on page 5 below. Fill unfilled "[mention price]" / "[mention average
+   resolution time, e.g., 30 minutes]" placeholders with a "contact us for
+   SLA details" pattern, not invented numbers.
+
+3. /it-managed-services/cloud-infrastructure/ — from "cloud-infrastructure-
+   solutions". It has a heading duplicated word-for-word ("Cloud
+   Infrastructure Management and Optimization") used for two different
+   sections — retitle the second occurrence to describe GRC/governance
+   content.
+
+4. /it-managed-services/cloud-migration/ — from "cloud-migration-services".
+   Fix the "Why Choose [Us]" header, which currently reads "...for Cloud
+   Optimization" — should say Cloud Migration.
+
+5. /it-managed-services/cloud-optimization/ — from "cloud-optimization-
+   services".
+
+6. /it-managed-services/backup-disaster-recovery/ — from "backup-and-
+   disaster-recovery-solutions", plus the BDR content pulled out of the IT
+   Support Services page in step 2 — consolidate here.
+
+Part B — Contact page: currently only lists Bengaluru. Add all 3 real office
+locations exactly as follows, don't paraphrase:
+- India (HQ): #21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis
+  Bank, New BEL Road, Bangalore-560094. Mobile: +91 9663445445
+- USA: 4139 164th AVE SE, Bellevue, WA 98006-8906
+- Dubai: Aadit Technologies FZCO, Building A1, Dubai Digital Park, Silicon
+  Oasis, Dubai. Phone: +971 52 184 7477
+Keep the existing contact form as-is, just add/expand the office locations
+section to show all three.
+
+Part C — About page: currently blank/broken on the live site. Build it using
+the "about-us" content from content-source/it-managed-and-company-pages.md —
+company story, certifications, mission, and the 3-office global presence
+from Part B.
+
+Part D — Privacy Policy: the current source content is 100% unedited
+WordPress placeholder text (every section literally starts "Suggested
+text:") — do not migrate it. Draft a real privacy policy appropriate for a
+company handling customer data across India, US, and UAE operations,
+covering data collection, use, third-party sharing, cookies, and contact-
+for-data-requests. Flag clearly that this needs legal review before
+publishing.
+
+Part E — Careers page: doesn't exist yet, linked from every footer. Build a
+simple version — open roles list or "no current openings, check back" state,
+plus a way to submit a general application.
+
+=====================================================================
+PHASE 4 — Blog migration (dedupe, don't 1:1 copy everything)
+=====================================================================
+Source: content-source/blog-posts-part1.md and blog-posts-part2.md
+
+The blog has heavy topical duplication — migrating all 49 posts as separate
+live pages recreates the same cannibalization problem this whole project is
+fixing.
+
+Migrate posts as MDX files, preserving exact original slugs for whichever
+post in each cluster you keep live (so existing indexed URLs still resolve).
+For each near-duplicate cluster below, pick the strongest/most complete post
+and 301-redirect the others to it (add to the redirect list in Phase 5, don't
+just delete them):
+
+- 8 "what is VAPT / VAPT full form" posts: what-is-vapt-guide, what-is-vapt-
+  guide-2, vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-
+  technologies, vapt-methodology-step-by-step-guide, types-of-vapt-services-
+  security-assessment-guide, services-vapt-understanding-vapt, vapt-in-cyber-
+  security-protecting-your-digital-assets, services-vapt-vapt-report. Pick
+  the one that best matches the "vapt full form" search query (high-
+  impression, zero-click opportunity per GSC data) and redirect the rest.
+
+- Managed SOC posts: managed-soc-services-in-india, managed-soc-services-
+  managed-soc-for-banks, managed-soc-services-comprehensive-cybersecurity-
+  with-managed-soc, managed-soc-services-managed-security-services-with-soc
+  — keep the strongest, redirect the rest.
+
+- "Cybersecurity companies in Bangalore/India" posts: cyber-security-
+  companies-bangalore, cyber-security-companies-bangalore-experts,
+  cybersecurity-companies-in-india-top-leaders — keep the strongest, redirect
+  the rest.
+
+- SOC 2 posts: soc-2-compliance-services-india and soc-2-compliance-services-
+  india-2 — keep one, redirect the other.
+
+- Cloud cost posts: cloud-cost-optimization-indian-businesses and cloud-
+  optimization-strategies — keep one, redirect the other.
+
+Special case: the post at slug "iso-27001-consulting-india" has a title/meta
+description promising ISO 27001 content, but its body is generic "Managed IT
+Services in India" copy with no ISO 27001 content. Either retitle the post
+(and its meta description) to match what it's actually about, or drop it and
+redirect to /compliance/iso-27001/ — don't publish it under an ISO 27001
+title with non-ISO-27001 content.
+
+Two posts couldn't be extracted and need content pulled manually from the
+live site: "what-is-vapt-guide" and "services-vapt-vapt-report". Flag these
+rather than inventing content.
+
+Each surviving post needs: author byline, published + last-updated dates,
+estimated read time, table of contents for longer posts, related-posts
+section. Also migrate the whitepaper ("navigating-cyber-threats-in-2025...")
+and ebook ("sebis-cscrf-2-0-and-its-impact-on-cyber-audits") to /whitepapers/
+and /ebook/ — flag that the ebook's download link is empty on the live site
+and needs a real PDF asset re-uploaded, not linked to a broken URL.
+
+=====================================================================
+PHASE 5 — SEO/AEO/GEO verification + full redirect map
+=====================================================================
+1. Show the actual rendered JSON-LD output (view-source or a script tag
+   dump) for the homepage, one glossary page, and one service page —
+   Organization, BreadcrumbList, and FAQPage schema specifically. Validate
+   each against Google's Rich Results Test and report any errors.
+
+2. Implement this full 301 redirect map in next.config.js (or Netlify's
+   _redirects file):
+
+   /cybersecurity-services-india/ → /cybersecurity/
+   /managed-soc/, /managed-soc-services/, /landing-page-soc/, /24x7-managed-soc-services/ → /cybersecurity/managed-soc/
+   /security-as-a-service-india/ → /cybersecurity/managed-soc/
+   /soc-as-a-service/ → /cybersecurity/soc-as-a-service/
+   /vulnerability-assessment-penetration-testing-vapt-services/ → /cybersecurity/vapt/
+   /endpoint-security-solutions/ → /cybersecurity/endpoint-security/
+   /firewall-network-security-solutions/ → /cybersecurity/firewall-network-security/
+   /email-security-solutions/ → /cybersecurity/email-security/
+   /cyber-security-consulting-services/ → /cybersecurity/consulting/
+   /compliance-audit-services-india/ → /compliance/
+   /iso-27001-certification-services/, /iso-27001-consulting-india/ → /compliance/iso-27001/
+   /iso-42001-certification/ → /compliance/iso-42001/
+   /iso-9001-certification/ → /compliance/iso-9001/
+   /gdpr-compliance-solutions/ → /compliance/gdpr/
+   /pci-dss-compliance-solutions/ → /compliance/pci-dss/
+   /hipaa-compliance-solutions/ → /compliance/hipaa/
+   /soc2-certification/ → /compliance/soc2/
+   /managed-it-services-india/, /managed-it-services/ → /it-managed-services/
+   /it-support-services/ → /it-managed-services/helpdesk-support/
+   /cloud-infrastructure-solutions/ → /it-managed-services/cloud-infrastructure/
+   /cloud-migration-services/ → /it-managed-services/cloud-migration/
+   /cloud-optimization-services/ → /it-managed-services/cloud-optimization/
+   /backup-and-disaster-recovery-solutions/ → /it-managed-services/backup-disaster-recovery/
+   /about-us/ → /about/
+   /contact-us/ → /contact/
+   /thank-you/ → /contact/
+   /whitepapers-cybersecurity-india/ → /whitepapers/
+   [plus every blog post redirect from the dedup clusters in Phase 4]
+
+3. Audit every service/compliance/IT/glossary page and confirm each opens
+   with a direct, self-contained 40-60 word answer to "what is [topic]"
+   before any marketing copy. Flag any page that still buries its
+   definition.
+
+4. Run a production build and report bundle sizes per route, confirm images
+   use next/image with explicit width/height, and fonts load via next/font.
+
+=====================================================================
+PHASE 6 — QA pass
+=====================================================================
+1. Run `next build` and fix any errors or warnings.
+2. Run Lighthouse against the homepage, one service page, one blog post, and
+   one glossary page, both mobile and desktop. Report Performance,
+   Accessibility, Best Practices, SEO — fix anything under 90.
+3. Crawl the site for broken internal links — every footer link currently
+   points to "#" placeholder anchors; confirm every one now points to a real
+   page from Phases 1-3, with none still showing "#".
+4. Confirm one H1 per page, no skipped heading levels.
+5. Confirm every image has descriptive alt text.
+6. Test the contact form end-to-end.
+7. Test every redirect from Phase 5 resolves with a 301, not a 302 or a
+   chain.
+8. Test responsive layout at 375px, 768px, 1024px, 1440px.
+
+After Phase 6, give me a summary of what changed, what's still open, and
+confirm nothing touches DNS, the custom domain, or GitHub — those stay
+manual steps I'll handle separately once I've reviewed this build.

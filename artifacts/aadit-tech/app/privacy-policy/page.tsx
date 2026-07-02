@@ -38,17 +38,6 @@ export default function PrivacyPolicyPage() {
 
         <Section>
           <div className="mx-auto max-w-3xl space-y-10 text-muted-foreground">
-            <div className="rounded-xl border border-amber-500/30 bg-amber-500/5 p-5 text-sm">
-              <p>
-                <span className="font-semibold text-foreground">Please note:</span> This privacy
-                policy is provided as a general template describing how {LEGAL_NAME} handles personal
-                information. It should be reviewed and finalised by qualified legal counsel to ensure
-                it accurately reflects your data practices and complies with all applicable laws,
-                including India&apos;s Digital Personal Data Protection Act, the EU/UK GDPR, and UAE
-                data protection regulations, before being treated as a binding legal document.
-              </p>
-            </div>
-
             <div className="space-y-4 leading-relaxed">
               <p>
                 {LEGAL_NAME} (&ldquo;Aadit Technologies&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
