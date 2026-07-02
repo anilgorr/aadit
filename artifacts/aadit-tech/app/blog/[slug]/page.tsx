@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
-import Link from "next/link"
 import { Calendar, Clock, RefreshCw } from "lucide-react"
 import { posts } from "@/.velite"
 import { getPost, getRelatedPosts, formatDate } from "@/lib/blog"

@@ -102,7 +102,7 @@ export function Footer() {
 
           {COLUMNS.map((col) => (
             <div key={col.heading}>
-              <h3 className="mb-4 text-sm font-semibold text-white">{col.heading}</h3>
+              <h2 className="mb-4 text-sm font-semibold text-white">{col.heading}</h2>
               <ul className="flex flex-col gap-1 text-sm text-white/70">
                 {col.links.map((link) => (
                   <li key={link.label}>

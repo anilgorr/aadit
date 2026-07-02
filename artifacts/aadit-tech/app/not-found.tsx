@@ -15,19 +15,19 @@ const HUBS = [
     icon: ShieldCheck,
     title: "Cybersecurity",
     desc: "Penetration testing, VAPT, and 24/7 incident response.",
-    href: "/services/cybersecurity",
+    href: "/cybersecurity",
   },
   {
     icon: FileCheck,
     title: "Compliance & Audits",
     desc: "ISO 27001, SOC 2, HIPAA, and PCI-DSS readiness.",
-    href: "/services/compliance",
+    href: "/compliance",
   },
   {
     icon: Server,
     title: "IT Managed Services",
     desc: "Cloud operations, help desk, and disaster recovery.",
-    href: "/services/managed-it",
+    href: "/it-managed-services",
   },
 ]
 

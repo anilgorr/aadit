@@ -26,19 +26,19 @@ const SERVICES = [
     icon: ShieldCheck,
     title: "Cybersecurity",
     desc: "Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.",
-    href: "/services/cybersecurity",
+    href: "/cybersecurity",
   },
   {
     icon: FileCheck,
     title: "Compliance",
     desc: "Streamlined certification for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.",
-    href: "/services/compliance",
+    href: "/compliance",
   },
   {
     icon: Server,
     title: "IT Managed Services",
     desc: "Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.",
-    href: "/services/managed-it",
+    href: "/it-managed-services",
   },
 ]
 
@@ -198,10 +198,10 @@ export default function Home() {
                   <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
                   <Link
                     href={service.href}
-                    aria-label={`Learn more about ${service.title}`}
                     className="mt-2 flex items-center font-semibold text-primary"
                   >
                     Learn More
+                    <span className="sr-only"> about {service.title}</span>
                     <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Card>

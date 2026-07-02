@@ -9,17 +9,17 @@ type Entry = { title: string; href: string; desc: string }
 const INDEX: Entry[] = [
   {
     title: "Cybersecurity",
-    href: "/services/cybersecurity",
+    href: "/cybersecurity",
     desc: "Penetration testing, vulnerability assessments, incident response",
   },
   {
     title: "Compliance & Audits",
-    href: "/services/compliance",
+    href: "/compliance",
     desc: "ISO 27001, SOC 2, HIPAA, PCI-DSS readiness",
   },
   {
     title: "IT Managed Services",
-    href: "/services/managed-it",
+    href: "/it-managed-services",
     desc: "Cloud operations, help desk, backup & disaster recovery",
   },
   { title: "About Us", href: "/about", desc: "Our story, team, and certifications" },

@@ -1,6 +1,7 @@
 - [Next.js config top-level await](nextjs-config-toplevel-await.md) — next.config.ts cannot use top-level await; Next.js loads it via require() which breaks async modules
 - [Velite + Next.js integration](velite-nextjs-integration.md) — Velite build must run via npm scripts (prebuild/predev), not inside next.config.ts
 - [Aadit Technologies project](aadit-tech-project.md) — Next.js 15 app at artifacts/aadit-tech/, workflow "Aadit Technologies" on port 3000, not a registered Replit artifact
+- [Lighthouse in Replit](lighthouse-in-replit.md) — install system chromium; audit a FRESH prod build in one bash call; desktop Perf/A11y/SEO trustworthy but mobile Perf is noisy/TBT-bound; link-text audit ignores aria-label
 - [Aadit SEO foundation](aadit-seo.md) — canonical apex aadit.net; title-template double-suffix trap; no-invention rules for schema; next/og can't use oklch; redirect map not provided
 - [Aadit content sections](aadit-content-sections.md) — blog/glossary/industries/resources; Velite s.toc()+s.metadata()+rehype-slug for TOC anchors; /contact & /about are a site-wide dead-link gap
 - [Aadit service-page architecture](aadit-service-architecture.md) — hub-based `/{hub}/{slug}` routes, MDX+frontmatter content model, conditional template sections, Velite MDX renderer

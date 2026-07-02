@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { formatDate } from "@/lib/blog"
 import type { Post } from "@/.velite"
 
-export function BlogCard({ post }: { post: Post }) {
+export function BlogCard({ post, titleAs: TitleTag = "h3" }: { post: Post; titleAs?: "h2" | "h3" }) {
   return (
     <Link href={post.permalink} className="group">
       <Card className="flex h-full flex-col p-6 transition-colors hover:border-primary/50">
@@ -18,9 +18,9 @@ export function BlogCard({ post }: { post: Post }) {
             ))}
           </div>
         )}
-        <h3 className="mb-2 text-lg font-bold leading-snug group-hover:text-primary">
+        <TitleTag className="mb-2 text-lg font-bold leading-snug group-hover:text-primary">
           {post.title}
-        </h3>
+        </TitleTag>
         <p className="mb-6 line-clamp-3 flex-1 text-sm leading-relaxed text-muted-foreground">
           {post.description}
         </p>

@@ -47,3 +47,7 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Local tooling artifacts (not product code)
+# Downloaded Chrome/Chromium used only for local Lighthouse audits
+/chrome/

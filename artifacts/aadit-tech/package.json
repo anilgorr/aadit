@@ -23,6 +23,7 @@
     "velite": "^0.2.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/node": "^25.3.3",
     "@types/react": "^19.2.0",
