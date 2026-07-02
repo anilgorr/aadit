@@ -5,6 +5,14 @@ import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/site'
 import { organizationSchema } from '@/lib/seo'
 import { JsonLd } from '@/components/json-ld'
 
+// Every page on this site is purely static marketing content — it never
+// changes between deploys.  Setting revalidate = false here (at the root
+// layout) cascades to every route segment and tells Next.js to treat all
+// pre-rendered pages as indefinitely cacheable.  Netlify will then serve
+// them as true static HTML from the CDN edge with no function invocation,
+// eliminating the cold-start TTFB entirely.
+export const revalidate = false
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],

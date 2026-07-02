@@ -1,0 +1,39 @@
+I tested aadit-tech.netlify.app directly (the real deployed site, not the
+Replit dev server) using the browser's Navigation Timing API. Two findings:
+
+1. GOOD NEWS: warm-cache production loads are fast. JS chunks are properly
+   content-hashed and minified (e.g. webpack-563d2ff10f554742.js), and a
+   repeat page load completes in under 200ms. This confirms the codebase
+   itself isn't bloated — the 40/73 Lighthouse scores from the last report
+   were measuring your local dev server, which is a fundamentally
+   different (much heavier) environment than what's actually live. Those
+   specific numbers should be disregarded.
+
+2. REAL ISSUE FOUND: cold-start latency. First hit to
+   /cybersecurity/vapt returned a Time To First Byte of 4,445ms. The exact
+   same URL, requested again immediately after, returned a TTFB of 53ms.
+   That's a classic cold-start pattern, not measurement noise. Please
+   investigate and fix:
+   - Are the service/compliance/IT/blog/glossary pages statically
+     generated at build time (generateStaticParams / static export), or
+     are they server-rendered on-demand (SSR/ISR) per request? If they're
+     SSR and the content doesn't change per-request (which it shouldn't —
+     this is marketing content, not personalized), convert them to static
+     generation so Netlify serves them from the CDN edge instantly instead
+     of invoking a function per cold request.
+   - If they're already static, check why the first request to a given
+     URL still shows this cold-start pattern — it may be Netlify's CDN
+     cache needing to warm per-URL, in which case check whether Netlify's
+     build is pre-warming the cache or if this only affects rarely-visited
+     URLs.
+   - Test cold-start TTFB on at least 3 different service pages that
+     haven't been recently visited, plus the homepage, to see how
+     widespread this is.
+
+3. Once you understand and fix the cold-start issue, run Lighthouse
+   against the ACTUAL DEPLOYED URL (https://aadit-tech.netlify.app/ and
+   its subpages) — not a local dev server — for homepage, VAPT service
+   page, one blog post, and glossary, both mobile and desktop. This is
+   the only way to get scores that reflect what real visitors and Google
+   will actually experience. Report the full Performance/Accessibility/
+   Best Practices/SEO grid from this real test.
