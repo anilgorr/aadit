@@ -212,3 +212,25 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* ── Mobile performance ─────────────────────────────────────────────────────
+   filter: blur(90px) forces GPU rasterisation and cannot be compositor-
+   promoted alongside transform on mobile GPUs — hide purely decorative
+   blobs on small screens.  radar-ring uses scale+opacity which also adds
+   unnecessary paint cost on low-end devices.                               */
+@media (max-width: 767px) {
+  .glow-blob {
+    display: none;
+  }
+  .radar-ring {
+    animation: none;
+    opacity: 0.4;
+  }
+}
+
+/* Promote drifting blobs to their own GPU compositor layer on desktop so
+   the blur repaint stays isolated from the rest of the page.              */
+.animate-drift,
+.animate-drift-slow {
+  will-change: transform;
+}

@@ -32,6 +32,8 @@ export function LogoCloud() {
                   alt={client.name}
                   width={client.width}
                   height={client.height}
+                  loading="lazy"
+                  sizes="160px"
                   className="h-10 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0"
                 />
               </li>

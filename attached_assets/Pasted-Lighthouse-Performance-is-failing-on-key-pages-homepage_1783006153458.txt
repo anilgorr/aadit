@@ -1,0 +1,42 @@
+Lighthouse Performance is failing on key pages: homepage desktop 75,
+homepage MOBILE 40, VAPT service page desktop 76. Fix these before we can
+consider this ready to launch.
+
+1. Diagnose the homepage mobile score of 40 specifically — this is the
+   most urgent issue. Common causes to check first, since the homepage has
+   a stats-ticker "Threat Monitor" card (Endpoints protected, Threats
+   blocked, Compliance score) and what looks like an animated/gradient
+   hero background:
+   - Is the hero background using a heavy CSS animation, canvas, or SVG
+     filter that's expensive on mobile GPUs? Simplify or make it static/
+     CSS-only if so.
+   - Are the "Threat Monitor" stat numbers animating via a JS library that
+     blocks the main thread? If so, use a lighter approach (CSS transitions
+     or a small dependency-free counter) or defer it until after
+     first paint.
+   - Run a Lighthouse trace and report the actual top opportunities/
+     diagnostics it lists (e.g. "Reduce unused JavaScript," "Eliminate
+     render-blocking resources," "Properly size images," "Reduce main-
+     thread work") with the specific numbers for each, not just the
+     overall score.
+   - Check if any images on the homepage (hero, client logos) are missing
+     next/image optimization, explicit width/height, or are being served
+     at a much larger size than displayed.
+   - Check total JS bundle size for the homepage specifically vs. the
+     glossary page (which scored 96) — what's different about what's
+     being loaded.
+
+2. Same diagnostic for the VAPT service page (desktop 76) — what's
+   dragging it down relative to the blog post (92) and glossary (96) pages,
+   which presumably share the same layout/header/footer.
+
+3. After fixing, re-run Lighthouse on ALL FOUR pages (homepage, VAPT
+   service page, the blog post, glossary), BOTH mobile and desktop, and
+   report all four categories this time — Performance, Accessibility,
+   Best Practices, and SEO — not just Performance. Give me the full 4x2x4
+   grid of scores (4 pages x 2 devices x 4 categories) so I can see
+   everything at once.
+
+4. Flag anything that's still below 90 after your fixes and explain why
+   it can't easily go higher (e.g. a genuine trade-off vs. something
+   that's just unoptimized and needs more work).
