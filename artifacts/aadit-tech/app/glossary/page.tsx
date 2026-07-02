@@ -8,12 +8,14 @@ import { Section } from "@/components/ui/section"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { buildMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Cybersecurity & Compliance Glossary | Aadit Technologies",
+export const metadata: Metadata = buildMetadata({
+  path: "/glossary",
+  title: "Cybersecurity & Compliance Glossary",
   description:
     "Plain-English definitions of key cybersecurity and compliance terms — VAPT, SOC, SIEM, ISO 27001, GDPR, HIPAA, PCI DSS, and SOC 2.",
-}
+})
 
 export default function GlossaryPage() {
   const terms = [...GLOSSARY].sort((a, b) => a.term.localeCompare(b.term))

@@ -7,12 +7,14 @@ import { Footer } from "@/components/footer"
 import { Section } from "@/components/ui/section"
 import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { buildMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Industries We Serve | Aadit Technologies",
+export const metadata: Metadata = buildMetadata({
+  path: "/industries",
+  title: "Industries We Serve",
   description:
     "Tailored cybersecurity and compliance for startups, healthcare & BFSI, and e-commerce & fintech — mapped to the regulations each industry must meet.",
-}
+})
 
 export default function IndustriesPage() {
   return (

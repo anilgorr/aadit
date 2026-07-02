@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { services } from "@/.velite"
 import { getService, getRelated } from "@/lib/services"
 import { ServicePageTemplate } from "@/components/service-page-template"
+import { buildMetadata } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ hub: string; slug: string }>
@@ -16,10 +17,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { hub, slug } = await params
   const service = getService(hub, slug)
   if (!service) return {}
-  return {
-    title: `${service.title} | Aadit Technologies`,
+  return buildMetadata({
+    path: service.permalink,
+    title: service.title,
     description: service.metaDescription,
-  }
+  })
 }
 
 export default async function ServiceChildPage({ params }: PageParams) {

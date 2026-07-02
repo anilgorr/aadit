@@ -1,0 +1,30 @@
+# Aadit Technologies
+
+> Aadit Technologies is a cybersecurity, compliance, and IT managed-services
+> provider based in Bengaluru, India. We help startups through enterprise
+> organisations — especially in healthcare, BFSI, fintech, e-commerce, and SaaS —
+> secure their systems, achieve and maintain compliance certifications, and run
+> reliable IT operations.
+
+## Core service areas
+
+- [Cybersecurity](https://aadit.net/cybersecurity): Managed SOC, VAPT (vulnerability assessment & penetration testing), endpoint and network security, security architecture review, and incident response.
+- [Compliance & Audits](https://aadit.net/compliance): Certification and audit readiness for ISO 27001, SOC 2, HIPAA, PCI DSS, GDPR, and India's DPDP Act.
+- [IT Managed Services](https://aadit.net/it-managed-services): 24/7 infrastructure monitoring, cloud operations, help desk, backup, and disaster recovery.
+
+## Industries
+
+- [Startups & Scaleups](https://aadit.net/industries/startups): Right-sized security and SOC 2 / ISO 27001 to close enterprise deals and pass due diligence.
+- [Healthcare & BFSI](https://aadit.net/industries/healthcare-bfsi): HIPAA, RBI cybersecurity guidelines, PCI DSS, and ISO 27001 with continuous monitoring.
+- [E-commerce & Fintech](https://aadit.net/industries/ecommerce-fintech): PCI DSS, GDPR/DPDP, fraud prevention, and application/API security testing.
+
+## Learn
+
+- [Security & Compliance Glossary](https://aadit.net/glossary): Plain-English definitions of VAPT, SOC, SIEM, ISO 27001, GDPR, HIPAA, PCI DSS, and SOC 2.
+- [Insights & Blog](https://aadit.net/blog): Practical guidance on cybersecurity, compliance, and managed IT.
+
+## Key pages
+
+- [Homepage](https://aadit.net/)
+- [Industries overview](https://aadit.net/industries)
+- [Sitemap](https://aadit.net/sitemap.xml)

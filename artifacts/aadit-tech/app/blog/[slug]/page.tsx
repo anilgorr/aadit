@@ -12,6 +12,8 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { MDXContent } from "@/components/mdx-content"
 import { TableOfContents } from "@/components/table-of-contents"
 import { BlogCard } from "@/components/blog-card"
+import { JsonLd } from "@/components/json-ld"
+import { buildMetadata, articleSchema } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -76,10 +78,16 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { slug } = await params
   const post = getPost(slug)
   if (!post) return {}
-  return {
-    title: `${post.title} | Aadit Technologies`,
+  return buildMetadata({
+    path: post.permalink,
+    title: post.title,
     description: post.description,
-  }
+    type: "article",
+    publishedTime: post.publishedAt,
+    modifiedTime: post.updatedAt ?? post.publishedAt,
+    authors: [post.author.name],
+    ...(post.cover ? { images: [{ url: post.cover.src }] } : {}),
+  })
 }
 
 export default async function BlogPostPage({ params }: PageParams) {
@@ -90,24 +98,21 @@ export default async function BlogPostPage({ params }: PageParams) {
   const related = getRelatedPosts(post)
   const readingTime = Math.max(1, Math.ceil(post.metadata.readingTime))
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.title,
+  const schema = articleSchema({
+    title: post.title,
     description: post.description,
+    path: post.permalink,
     datePublished: post.publishedAt,
-    ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
-    author: { "@type": "Organization", name: post.author.name },
-  }
+    dateModified: post.updatedAt,
+    authorName: post.author.name,
+    image: post.cover?.src,
+  })
 
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-        />
+        <JsonLd data={schema} />
 
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-3xl">

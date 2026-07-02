@@ -1,6 +1,9 @@
 import React from "react"
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { JsonLd } from "@/components/json-ld"
+import { buildMetadata, websiteSchema } from "@/lib/seo"
 import { Section } from "@/components/ui/section"
 import { StatBlock } from "@/components/ui/stat-block"
 import { Button } from "@/components/ui/button"
@@ -39,9 +42,17 @@ const SERVICES = [
   },
 ]
 
+export const metadata: Metadata = buildMetadata({
+  path: "/",
+  absoluteTitle: "Aadit Technologies | Cybersecurity, Compliance & IT Services",
+  description:
+    "Aadit Technologies delivers cybersecurity, compliance, and IT managed services — VAPT, ISO 27001, SOC 2, HIPAA & PCI DSS — for regulated businesses. Book a free assessment.",
+})
+
 export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col">
+      <JsonLd data={websiteSchema()} />
       <Header />
 
       <main className="w-full flex-1">

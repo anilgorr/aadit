@@ -10,6 +10,8 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { buttonVariants } from "@/components/ui/button"
+import { JsonLd } from "@/components/json-ld"
+import { buildMetadata, definedTermSchema } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -24,10 +26,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const term = getTerm(slug)
   if (!term) return {}
   const label = term.fullForm ? `${term.term} — ${term.fullForm}` : term.term
-  return {
-    title: `${label} | Aadit Technologies Glossary`,
+  return buildMetadata({
+    path: `/glossary/${term.slug}`,
+    absoluteTitle: `${label} | Aadit Technologies Glossary`,
     description: term.definition,
-  }
+  })
 }
 
 export default async function GlossaryTermPage({ params }: PageParams) {
@@ -37,23 +40,17 @@ export default async function GlossaryTermPage({ params }: PageParams) {
 
   const related = getRelatedTerms(term.relatedTerms)
 
-  const definedTermSchema = {
-    "@context": "https://schema.org",
-    "@type": "DefinedTerm",
-    name: term.term,
-    ...(term.fullForm ? { alternateName: term.fullForm } : {}),
-    description: term.definition,
-    inDefinedTermSet: "https://aadit.tech/glossary",
-  }
+  const schema = definedTermSchema({
+    term: term.term,
+    fullForm: term.fullForm,
+    definition: term.definition,
+  })
 
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }}
-        />
+        <JsonLd data={schema} />
 
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-3xl">

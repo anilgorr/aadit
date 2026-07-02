@@ -8,6 +8,8 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { MDXContent } from "@/components/mdx-content"
+import { JsonLd } from "@/components/json-ld"
+import { faqSchema } from "@/lib/seo"
 import { HUBS, type Hub, type RelatedLink } from "@/lib/services"
 import {
   CheckCircle2,
@@ -84,6 +86,7 @@ export function ServicePageTemplate({
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
+      {service.faqs.length > 0 && <JsonLd data={faqSchema(service.faqs)} />}
       <main className="flex-1">
         {/* 1. Hero */}
         <Section background="muted" className="border-b">

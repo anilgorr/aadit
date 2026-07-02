@@ -1,0 +1,56 @@
+Implement the following technical SEO/AEO/GEO requirements across the whole site:
+
+1. METADATA: Using the Next.js Metadata API, generate unique title tags (50-60
+   characters, primary keyword near the front, brand name at the end) and meta
+   descriptions (150-160 characters, includes a clear value prop and call to action)
+   for every page — homepage, every service/compliance/IT page, every industry page,
+   every blog post, every glossary term. No duplicate titles or descriptions anywhere
+   on the site. Add canonical tags (self-referencing) on every page.
+
+2. STRUCTURED DATA (JSON-LD): Build reusable schema components and add:
+   - Organization schema (with logo, sameAs social profiles, contactPoint) on every page
+     via the root layout
+   - WebSite schema with a sitelinks search box on the homepage
+   - BreadcrumbList schema matching the visual breadcrumbs on every non-homepage page
+   - FAQPage schema on every service/compliance/IT page (matching the FAQ accordion
+     content built in Phase 3) and on glossary term pages
+   - Article/BlogPosting schema on every blog post (headline, image, datePublished,
+     dateModified, author)
+   - DefinedTerm or Article schema on glossary pages
+   Validate every schema type against Google's Rich Results Test before moving on —
+   list out any validation errors you find.
+
+3. ROBOTS.TXT & AI CRAWLER ACCESS: Create a robots.txt that explicitly allows GPTBot,
+   ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, and Bingbot.
+   Do not block any of them — blocking these prevents citation in AI answers. Reference
+   the sitemap location in robots.txt.
+
+4. LLMS.TXT: Create a /public/llms.txt file summarizing what Aadit Technologies does,
+   its core service areas (Cybersecurity, Compliance & Audits, IT Managed Services),
+   and linking to the most important pages — this is an emerging convention some AI
+   crawlers reference for a quick site summary.
+
+5. XML SITEMAP: Use next-sitemap (or the built-in App Router sitemap.ts) to generate a
+   single clean sitemap.xml covering every real page, excluding any old WordPress-only
+   URLs, attachment pages, or utility pages. Only one sitemap file — replace the current
+   site's fragmented seven-sitemap setup.
+
+6. REDIRECTS: Implement 301 redirects in next.config.js (or Netlify's _redirects file)
+   for every URL in this list [paste the full redirect map from the migration plan here
+   once Phase 0's crawl is complete]. Also add a redirect enforcing apex domain
+   (aadit.net) over www, and HTTPS enforcement.
+
+7. CONTENT EXTRACTABILITY: Audit every service/compliance/IT/glossary page and confirm
+   each one opens with a direct, self-contained 40-60 word answer to "what is [topic]"
+   before any marketing copy — this is what gets pulled into AI Overviews and chatbot
+   answers. Flag any page that buries its definition below fluff.
+
+8. CORE WEB VITALS: Confirm all images use next/image with explicit width/height (no
+   layout shift), fonts are loaded via next/font (no render-blocking font requests),
+   and there's no unnecessary client-side JavaScript on pages that don't need
+   interactivity (keep service/blog/glossary pages as server components wherever
+   possible). Run a production build and report bundle sizes per route.
+
+9. OPEN GRAPH IMAGES: Generate Open Graph and Twitter Card images for the homepage and
+   each hub page using next/og or static designed images, so shared links look
+   professional.

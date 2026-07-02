@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer"
 import { Section } from "@/components/ui/section"
 import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
+import { buildMetadata } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ hub: string }>
@@ -21,10 +22,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { hub } = await params
   if (!isHub(hub)) return {}
   const meta = HUBS[hub]
-  return {
-    title: `${meta.title} | Aadit Technologies`,
+  return buildMetadata({
+    path: `/${hub}`,
+    title: meta.title,
     description: meta.metaDescription,
-  }
+  })
 }
 
 export default async function HubPage({ params }: PageParams) {

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import { BlogIndex } from "@/components/blog-index"
 import { getTotalPages } from "@/lib/blog"
+import { buildMetadata } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ page: string }>
@@ -17,11 +18,12 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { page } = await params
-  return {
-    title: `Insights & Blog — Page ${page} | Aadit Technologies`,
+  return buildMetadata({
+    path: `/blog/page/${page}`,
+    title: `Insights & Blog — Page ${page}`,
     description:
       "Practical perspectives on cybersecurity, compliance, and managed IT from the Aadit Technologies team.",
-  }
+  })
 }
 
 export default async function BlogPaginatedPage({ params }: PageParams) {

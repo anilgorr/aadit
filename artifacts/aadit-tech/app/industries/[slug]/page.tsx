@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/section"
 import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { buttonVariants } from "@/components/ui/button"
+import { buildMetadata } from "@/lib/seo"
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -22,10 +23,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { slug } = await params
   const industry = getIndustry(slug)
   if (!industry) return {}
-  return {
-    title: `${industry.title} | Aadit Technologies`,
+  return buildMetadata({
+    path: `/industries/${industry.slug}`,
+    title: industry.title,
     description: industry.metaDescription,
-  }
+  })
 }
 
 export default async function IndustryPage({ params }: PageParams) {

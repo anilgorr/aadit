@@ -1,6 +1,8 @@
 import React from "react"
 import Link from "next/link"
 import { ChevronRight } from "lucide-react"
+import { breadcrumbSchema } from "@/lib/seo"
+import { JsonLd } from "@/components/json-ld"
 
 export interface BreadcrumbItem {
   label: string
@@ -8,20 +10,9 @@ export interface BreadcrumbItem {
 }
 
 export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.label,
-      item: item.href,
-    })),
-  }
-
   return (
     <nav aria-label="Breadcrumb">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <JsonLd data={breadcrumbSchema(items)} />
       <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         {items.map((item, index) => (
           <li key={item.href} className="flex items-center gap-2">
