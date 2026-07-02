@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Mail, MapPin, Clock } from "lucide-react"
+import { Mail, MapPin, Phone, Clock } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Section } from "@/components/ui/section"
@@ -7,16 +7,43 @@ import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
 import { ContactForm } from "@/components/contact-form"
 import { buildMetadata } from "@/lib/seo"
-import { SITE_LOCALITY, SITE_REGION } from "@/lib/site"
 
 export const metadata: Metadata = buildMetadata({
   path: "/contact",
   title: "Contact Us",
   description:
-    "Get in touch with Aadit Technologies about cybersecurity, compliance, and IT managed services. Send us a message and our team will get back to you.",
+    "Contact Aadit Technologies, a specialised cybersecurity and IT managed services provider with offices in India, the USA, and Dubai. Reach out to our team today.",
 })
 
 const CONTACT_EMAIL = "anilgorraladaku@gmail.com"
+
+const OFFICES = [
+  {
+    country: "India",
+    lines: [
+      "#21 & 22, AnandAM, 4th Main Road, 3rd Block,",
+      "Opposite Axis Bank, New BEL Road,",
+      "Bangalore - 560094",
+    ],
+    phone: "+91 9663445445",
+    phoneHref: "tel:+919663445445",
+  },
+  {
+    country: "USA",
+    lines: ["4139 164th AVE SE,", "Bellevue, WA 98006-8906"],
+    phone: null,
+    phoneHref: null,
+  },
+  {
+    country: "Dubai",
+    lines: [
+      "Aadit Technologies FZCO, Building A1,",
+      "Dubai Digital Park, Silicon Oasis, Dubai",
+    ],
+    phone: "+971 52 184 7477",
+    phoneHref: "tel:+971521847477",
+  },
+]
 
 export default function ContactPage() {
   return (
@@ -65,17 +92,32 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </li>
-                <li className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <MapPin className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <div className="font-semibold text-foreground">Location</div>
-                    <p className="text-muted-foreground">
-                      {SITE_LOCALITY}, {SITE_REGION}, India
-                    </p>
-                  </div>
-                </li>
+                {OFFICES.map((office) => (
+                  <li key={office.country} className="flex items-start gap-4">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                      <MapPin className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <div className="font-semibold text-foreground">{office.country}</div>
+                      <address className="mt-1 not-italic text-muted-foreground">
+                        {office.lines.map((line) => (
+                          <span key={line} className="block">
+                            {line}
+                          </span>
+                        ))}
+                      </address>
+                      {office.phone && office.phoneHref && (
+                        <a
+                          href={office.phoneHref}
+                          className="mt-2 inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
+                        >
+                          <Phone className="h-4 w-4" />
+                          {office.phone}
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
                 <li className="flex items-start gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <Clock className="h-5 w-5" />

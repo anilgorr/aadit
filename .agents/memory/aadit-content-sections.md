@@ -21,6 +21,12 @@ Four content sections live alongside the hub/service architecture at `artifacts/
 
 - **Route precedence:** the static section routes win over the root `[hub]`/`[hub]/[slug]` dynamic segments, so no collision. Keep new top-level sections as static folders.
 
-## Known site-wide gap
+## Company/legal pages
 
-- CTAs across the whole site (service template + these sections) link to `/contact`, and header/footer link `/about` — **neither page exists yet**. This is a pre-existing convention, not a bug introduced here. Build those pages to clear the global dead links.
+- `/contact`, `/about`, `/careers`, `/privacy-policy` all exist as static `app/<name>/page.tsx` pages (same Header/Section/Card/Breadcrumbs/buildMetadata pattern as service pages). Footer "Company" links wired to /about + /careers + /contact.
+- Contact page holds 3 verbatim offices (India Bangalore-560094, USA Bellevue WA, Dubai FZCO) + ContactForm.
+- Privacy policy carries an amber "needs legal counsel review" banner — it's a template, not vetted legal text.
+
+## Still-open site-wide gap
+
+- Header/footer **service mega-menu** items (cyber/compliance/IT services) still point to `#` placeholders — service routes exist but aren't linked from the menu. Left as-is intentionally across content batches (owner hasn't wired them). Wiring them is a discoverability follow-up, not a bug.

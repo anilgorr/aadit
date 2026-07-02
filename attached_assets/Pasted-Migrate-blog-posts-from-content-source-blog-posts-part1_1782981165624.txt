@@ -1,0 +1,54 @@
+Migrate blog posts from content-source/blog-posts-part1.md and
+blog-posts-part2.md as MDX files, preserving exact original slugs for
+whichever post in each cluster you keep live (so existing indexed URLs
+still resolve). Handle these near-duplicate clusters by picking the
+strongest, most complete post per topic and 301-redirecting the others to it
+(add these to the redirect list, don't just delete them):
+
+- 8 posts substantially re-explaining "what is VAPT / VAPT full form":
+  what-is-vapt-guide, what-is-vapt-guide-2, vapt-full-form-comprehensive-vapt-
+  testing-services-in-india-aadit-technologies, vapt-methodology-step-by-step-
+  guide, types-of-vapt-services-security-assessment-guide, services-vapt-
+  understanding-vapt, vapt-in-cyber-security-protecting-your-digital-assets,
+  services-vapt-vapt-report. Pick the most complete one (check word count and
+  which one best matches the "vapt full form" search query — that's a
+  high-impression, zero-click opportunity per GSC data) and redirect the rest.
+
+- 3 near-duplicate Managed SOC posts: managed-soc-services-in-india,
+  managed-soc-services-managed-soc-for-banks, managed-soc-services-
+  comprehensive-cybersecurity-with-managed-soc, managed-soc-services-managed-
+  security-services-with-soc (4 actually, recheck all) — keep the strongest,
+  redirect the rest.
+
+- 2 "cybersecurity companies in Bangalore/India" posts: cyber-security-
+  companies-bangalore, cyber-security-companies-bangalore-experts,
+  cybersecurity-companies-in-india-top-leaders (check all 3 for overlap) —
+  keep the strongest, redirect the rest.
+
+- 2 SOC 2 posts: soc-2-compliance-services-india and
+  soc-2-compliance-services-india-2 — keep one, redirect the other.
+
+- 2 cloud-cost-optimization posts: cloud-cost-optimization-indian-businesses
+  and cloud-optimization-strategies — keep one, redirect the other.
+
+Special case: the post at slug "iso-27001-consulting-india" has a title/meta
+description promising ISO 27001 content, but its actual body is generic
+"Managed IT Services in India" copy with no ISO 27001 content at all. Either
+retitle this post to match what it's actually about (managed IT services) and
+its meta description too, or drop it and redirect to the real
+/compliance/iso-27001/ page — don't publish it under an ISO 27001 title with
+non-ISO-27001 content.
+
+Two posts couldn't be extracted and need the content pulled manually from the
+live site: "what-is-vapt-guide" (kept returning an unrelated whitepaper
+block during automated extraction) and "services-vapt-vapt-report" (blocked
+by a bot-check page). I'll get you the content for these separately if we
+decide to keep either one instead of redirecting it.
+
+Each surviving post needs: author byline, published + last-updated dates,
+estimated read time, table of contents for longer posts, related-posts
+section. Also migrate the whitepaper ("navigating-cyber-threats-in-2025...")
+and ebook ("sebis-cscrf-2-0-and-its-impact-on-cyber-audits") pages to
+/whitepapers/ and /ebook/ — note the ebook page currently has an empty
+download-link href on the live site, so flag that its real PDF asset needs
+to be re-uploaded, not linked to a broken URL.
