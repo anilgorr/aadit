@@ -1,0 +1,81 @@
+Fix the following 3 items in order. Commit after each.
+
+=====================================================================
+1 — FULL 301 REDIRECT MAP (old aadit.net URLs → new URLs)
+=====================================================================
+Implement the complete redirect map in next.config.js or Netlify's
+_redirects file:
+
+   /cybersecurity-services-india/ → /cybersecurity/
+   /managed-soc/, /managed-soc-services/, /landing-page-soc/, /24x7-managed-soc-services/ → /cybersecurity/managed-soc/
+   /security-as-a-service-india/ → /cybersecurity/managed-soc/
+   /soc-as-a-service/ → /cybersecurity/soc-as-a-service/
+   /vulnerability-assessment-penetration-testing-vapt-services/ → /cybersecurity/vapt/
+   /endpoint-security-solutions/ → /cybersecurity/endpoint-security/
+   /firewall-network-security-solutions/ → /cybersecurity/firewall-network-security/
+   /email-security-solutions/ → /cybersecurity/email-security/
+   /cyber-security-consulting-services/ → /cybersecurity/consulting/
+   /compliance-audit-services-india/ → /compliance/
+   /iso-27001-certification-services/, /iso-27001-consulting-india/ → /compliance/iso-27001/
+   /iso-42001-certification/ → /compliance/iso-42001/
+   /iso-9001-certification/ → /compliance/iso-9001/
+   /gdpr-compliance-solutions/ → /compliance/gdpr/
+   /pci-dss-compliance-solutions/ → /compliance/pci-dss/
+   /hipaa-compliance-solutions/ → /compliance/hipaa/
+   /soc2-certification/ → /compliance/soc2/
+   /managed-it-services-india/, /managed-it-services/ → /it-managed-services/managed-it-services/
+   /it-support-services/ → /it-managed-services/helpdesk-support/
+   /cloud-infrastructure-solutions/ → /it-managed-services/cloud-infrastructure/
+   /cloud-migration-services/ → /it-managed-services/cloud-migration/
+   /cloud-optimization-services/ → /it-managed-services/cloud-optimization/
+   /backup-and-disaster-recovery-solutions/ → /it-managed-services/backup-disaster-recovery/
+   /about-us/ → /about/
+   /contact-us/ → /contact/
+   /thank-you/ → /contact/
+   /whitepapers-cybersecurity-india/ → /whitepapers/
+
+IMPORTANT — blog redirects need special attention: the blog was migrated
+with entirely new slugs (e.g. the old
+"/blog/compliance-audit-services-iso-27001-certification/"-style content
+now lives at different new URLs), not the original WordPress slugs that
+were indexed by Google. This means a simple slug-to-slug map won't work —
+you need to build a mapping from each OLD indexed blog URL on aadit.net
+(check the live aadit.net/sitemap.xml for the full current list, since
+that site is still live) to whichever NEW post on this site covers the
+same topic most closely. Where multiple old posts covered the same near-
+duplicate topic (e.g. multiple "what is VAPT" posts, multiple Managed SOC
+posts), redirect all of them to the single best-matching new post — don't
+create multiple redirects to different new posts for what was one topic
+cluster. List out the full old-URL-to-new-URL blog mapping you used so it
+can be reviewed before this goes live.
+
+=====================================================================
+2 — VERIFY JSON-LD SCHEMA ACTUALLY RENDERS
+=====================================================================
+Show the actual rendered JSON-LD output (view-source or a script tag
+dump) for the homepage, one glossary page, and one service page —
+Organization, BreadcrumbList, and FAQPage schema specifically. Validate
+each against Google's Rich Results Test and report any errors or
+warnings.
+
+=====================================================================
+3 — QA PASS
+=====================================================================
+1. Run `next build` and fix any errors or warnings.
+2. Run Lighthouse against the homepage, one service page, one blog post,
+   and one glossary page, both mobile and desktop. Report Performance,
+   Accessibility, Best Practices, SEO — fix anything under 90.
+3. Crawl the site for broken internal links and confirm zero "#"
+   placeholder links remain anywhere, including the footer social icons
+   (Twitter/LinkedIn/etc.) — either link them to real profiles or remove
+   them, don't leave them as dead "#".
+4. Confirm one H1 per page, no skipped heading levels.
+5. Confirm every image has descriptive alt text.
+6. Test the contact form end-to-end.
+7. Test every redirect from step 1 resolves with a single 301, not a 302
+   or a redirect chain.
+8. Test responsive layout at 375px, 768px, 1024px, 1440px.
+
+After all 3 steps, give me a summary of what changed, the full old-to-new
+blog redirect mapping from step 1, and confirm nothing touches DNS, the
+custom domain, or GitHub — those stay manual steps I'll handle separately.

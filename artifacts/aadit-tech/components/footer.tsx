@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, Twitter, Github } from "lucide-react"
 
 const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] = [
   {
@@ -96,22 +95,6 @@ export function Footer() {
               The security partner you trust before regulators knock. Cybersecurity, compliance &amp;
               managed IT for the modern enterprise.
             </p>
-            <div className="mt-6 flex gap-3">
-              {[
-                { Icon: Linkedin, label: "LinkedIn" },
-                { Icon: Twitter, label: "Twitter" },
-                { Icon: Github, label: "GitHub" },
-              ].map(({ Icon, label }) => (
-                <Link
-                  key={label}
-                  href="#"
-                  aria-label={`Aadit Technologies on ${label}`}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/70 transition-colors hover:border-primary/50 hover:bg-primary/20 hover:text-white"
-                >
-                  <Icon className="h-4 w-4" />
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Nav columns — all 6 in one row on desktop */}

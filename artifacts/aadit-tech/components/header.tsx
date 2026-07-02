@@ -124,7 +124,7 @@ export function Header() {
               }}
             >
               <button
-                className="flex items-center gap-1 rounded-md px-3 py-2 text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
+                className="flex items-center gap-1 whitespace-nowrap rounded-md px-3 py-2 text-foreground/80 transition-colors hover:bg-accent hover:text-primary"
                 aria-expanded={activeDropdown === key}
                 aria-haspopup="true"
                 onClick={() => toggleDropdown(key)}
