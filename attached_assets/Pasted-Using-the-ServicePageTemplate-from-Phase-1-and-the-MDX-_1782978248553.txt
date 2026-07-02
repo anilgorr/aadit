@@ -1,0 +1,52 @@
+Using the ServicePageTemplate from Phase 1 and the MDX "services" content
+collection, build these 6 Cybersecurity pages. Source content for each is in
+content-source/cybersecurity-pages.md, organized by old URL — read that file
+and use it as your source material, but apply these specific edits, don't
+paste it verbatim:
+
+1. /cybersecurity/ (hub) — from "cybersecurity-services-india". List and link
+   to the 5 children below with short descriptions.
+
+2. /cybersecurity/managed-soc/ — merge "managed-soc" and "managed-soc-services"
+   (these two are identical, just use one as the base). Do NOT pull in
+   "security-as-a-service-india" — despite its URL, that page's actual content
+   is an off-topic "Top Cybersecurity Companies in India" listicle profiling
+   competitors (TCS, Wipro, Infosys, HCL) and has nothing to do with managed
+   SOC; leave it out entirely. Also fold in the DISTINCT pricing/testimonial
+   content from "24x7-managed-soc-services" as a "24/7 Coverage" highlight
+   section on this same page — don't publish it as a separate competing URL,
+   that recreates the exact duplicate-page problem this migration is fixing.
+
+3. /cybersecurity/soc-as-a-service/ — from "soc-as-a-service". Strip out its
+   "Why Choose Us" and "Conclusion" sections entirely — both are copy-pasted
+   from the Firewall/Cloud Infrastructure pages and are off-topic. Write a
+   short, genuine closing section instead based on what's actually on this
+   page (SOC report types, SOC components).
+
+4. /cybersecurity/vapt/ — from "vulnerability-assessment-penetration-testing-
+   vapt-services". Open with the definition paragraph tightened to 40-60 words.
+
+5. /cybersecurity/endpoint-security/ — from "endpoint-security-solutions". Fix
+   the pricing section intro, which currently says "Our VAPT service pricing
+   varies..." (copy-paste error) — rewrite to describe endpoint security
+   pricing instead.
+
+6. /cybersecurity/firewall-network-security/ — from
+   "firewall-network-security-solutions". Its "Why Choose Us" section is
+   Cloud Infrastructure copy and its firewall FAQ answer is actually the
+   managed-IT-services pricing answer — replace both with real
+   firewall/network-security content, don't carry the mismatches forward.
+
+For "email-security-solutions" — read its content in the source file and tell
+me whether it's substantial and distinct enough to be its own 7th page, or
+thin enough to fold into Endpoint Security as a section. Don't decide silently,
+flag it for me either way.
+
+Every generic testimonial you encounter (labeled "– IT Company," "– Healthcare
+Industry," "– Retail Industry," "John Doe, CTO, ABC Company," etc.) — do not
+migrate as-is. Either flag it for me to provide a real one, or drop that
+testimonial block from the page.
+
+Every placeholder-style pricing table (round numbers like "$500/$1000/$2000,"
+unpriced "Basic/Standard/Premium" tiers) — replace with a "Request a custom
+quote" CTA pattern instead of migrating fake numbers.
