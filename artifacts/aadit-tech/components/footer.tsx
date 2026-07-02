@@ -67,6 +67,8 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
 ]
 
 export function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="relative overflow-hidden bg-midnight text-midnight-foreground">
       <div className="grid-lines mask-radial pointer-events-none absolute inset-0 opacity-60" />
@@ -74,9 +76,13 @@ export function Footer() {
         className="glow-blob absolute -left-20 top-0 h-64 w-64 opacity-25"
         style={{ background: "oklch(0.53 0.22 262)" }}
       />
+
       <div className="container relative mx-auto max-w-7xl px-4 py-16 md:px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-          <div className="col-span-2 lg:col-span-2">
+        {/* Main footer body: brand left, nav columns right */}
+        <div className="flex flex-col gap-12 lg:flex-row lg:gap-8">
+
+          {/* Brand column */}
+          <div className="shrink-0 lg:w-56">
             <Link href="/" className="mb-5 inline-flex items-center">
               <Image
                 src="/logo-white.png"
@@ -86,8 +92,8 @@ export function Footer() {
                 className="h-9 w-auto"
               />
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-white/75">
-              The security partner you trust before regulators knock. Cybersecurity, compliance &
+            <p className="text-sm leading-relaxed text-white/75">
+              The security partner you trust before regulators knock. Cybersecurity, compliance &amp;
               managed IT for the modern enterprise.
             </p>
             <div className="mt-6 flex gap-3">
@@ -108,27 +114,32 @@ export function Footer() {
             </div>
           </div>
 
-          {COLUMNS.map((col) => (
-            <div key={col.heading}>
-              <h2 className="mb-4 text-sm font-semibold text-white">{col.heading}</h2>
-              <ul className="flex flex-col gap-1 text-sm text-white/70">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="inline-block py-1 transition-colors hover:text-primary"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Nav columns — all 6 in one row on desktop */}
+          <div className="grid flex-1 grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
+            {COLUMNS.map((col) => (
+              <div key={col.heading}>
+                <h2 className="mb-4 text-sm font-semibold text-white">{col.heading}</h2>
+                <ul className="flex flex-col gap-1 text-sm text-white/70">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        href={link.href}
+                        className="inline-block py-1 transition-colors hover:text-primary"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
         </div>
 
+        {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/70 md:flex-row">
-          <p>© 2025 Aadit Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>© {year} Aadit Technologies Pvt. Ltd. All rights reserved.</p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
             Systems operational · Bangalore, India
