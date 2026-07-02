@@ -54,6 +54,9 @@ const mdxComponents = {
   ul: (props: Record<string, unknown>) => (
     <ul className="mb-4 list-disc space-y-2 pl-6 text-muted-foreground" {...props} />
   ),
+  ol: (props: Record<string, unknown>) => (
+    <ol className="mb-4 list-decimal space-y-2 pl-6 text-muted-foreground" {...props} />
+  ),
   li: (props: Record<string, unknown>) => <li className="leading-relaxed" {...props} />,
   h2: (props: Record<string, unknown>) => (
     <h2 className="mb-4 mt-8 text-2xl font-bold text-foreground" {...props} />

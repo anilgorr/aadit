@@ -41,5 +41,13 @@ at not-yet-built pages are silently omitted (no dead links). `related` is matche
 **globally** — this is safe only while service slugs stay globally unique across hubs.
 
 **Content sourcing rule:** service page copy must come from the real exported source; do
-NOT invent stats/testimonials/pricing. Flag placeholder testimonials/round-number pricing
-instead of publishing them.
+NOT invent stats/testimonials/pricing. Established migration pattern: replace any
+placeholder-style pricing (round numbers, unpriced Basic/Standard/Premium tiers, filler
+like "$1000/month") with scoped-pricing prose ending in a `[request a custom quote](/contact)`
+link; drop generic/unverifiable testimonials rather than publishing them; rewrite
+cross-contaminated fragments (legacy source had cloud-infra "Why Choose Us" blocks pasted
+onto SOC/firewall pages, a firewall FAQ answering managed-IT pricing, an endpoint pricing
+intro referencing VAPT).
+**Note:** MDX body CAN use `##` headings — the template's `mdxComponents` styles
+`h2/h3/ul/ol/li/p/a/strong`; `ol` was added so numbered lists (e.g. VAPT process) render.
+Avoid markdown tables (unstyled) — use bulleted lists instead.
