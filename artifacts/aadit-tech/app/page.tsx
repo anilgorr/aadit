@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/json-ld"
 import { buildMetadata, websiteSchema } from "@/lib/seo"
 import { Section } from "@/components/ui/section"
 import { StatBlock } from "@/components/ui/stat-block"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
   ShieldCheck,
@@ -235,13 +235,16 @@ export default function Home() {
               and cybersecurity needs.
             </p>
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <Button size="lg" variant="light">
+              <Link href="/contact" className={buttonVariants({ variant: "light", size: "lg" })}>
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outlineLight">
+              </Link>
+              <Link
+                href="/contact"
+                className={buttonVariants({ variant: "outlineLight", size: "lg" })}
+              >
                 Talk to Sales
-              </Button>
+              </Link>
             </div>
           </div>
         </section>
