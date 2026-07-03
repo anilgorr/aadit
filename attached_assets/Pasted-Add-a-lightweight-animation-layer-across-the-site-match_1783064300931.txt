@@ -1,0 +1,72 @@
+Add a lightweight animation layer across the site, matching the visual style of
+aadrila.ai (scroll-reveal cards, pulsing status dots, gradient-text headline,
+a scrolling trust-logo marquee, subtle hover states) — but under these hard
+constraints, because this exact category of change tanked our mobile
+Lighthouse score to 40 once already:
+
+RULES (do not violate any of these):
+1. Zero new npm dependencies. No GSAP, Framer Motion, AOS, Lenis, Lottie,
+   react-spring, or any animation library. Everything below is achievable with
+   plain CSS @keyframes/transitions plus the native IntersectionObserver API.
+2. Every animation may only touch `transform`, `opacity`, or `background-position`
+   on elements no larger than a card or badge. Do not animate `width`, `height`,
+   `top`/`left`, `box-shadow` on any full-width or full-height element, and do
+   not animate anything behind/under text content in the hero.
+3. No canvas, no WebGL, no SVG filter effects.
+4. Wrap every animation in `@media (prefers-reduced-motion: no-preference)` so
+   motion-sensitive users and Lighthouse's reduced-motion audits both get a
+   static fallback.
+5. Scroll-reveal must use IntersectionObserver directly (a small custom hook
+   is fine, e.g. useInView), not a library. Unobserve each element once it has
+   revealed once — don't keep observers running indefinitely on scroll.
+
+BUILD THESE:
+
+1. Gradient headline text — add a reusable `.gradient-text` utility class that
+   animates `background-position` on a `background: linear-gradient(...)`
+   with `background-clip: text`, ~6-8s ease-in-out infinite. Apply it to the
+   colored half of hero headlines (e.g. the second line of the homepage H1),
+   not entire paragraphs.
+
+2. Scroll-reveal on section content — build a small `useInView` hook
+   (IntersectionObserver, threshold ~0.15, triggerOnce) and a `.reveal` CSS
+   class pair (`.reveal { opacity: 0; transform: translateY(16px); transition:
+   opacity 0.5s ease, transform 0.5s ease; } .reveal.is-visible { opacity: 1;
+   transform: translateY(0); }`). Apply to service/industry cards, section
+   headings, and stat blocks — stagger children with a small transition-delay
+   (80-120ms increments), capped at ~6 items so late cards don't wait too long.
+
+3. Pulsing status indicators — a `.pulse-dot` component (small colored circle,
+   `animation: pulse 2s ease-in-out infinite` on opacity, or `ping` style using
+   a duplicated ::after ring animating transform:scale + opacity). Use for any
+   "live"/"real-time"/"24/7 monitoring" badge — this fits our SOC/compliance
+   messaging well.
+
+4. Scrolling trust/certification strip — the logo marquee we already fixed in
+   Stage 1 (ISO 27001, SOC 2, 24/7 SOC Monitoring, 3 Global Offices badges):
+   animate it as an infinite `transform: translateX` loop, duplicating the
+   badge list once in the DOM so the loop is seamless, pause on hover.
+
+5. Hover micro-interactions — buttons and cards get a subtle
+   `transform: translateY(-2px)` + shadow transition on hover (shadow transition
+   only on hover/focus state, never looping/infinite).
+
+6. Optional hero diagram (only if it fits our content — we don't have an
+   "Input/Core/Output" flow to show, so use judgment): if there's a natural
+   place for a simple animated connector (e.g. illustrating our
+   assess-remediate-monitor security lifecycle), build it as SVG with small
+   `transform`-animated markers, not canvas.
+
+After building:
+1. Run `next build` and report the bundle size delta for the homepage route
+   vs. before this change — flag anything that grew by more than ~5KB.
+2. Run Lighthouse on homepage, one service page, one blog post — mobile AND
+   desktop — and report Performance/Accessibility/Best Practices/SEO for all.
+   Compare directly against the last known-good scores in
+   replit-performance-fix-prompt.md. Anything that regresses below 90 must be
+   fixed before this is done, not shipped with a note.
+3. Confirm `prefers-reduced-motion: reduce` actually disables every animation
+   added here (test via browser dev tools' emulation, not just code review).
+4. Confirm no animation fires above the fold before First Contentful Paint —
+   scroll-reveal on hero content should default to visible, not wait for
+   IntersectionObserver to fire on page load.

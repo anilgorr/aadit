@@ -188,13 +188,54 @@ body {
   animation: pulse-ring 3s ease-out infinite;
 }
 
-/* Scroll-triggered reveal — only where supported, so it degrades gracefully */
-@supports (animation-timeline: view()) {
+/* Scroll-reveal — driven by IntersectionObserver (see hooks/use-in-view.ts
+   + components/ui/reveal.tsx). Base state is always visible so content never
+   disappears without JS; the fade/slide-in only applies when motion is
+   allowed, and .is-visible is toggled once the element enters the viewport. */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
-    animation: fade-up linear both;
-    animation-timeline: view();
-    animation-range: entry 5% cover 25%;
+    transform: translateY(16px);
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animated gradient headline text — static gradient always shows; the
+   background-position sweep only runs when motion is allowed. */
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    oklch(0.72 0.15 220),
+    oklch(0.62 0.2 262),
+    oklch(0.72 0.15 220)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gradient-text {
+    animation: gradient-shift 7s ease-in-out infinite;
+  }
+}
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
@@ -203,8 +244,8 @@ body {
   .animate-drift-slow,
   .animate-fade-up,
   .animate-marquee,
-  .radar-ring,
-  .reveal {
+  .animate-ping,
+  .radar-ring {
     animation: none !important;
     opacity: 1 !important;
   }
