@@ -1,5 +1,6 @@
 import React from "react"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/json-ld"
@@ -19,7 +20,6 @@ import {
 } from "lucide-react"
 import { LogoCloud } from "@/components/logo-cloud"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
-import Link from "next/link"
 
 const SERVICES = [
   {
@@ -91,13 +91,17 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
-                <Button size="lg" variant="light">
-                  Get a Free Assessment
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outlineLight">
-                  Explore Services
-                </Button>
+                <Link href="/contact">
+                  <Button size="lg" variant="light" className="w-full sm:w-auto">
+                    Get a Free Assessment
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/cybersecurity">
+                  <Button size="lg" variant="outlineLight" className="w-full sm:w-auto">
+                    Explore Services
+                  </Button>
+                </Link>
               </div>
 
               <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/70 md:justify-start">
