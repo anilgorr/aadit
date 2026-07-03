@@ -19,8 +19,6 @@ import {
 } from "lucide-react"
 import { LogoCloud } from "@/components/logo-cloud"
 import { TestimonialCarousel } from "@/components/testimonial-carousel"
-import { Reveal } from "@/components/ui/reveal"
-import { PulseDot } from "@/components/ui/pulse-dot"
 import Link from "next/link"
 
 const SERVICES = [
@@ -75,13 +73,16 @@ export default function Home() {
           <div className="container relative mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-32">
             <div className="animate-fade-up text-center md:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
-                <PulseDot />
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
+                </span>
                 New: Comprehensive DPDP Act Compliance Services
               </div>
 
               <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
                 The security partner you{" "}
-                <span className="gradient-text">trust before</span> regulators knock.
+                <span className="text-gradient">trust before</span> regulators knock.
               </h1>
 
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65 md:mx-0 md:text-xl">
@@ -119,8 +120,7 @@ export default function Home() {
                   <div className="flex items-center gap-2 text-sm font-semibold text-white">
                     <Radar className="h-5 w-5 text-cyan" /> Threat Monitor
                   </div>
-                  <span className="flex items-center gap-1.5 rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
-                    <PulseDot color="bg-emerald-400" />
+                  <span className="rounded-full bg-emerald-400/15 px-2.5 py-1 text-xs font-medium text-emerald-300">
                     Secure
                   </span>
                 </div>
@@ -166,15 +166,9 @@ export default function Home() {
         {/* ---------- STATS ---------- */}
         <Section background="muted" className="border-b border-border">
           <div className="grid grid-cols-1 divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
-            {[
-              { stat: "50+", label: "Organizations Protected", subtext: "Across healthcare, BFSI & fintech" },
-              { stat: "99.9%", label: "Uptime SLA", subtext: "Guaranteed reliability" },
-              { stat: "100%", label: "Compliance Readiness", subtext: "ISO 27001, SOC 2, HIPAA" },
-            ].map((item, i) => (
-              <Reveal key={item.label} delay={i * 100}>
-                <StatBlock stat={item.stat} label={item.label} subtext={item.subtext} />
-              </Reveal>
-            ))}
+            <StatBlock stat="50+" label="Organizations Protected" subtext="Across healthcare, BFSI & fintech" />
+            <StatBlock stat="99.9%" label="Uptime SLA" subtext="Guaranteed reliability" />
+            <StatBlock stat="100%" label="Compliance Readiness" subtext="ISO 27001, SOC 2, HIPAA" />
           </div>
         </Section>
 
@@ -182,7 +176,7 @@ export default function Home() {
         <Section>
           <div className="relative">
             <div className="grid-lines-light mask-radial pointer-events-none absolute inset-0 -z-10 opacity-70" />
-            <Reveal className="mx-auto mb-16 max-w-2xl text-center">
+            <div className="mx-auto mb-16 max-w-2xl text-center reveal">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
                 What we do
               </span>
@@ -193,26 +187,24 @@ export default function Home() {
                 Everything you need to secure your infrastructure, pass audits, and run IT
                 operations smoothly.
               </p>
-            </Reveal>
+            </div>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              {SERVICES.map((service, i) => (
-                <Reveal key={service.title} delay={Math.min(i, 5) * 100}>
-                  <Card className="group flex h-full flex-col gap-5 p-8">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-[oklch(0.62_0.2_262)] text-white shadow-lg shadow-primary/25">
-                      <service.icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="text-xl font-bold">{service.title}</h3>
-                    <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
-                    <Link
-                      href={service.href}
-                      className="mt-2 flex items-center font-semibold text-primary"
-                    >
-                      Learn More
-                      <span className="sr-only"> about {service.title}</span>
-                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Card>
-                </Reveal>
+              {SERVICES.map((service) => (
+                <Card key={service.title} className="group reveal flex flex-col gap-5 p-8">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-[oklch(0.62_0.2_262)] text-white shadow-lg shadow-primary/25">
+                    <service.icon className="h-7 w-7" />
+                  </div>
+                  <h3 className="text-xl font-bold">{service.title}</h3>
+                  <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
+                  <Link
+                    href={service.href}
+                    className="mt-2 flex items-center font-semibold text-primary"
+                  >
+                    Learn More
+                    <span className="sr-only"> about {service.title}</span>
+                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                </Card>
               ))}
             </div>
           </div>

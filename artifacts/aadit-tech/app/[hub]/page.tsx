@@ -8,7 +8,6 @@ import { Footer } from "@/components/footer"
 import { Section } from "@/components/ui/section"
 import { Card } from "@/components/ui/card"
 import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { Reveal } from "@/components/ui/reveal"
 import { buildMetadata } from "@/lib/seo"
 
 interface PageParams {
@@ -61,21 +60,19 @@ export default async function HubPage({ params }: PageParams) {
         <Section>
           {children.length > 0 ? (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {children.map((service, i) => (
-                <Reveal key={service.slug} delay={Math.min(i, 5) * 100}>
-                  <Link href={service.permalink} className="group block h-full">
-                    <Card className="flex h-full flex-col p-8 transition-colors hover:border-primary/50">
-                      <h2 className="mb-3 text-xl font-bold">{service.title}</h2>
-                      <p className="mb-6 flex-1 leading-relaxed text-muted-foreground">
-                        {service.metaDescription}
-                      </p>
-                      <div className="mt-auto flex items-center text-sm font-semibold text-primary">
-                        Learn more
-                        <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </Card>
-                  </Link>
-                </Reveal>
+              {children.map((service) => (
+                <Link key={service.slug} href={service.permalink} className="group">
+                  <Card className="flex h-full flex-col p-8 transition-colors hover:border-primary/50">
+                    <h2 className="mb-3 text-xl font-bold">{service.title}</h2>
+                    <p className="mb-6 flex-1 leading-relaxed text-muted-foreground">
+                      {service.metaDescription}
+                    </p>
+                    <div className="mt-auto flex items-center text-sm font-semibold text-primary">
+                      Learn more
+                      <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </div>
+                  </Card>
+                </Link>
               ))}
             </div>
           ) : (

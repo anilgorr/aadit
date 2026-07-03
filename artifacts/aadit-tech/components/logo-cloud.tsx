@@ -17,7 +17,7 @@ export function LogoCloud() {
         Trusted by leading organizations
       </p>
 
-      <div className="marquee-wrap relative flex">
+      <div className="relative flex">
         {/* duplicate list for seamless loop */}
         {[0, 1].map((pass) => (
           <ul
@@ -45,9 +45,6 @@ export function LogoCloud() {
       <style>{`
         .marquee-track {
           animation: marquee-scroll 28s linear infinite;
-        }
-        .marquee-wrap:hover .marquee-track {
-          animation-play-state: paused;
         }
         @media (prefers-reduced-motion: reduce) {
           .marquee-track { animation: none; }
