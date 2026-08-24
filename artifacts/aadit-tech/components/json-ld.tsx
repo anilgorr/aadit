@@ -12,7 +12,7 @@ export function JsonLd({ data }: { data: object | object[] }) {
         const key = schema["@id"] ?? type ?? `schema-${i}`
         return (
         <script
-          key={`json-ld-${key}`}
+          key={`json-ld-${key}-${i}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
         />

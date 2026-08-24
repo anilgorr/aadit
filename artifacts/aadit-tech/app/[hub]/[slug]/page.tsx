@@ -21,6 +21,14 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     path: service.permalink,
     title: service.heading ?? service.title,
     description: service.metaDescription,
+    images: [
+      {
+        url: `${service.permalink}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${service.heading ?? service.title} from Aadit Technologies`,
+      },
+    ],
   })
 }
 

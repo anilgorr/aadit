@@ -45,6 +45,40 @@ interface PageMetaInput {
   noindex?: boolean
 }
 
+const BRAND_SUFFIX = ` | ${SITE_NAME}`
+const MAX_TITLE_LENGTH = 65
+const MIN_DESCRIPTION_LENGTH = 120
+// Leave a little room for HTML entities in rendered source (for example, "&" is
+// encoded as "&amp;") while keeping the human-visible description concise.
+const MAX_DESCRIPTION_LENGTH = 150
+
+function trimAtWord(value: string, maxLength: number) {
+  const normalized = value.replace(/\s+/g, " ").trim()
+  if (normalized.length <= maxLength) return normalized
+
+  const shortened = normalized.slice(0, maxLength - 1)
+  const lastSpace = shortened.lastIndexOf(" ")
+  return `${shortened.slice(0, lastSpace > maxLength * 0.55 ? lastSpace : maxLength - 1)}…`
+}
+
+function fitPageTitle(title: string) {
+  return trimAtWord(title, MAX_TITLE_LENGTH - BRAND_SUFFIX.length)
+}
+
+function fitAbsoluteTitle(title: string) {
+  return trimAtWord(title, MAX_TITLE_LENGTH)
+}
+
+function fitDescription(description: string) {
+  const normalized = description.replace(/\s+/g, " ").trim()
+  const expanded =
+    normalized.length < MIN_DESCRIPTION_LENGTH
+      ? `${normalized} Explore practical guidance from Aadit Technologies.`
+      : normalized
+
+  return trimAtWord(expanded, MAX_DESCRIPTION_LENGTH)
+}
+
 /**
  * Build a complete Metadata object with a self-referencing canonical, Open
  * Graph, and Twitter card. Titles are page-specific; the brand suffix is applied
@@ -52,20 +86,41 @@ interface PageMetaInput {
  */
 export function buildMetadata(input: PageMetaInput): Metadata {
   const url = absoluteUrl(input.path)
-  const ogTitle =
-    input.absoluteTitle ?? (input.title ? `${input.title} | ${SITE_NAME}` : SITE_NAME)
+  const absoluteTitle = input.absoluteTitle ? fitAbsoluteTitle(input.absoluteTitle) : undefined
+  const title = absoluteTitle
+    ? absoluteTitle
+    : input.title
+      ? fitPageTitle(input.title)
+      : undefined
+  const ogTitle = absoluteTitle
+    ? title ?? SITE_NAME
+    : title
+      ? `${title}${BRAND_SUFFIX}`
+      : SITE_NAME
+  const description = fitDescription(input.description)
+  const images = input.images?.length
+    ? input.images
+    : [
+        {
+          url: absoluteUrl("/opengraph-image"),
+          width: 1200,
+          height: 630,
+          alt: `${SITE_NAME} — Cybersecurity, Compliance & IT Managed Services`,
+        },
+      ]
+
   const meta: Metadata = {
-    title: input.absoluteTitle ? { absolute: input.absoluteTitle } : input.title,
-    description: input.description,
+    title: absoluteTitle ? { absolute: absoluteTitle } : title,
+    description,
     alternates: { canonical: url },
     openGraph: {
       title: ogTitle,
-      description: input.description,
+      description,
       url,
       siteName: SITE_NAME,
       locale: "en_US",
       type: input.type ?? "website",
-      ...(input.images ? { images: input.images } : {}),
+      images,
       ...(input.type === "article" && input.publishedTime
         ? { publishedTime: input.publishedTime }
         : {}),
@@ -77,8 +132,8 @@ export function buildMetadata(input: PageMetaInput): Metadata {
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
-      description: input.description,
-      ...(input.images ? { images: input.images.map((i) => i.url) } : {}),
+      description,
+      images: images.map((image) => image.url),
     },
   }
   if (input.noindex) {

@@ -11,7 +11,7 @@ import { buildMetadata, webPageSchema } from "@/lib/seo"
 
 export const metadata: Metadata = buildMetadata({
   path: "/team",
-  title: "Our Team",
+  title: "Leadership Team",
   description:
     "Meet the leadership team behind Aadit Technologies and the people who guide our cybersecurity, compliance, and managed IT work.",
 })

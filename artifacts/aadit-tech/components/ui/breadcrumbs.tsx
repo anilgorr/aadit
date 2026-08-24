@@ -15,7 +15,7 @@ export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
       <JsonLd data={breadcrumbSchema(items)} />
       <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
         {items.map((item, index) => (
-          <li key={item.href} className="flex items-center gap-2">
+          <li key={`${item.href}-${item.label}-${index}`} className="flex items-center gap-2">
             <Link href={item.href} className="hover:text-foreground transition-colors">
               {item.label}
             </Link>

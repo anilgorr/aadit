@@ -71,13 +71,23 @@ export function ResourceListing({
                       Request Access
                     </Link>
                   ) : (
-                    <a
-                      href={resource.fileUrl ?? "#"}
-                      className={buttonVariants({ variant: "secondary", size: "md" })}
-                    >
-                      <Download className="h-4 w-4" />
-                      Download
-                    </a>
+                    resource.fileUrl ? (
+                      <a
+                        href={resource.fileUrl}
+                        className={buttonVariants({ variant: "secondary", size: "md" })}
+                      >
+                        <Download className="h-4 w-4" />
+                        Download
+                      </a>
+                    ) : (
+                      <Link
+                        href="/contact"
+                        className={buttonVariants({ variant: "secondary", size: "md" })}
+                      >
+                        <Lock className="h-4 w-4" />
+                        Request Access
+                      </Link>
+                    )
                   )}
                 </Card>
               ))}
@@ -102,9 +112,66 @@ export function ResourceListing({
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
+              <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+                <Link
+                  href="/blog"
+                  className="rounded-lg border border-border p-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Browse practical insights
+                </Link>
+                <Link
+                  href="/glossary"
+                  className="rounded-lg border border-border p-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Explore key definitions
+                </Link>
+                <Link
+                  href="/compare/soc-2-vs-iso-27001"
+                  className="rounded-lg border border-border p-4 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Compare SOC 2 and ISO 27001
+                </Link>
+              </div>
             </div>
           )}
         </Section>
+
+        {resources.length > 0 && (
+          <Section background="muted">
+            <div className="mx-auto max-w-5xl">
+              <div className="mx-auto max-w-2xl text-center">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                  Keep exploring
+                </p>
+                <h2 className="mt-3 text-3xl font-bold">Practical guidance for the next decision</h2>
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  Use these resources to build shared context before you scope a security,
+                  compliance, or managed IT initiative.
+                </p>
+              </div>
+              <div className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-3">
+                <Link
+                  href="/blog"
+                  className="rounded-lg border border-border bg-background p-5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Browse practical insights
+                </Link>
+                <Link
+                  href="/glossary"
+                  className="rounded-lg border border-border bg-background p-5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Explore key definitions
+                </Link>
+                <Link
+                  href="/compare/soc-2-vs-iso-27001"
+                  className="rounded-lg border border-border bg-background p-5 text-sm font-semibold text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+                >
+                  Compare SOC 2 and ISO 27001
+                </Link>
+              </div>
+            </div>
+          </Section>
+        )}
       </main>
       <Footer />
     </div>

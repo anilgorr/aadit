@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next"
 import { services, posts } from "@/.velite"
-import { absoluteUrl } from "@/lib/site"
+import { absoluteUrl, SITE_URL } from "@/lib/site"
 import { HUB_ORDER } from "@/lib/services"
 import { INDUSTRIES } from "@/lib/industries"
 import { GLOSSARY } from "@/lib/glossary"
@@ -11,7 +11,7 @@ import { GLOSSARY } from "@/lib/glossary"
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = [
-    { url: absoluteUrl("/"), lastModified: new Date("2026-08-24"), changeFrequency: "weekly", priority: 1 },
+    { url: SITE_URL, lastModified: new Date("2026-08-24"), changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/about"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.7 },
     { url: absoluteUrl("/contact"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.7 },
     { url: absoluteUrl("/careers"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.4 },

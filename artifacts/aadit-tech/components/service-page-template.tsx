@@ -231,9 +231,39 @@ export function ServicePageTemplate({
           </Section>
         )}
 
-        {/* 5. FAQ */}
+        {/* 5. Buyer guidance */}
+        <Section background={service.benefits.length > 0 ? "muted" : undefined}>
+          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                Scope with confidence
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight">
+                Before you engage a {service.title.toLowerCase()} provider
+              </h2>
+              <p className="mt-5 leading-relaxed text-muted-foreground">
+                A useful engagement begins with a clear view of the systems, owners, business
+                priorities, and evidence that should be in scope. This helps keep the work focused
+                on decisions and improvements your team can act on.
+              </p>
+            </div>
+            <ol className="space-y-5">
+              {HUBS[service.hub].buyerGuide.steps.map((step, index) => (
+                <li key={step} className="flex gap-4">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                  <p className="leading-relaxed text-muted-foreground">
+                    <span className="font-semibold text-foreground">Consideration {index + 1}: </span>
+                    {step}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Section>
+
+        {/* 6. FAQ */}
         {service.faqs.length > 0 && (
-          <Section background="muted">
+          <Section background={service.benefits.length > 0 ? undefined : "muted"}>
             <div className="mx-auto max-w-3xl">
               <h2 className="mb-12 text-center text-3xl font-bold">
                 Frequently Asked Questions
@@ -243,7 +273,7 @@ export function ServicePageTemplate({
           </Section>
         )}
 
-        {/* 6. Related Services */}
+        {/* 7. Related Services */}
         {related.length > 0 && (
           <Section>
             <h2 className="mb-8 text-2xl font-bold">Related Services</h2>
@@ -266,15 +296,14 @@ export function ServicePageTemplate({
           </Section>
         )}
 
-        {/* 7. Closing CTA */}
+        {/* 8. Closing CTA */}
         <Section background="dark">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold md:text-4xl">
               Ready to strengthen your {hub.title.toLowerCase()}?
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
-              Speak with one of our certified specialists to discuss your specific
-              requirements.
+              Speak with our team to discuss your specific requirements.
             </p>
             <div className="mt-8 flex justify-center">
               <Link

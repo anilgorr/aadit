@@ -16,6 +16,11 @@ export function renderOgImage({
   title: string
   eyebrow?: string
 }) {
+  const displayTitle =
+    title.length > 78
+      ? `${title.slice(0, 77).replace(/\s+\S*$/, "")}…`
+      : title
+
   return new ImageResponse(
     (
       <div
@@ -69,13 +74,13 @@ export function renderOgImage({
           <div
             style={{
               color: "#ffffff",
-              fontSize: title.length > 48 ? "58px" : "72px",
+              fontSize: displayTitle.length > 48 ? "58px" : "72px",
               fontWeight: 800,
               lineHeight: 1.05,
               maxWidth: "980px",
             }}
           >
-            {title}
+            {displayTitle}
           </div>
         </div>
 

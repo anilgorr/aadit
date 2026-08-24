@@ -59,7 +59,8 @@ const MENUS: Record<
       { title: "Blog", href: "/blog", desc: "Insights on security, compliance & IT." },
       { title: "Glossary", href: "/glossary", desc: "Plain-English security & compliance terms." },
       { title: "Whitepapers", href: "/whitepapers", desc: "In-depth research and guidance." },
-      { title: "eBooks", href: "/ebook", desc: "Practical guides you can download." },
+      { title: "Case Studies", href: "/case-studies", desc: "Our approach to sharing approved client work." },
+      { title: "SOC 2 vs ISO 27001", href: "/compare/soc-2-vs-iso-27001", desc: "A practical compliance comparison." },
     ],
   },
 }

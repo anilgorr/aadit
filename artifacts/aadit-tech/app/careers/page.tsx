@@ -11,7 +11,7 @@ import { buildMetadata } from "@/lib/seo"
 
 export const metadata: Metadata = buildMetadata({
   path: "/careers",
-  title: "Careers",
+  title: "Cybersecurity Careers",
   description:
     "Build your career in cybersecurity with Aadit Technologies. We don't have any open roles right now, but we're always keen to hear from talented security and IT professionals.",
 })

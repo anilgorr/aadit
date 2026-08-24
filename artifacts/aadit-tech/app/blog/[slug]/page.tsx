@@ -88,7 +88,15 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
     authors: [author.name],
-    ...(post.cover ? { images: [{ url: post.cover.src }] } : {}),
+    images: [
+      ...(post.cover ? [{ url: post.cover.src }] : []),
+      {
+        url: `${post.permalink}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${post.title} from Aadit Technologies`,
+      },
+    ],
   })
 }
 

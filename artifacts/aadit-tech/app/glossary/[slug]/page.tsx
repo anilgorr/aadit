@@ -29,6 +29,14 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     path: `/glossary/${term.slug}`,
     title: `${term.term}: Definition & Meaning`,
     description: term.definition.split(". ")[0],
+    images: [
+      {
+        url: `/glossary/${term.slug}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${term.term} definition from Aadit Technologies`,
+      },
+    ],
   })
 }
 
@@ -38,6 +46,18 @@ export default async function GlossaryTermPage({ params }: PageParams) {
   if (!term) notFound()
 
   const related = getRelatedTerms(term.relatedTerms)
+  const practicalQuestions =
+    term.category === "Cybersecurity"
+      ? [
+          "Which systems, identities, and data would be affected by this security concern?",
+          "What evidence would help the team decide whether the risk is material?",
+          "Who owns the next control, remediation, or monitoring decision?",
+        ]
+      : [
+          "Which customers, data, services, or contracts make this requirement relevant?",
+          "What controls and evidence would demonstrate that the requirement is operating in practice?",
+          "Who is accountable for the scope, reviews, and any remediation work?",
+        ]
 
   const schema = definedTermSchema({
     term: term.term,
@@ -96,6 +116,30 @@ export default async function GlossaryTermPage({ params }: PageParams) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+          </div>
+        </Section>
+
+        <Section background="muted">
+          <div className="mx-auto max-w-3xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+              Practical context
+            </p>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight">
+              Using {term.term} in a real decision
+            </h2>
+            <p className="mt-5 leading-relaxed text-muted-foreground">
+              Definitions are most useful when they help a team decide what to scope, who should
+              own the work, and what evidence supports the next step. Use these questions to turn
+              the term into a practical conversation.
+            </p>
+            <ul className="mt-6 space-y-4">
+              {practicalQuestions.map((question) => (
+                <li key={question} className="flex gap-3 leading-relaxed text-muted-foreground">
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-primary" />
+                  {question}
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
 
