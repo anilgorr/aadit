@@ -56,7 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   const postEntries: MetadataRoute.Sitemap = posts
-    .filter((post) => post.slug !== "services-vapt-network-vapt")
+    .filter(
+      (post) =>
+        post.slug !== "services-vapt-network-vapt" &&
+        post.slug !== "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
+    )
     .map((post) => ({
     url: absoluteUrl(post.permalink),
     lastModified: new Date(post.updatedAt ?? post.publishedAt),

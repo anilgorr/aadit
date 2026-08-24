@@ -40,6 +40,7 @@ const nextConfig: NextConfig = {
       { source: '/blog/services-vapt-vapt-report', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       { source: '/blog/services-vapt-network-vapt', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       // Managed SOC cluster → canonical Managed SOC post
+      { source: '/blog/understanding-the-digital-personal-data-protection-act-dpdp-act-in-india', destination: '/compliance/dpdp-act', permanent: true },
       { source: '/blog/managed-soc-services-managed-soc-for-banks', destination: '/blog/managed-soc-services-in-india', permanent: true },
       { source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
       { source: '/blog/managed-soc-services-managed-security-services-with-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
