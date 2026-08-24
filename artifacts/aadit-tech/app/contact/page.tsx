@@ -15,7 +15,9 @@ export const metadata: Metadata = buildMetadata({
     "Contact Aadit Technologies, a specialised cybersecurity and IT managed services provider with offices in India, the USA, and Dubai. Reach out to our team today.",
 })
 
-const CONTACT_EMAIL = "anilgorraladaku@gmail.com"
+const CONTACT_EMAIL = "info@aadit.net"
+const SALES_EMAIL = "sales@aadit.net"
+const SECURITY_EMAIL = "security@aadit.net"
 
 const OFFICES = [
   {
@@ -83,13 +85,24 @@ export default function ContactPage() {
                     <Mail className="h-5 w-5" />
                   </span>
                   <div>
-                    <div className="font-semibold text-foreground">Email</div>
+                    <div className="font-semibold text-foreground">General enquiries</div>
                     <a
                       href={`mailto:${CONTACT_EMAIL}`}
                       className="text-muted-foreground transition-colors hover:text-primary"
                     >
                       {CONTACT_EMAIL}
                     </a>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      Sales:{" "}
+                      <a href={`mailto:${SALES_EMAIL}`} className="hover:text-primary">
+                        {SALES_EMAIL}
+                      </a>
+                      <br />
+                      Security reports:{" "}
+                      <a href={`mailto:${SECURITY_EMAIL}`} className="hover:text-primary">
+                        {SECURITY_EMAIL}
+                      </a>
+                    </p>
                   </div>
                 </li>
                 {OFFICES.map((office) => (

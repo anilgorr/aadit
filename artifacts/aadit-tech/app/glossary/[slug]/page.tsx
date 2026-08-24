@@ -25,11 +25,10 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { slug } = await params
   const term = getTerm(slug)
   if (!term) return {}
-  const label = term.fullForm ? `${term.term} — ${term.fullForm}` : term.term
   return buildMetadata({
     path: `/glossary/${term.slug}`,
-    absoluteTitle: `${label} | Aadit Technologies Glossary`,
-    description: term.definition,
+    title: `${term.term}: Definition & Meaning`,
+    description: term.definition.split(". ")[0],
   })
 }
 
@@ -44,6 +43,7 @@ export default async function GlossaryTermPage({ params }: PageParams) {
     term: term.term,
     fullForm: term.fullForm,
     definition: term.definition,
+    path: `/glossary/${term.slug}`,
   })
 
   return (

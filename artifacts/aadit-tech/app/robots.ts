@@ -21,11 +21,18 @@ export default function robots(): MetadataRoute.Robots {
     "Applebot",
     "Applebot-Extended",
     "CCBot",
+    "Bingbot-Extended",
+    "meta-externalagent",
+    "Amazonbot",
   ]
 
   return {
     rules: [
-      { userAgent: "*", allow: "/" },
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/api/", "/*?utm_*"],
+      },
       ...aiAndSearchBots.map((userAgent) => ({ userAgent, allow: "/" })),
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

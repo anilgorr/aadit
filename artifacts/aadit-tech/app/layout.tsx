@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import '../styles/globals.css'
 import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from '@/lib/site'
-import { organizationSchema } from '@/lib/seo'
+import { offerCatalogSchema, officeSchemas, organizationSchema, websiteSchema } from '@/lib/seo'
 import { JsonLd } from '@/components/json-ld'
 
 // Every page on this site is purely static marketing content — it never
@@ -62,7 +62,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <JsonLd data={organizationSchema()} />
+        <JsonLd data={[organizationSchema(), websiteSchema(), offerCatalogSchema(), ...officeSchemas()]} />
         {children}
       </body>
     </html>

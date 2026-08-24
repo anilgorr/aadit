@@ -3,6 +3,7 @@ import rehypeSlug from 'rehype-slug'
 
 const serviceSchema = {
   title: s.string().min(1),
+  heading: s.string().min(1).optional(),
   metaDescription: s.string().min(1).max(200),
   slug: s.slug('service'),
   hub: s.enum(['cybersecurity', 'compliance', 'it-managed-services']),
@@ -38,6 +39,16 @@ const serviceSchema = {
     .optional()
     .default([]),
   related: s.array(s.string()).optional().default([]),
+  answerFirst: s.string().optional(),
+  keyFacts: s
+    .array(
+      s.object({
+        label: s.string(),
+        value: s.string(),
+      })
+    )
+    .optional()
+    .default([]),
   content: s.mdx(),
 }
 
@@ -88,6 +99,12 @@ export default defineConfig({
         .object(postSchema)
         .transform((data) => ({
           ...data,
+          // The bulk migration date was never an editorial revision. Do not
+          // present it to users or crawlers as a meaningful modification date.
+          updatedAt:
+            data.updatedAt === "2026-07-02T00:00:00.000Z"
+              ? data.publishedAt
+              : (data.updatedAt ?? data.publishedAt),
           permalink: `/blog/${data.slug}`,
         })),
     },

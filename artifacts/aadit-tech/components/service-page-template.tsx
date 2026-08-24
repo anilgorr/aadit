@@ -9,7 +9,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { MDXContent } from "@/components/mdx-content"
 import { JsonLd } from "@/components/json-ld"
-import { faqSchema } from "@/lib/seo"
+import { faqSchema, serviceSchema, webPageSchema } from "@/lib/seo"
 import { HUBS, type Hub, type RelatedLink } from "@/lib/services"
 import {
   CheckCircle2,
@@ -68,6 +68,7 @@ const mdxComponents = {
 
 export interface ServicePageData {
   title: string
+  heading?: string
   slug: string
   metaDescription: string
   hub: Hub
@@ -75,6 +76,8 @@ export interface ServicePageData {
   features: { title: string; description: string; icon?: string }[]
   benefits: { title: string; description: string }[]
   faqs: { question: string; answer: string }[]
+  answerFirst?: string
+  keyFacts?: { label: string; value: string }[]
 }
 
 export function ServicePageTemplate({
@@ -85,11 +88,28 @@ export function ServicePageTemplate({
   related: RelatedLink[]
 }) {
   const hub = HUBS[service.hub]
+  const path = `/${service.hub}/${service.slug}`
+  const structuredData = [
+    webPageSchema({
+      path,
+      name: service.heading ?? service.title,
+      description: service.metaDescription,
+    }),
+    serviceSchema({
+      path,
+      name: service.title,
+      description: service.metaDescription,
+      serviceType: service.title,
+      audience: "Organisations seeking cybersecurity, compliance, or managed IT support",
+      related: related.map((item) => item.href),
+    }),
+    ...(service.faqs.length ? [faqSchema(service.faqs)] : []),
+  ]
 
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
-      {service.faqs.length > 0 && <JsonLd data={faqSchema(service.faqs)} />}
+      <JsonLd data={structuredData} />
       <main className="flex-1">
         {/* 1. Hero */}
         <Section background="muted" className="border-b">
@@ -102,19 +122,21 @@ export function ServicePageTemplate({
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              {service.title}
+                {service.heading ?? service.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
               {service.metaDescription}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
+              {/* A document navigation keeps this primary contact CTA reliable in embedded previews. */}
+              {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+              <a
                 href="/contact"
                 className={buttonVariants({ variant: "primary", size: "lg" })}
               >
                 Get a Free Assessment
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
               <Link
                 href={`/${service.hub}`}
                 className={buttonVariants({ variant: "secondary", size: "lg" })}
@@ -125,7 +147,34 @@ export function ServicePageTemplate({
           </div>
         </Section>
 
-        {/* 2. Definition opener (from MDX body) */}
+        {service.answerFirst && (
+          <Section className="pb-0">
+            <div className="mx-auto max-w-3xl">
+              <p className="answer-first text-xl leading-relaxed text-foreground">
+                {service.answerFirst}
+              </p>
+            </div>
+          </Section>
+        )}
+
+        {service.keyFacts && service.keyFacts.length > 0 && (
+          <Section className="pb-0">
+            <div className="mx-auto max-w-3xl">
+              <Card className="overflow-hidden">
+                <dl className="divide-y">
+                  {service.keyFacts.map((fact) => (
+                    <div key={fact.label} className="grid gap-1 p-4 sm:grid-cols-3 sm:gap-6">
+                      <dt className="font-semibold text-foreground">{fact.label}</dt>
+                      <dd className="sm:col-span-2 text-muted-foreground">{fact.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </Card>
+            </div>
+          </Section>
+        )}
+
+        {/* 2. Explanatory content */}
         {service.content && (
           <Section>
             <div className="mx-auto max-w-3xl">

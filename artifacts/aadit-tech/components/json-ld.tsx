@@ -6,13 +6,18 @@ export function JsonLd({ data }: { data: object | object[] }) {
   const blocks = Array.isArray(data) ? data : [data]
   return (
     <>
-      {blocks.map((block, i) => (
+      {blocks.map((block, i) => {
+        const schema = block as { "@id"?: string; "@type"?: string | string[] }
+        const type = Array.isArray(schema["@type"]) ? schema["@type"].join("-") : schema["@type"]
+        const key = schema["@id"] ?? type ?? `schema-${i}`
+        return (
         <script
-          key={i}
+          key={`json-ld-${key}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(block) }}
         />
-      ))}
+        )
+      })}
     </>
   )
 }

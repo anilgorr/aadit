@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Calendar, Clock, RefreshCw } from "lucide-react"
 import { posts } from "@/.velite"
 import { getPost, getRelatedPosts, formatDate } from "@/lib/blog"
@@ -13,6 +14,7 @@ import { TableOfContents } from "@/components/table-of-contents"
 import { BlogCard } from "@/components/blog-card"
 import { JsonLd } from "@/components/json-ld"
 import { buildMetadata, articleSchema } from "@/lib/seo"
+import { getAuthorForPost } from "@/lib/authors"
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -77,6 +79,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const { slug } = await params
   const post = getPost(slug)
   if (!post) return {}
+  const author = getAuthorForPost(post)
   return buildMetadata({
     path: post.permalink,
     title: post.title,
@@ -84,7 +87,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     type: "article",
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
-    authors: [post.author.name],
+    authors: [author.name],
     ...(post.cover ? { images: [{ url: post.cover.src }] } : {}),
   })
 }
@@ -96,6 +99,11 @@ export default async function BlogPostPage({ params }: PageParams) {
 
   const related = getRelatedPosts(post)
   const readingTime = Math.max(1, Math.ceil(post.metadata.readingTime))
+  const author = getAuthorForPost(post)
+  const reviewer =
+    author.slug === "srinivas-gadicherla"
+      ? { name: "Anil Gorraladaku", url: "/authors/anil-gorraladaku" }
+      : { name: "Srinivas Gadicherla", url: "/authors/srinivas-gadicherla" }
 
   const schema = articleSchema({
     title: post.title,
@@ -103,7 +111,8 @@ export default async function BlogPostPage({ params }: PageParams) {
     path: post.permalink,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt,
-    authorName: post.author.name,
+    author: { name: author.name, url: `/authors/${author.slug}` },
+    reviewedBy: reviewer,
     image: post.cover?.src,
   })
 
@@ -139,18 +148,23 @@ export default async function BlogPostPage({ params }: PageParams) {
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 font-semibold text-primary">
-                  {post.author.name.charAt(0)}
+                  {author.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{post.author.name}</p>
-                  {post.author.role && <p className="text-xs">{post.author.role}</p>}
+                  <Link
+                    href={`/authors/${author.slug}`}
+                    className="font-semibold text-foreground hover:text-primary"
+                  >
+                    {author.name}
+                  </Link>
+                  <p className="text-xs">{author.jobTitle}</p>
                 </div>
               </div>
               <span className="flex items-center gap-1.5">
                 <Calendar className="h-4 w-4" />
                 {formatDate(post.publishedAt)}
               </span>
-              {post.updatedAt && (
+              {post.updatedAt !== post.publishedAt && (
                 <span className="flex items-center gap-1.5">
                   <RefreshCw className="h-4 w-4" />
                   Updated {formatDate(post.updatedAt)}

@@ -1,0 +1,27 @@
+[
+  {
+    "source": "/securing-india-top-cyber-security-companies-in-bangalore",
+    "destination": "/blog/cyber-security-companies-bangalore",
+    "permanent": true
+  },
+  {
+    "source": "/soc-2-compliance-services-india",
+    "destination": "/compliance/soc2",
+    "permanent": true
+  },
+  {
+    "source": "/soc-2-compliance",
+    "destination": "/compliance/soc2",
+    "permanent": true
+  },
+  {
+    "source": "/expert-it-managed-services-streamline-your-business-aadit-technologies",
+    "destination": "/it-managed-services",
+    "permanent": true
+  },
+  {
+    "source": "/managed-services-in-india-empowering-business-growth",
+    "destination": "/it-managed-services/managed-it-services",
+    "permanent": true
+  }
+]

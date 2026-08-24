@@ -18,12 +18,15 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { page } = await params
-  return buildMetadata({
+  const metadata = buildMetadata({
     path: `/blog/page/${page}`,
     title: `Insights & Blog — Page ${page}`,
     description:
       "Practical perspectives on cybersecurity, compliance, and managed IT from the Aadit Technologies team.",
+    noindex: true,
   })
+  metadata.alternates = { canonical: "/blog" }
+  return metadata
 }
 
 export default async function BlogPaginatedPage({ params }: PageParams) {

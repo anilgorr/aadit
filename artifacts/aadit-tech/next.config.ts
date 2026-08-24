@@ -1,5 +1,6 @@
 import type { NextConfig } from 'next'
 import { SITE_URL } from './lib/site'
+import legacyRedirects from './redirects/legacy.json'
 
 const apexHost = new URL(SITE_URL).host // e.g. "aadit.net"
 
@@ -16,6 +17,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // NOTE: HTTP→HTTPS is handled automatically by Netlify's edge (forced TLS).
+
+      // ─── Migration and legacy URL recovery ─────────────────────────────────
+      ...legacyRedirects,
+      { source: '/category/:slug*', destination: '/blog', permanent: true },
+      { source: '/tag/:slug*', destination: '/blog', permanent: true },
+      { source: '/author/:slug*', destination: '/about', permanent: true },
+      { source: '/feed', destination: '/blog', permanent: true },
 
       // ─── Blog de-duplication 301s ──────────────────────────────────────────
       // Old aadit.net blog slugs exactly match new slugs (migration preserved
@@ -90,7 +98,10 @@ const nextConfig: NextConfig = {
       // ─── Old ebook / whitepaper URL schemes ───────────────────────────────
       // aadit.net used /ebook/<slug>/ and /whitepaper/<slug>/ paths; new site
       // consolidates these into single hub pages.
-      { source: '/ebook/:slug*', destination: '/ebook', permanent: true },
+      // The retired eBook route previously redirected back to itself. Keep this
+      // one-hop redirect to the live resource hub for existing links.
+      { source: '/ebook', destination: '/whitepapers', permanent: true },
+      { source: '/ebook/:slug*', destination: '/whitepapers', permanent: true },
       { source: '/whitepaper/:slug*', destination: '/whitepapers', permanent: true },
 
       // ─── GSC Page Indexing 404 fixes ──────────────────────────────────────

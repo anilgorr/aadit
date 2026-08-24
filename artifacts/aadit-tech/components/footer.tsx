@@ -45,7 +45,7 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
       { label: "Blog", href: "/blog" },
       { label: "Glossary", href: "/glossary" },
       { label: "Whitepapers", href: "/whitepapers" },
-      { label: "eBooks", href: "/ebook" },
+        { label: "Case Studies", href: "/case-studies" },
     ],
   },
   {
@@ -60,6 +60,7 @@ const COLUMNS: { heading: string; links: { label: string; href: string }[] }[] =
     heading: "Company",
     links: [
       { label: "About Us", href: "/about" },
+        { label: "Our Team", href: "/team" },
       { label: "Careers", href: "/careers" },
       { label: "Contact", href: "/contact" },
     ],
@@ -134,7 +135,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/70 md:flex-row">
-          <p>© {year} Aadit Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>
+            © {year} Aadit Technologies Pvt. Ltd. · CIN: U72900KA2017PTC099151 · All
+            rights reserved.
+          </p>
           <p className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
             Systems operational · Bangalore, India

@@ -20,9 +20,9 @@ export const HUBS: Record<Hub, HubMeta> = {
     slug: "cybersecurity",
     title: "Cybersecurity",
     metaDescription:
-      "Offensive and defensive cybersecurity services — managed SOC, VAPT, endpoint and network security, and consulting for regulated industries.",
+      "Managed cybersecurity services for Indian organisations: SOC, VAPT, risk assessment, incident response, endpoint and network security, and advisory support.",
     intro:
-      "Detect, prevent, and respond to threats with a security partner that understands regulated industries. Explore our cybersecurity services below.",
+      "Aadit Technologies helps organisations identify, reduce, and respond to cyber risk through monitoring, testing, incident readiness, endpoint and network security, and practical security guidance.",
   },
   compliance: {
     slug: "compliance",
