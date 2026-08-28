@@ -1,17 +1,19 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, Shield, Users, GraduationCap } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Card } from "@/components/ui/card"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { buttonVariants } from "@/components/ui/button"
-import { buildMetadata } from "@/lib/seo"
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, Shield, Users, GraduationCap } from 'lucide-react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Card } from '@/components/ui/card'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { buttonVariants } from '@/components/ui/button'
+import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  path: "/careers",
-  title: "Cybersecurity Careers",
+  path: '/careers',
+  title: 'Cybersecurity Careers',
   description:
     "Build your career in cybersecurity with Aadit Technologies. We don't have any open roles right now, but we're always keen to hear from talented security and IT professionals.",
 })
@@ -19,21 +21,21 @@ export const metadata: Metadata = buildMetadata({
 const WHY_JOIN = [
   {
     icon: Shield,
-    title: "Meaningful Work",
+    title: 'Meaningful Work',
     description:
-      "Protect real organisations from real threats. Every day you help keep Indian businesses secure and resilient.",
+      'Protect real organisations from real threats. Every day you help keep Indian businesses secure and resilient.',
   },
   {
     icon: Users,
-    title: "One Accountable Team",
+    title: 'One Accountable Team',
     description:
-      "Work alongside certified professionals across SOC, VAPT, cloud, and compliance — with a client-first culture and no silos.",
+      'Work alongside certified professionals across SOC, VAPT, cloud, and compliance — with a client-first culture and no silos.',
   },
   {
     icon: GraduationCap,
-    title: "Grow Your Expertise",
+    title: 'Grow Your Expertise',
     description:
-      "Sharpen your skills across the full security lifecycle and gain exposure to leading tools, certifications, and industries.",
+      'Sharpen your skills across the full security lifecycle and gain exposure to leading tools, certifications, and industries.',
   },
 ]
 
@@ -42,12 +44,20 @@ export default function CareersPage() {
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path: '/careers',
+            name: 'Careers at Aadit Technologies',
+            description:
+              "We build the team that protects India's enterprises. If cybersecurity, cloud, and solving hard problems for real clients excite you, we'd love to hear from you.",
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Careers", href: "/careers" },
+                { label: 'Home', href: '/' },
+                { label: 'Careers', href: '/careers' },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
@@ -86,11 +96,11 @@ export default function CareersPage() {
             <h2 className="text-3xl font-bold text-foreground">Current Openings</h2>
             <p className="mt-4 text-muted-foreground">
               We don&apos;t have any open positions at the moment. However, we&apos;re always
-              interested in connecting with talented cybersecurity and IT professionals. Send us your
-              details and we&apos;ll reach out when a suitable role opens up.
+              interested in connecting with talented cybersecurity and IT professionals. Send us
+              your details and we&apos;ll reach out when a suitable role opens up.
             </p>
             <div className="mt-8 flex justify-center">
-              <Link href="/contact" className={buttonVariants({ variant: "primary", size: "lg" })}>
+              <Link href="/contact" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
                 Send a General Application
                 <ArrowRight className="h-4 w-4" />
               </Link>

@@ -1,19 +1,21 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-import { INDUSTRIES } from "@/lib/industries"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Card } from "@/components/ui/card"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { buildMetadata } from "@/lib/seo"
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { INDUSTRIES } from '@/lib/industries'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Card } from '@/components/ui/card'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  path: "/industries",
-  title: "Industries We Serve",
+  path: '/industries',
+  title: 'Industries We Serve',
   description:
-    "Tailored cybersecurity and compliance for startups, healthcare & BFSI, and e-commerce & fintech — mapped to the regulations each industry must meet.",
+    'Tailored cybersecurity and compliance for startups, healthcare & BFSI, and e-commerce & fintech — mapped to the regulations each industry must meet.',
 })
 
 export default function IndustriesPage() {
@@ -21,20 +23,29 @@ export default function IndustriesPage() {
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path: '/industries',
+            name: 'Industries We Serve',
+            description:
+              'Every sector faces its own regulations and threats. We tailor security and compliance to the specific obligations and risks your industry lives with.',
+            type: 'CollectionPage',
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Industries", href: "/industries" },
+                { label: 'Home', href: '/' },
+                { label: 'Industries', href: '/industries' },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               Industries We Serve
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Every sector faces its own regulations and threats. We tailor security and
-              compliance to the specific obligations and risks your industry lives with.
+              Every sector faces its own regulations and threats. We tailor security and compliance
+              to the specific obligations and risks your industry lives with.
             </p>
           </div>
         </Section>
@@ -42,16 +53,10 @@ export default function IndustriesPage() {
         <Section>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {INDUSTRIES.map((industry) => (
-              <Link
-                key={industry.slug}
-                href={`/industries/${industry.slug}`}
-                className="group"
-              >
+              <Link key={industry.slug} href={`/industries/${industry.slug}`} className="group">
                 <Card className="flex h-full flex-col p-8 transition-colors hover:border-primary/50">
                   <h2 className="mb-2 text-xl font-bold">{industry.title}</h2>
-                  <p className="mb-4 text-sm font-medium text-primary">
-                    {industry.tagline}
-                  </p>
+                  <p className="mb-4 text-sm font-medium text-primary">{industry.tagline}</p>
                   <p className="mb-6 flex-1 leading-relaxed text-muted-foreground">
                     {industry.metaDescription}
                   </p>

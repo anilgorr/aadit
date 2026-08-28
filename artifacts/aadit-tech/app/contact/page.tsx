@@ -1,49 +1,48 @@
-import type { Metadata } from "next"
-import { Mail, MapPin, Phone, Clock } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Card } from "@/components/ui/card"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { ContactForm } from "@/components/contact-form"
-import { buildMetadata } from "@/lib/seo"
+import type { Metadata } from 'next'
+import { Mail, MapPin, Phone, Clock } from 'lucide-react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Card } from '@/components/ui/card'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { ContactForm } from '@/components/contact-form'
+import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
-  path: "/contact",
-  title: "Contact Us",
+  path: '/contact',
+  title: 'Contact Us',
   description:
-    "Contact Aadit Technologies, a specialised cybersecurity and IT managed services provider with offices in India, the USA, and Dubai. Reach out to our team today.",
+    'Contact Aadit Technologies, a specialised cybersecurity and IT managed services provider with offices in India, the USA, and Dubai. Reach out to our team today.',
 })
 
-const CONTACT_EMAIL = "info@aadit.net"
-const SALES_EMAIL = "sales@aadit.net"
-const SECURITY_EMAIL = "security@aadit.net"
+const CONTACT_EMAIL = 'info@aadit.net'
+const SALES_EMAIL = 'sales@aadit.net'
+const SECURITY_EMAIL = 'security@aadit.net'
 
 const OFFICES = [
   {
-    country: "India",
+    country: 'India',
     lines: [
-      "#21 & 22, AnandAM, 4th Main Road, 3rd Block,",
-      "Opposite Axis Bank, New BEL Road,",
-      "Bangalore - 560094",
+      '#21 & 22, AnandAM, 4th Main Road, 3rd Block,',
+      'Opposite Axis Bank, New BEL Road,',
+      'Bangalore - 560094',
     ],
-    phone: "+91 9663445445",
-    phoneHref: "tel:+919663445445",
+    phone: '+91 9663445445',
+    phoneHref: 'tel:+919663445445',
   },
   {
-    country: "USA",
-    lines: ["4139 164th AVE SE,", "Bellevue, WA 98006-8906"],
+    country: 'USA',
+    lines: ['4139 164th AVE SE,', 'Bellevue, WA 98006-8906'],
     phone: null,
     phoneHref: null,
   },
   {
-    country: "Dubai",
-    lines: [
-      "Aadit Technologies FZCO, Building A1,",
-      "Dubai Digital Park, Silicon Oasis, Dubai",
-    ],
-    phone: "+971 52 184 7477",
-    phoneHref: "tel:+971521847477",
+    country: 'Dubai',
+    lines: ['Aadit Technologies FZCO, Building A1,', 'Dubai Digital Park, Silicon Oasis, Dubai'],
+    phone: '+971 52 184 7477',
+    phoneHref: 'tel:+971521847477',
   },
 ]
 
@@ -52,12 +51,20 @@ export default function ContactPage() {
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path: '/contact',
+            name: "Let's talk security",
+            description:
+              "Whether you need a penetration test, an audit-ready compliance programme, or a managed IT partner, our team is ready to help. Send us a message and we'll get back to you.",
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Contact", href: "/contact" },
+                { label: 'Home', href: '/' },
+                { label: 'Contact', href: '/contact' },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
@@ -76,8 +83,8 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <h2 className="text-xl font-bold text-foreground">Get in touch</h2>
               <p className="mt-3 text-muted-foreground">
-                Prefer email or want to reach us directly? Use the details below and we&apos;ll route
-                your message to the right specialist.
+                Prefer email or want to reach us directly? Use the details below and we&apos;ll
+                route your message to the right specialist.
               </p>
               <ul className="mt-8 flex flex-col gap-6">
                 <li className="flex items-start gap-4">
@@ -93,12 +100,12 @@ export default function ContactPage() {
                       {CONTACT_EMAIL}
                     </a>
                     <p className="mt-2 text-sm text-muted-foreground">
-                      Sales:{" "}
+                      Sales:{' '}
                       <a href={`mailto:${SALES_EMAIL}`} className="hover:text-primary">
                         {SALES_EMAIL}
                       </a>
                       <br />
-                      Security reports:{" "}
+                      Security reports:{' '}
                       <a href={`mailto:${SECURITY_EMAIL}`} className="hover:text-primary">
                         {SECURITY_EMAIL}
                       </a>
@@ -112,7 +119,7 @@ export default function ContactPage() {
                     </span>
                     <div>
                       <div className="font-semibold text-foreground">{office.country}</div>
-                      <address className="mt-1 not-italic text-muted-foreground">
+                      <address className="mt-1 text-muted-foreground not-italic">
                         {office.lines.map((line) => (
                           <span key={line} className="block">
                             {line}

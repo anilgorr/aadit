@@ -1,58 +1,57 @@
-import React from "react"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { JsonLd } from "@/components/json-ld"
-import { buildMetadata, websiteSchema } from "@/lib/seo"
-import { Section } from "@/components/ui/section"
-import { StatBlock } from "@/components/ui/stat-block"
-import { Button, buttonVariants } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import {
-  ShieldCheck,
-  FileCheck,
-  Server,
-  ArrowRight,
-  Lock,
-  Activity,
-  Radar,
-} from "lucide-react"
-import { LogoCloud } from "@/components/logo-cloud"
-import { TestimonialCarousel } from "@/components/testimonial-carousel"
+import React from 'react'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { JsonLd } from '@/components/json-ld'
+import { buildMetadata, webPageSchema } from '@/lib/seo'
+import { Section } from '@/components/ui/section'
+import { StatBlock } from '@/components/ui/stat-block'
+import { Button, buttonVariants } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { ShieldCheck, FileCheck, Server, ArrowRight, Lock, Activity, Radar } from 'lucide-react'
+import { LogoCloud } from '@/components/logo-cloud'
+import { TestimonialCarousel } from '@/components/testimonial-carousel'
 
 const SERVICES = [
   {
     icon: ShieldCheck,
-    title: "Cybersecurity",
-    desc: "Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.",
-    href: "/cybersecurity",
+    title: 'Cybersecurity',
+    desc: 'Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.',
+    href: '/cybersecurity',
   },
   {
     icon: FileCheck,
-    title: "Compliance",
-    desc: "Streamlined certification for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.",
-    href: "/compliance",
+    title: 'Compliance',
+    desc: 'Streamlined certification for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.',
+    href: '/compliance',
   },
   {
     icon: Server,
-    title: "IT Managed Services",
-    desc: "Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.",
-    href: "/it-managed-services",
+    title: 'IT Managed Services',
+    desc: 'Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.',
+    href: '/it-managed-services',
   },
 ]
 
 export const metadata: Metadata = buildMetadata({
-  path: "/",
-  absoluteTitle: "Aadit Technologies | Cybersecurity, Compliance & IT Services",
+  path: '/',
+  absoluteTitle: 'Aadit Technologies | Cybersecurity, Compliance & IT Services',
   description:
-    "Aadit Technologies delivers cybersecurity, compliance, and IT managed services — VAPT, ISO 27001, SOC 2, HIPAA & PCI DSS — for regulated businesses. Book a free assessment.",
+    'Aadit Technologies delivers cybersecurity, compliance, and IT managed services — VAPT, ISO 27001, SOC 2, HIPAA & PCI DSS — for regulated businesses. Book a free assessment.',
 })
 
 export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <JsonLd data={websiteSchema()} />
+      <JsonLd
+        data={webPageSchema({
+          path: '/',
+          name: 'The security partner you trust before regulators knock.',
+          description:
+            'Technically precise, clean, and trustworthy cybersecurity, compliance, and IT managed services for the modern enterprise.',
+        })}
+      />
       <Header />
 
       <main className="w-full flex-1">
@@ -60,17 +59,17 @@ export default function Home() {
         <section className="relative overflow-hidden bg-midnight text-midnight-foreground">
           {/* ambient glow */}
           <div
-            className="glow-blob animate-drift-slow absolute -left-32 -top-24 h-96 w-96 opacity-40"
-            style={{ background: "oklch(0.53 0.22 262)" }}
+            className="glow-blob animate-drift-slow absolute -top-24 -left-32 h-96 w-96 opacity-40"
+            style={{ background: 'oklch(0.53 0.22 262)' }}
           />
           <div
-            className="glow-blob animate-drift absolute -right-24 top-32 h-80 w-80 opacity-30"
-            style={{ background: "oklch(0.72 0.15 220)" }}
+            className="glow-blob animate-drift absolute top-32 -right-24 h-80 w-80 opacity-30"
+            style={{ background: 'oklch(0.72 0.15 220)' }}
           />
           {/* security grid */}
           <div className="grid-lines mask-radial pointer-events-none absolute inset-0" />
 
-          <div className="container relative mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-32">
+          <div className="relative container mx-auto grid max-w-7xl items-center gap-16 px-4 py-24 md:grid-cols-[1.1fr_0.9fr] md:px-6 md:py-32">
             <div className="animate-fade-up text-center md:text-left">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/80 backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
@@ -80,14 +79,14 @@ export default function Home() {
                 New: Comprehensive DPDP Act Compliance Services
               </div>
 
-              <h1 className="mt-8 text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl">
-                The security partner you{" "}
-                <span className="text-gradient">trust before</span> regulators knock.
+              <h1 className="mt-8 text-5xl leading-[1.05] font-bold tracking-tight md:text-7xl">
+                The security partner you <span className="text-gradient">trust before</span>{' '}
+                regulators knock.
               </h1>
 
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65 md:mx-0 md:text-xl">
-                Technically precise, clean, and trustworthy cybersecurity, compliance, and IT managed
-                services for the modern enterprise.
+                Technically precise, clean, and trustworthy cybersecurity, compliance, and IT
+                managed services for the modern enterprise.
               </p>
 
               <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
@@ -147,9 +146,9 @@ export default function Home() {
 
                 <div className="space-y-3">
                   {[
-                    { label: "Endpoints protected", value: "1,284" },
-                    { label: "Threats blocked (24h)", value: "37" },
-                    { label: "Compliance score", value: "98%" },
+                    { label: 'Endpoints protected', value: '1,284' },
+                    { label: 'Threats blocked (24h)', value: '37' },
+                    { label: 'Compliance score', value: '98%' },
                   ].map((row) => (
                     <div
                       key={row.label}
@@ -170,7 +169,11 @@ export default function Home() {
         {/* ---------- STATS ---------- */}
         <Section background="muted" className="border-b border-border">
           <div className="grid grid-cols-1 divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
-            <StatBlock stat="50+" label="Organizations Protected" subtext="Across healthcare, BFSI & fintech" />
+            <StatBlock
+              stat="50+"
+              label="Organizations Protected"
+              subtext="Across healthcare, BFSI & fintech"
+            />
             <StatBlock stat="99.9%" label="Uptime SLA" subtext="Guaranteed reliability" />
             <StatBlock stat="100%" label="Compliance Readiness" subtext="ISO 27001, SOC 2, HIPAA" />
           </div>
@@ -180,8 +183,8 @@ export default function Home() {
         <Section>
           <div className="relative">
             <div className="grid-lines-light mask-radial pointer-events-none absolute inset-0 -z-10 opacity-70" />
-            <div className="mx-auto mb-16 max-w-2xl text-center reveal">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            <div className="reveal mx-auto mb-16 max-w-2xl text-center">
+              <span className="text-xs font-semibold tracking-[0.2em] text-primary uppercase">
                 What we do
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
@@ -223,10 +226,10 @@ export default function Home() {
         <section className="relative overflow-hidden bg-midnight text-midnight-foreground">
           <div className="grid-lines mask-radial pointer-events-none absolute inset-0" />
           <div
-            className="glow-blob animate-drift absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 opacity-40"
-            style={{ background: "oklch(0.53 0.22 262)" }}
+            className="glow-blob animate-drift absolute top-1/2 left-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 opacity-40"
+            style={{ background: 'oklch(0.53 0.22 262)' }}
           />
-          <div className="container relative mx-auto max-w-3xl px-4 py-24 text-center md:px-6">
+          <div className="relative container mx-auto max-w-3xl px-4 py-24 text-center md:px-6">
             <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
               Ready to secure your business?
             </h2>
@@ -235,13 +238,13 @@ export default function Home() {
               and cybersecurity needs.
             </p>
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-              <Link href="/contact" className={buttonVariants({ variant: "light", size: "lg" })}>
+              <Link href="/contact" className={buttonVariants({ variant: 'light', size: 'lg' })}>
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/contact"
-                className={buttonVariants({ variant: "outlineLight", size: "lg" })}
+                className={buttonVariants({ variant: 'outlineLight', size: 'lg' })}
               >
                 Talk to Sales
               </Link>

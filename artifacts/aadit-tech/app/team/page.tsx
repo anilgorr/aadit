@@ -20,9 +20,9 @@ export default function TeamPage() {
   const schema = [
     webPageSchema({
       path: "/team",
-      name: "The Team Behind Aadit Technologies",
+      name: "The Team Behind Aadit",
       description:
-        "Leadership team guiding Aadit Technologies' cybersecurity, compliance, and managed IT work.",
+        "Experienced leaders helping organisations make practical progress on cybersecurity, compliance, and resilient technology operations.",
       type: "ProfilePage",
     }),
     ...AUTHORS.map(authorSchema),

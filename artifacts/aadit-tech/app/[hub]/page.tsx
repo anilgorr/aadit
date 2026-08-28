@@ -49,7 +49,7 @@ export default async function HubPage({ params }: PageParams) {
     webPageSchema({
       path: `/${hub}`,
       name: meta.title,
-      description: meta.metaDescription,
+      description: meta.intro,
       type: "CollectionPage",
     }),
     faqSchema(meta.buyerGuide.faqs),

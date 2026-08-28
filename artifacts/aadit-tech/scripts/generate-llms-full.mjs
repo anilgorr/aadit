@@ -4,6 +4,10 @@ import path from "node:path"
 const ROOT = process.cwd()
 const CONTENT_ROOT = path.join(ROOT, "content")
 const SITE_URL = "https://aadit.net"
+const EXCLUDED_POSTS = new Set([
+  "services-vapt-network-vapt",
+  "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
+])
 
 function parseFrontmatter(source) {
   const match = source.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/)
@@ -41,12 +45,20 @@ async function buildSection(directory, kind) {
   for (const file of files) {
     const { attributes, body } = parseFrontmatter(await readFile(path.join(directory, file), "utf8"))
     const slug = attributes.slug ?? file.replace(/\.mdx$/, "")
+    if (kind === "post" && EXCLUDED_POSTS.has(slug)) continue
     const url =
       kind === "service"
         ? `${SITE_URL}/${attributes.hub}/${slug}`
         : `${SITE_URL}/blog/${slug}`
     const heading = attributes.title ?? slug
-    parts.push(`## ${heading}\nURL: ${url}\n\n${toPlainText(body)}`)
+    const metadata =
+      kind === "post"
+        ? [
+            `Author: ${attributes.author ?? "Aadit Technologies editorial team"}`,
+            ...(attributes.publishedAt ? [`Published: ${attributes.publishedAt}`] : []),
+          ].join("\n")
+        : ""
+    parts.push(`## ${heading}\nURL: ${url}${metadata ? `\n${metadata}` : ""}\n\n${toPlainText(body)}`)
   }
 
   return parts
@@ -61,6 +73,8 @@ const document = [
   "# Aadit Technologies — Full Content Export",
   "",
   "> Aadit Technologies Pvt. Ltd. is a cybersecurity, compliance, and IT managed-services company based in Bengaluru, India.",
+  `> Canonical website: ${SITE_URL}/`,
+  `> Canonical sitemap: ${SITE_URL}/sitemap.xml`,
   "",
   ...services,
   ...posts,

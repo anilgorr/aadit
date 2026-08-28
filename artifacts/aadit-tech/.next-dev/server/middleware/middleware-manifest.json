@@ -1,0 +1,31 @@
+{
+  "sorted_middleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_02734651._.js",
+        "server/edge/chunks/[root-of-the-server]__8d9a516d._.js",
+        "server/edge/chunks/turbopack-artifacts_aadit-tech_edge-wrapper_61bc417b.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/:path*{(\\.json|\\.rsc|\\.segments/.+\\.segment\\.rsc)}?",
+          "originalSource": "/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "xQIKxzvL3Rb/WuYuaHt/MoXw84qDodj/8te5FftZJ5g=",
+        "__NEXT_PREVIEW_MODE_ID": "33f52acaa60eb6b46b4c054cd3b6662a",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "f66dd590cc35777e4fd69d794f91a8a3ab24c728d2af51de76e3771cc4d4d7e3",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "88bd90c16519363a8de7ff98d10b8519308a94dc0821b5b5cb2211597760e5b0"
+      }
+    }
+  },
+  "instrumentation": null,
+  "functions": {}
+}

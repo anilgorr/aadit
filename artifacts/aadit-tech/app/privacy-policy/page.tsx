@@ -1,32 +1,41 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { buildMetadata } from "@/lib/seo"
-import { LEGAL_NAME } from "@/lib/site"
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
+import { LEGAL_NAME } from '@/lib/site'
 
 export const metadata: Metadata = buildMetadata({
-  path: "/privacy-policy",
-  title: "Privacy Policy",
+  path: '/privacy-policy',
+  title: 'Privacy Policy',
   description:
-    "How Aadit Technologies collects, uses, and protects personal information across our services and website, including visitors in India, the USA, and the UAE.",
+    'How Aadit Technologies collects, uses, and protects personal information across our services and website, including visitors in India, the USA, and the UAE.',
 })
 
-const LAST_UPDATED = "1 June 2025"
+const LAST_UPDATED = '1 June 2025'
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path: '/privacy-policy',
+            name: 'Privacy Policy',
+            description: `Last updated: ${LAST_UPDATED}`,
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: 'Home', href: '/' },
+                { label: 'Privacy Policy', href: '/privacy-policy' },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
@@ -40,12 +49,12 @@ export default function PrivacyPolicyPage() {
           <div className="mx-auto max-w-3xl space-y-10 text-muted-foreground">
             <div className="space-y-4 leading-relaxed">
               <p>
-                {LEGAL_NAME} (&ldquo;Aadit Technologies&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
-                &ldquo;our&rdquo;) is committed to protecting the privacy of visitors to our website
-                and the clients and prospects we work with. This policy explains what personal
-                information we collect, how we use it, and the choices you have. It applies to our
-                website and to enquiries handled by our offices in India, the United States, and the
-                United Arab Emirates.
+                {LEGAL_NAME} (&ldquo;Aadit Technologies&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;,
+                or &ldquo;our&rdquo;) is committed to protecting the privacy of visitors to our
+                website and the clients and prospects we work with. This policy explains what
+                personal information we collect, how we use it, and the choices you have. It applies
+                to our website and to enquiries handled by our offices in India, the United States,
+                and the United Arab Emirates.
               </p>
             </div>
 
@@ -78,9 +87,9 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-3">
               <h2 className="text-2xl font-bold text-foreground">Cookies &amp; Analytics</h2>
               <p className="leading-relaxed">
-                Our website may use cookies and similar technologies to remember your preferences and
-                to understand how the site is used. You can control or disable cookies through your
-                browser settings; disabling some cookies may affect how the site functions.
+                Our website may use cookies and similar technologies to remember your preferences
+                and to understand how the site is used. You can control or disable cookies through
+                your browser settings; disabling some cookies may affect how the site functions.
               </p>
             </section>
 
@@ -108,28 +117,28 @@ export default function PrivacyPolicyPage() {
             <section className="space-y-3">
               <h2 className="text-2xl font-bold text-foreground">Your Rights</h2>
               <p className="leading-relaxed">
-                Depending on your location, you may have rights to access, correct, update, or delete
-                the personal information we hold about you, and to object to or restrict certain
-                processing. To exercise any of these rights, please contact us using the details
-                below and we will respond in accordance with applicable law.
+                Depending on your location, you may have rights to access, correct, update, or
+                delete the personal information we hold about you, and to object to or restrict
+                certain processing. To exercise any of these rights, please contact us using the
+                details below and we will respond in accordance with applicable law.
               </p>
             </section>
 
             <section className="space-y-3">
               <h2 className="text-2xl font-bold text-foreground">International Data Transfers</h2>
               <p className="leading-relaxed">
-                As a business with offices in India, the United States, and the United Arab Emirates,
-                your information may be processed in any of these locations. Where information is
-                transferred across borders, we take steps to ensure it remains protected in line with
-                this policy and applicable law.
+                As a business with offices in India, the United States, and the United Arab
+                Emirates, your information may be processed in any of these locations. Where
+                information is transferred across borders, we take steps to ensure it remains
+                protected in line with this policy and applicable law.
               </p>
             </section>
 
             <section className="space-y-3">
               <h2 className="text-2xl font-bold text-foreground">Changes to This Policy</h2>
               <p className="leading-relaxed">
-                We may update this policy from time to time. When we do, we will revise the &ldquo;Last
-                updated&rdquo; date at the top of this page.
+                We may update this policy from time to time. When we do, we will revise the
+                &ldquo;Last updated&rdquo; date at the top of this page.
               </p>
             </section>
 
@@ -137,7 +146,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-2xl font-bold text-foreground">Contact Us</h2>
               <p className="leading-relaxed">
                 If you have any questions about this privacy policy or how we handle your personal
-                information, please{" "}
+                information, please{' '}
                 <Link href="/contact" className="font-medium text-primary hover:underline">
                   get in touch with us
                 </Link>

@@ -1,15 +1,17 @@
-import { notFound } from "next/navigation"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowRight, ShieldCheck } from "lucide-react"
-import { INDUSTRIES, getIndustry } from "@/lib/industries"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Card } from "@/components/ui/card"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { buttonVariants } from "@/components/ui/button"
-import { buildMetadata } from "@/lib/seo"
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
+import { INDUSTRIES, getIndustry } from '@/lib/industries'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Card } from '@/components/ui/card'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { buttonVariants } from '@/components/ui/button'
+import { buildMetadata } from '@/lib/seo'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -35,35 +37,39 @@ export default async function IndustryPage({ params }: PageParams) {
   const industry = getIndustry(slug)
   if (!industry) notFound()
 
+  const path = `/industries/${industry.slug}`
+
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path,
+            name: industry.title,
+            description: industry.intro[0],
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Industries", href: "/industries" },
-                { label: industry.title, href: `/industries/${industry.slug}` },
+                { label: 'Home', href: '/' },
+                { label: 'Industries', href: '/industries' },
+                { label: industry.title, href: path },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               {industry.title}
             </h1>
-            <p className="mt-4 text-lg font-medium text-primary md:text-xl">
-              {industry.tagline}
-            </p>
+            <p className="mt-4 text-lg font-medium text-primary md:text-xl">{industry.tagline}</p>
             <div className="mt-6 max-w-2xl space-y-4 text-lg text-muted-foreground">
               {industry.intro.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
             </div>
             <div className="mt-8">
-              <Link
-                href="/contact"
-                className={buttonVariants({ variant: "primary", size: "lg" })}
-              >
+              <Link href="/contact" className={buttonVariants({ variant: 'primary', size: 'lg' })}>
                 Talk to a Specialist
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -85,9 +91,7 @@ export default async function IndustryPage({ params }: PageParams) {
                   <ShieldCheck className="h-7 w-7" />
                 </div>
                 <h3 className="mb-3 text-lg font-bold">{concern.title}</h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  {concern.description}
-                </p>
+                <p className="leading-relaxed text-muted-foreground">{concern.description}</p>
               </Card>
             ))}
           </div>
@@ -113,18 +117,12 @@ export default async function IndustryPage({ params }: PageParams) {
 
         <Section background="dark">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">
-              Built for {industry.title}
-            </h2>
+            <h2 className="text-3xl font-bold md:text-4xl">Built for {industry.title}</h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
-              Let&apos;s map your obligations and risks to a practical security and
-              compliance plan.
+              Let&apos;s map your obligations and risks to a practical security and compliance plan.
             </p>
             <div className="mt-8 flex justify-center">
-              <Link
-                href="/contact"
-                className={buttonVariants({ variant: "light", size: "lg" })}
-              >
+              <Link href="/contact" className={buttonVariants({ variant: 'light', size: 'lg' })}>
                 Book a Free Consultation
                 <ArrowRight className="h-4 w-4" />
               </Link>

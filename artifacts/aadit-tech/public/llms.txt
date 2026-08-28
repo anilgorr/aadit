@@ -37,6 +37,7 @@
 
 - [Security & Compliance Glossary](https://aadit.net/glossary): Plain-English definitions of VAPT, SOC, SIEM, ISO 27001, GDPR, HIPAA, PCI DSS, and SOC 2.
 - [Insights & Blog](https://aadit.net/blog): Practical guidance on cybersecurity, compliance, and managed IT.
+- [Full plain-text content export](https://aadit.net/llms-full.txt): Substantive service and article content with canonical source URLs.
 
 ## Key pages
 

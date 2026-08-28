@@ -3,10 +3,16 @@ import { SITE_URL } from './lib/site'
 import legacyRedirects from './redirects/legacy.json'
 
 const apexHost = new URL(SITE_URL).host // e.g. "aadit.net"
+const replitDevDomain = process.env.REPLIT_DEV_DOMAIN
 
 const nextConfig: NextConfig = {
+  distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  allowedDevOrigins: ['*.replit.dev', '*.repl.co'],
+  allowedDevOrigins: [
+    '*.replit.dev',
+    '*.repl.co',
+    ...(replitDevDomain ? [replitDevDomain] : []),
+  ],
   async redirects() {
     return [
       // ─── Canonical host: 301 www.<apex> → <apex> ──────────────────────────

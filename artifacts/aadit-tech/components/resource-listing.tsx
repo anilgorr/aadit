@@ -1,13 +1,15 @@
-import Link from "next/link"
-import { Download, Lock, ArrowRight, type LucideIcon } from "lucide-react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { buttonVariants } from "@/components/ui/button"
-import type { Resource } from "@/lib/resources"
+import Link from 'next/link'
+import { Download, Lock, ArrowRight, type LucideIcon } from 'lucide-react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Card } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { buttonVariants } from '@/components/ui/button'
+import type { Resource } from '@/lib/resources'
+import { JsonLd } from '@/components/json-ld'
+import { webPageSchema } from '@/lib/seo'
 
 export function ResourceListing({
   title,
@@ -26,20 +28,26 @@ export function ResourceListing({
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
+        <JsonLd
+          data={webPageSchema({
+            path: href,
+            name: title,
+            description: tagline,
+            type: 'CollectionPage',
+          })}
+        />
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-4xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
+                { label: 'Home', href: '/' },
                 { label: title, href },
               ]}
             />
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               {title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              {tagline}
-            </p>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">{tagline}</p>
           </div>
         </Section>
 
@@ -52,42 +60,38 @@ export function ResourceListing({
                     <div className="text-primary">
                       <Icon className="h-8 w-8" />
                     </div>
-                    <Badge variant={resource.gated ? "accent" : "muted"}>
-                      {resource.gated ? "Gated" : "Free"}
+                    <Badge variant={resource.gated ? 'accent' : 'muted'}>
+                      {resource.gated ? 'Gated' : 'Free'}
                     </Badge>
                   </div>
-                  <h2 className="mb-3 text-xl font-bold leading-snug">
-                    {resource.title}
-                  </h2>
+                  <h2 className="mb-3 text-xl leading-snug font-bold">{resource.title}</h2>
                   <p className="mb-6 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {resource.description}
                   </p>
                   {resource.gated ? (
                     <Link
                       href="/contact"
-                      className={buttonVariants({ variant: "primary", size: "md" })}
+                      className={buttonVariants({ variant: 'primary', size: 'md' })}
                     >
                       <Lock className="h-4 w-4" />
                       Request Access
                     </Link>
+                  ) : resource.fileUrl ? (
+                    <a
+                      href={resource.fileUrl}
+                      className={buttonVariants({ variant: 'secondary', size: 'md' })}
+                    >
+                      <Download className="h-4 w-4" />
+                      Download
+                    </a>
                   ) : (
-                    resource.fileUrl ? (
-                      <a
-                        href={resource.fileUrl}
-                        className={buttonVariants({ variant: "secondary", size: "md" })}
-                      >
-                        <Download className="h-4 w-4" />
-                        Download
-                      </a>
-                    ) : (
-                      <Link
-                        href="/contact"
-                        className={buttonVariants({ variant: "secondary", size: "md" })}
-                      >
-                        <Lock className="h-4 w-4" />
-                        Request Access
-                      </Link>
-                    )
+                    <Link
+                      href="/contact"
+                      className={buttonVariants({ variant: 'secondary', size: 'md' })}
+                    >
+                      <Lock className="h-4 w-4" />
+                      Request Access
+                    </Link>
                   )}
                 </Card>
               ))}
@@ -99,14 +103,14 @@ export function ResourceListing({
               </div>
               <h2 className="text-2xl font-bold">New {title.toLowerCase()} are on the way</h2>
               <p className="mx-auto mt-4 max-w-md text-muted-foreground">
-                We&apos;re preparing in-depth {title.toLowerCase()} on cybersecurity,
-                compliance, and managed IT. Get in touch to be notified when they&apos;re
-                published, or to request a specific topic.
+                We&apos;re preparing in-depth {title.toLowerCase()} on cybersecurity, compliance,
+                and managed IT. Get in touch to be notified when they&apos;re published, or to
+                request a specific topic.
               </p>
               <div className="mt-8 flex justify-center">
                 <Link
                   href="/contact"
-                  className={buttonVariants({ variant: "primary", size: "lg" })}
+                  className={buttonVariants({ variant: 'primary', size: 'lg' })}
                 >
                   Get Notified
                   <ArrowRight className="h-4 w-4" />
@@ -140,10 +144,12 @@ export function ResourceListing({
           <Section background="muted">
             <div className="mx-auto max-w-5xl">
               <div className="mx-auto max-w-2xl text-center">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">
+                <p className="text-sm font-semibold tracking-[0.18em] text-primary uppercase">
                   Keep exploring
                 </p>
-                <h2 className="mt-3 text-3xl font-bold">Practical guidance for the next decision</h2>
+                <h2 className="mt-3 text-3xl font-bold">
+                  Practical guidance for the next decision
+                </h2>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
                   Use these resources to build shared context before you scope a security,
                   compliance, or managed IT initiative.

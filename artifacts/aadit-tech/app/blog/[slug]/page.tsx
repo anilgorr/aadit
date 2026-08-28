@@ -1,20 +1,20 @@
-import { notFound } from "next/navigation"
-import type { Metadata } from "next"
-import Link from "next/link"
-import { Calendar, Clock, RefreshCw } from "lucide-react"
-import { posts } from "@/.velite"
-import { getPost, getRelatedPosts, formatDate } from "@/lib/blog"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Section } from "@/components/ui/section"
-import { Badge } from "@/components/ui/badge"
-import { Breadcrumbs } from "@/components/ui/breadcrumbs"
-import { MDXContent } from "@/components/mdx-content"
-import { TableOfContents } from "@/components/table-of-contents"
-import { BlogCard } from "@/components/blog-card"
-import { JsonLd } from "@/components/json-ld"
-import { buildMetadata, articleSchema } from "@/lib/seo"
-import { getAuthorForPost } from "@/lib/authors"
+import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Calendar, Clock, RefreshCw } from 'lucide-react'
+import { posts } from '@/.velite'
+import { getPost, getRelatedPosts, formatDate } from '@/lib/blog'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
+import { Section } from '@/components/ui/section'
+import { Badge } from '@/components/ui/badge'
+import { Breadcrumbs } from '@/components/ui/breadcrumbs'
+import { MDXContent } from '@/components/mdx-content'
+import { TableOfContents } from '@/components/table-of-contents'
+import { BlogCard } from '@/components/blog-card'
+import { JsonLd } from '@/components/json-ld'
+import { buildMetadata, articleSchema, webPageSchema } from '@/lib/seo'
+import { getAuthorForPost } from '@/lib/authors'
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -23,21 +23,15 @@ interface PageParams {
 const proseComponents = {
   h2: (props: Record<string, unknown>) => (
     <h2
-      className="mb-4 mt-12 scroll-mt-28 text-2xl font-bold tracking-tight text-foreground"
+      className="mt-12 mb-4 scroll-mt-28 text-2xl font-bold tracking-tight text-foreground"
       {...props}
     />
   ),
   h3: (props: Record<string, unknown>) => (
-    <h3
-      className="mb-3 mt-8 scroll-mt-28 text-xl font-bold text-foreground"
-      {...props}
-    />
+    <h3 className="mt-8 mb-3 scroll-mt-28 text-xl font-bold text-foreground" {...props} />
   ),
   h4: (props: Record<string, unknown>) => (
-    <h4
-      className="mb-2 mt-6 scroll-mt-28 text-lg font-semibold text-foreground"
-      {...props}
-    />
+    <h4 className="mt-6 mb-2 scroll-mt-28 text-lg font-semibold text-foreground" {...props} />
   ),
   p: (props: Record<string, unknown>) => (
     <p className="mb-5 leading-relaxed text-muted-foreground" {...props} />
@@ -48,9 +42,7 @@ const proseComponents = {
   ol: (props: Record<string, unknown>) => (
     <ol className="mb-5 list-decimal space-y-2 pl-6 text-muted-foreground" {...props} />
   ),
-  li: (props: Record<string, unknown>) => (
-    <li className="leading-relaxed" {...props} />
-  ),
+  li: (props: Record<string, unknown>) => <li className="leading-relaxed" {...props} />,
   a: (props: Record<string, unknown>) => (
     <a
       className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
@@ -62,7 +54,7 @@ const proseComponents = {
   ),
   blockquote: (props: Record<string, unknown>) => (
     <blockquote
-      className="my-6 border-l-4 border-primary/40 pl-5 italic text-muted-foreground"
+      className="my-6 border-l-4 border-primary/40 pl-5 text-muted-foreground italic"
       {...props}
     />
   ),
@@ -84,7 +76,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     path: post.permalink,
     title: post.title,
     description: post.description,
-    type: "article",
+    type: 'article',
     publishedTime: post.publishedAt,
     modifiedTime: post.updatedAt ?? post.publishedAt,
     authors: [author.name],
@@ -109,33 +101,43 @@ export default async function BlogPostPage({ params }: PageParams) {
   const readingTime = Math.max(1, Math.ceil(post.metadata.readingTime))
   const author = getAuthorForPost(post)
   const reviewer =
-    author.slug === "srinivas-gadicherla"
-      ? { name: "Anil Gorraladaku", url: "/authors/anil-gorraladaku" }
-      : { name: "Srinivas Gadicherla", url: "/authors/srinivas-gadicherla" }
+    author.slug === 'srinivas-gadicherla'
+      ? { name: 'Anil Gorraladaku', url: '/authors/anil-gorraladaku' }
+      : { name: 'Srinivas Gadicherla', url: '/authors/srinivas-gadicherla' }
 
-  const schema = articleSchema({
-    title: post.title,
-    description: post.description,
-    path: post.permalink,
-    datePublished: post.publishedAt,
-    dateModified: post.updatedAt,
-    author: { name: author.name, url: `/authors/${author.slug}` },
-    reviewedBy: reviewer,
-    image: post.cover?.src,
-  })
+  const schemas = [
+    webPageSchema({
+      path: post.permalink,
+      name: post.title,
+      description: post.description,
+    }),
+    articleSchema({
+      title: post.title,
+      description: post.description,
+      path: post.permalink,
+      datePublished: post.publishedAt,
+      dateModified: post.updatedAt,
+      author: { name: author.name, url: `/authors/${author.slug}` },
+      reviewedBy: reviewer,
+      image: post.cover?.src ?? `${post.permalink}/opengraph-image`,
+      wordCount: post.metadata.wordCount,
+      articleSection: post.tags[0],
+      keywords: post.tags,
+    }),
+  ]
 
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
       <main className="flex-1">
-        <JsonLd data={schema} />
+        <JsonLd data={schemas} />
 
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-3xl">
             <Breadcrumbs
               items={[
-                { label: "Home", href: "/" },
-                { label: "Blog", href: "/blog" },
+                { label: 'Home', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: post.title, href: post.permalink },
               ]}
             />

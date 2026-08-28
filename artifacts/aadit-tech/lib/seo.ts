@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import type { Metadata } from 'next'
 import {
   SITE_NAME,
   SITE_URL,
@@ -10,11 +10,11 @@ import {
   ORG_LOGO_PATH,
   SOCIAL_PROFILES,
   absoluteUrl,
-} from "./site"
+} from './site'
 
-export const ORGANIZATION_ID = absoluteUrl("/#organization")
-export const WEBSITE_ID = absoluteUrl("/#website")
-export const OFFER_CATALOG_ID = absoluteUrl("/#service-catalog")
+export const ORGANIZATION_ID = absoluteUrl('/#organization')
+export const WEBSITE_ID = absoluteUrl('/#website')
+export const OFFER_CATALOG_ID = absoluteUrl('/#service-catalog')
 
 interface OgImageInput {
   url: string
@@ -37,7 +37,7 @@ interface PageMetaInput {
    * a custom trailing label (e.g. glossary "… | Aadit Technologies Glossary").
    */
   absoluteTitle?: string
-  type?: "website" | "article"
+  type?: 'website' | 'article'
   images?: OgImageInput[]
   publishedTime?: string
   modifiedTime?: string
@@ -53,11 +53,11 @@ const MIN_DESCRIPTION_LENGTH = 120
 const MAX_DESCRIPTION_LENGTH = 150
 
 function trimAtWord(value: string, maxLength: number) {
-  const normalized = value.replace(/\s+/g, " ").trim()
+  const normalized = value.replace(/\s+/g, ' ').trim()
   if (normalized.length <= maxLength) return normalized
 
   const shortened = normalized.slice(0, maxLength - 1)
-  const lastSpace = shortened.lastIndexOf(" ")
+  const lastSpace = shortened.lastIndexOf(' ')
   return `${shortened.slice(0, lastSpace > maxLength * 0.55 ? lastSpace : maxLength - 1)}…`
 }
 
@@ -70,7 +70,7 @@ function fitAbsoluteTitle(title: string) {
 }
 
 function fitDescription(description: string) {
-  const normalized = description.replace(/\s+/g, " ").trim()
+  const normalized = description.replace(/\s+/g, ' ').trim()
   const expanded =
     normalized.length < MIN_DESCRIPTION_LENGTH
       ? `${normalized} Explore practical guidance from Aadit Technologies.`
@@ -87,13 +87,9 @@ function fitDescription(description: string) {
 export function buildMetadata(input: PageMetaInput): Metadata {
   const url = absoluteUrl(input.path)
   const absoluteTitle = input.absoluteTitle ? fitAbsoluteTitle(input.absoluteTitle) : undefined
-  const title = absoluteTitle
-    ? absoluteTitle
-    : input.title
-      ? fitPageTitle(input.title)
-      : undefined
+  const title = absoluteTitle ? absoluteTitle : input.title ? fitPageTitle(input.title) : undefined
   const ogTitle = absoluteTitle
-    ? title ?? SITE_NAME
+    ? (title ?? SITE_NAME)
     : title
       ? `${title}${BRAND_SUFFIX}`
       : SITE_NAME
@@ -102,7 +98,7 @@ export function buildMetadata(input: PageMetaInput): Metadata {
     ? input.images
     : [
         {
-          url: absoluteUrl("/opengraph-image"),
+          url: absoluteUrl('/opengraph-image'),
           width: 1200,
           height: 630,
           alt: `${SITE_NAME} — Cybersecurity, Compliance & IT Managed Services`,
@@ -118,19 +114,19 @@ export function buildMetadata(input: PageMetaInput): Metadata {
       description,
       url,
       siteName: SITE_NAME,
-      locale: "en_US",
-      type: input.type ?? "website",
+      locale: 'en_US',
+      type: input.type ?? 'website',
       images,
-      ...(input.type === "article" && input.publishedTime
+      ...(input.type === 'article' && input.publishedTime
         ? { publishedTime: input.publishedTime }
         : {}),
-      ...(input.type === "article" && input.modifiedTime
+      ...(input.type === 'article' && input.modifiedTime
         ? { modifiedTime: input.modifiedTime }
         : {}),
-      ...(input.type === "article" && input.authors ? { authors: input.authors } : {}),
+      ...(input.type === 'article' && input.authors ? { authors: input.authors } : {}),
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: ogTitle,
       description,
       images: images.map((image) => image.url),
@@ -148,46 +144,46 @@ export function buildMetadata(input: PageMetaInput): Metadata {
 
 export function organizationSchema() {
   return {
-    "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService"],
-    "@id": ORGANIZATION_ID,
+    '@context': 'https://schema.org',
+    '@type': ['Organization', 'ProfessionalService'],
+    '@id': ORGANIZATION_ID,
     name: SITE_NAME,
     legalName: LEGAL_NAME,
     url: SITE_URL,
     logo: absoluteUrl(ORG_LOGO_PATH),
     description: SITE_DESCRIPTION,
-    foundingDate: "2017-01-12",
+    foundingDate: '2017-01-12',
     identifier: {
-      "@type": "PropertyValue",
-      propertyID: "CIN",
-      value: "U72900KA2017PTC099151",
+      '@type': 'PropertyValue',
+      propertyID: 'CIN',
+      value: 'U72900KA2017PTC099151',
     },
     address: {
-      "@type": "PostalAddress",
+      '@type': 'PostalAddress',
       streetAddress:
-        "#21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank, New BEL Road",
+        '#21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank, New BEL Road',
       addressLocality: SITE_LOCALITY,
       addressRegion: SITE_REGION,
-      postalCode: "560094",
+      postalCode: '560094',
       addressCountry: SITE_COUNTRY,
     },
-    telephone: "+91 9663445445",
-    email: "info@aadit.net",
+    telephone: '+91 9663445445',
+    email: 'info@aadit.net',
     contactPoint: [
       {
-        "@type": "ContactPoint",
-        contactType: "sales",
-        email: "sales@aadit.net",
-        availableLanguage: ["en"],
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'sales@aadit.net',
+        availableLanguage: ['en'],
       },
       {
-        "@type": "ContactPoint",
-        contactType: "security",
-        email: "security@aadit.net",
-        availableLanguage: ["en"],
+        '@type': 'ContactPoint',
+        contactType: 'security',
+        email: 'security@aadit.net',
+        availableLanguage: ['en'],
       },
     ],
-    hasOfferCatalog: { "@id": OFFER_CATALOG_ID },
+    hasOfferCatalog: { '@id': OFFER_CATALOG_ID },
     // Only emitted when real profile URLs are configured (never invented).
     ...(SOCIAL_PROFILES.length ? { sameAs: SOCIAL_PROFILES } : {}),
   }
@@ -195,85 +191,97 @@ export function organizationSchema() {
 
 export function websiteSchema() {
   return {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "@id": WEBSITE_ID,
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
     url: SITE_URL,
     name: SITE_NAME,
     description: SITE_DESCRIPTION,
-    publisher: { "@id": ORGANIZATION_ID },
-    inLanguage: "en",
+    publisher: { '@id': ORGANIZATION_ID },
+    inLanguage: 'en',
   }
 }
 
 export function officeSchemas() {
   const offices = [
     {
-      name: "Aadit Technologies — Bengaluru",
+      name: 'Aadit Technologies — Bengaluru',
       address: {
         streetAddress:
-          "#21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank, New BEL Road",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
-        postalCode: "560094",
-        addressCountry: "IN",
+          '#21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank, New BEL Road',
+        addressLocality: 'Bengaluru',
+        addressRegion: 'Karnataka',
+        postalCode: '560094',
+        addressCountry: 'IN',
       },
-      telephone: "+91 9663445445",
+      telephone: '+91 9663445445',
     },
     {
-      name: "Aadit Technologies — Bellevue",
+      name: 'Aadit Technologies — Bellevue',
       address: {
-        streetAddress: "4139 164th Ave SE",
-        addressLocality: "Bellevue",
-        addressRegion: "WA",
-        postalCode: "98006-8906",
-        addressCountry: "US",
+        streetAddress: '4139 164th Ave SE',
+        addressLocality: 'Bellevue',
+        addressRegion: 'WA',
+        postalCode: '98006-8906',
+        addressCountry: 'US',
       },
     },
     {
-      name: "Aadit Technologies FZCO — Dubai",
+      name: 'Aadit Technologies FZCO — Dubai',
       address: {
-        streetAddress: "Building A1, Dubai Digital Park, Silicon Oasis",
-        addressLocality: "Dubai",
-        addressCountry: "AE",
+        streetAddress: 'Building A1, Dubai Digital Park, Silicon Oasis',
+        addressLocality: 'Dubai',
+        addressCountry: 'AE',
       },
-      telephone: "+971 52 184 7477",
+      telephone: '+971 52 184 7477',
     },
   ]
 
   return offices.map((office) => ({
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${SITE_URL}/#${office.name.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': `${SITE_URL}/#${office.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
     name: office.name,
-    parentOrganization: { "@id": ORGANIZATION_ID },
-    address: { "@type": "PostalAddress", ...office.address },
+    parentOrganization: { '@id': ORGANIZATION_ID },
+    address: { '@type': 'PostalAddress', ...office.address },
     ...(office.telephone ? { telephone: office.telephone } : {}),
   }))
 }
 
 export function offerCatalogSchema() {
   return {
-    "@context": "https://schema.org",
-    "@type": "OfferCatalog",
-    "@id": OFFER_CATALOG_ID,
-    name: "Aadit Technologies Service Catalog",
+    '@context': 'https://schema.org',
+    '@type': 'OfferCatalog',
+    '@id': OFFER_CATALOG_ID,
+    name: 'Aadit Technologies Service Catalog',
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Managed Security Operations" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Vulnerability Assessment and Penetration Testing" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Cybersecurity Risk Assessment" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Compliance Consulting" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Managed IT Services" } },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Managed Security Operations' },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Vulnerability Assessment and Penetration Testing',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Cybersecurity Risk Assessment' },
+      },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Compliance Consulting' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed IT Services' } },
     ],
   }
 }
 
 export function breadcrumbSchema(items: { label: string; href: string }[]) {
   return {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
     itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
+      '@type': 'ListItem',
       position: index + 1,
       name: item.label,
       item: absoluteUrl(item.href),
@@ -283,13 +291,13 @@ export function breadcrumbSchema(items: { label: string; href: string }[]) {
 
 export function faqSchema(faqs: { question: string; answer: string }[]) {
   return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
     mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
+      '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
-        "@type": "Answer",
+        '@type': 'Answer',
         text: faq.answer,
       },
     })),
@@ -300,20 +308,20 @@ interface WebPageSchemaInput {
   path: string
   name: string
   description: string
-  type?: "WebPage" | "ProfilePage" | "AboutPage" | "CollectionPage"
+  type?: 'WebPage' | 'ProfilePage' | 'AboutPage' | 'CollectionPage'
 }
 
 export function webPageSchema(input: WebPageSchemaInput) {
   return {
-    "@context": "https://schema.org",
-    "@type": input.type ?? "WebPage",
-    "@id": absoluteUrl(`${input.path}#webpage`),
+    '@context': 'https://schema.org',
+    '@type': input.type ?? 'WebPage',
+    '@id': absoluteUrl(`${input.path}#webpage`),
     url: absoluteUrl(input.path),
     name: input.name,
     description: input.description,
-    isPartOf: { "@id": WEBSITE_ID },
-    publisher: { "@id": ORGANIZATION_ID },
-    inLanguage: "en",
+    isPartOf: { '@id': WEBSITE_ID },
+    publisher: { '@id': ORGANIZATION_ID },
+    inLanguage: 'en',
   }
 }
 
@@ -328,22 +336,22 @@ interface ServiceSchemaInput {
 
 export function serviceSchema(input: ServiceSchemaInput) {
   return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": absoluteUrl(`${input.path}#service`),
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': absoluteUrl(`${input.path}#service`),
     name: input.name,
     description: input.description,
     serviceType: input.serviceType,
     url: absoluteUrl(input.path),
-    provider: { "@id": ORGANIZATION_ID },
+    provider: { '@id': ORGANIZATION_ID },
     areaServed: [
-      { "@type": "Country", name: "India" },
-      { "@type": "Country", name: "United States" },
-      { "@type": "Country", name: "United Arab Emirates" },
+      { '@type': 'Country', name: 'India' },
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'United Arab Emirates' },
     ],
-    ...(input.audience ? { audience: { "@type": "Audience", audienceType: input.audience } } : {}),
+    ...(input.audience ? { audience: { '@type': 'Audience', audienceType: input.audience } } : {}),
     ...(input.related?.length
-      ? { isRelatedTo: input.related.map((path) => ({ "@id": absoluteUrl(`${path}#service`) })) }
+      ? { isRelatedTo: input.related.map((path) => ({ '@id': absoluteUrl(`${path}#service`) })) }
       : {}),
   }
 }
@@ -356,36 +364,47 @@ interface ArticleSchemaInput {
   dateModified?: string
   author: { name: string; url: string }
   reviewedBy?: { name: string; url: string }
-  image?: string
+  image: string
+  wordCount: number
+  articleSection?: string
+  keywords?: string[]
 }
 
 export function articleSchema(input: ArticleSchemaInput) {
   return {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': absoluteUrl(`${input.path}#article`),
+    url: absoluteUrl(input.path),
     headline: input.title,
     description: input.description,
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
     author: {
-      "@type": "Person",
-      "@id": `${absoluteUrl(input.author.url)}#person`,
+      '@type': 'Person',
+      '@id': `${absoluteUrl(input.author.url)}#person`,
       name: input.author.name,
       url: absoluteUrl(input.author.url),
     },
     ...(input.reviewedBy
       ? {
           reviewedBy: {
-            "@type": "Person",
-            "@id": `${absoluteUrl(input.reviewedBy.url)}#person`,
+            '@type': 'Person',
+            '@id': `${absoluteUrl(input.reviewedBy.url)}#person`,
             name: input.reviewedBy.name,
             url: absoluteUrl(input.reviewedBy.url),
           },
         }
       : {}),
-    publisher: { "@id": ORGANIZATION_ID },
-    mainEntityOfPage: { "@type": "WebPage", "@id": absoluteUrl(input.path) },
-    ...(input.image ? { image: absoluteUrl(input.image) } : {}),
+    publisher: { '@id': ORGANIZATION_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'en',
+    isAccessibleForFree: true,
+    wordCount: input.wordCount,
+    mainEntityOfPage: { '@id': absoluteUrl(`${input.path}#webpage`) },
+    image: absoluteUrl(input.image),
+    ...(input.articleSection ? { articleSection: input.articleSection } : {}),
+    ...(input.keywords?.length ? { keywords: input.keywords } : {}),
   }
 }
 
@@ -399,17 +418,19 @@ interface DefinedTermInput {
 
 export function definedTermSchema(input: DefinedTermInput) {
   return {
-    "@context": "https://schema.org",
-    "@type": "DefinedTerm",
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
     name: input.term,
     ...(input.fullForm ? { alternateName: input.fullForm } : {}),
     description: input.definition,
-    ...(input.path ? { url: absoluteUrl(input.path), "@id": absoluteUrl(`${input.path}#term`) } : {}),
+    ...(input.path
+      ? { url: absoluteUrl(input.path), '@id': absoluteUrl(`${input.path}#term`) }
+      : {}),
     ...(input.subjectOf ? { subjectOf: input.subjectOf } : {}),
     inDefinedTermSet: {
-      "@type": "DefinedTermSet",
+      '@type': 'DefinedTermSet',
       name: `${SITE_NAME} Security & Compliance Glossary`,
-      url: absoluteUrl("/glossary"),
+      url: absoluteUrl('/glossary'),
     },
   }
 }
