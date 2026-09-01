@@ -1,6 +1,6 @@
 # AEO/GEO Remediation Summary
 
-Completed: 28 August 2026
+Completed and post-merge verified: 1 September 2026
 
 ## Scope and safeguards
 
@@ -13,7 +13,7 @@ Completed: 28 August 2026
 
 ### Reviewed or changed
 
-- `app/robots.ts` — audited; existing disallow rules were preserved and the required AI/search fetchers are explicitly allowed.
+- `app/robots.ts` — existing disallow rules were preserved and `Claude-SearchBot` plus `Perplexity-User` were explicitly added alongside the existing AI/search fetchers.
 - `public/llms.txt` — retained verified company and route information and added the full-export discovery link.
 - `scripts/generate-llms-full.mjs` — now records the canonical site/sitemap, includes post author/date metadata when available, and excludes redirected noncanonical posts.
 - `public/llms-full.txt` — regenerated from current Velite source content after article remediation.
@@ -113,8 +113,8 @@ All recursively checked URL-like JSON-LD fields were absolute.
 
 ### Changed or reviewed
 
-- `middleware.ts` — emits 410 for four retired sitemap endpoints and direct 301 canonical-host redirects.
-- `next.config.ts` — existing redirect map and canonical-host rule retained; the live Replit preview origin is allowed during development, and development output is isolated in `.next-dev` so concurrent production validation cannot corrupt `.next`.
+- `middleware.ts` — emits 410 for all four specified retired sitemap endpoints (and the existing retired post sitemap) and direct 301 canonical-host redirects.
+- `next.config.ts` — the legacy redirect map remains intact; canonical-host handling now lives in middleware so it returns the requested 301 instead of Next.js's permanent 308. The live Replit preview origin remains allowed during development, and development output is isolated in `.next-dev`.
 - `app/sitemap.ts` — audited; no content change was required.
 
 ### Observed local production status codes
@@ -129,6 +129,7 @@ All recursively checked URL-like JSON-LD fields were absolute.
 | `/wp-sitemap.xml` | 410 |
 | `/post-sitemap.xml` | 410 |
 | `/page-sitemap.xml` | 410 |
+| `/blog/sitemap.xml` | 410 |
 | Random nonexistent route | 404 with custom page |
 | `/ebook` | One-hop permanent redirect to `/whitepapers` |
 | `www.aadit.net/*` | One-hop 301 to the same path on `https://aadit.net` |
@@ -157,8 +158,8 @@ The middleware covers both HTTP and HTTPS requests once those hosts reach this d
 
 ### Automated checks
 
-- `pnpm run typecheck` — passed.
-- Fresh `pnpm run build` — passed; 166 static/SSG outputs generated.
+- `pnpm run typecheck` — passed again after post-merge corrections.
+- Fresh `pnpm run build` — passed again after post-merge corrections; 166 static/SSG outputs generated.
 - Concurrent-preview reproducibility check — passed; a clean production build completed while the managed development workflow remained running, and the generated app-path manifest contains both `/_not-found` and `/[hub]/[slug]`.
 - Production route/status crawl — passed for all 82 sitemap routes.
 - JSON-LD parse and absolute-URL crawl — passed.

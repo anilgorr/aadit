@@ -1,8 +1,6 @@
 import type { NextConfig } from 'next'
-import { SITE_URL } from './lib/site'
 import legacyRedirects from './redirects/legacy.json'
 
-const apexHost = new URL(SITE_URL).host // e.g. "aadit.net"
 const replitDevDomain = process.env.REPLIT_DEV_DOMAIN
 
 const nextConfig: NextConfig = {
@@ -15,15 +13,6 @@ const nextConfig: NextConfig = {
   ],
   async redirects() {
     return [
-      // ─── Canonical host: 301 www.<apex> → <apex> ──────────────────────────
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: `www.${apexHost}` }],
-        destination: `${SITE_URL}/:path*`,
-        permanent: true,
-      },
-      // NOTE: HTTP→HTTPS is handled automatically by Netlify's edge (forced TLS).
-
       // ─── Migration and legacy URL recovery ─────────────────────────────────
       ...legacyRedirects,
       { source: '/category/:slug*', destination: '/blog', permanent: true },

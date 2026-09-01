@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "/[hub]/page": [
+      "static/chunks/f61bf_next_dist_676ec276._.js",
+      "static/chunks/artifacts_aadit-tech_app_icon_png_mjs_1ec33b01._.js",
+      "static/chunks/[root-of-the-server]__32fb4351._.css",
+      "static/chunks/artifacts_aadit-tech_app_layout_tsx_4a96fa26._.js",
+      "static/chunks/node_modules__pnpm_acd7660d._.js",
+      "static/chunks/artifacts_aadit-tech_d8b9183e._.js",
+      "static/chunks/artifacts_aadit-tech_app_not-found_tsx_dffd398c._.js",
+      "static/chunks/f61bf_next_dist_client_components_builtin_global-error_dffd398c.js",
+      "static/chunks/node_modules__pnpm_aafa681a._.js",
+      "static/chunks/artifacts_aadit-tech_e77f480e._.js",
+      "static/chunks/artifacts_aadit-tech_app_[hub]_page_tsx_dffd398c._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_37fa0b29._.js",
+      "static/chunks/f61bf_next_dist_compiled_react-dom_f58aa104._.js",
+      "static/chunks/f61bf_next_dist_compiled_next-devtools_index_95fe796f.js",
+      "static/chunks/f61bf_next_dist_compiled_0f688179._.js",
+      "static/chunks/f61bf_next_dist_client_3aec3e1c._.js",
+      "static/chunks/f61bf_next_dist_409e25e6._.js",
+      "static/chunks/69652_@swc_helpers_cjs_77b72907._.js",
+      "static/chunks/artifacts_aadit-tech_a0ff3932._.js",
+      "static/chunks/turbopack-artifacts_aadit-tech_5718c594._.js"
+    ]
+  }
+}
