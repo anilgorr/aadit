@@ -11,7 +11,7 @@ import { Badge } from '@/components/ui/badge'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { buttonVariants } from '@/components/ui/button'
 import { JsonLd } from '@/components/json-ld'
-import { buildMetadata, definedTermSchema, webPageSchema } from '@/lib/seo'
+import { buildMetadata, definedTermSchema, faqSchema, webPageSchema } from '@/lib/seo'
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -68,6 +68,7 @@ export default async function GlossaryTermPage({ params }: PageParams) {
       definition: term.definition,
       path,
     }),
+    faqSchema(term.faqs),
   ]
 
   return (
@@ -118,6 +119,45 @@ export default async function GlossaryTermPage({ params }: PageParams) {
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+          </div>
+        </Section>
+
+        <Section>
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-3xl font-bold tracking-tight">{term.comparison.heading}</h2>
+            <div className="mt-6 overflow-x-auto rounded-xl border">
+              <table className="w-full min-w-[560px] text-left">
+                <thead className="bg-muted text-sm">
+                  <tr><th scope="col" className="p-4">Aspect</th><th scope="col" className="p-4">{term.comparison.heading.split(' vs. ')[0]}</th><th scope="col" className="p-4">{term.comparison.heading.split(' vs. ')[1]}</th></tr>
+                </thead>
+                <tbody>
+                  {term.comparison.rows.map((row) => (
+                    <tr key={row.aspect} className="border-t">
+                      <th scope="row" className="p-4 align-top font-semibold">{row.aspect}</th>
+                      <td className="p-4 align-top text-muted-foreground">{row.first}</td>
+                      <td className="p-4 align-top text-muted-foreground">{row.second}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <h2 className="mt-12 text-3xl font-bold tracking-tight">Frequently asked questions</h2>
+            <div className="mt-6 space-y-6">
+              {term.faqs.map(({ question, answer }) => (
+                <div key={question}>
+                  <h3 className="text-lg font-semibold">{question}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{answer}</p>
+                </div>
+              ))}
+            </div>
+            <h2 className="mt-12 text-xl font-bold">Reference sources</h2>
+            <ul className="mt-3 list-inside list-disc space-y-2">
+              {term.sources.map(({ label, href }) => (
+                <li key={href}>
+                  <a className="text-primary underline underline-offset-4" href={href} target="_blank" rel="noopener noreferrer">{label}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
 
