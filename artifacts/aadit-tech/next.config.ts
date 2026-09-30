@@ -5,14 +5,18 @@ const replitDevDomain = process.env.REPLIT_DEV_DOMAIN
 
 const nextConfig: NextConfig = {
   distDir: process.env.NODE_ENV === 'development' ? '.next-dev' : '.next',
+  skipTrailingSlashRedirect: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   allowedDevOrigins: [
     '*.replit.dev',
     '*.repl.co',
     ...(replitDevDomain ? [replitDevDomain] : []),
   ],
-  async redirects() {
-    return [
+}
+
+// Middleware uses the legacy mapping to issue one-hop 301s for both slash and
+// non-slash source URLs. Next's `permanent: true` would instead issue 308s.
+export const routeRedirects = [
       // ─── Migration and legacy URL recovery ─────────────────────────────────
       ...legacyRedirects,
       { source: '/category/:slug*', destination: '/blog', permanent: true },
@@ -109,8 +113,6 @@ const nextConfig: NextConfig = {
       { source: '/soc-services-in-india', destination: '/cybersecurity/managed-soc', permanent: true },
       { source: '/managed-it-service-providers-india', destination: '/it-managed-services/managed-it-services', permanent: true },
       { source: '/iso-42001-certification-consulting-in-india-aadit-technologies', destination: '/compliance/iso-42001', permanent: true },
-    ]
-  },
-}
+    ] as const
 
 export default nextConfig

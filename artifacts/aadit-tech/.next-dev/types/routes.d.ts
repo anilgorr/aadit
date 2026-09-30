@@ -4,7 +4,7 @@
 type AppRoutes = "/" | "/[hub]" | "/[hub]/[slug]" | "/about" | "/authors/[slug]" | "/blog" | "/blog/[slug]" | "/blog/page/[page]" | "/careers" | "/case-studies" | "/compare/soc-2-vs-iso-27001" | "/contact" | "/ebook" | "/glossary" | "/glossary/[slug]" | "/industries" | "/industries/[slug]" | "/privacy-policy" | "/team" | "/whitepapers"
 type PageRoutes = never
 type LayoutRoutes = "/"
-type RedirectRoutes = "/24x7-managed-soc-services" | "/about-us" | "/author/[[...slug]]" | "/backup-and-disaster-recovery-solutions" | "/blog/cloud-optimization-strategies" | "/blog/cyber-security-companies-bangalore-experts" | "/blog/cybersecurity-companies-in-india-top-leaders" | "/blog/iso-27001-consulting-india" | "/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc" | "/blog/managed-soc-services-managed-security-services-with-soc" | "/blog/managed-soc-services-managed-soc-for-banks" | "/blog/services-vapt-network-vapt" | "/blog/services-vapt-understanding-vapt" | "/blog/services-vapt-vapt-report" | "/blog/soc-2-compliance-services-india-2" | "/blog/types-of-vapt-services-security-assessment-guide" | "/blog/understanding-the-digital-personal-data-protection-act-dpdp-act-in-india" | "/blog/vapt-in-cyber-security-protecting-your-digital-assets" | "/blog/vapt-methodology-step-by-step-guide" | "/blog/what-is-vapt-guide" | "/blog/what-is-vapt-guide-2" | "/category/[[...slug]]" | "/cloud-infrastructure-solutions" | "/cloud-migration-services" | "/cloud-optimization-services" | "/compliance-audit-services-india" | "/contact-us" | "/cyber-security-consulting-services" | "/cybersecurity-services-india" | "/ebook" | "/ebook/[[...slug]]" | "/email-security-solutions" | "/endpoint-security-solutions" | "/expert-it-managed-services-streamline-your-business-aadit-technologies" | "/feed" | "/firewall-network-security-solutions" | "/gdpr-compliance-solutions" | "/hipaa-compliance-solutions" | "/iso-27001-certification-services" | "/iso-27001-consulting-india" | "/iso-42001-certification" | "/iso-42001-certification-consulting-in-india-aadit-technologies" | "/iso-9001-certification" | "/it-support-services" | "/landing-page-soc" | "/managed-it-service-providers-india" | "/managed-it-services" | "/managed-it-services-india" | "/managed-services-in-india-empowering-business-growth" | "/managed-soc" | "/managed-soc-services" | "/managed-soc-services-managed-security-services-with-soc" | "/pci-dss-compliance-solutions" | "/securing-india-top-cyber-security-companies-in-bangalore" | "/security-as-a-service-india" | "/soc-2-compliance" | "/soc-2-compliance-services-india" | "/soc-as-a-service" | "/soc-services-in-india" | "/soc2-certification" | "/tag/[[...slug]]" | "/thank-you" | "/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies" | "/vulnerability-assessment-penetration-testing-vapt-services" | "/whitepaper/[[...slug]]" | "/whitepapers-cybersecurity-india"
+type RedirectRoutes = never
 type RewriteRoutes = never
 type Routes = AppRoutes | PageRoutes | LayoutRoutes | RedirectRoutes | RewriteRoutes
 
@@ -13,88 +13,23 @@ interface ParamMap {
   "/": {}
   "/[hub]": { "hub": string; }
   "/[hub]/[slug]": { "hub": string; "slug": string; }
-  "/24x7-managed-soc-services": {}
   "/about": {}
-  "/about-us": {}
-  "/author/[[...slug]]": { "slug"?: string[]; }
   "/authors/[slug]": { "slug": string; }
-  "/backup-and-disaster-recovery-solutions": {}
   "/blog": {}
   "/blog/[slug]": { "slug": string; }
-  "/blog/cloud-optimization-strategies": {}
-  "/blog/cyber-security-companies-bangalore-experts": {}
-  "/blog/cybersecurity-companies-in-india-top-leaders": {}
-  "/blog/iso-27001-consulting-india": {}
-  "/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc": {}
-  "/blog/managed-soc-services-managed-security-services-with-soc": {}
-  "/blog/managed-soc-services-managed-soc-for-banks": {}
   "/blog/page/[page]": { "page": string; }
-  "/blog/services-vapt-network-vapt": {}
-  "/blog/services-vapt-understanding-vapt": {}
-  "/blog/services-vapt-vapt-report": {}
-  "/blog/soc-2-compliance-services-india-2": {}
-  "/blog/types-of-vapt-services-security-assessment-guide": {}
-  "/blog/understanding-the-digital-personal-data-protection-act-dpdp-act-in-india": {}
-  "/blog/vapt-in-cyber-security-protecting-your-digital-assets": {}
-  "/blog/vapt-methodology-step-by-step-guide": {}
-  "/blog/what-is-vapt-guide": {}
-  "/blog/what-is-vapt-guide-2": {}
   "/careers": {}
   "/case-studies": {}
-  "/category/[[...slug]]": { "slug"?: string[]; }
-  "/cloud-infrastructure-solutions": {}
-  "/cloud-migration-services": {}
-  "/cloud-optimization-services": {}
   "/compare/soc-2-vs-iso-27001": {}
-  "/compliance-audit-services-india": {}
   "/contact": {}
-  "/contact-us": {}
-  "/cyber-security-consulting-services": {}
-  "/cybersecurity-services-india": {}
   "/ebook": {}
-  "/ebook/[[...slug]]": { "slug"?: string[]; }
-  "/email-security-solutions": {}
-  "/endpoint-security-solutions": {}
-  "/expert-it-managed-services-streamline-your-business-aadit-technologies": {}
-  "/feed": {}
-  "/firewall-network-security-solutions": {}
-  "/gdpr-compliance-solutions": {}
   "/glossary": {}
   "/glossary/[slug]": { "slug": string; }
-  "/hipaa-compliance-solutions": {}
   "/industries": {}
   "/industries/[slug]": { "slug": string; }
-  "/iso-27001-certification-services": {}
-  "/iso-27001-consulting-india": {}
-  "/iso-42001-certification": {}
-  "/iso-42001-certification-consulting-in-india-aadit-technologies": {}
-  "/iso-9001-certification": {}
-  "/it-support-services": {}
-  "/landing-page-soc": {}
-  "/managed-it-service-providers-india": {}
-  "/managed-it-services": {}
-  "/managed-it-services-india": {}
-  "/managed-services-in-india-empowering-business-growth": {}
-  "/managed-soc": {}
-  "/managed-soc-services": {}
-  "/managed-soc-services-managed-security-services-with-soc": {}
-  "/pci-dss-compliance-solutions": {}
   "/privacy-policy": {}
-  "/securing-india-top-cyber-security-companies-in-bangalore": {}
-  "/security-as-a-service-india": {}
-  "/soc-2-compliance": {}
-  "/soc-2-compliance-services-india": {}
-  "/soc-as-a-service": {}
-  "/soc-services-in-india": {}
-  "/soc2-certification": {}
-  "/tag/[[...slug]]": { "slug"?: string[]; }
   "/team": {}
-  "/thank-you": {}
-  "/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies": {}
-  "/vulnerability-assessment-penetration-testing-vapt-services": {}
-  "/whitepaper/[[...slug]]": { "slug"?: string[]; }
   "/whitepapers": {}
-  "/whitepapers-cybersecurity-india": {}
 }
 
 

@@ -94,35 +94,17 @@ const ORGANIZATION_ID = (0, __TURBOPACK__imported__module__$5b$project$5d2f$arti
 const WEBSITE_ID = (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["absoluteUrl"])('/#website');
 const OFFER_CATALOG_ID = (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["absoluteUrl"])('/#service-catalog');
 const BRAND_SUFFIX = ` | ${__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAME"]}`;
-const MAX_TITLE_LENGTH = 65;
-const MIN_DESCRIPTION_LENGTH = 120;
-// Leave a little room for HTML entities in rendered source (for example, "&" is
-// encoded as "&amp;") while keeping the human-visible description concise.
-const MAX_DESCRIPTION_LENGTH = 150;
-function trimAtWord(value, maxLength) {
-    const normalized = value.replace(/\s+/g, ' ').trim();
-    if (normalized.length <= maxLength) return normalized;
-    const shortened = normalized.slice(0, maxLength - 1);
-    const lastSpace = shortened.lastIndexOf(' ');
-    return `${shortened.slice(0, lastSpace > maxLength * 0.55 ? lastSpace : maxLength - 1)}…`;
-}
-function fitPageTitle(title) {
-    return trimAtWord(title, MAX_TITLE_LENGTH - BRAND_SUFFIX.length);
-}
-function fitAbsoluteTitle(title) {
-    return trimAtWord(title, MAX_TITLE_LENGTH);
-}
-function fitDescription(description) {
-    const normalized = description.replace(/\s+/g, ' ').trim();
-    const expanded = normalized.length < MIN_DESCRIPTION_LENGTH ? `${normalized} Explore practical guidance from Aadit Technologies.` : normalized;
-    return trimAtWord(expanded, MAX_DESCRIPTION_LENGTH);
+// Metadata must be authored to length at the source, not shortened mid-thought
+// in the shared helper. Only normalize whitespace for consistent HTML output.
+function normalizeMetadataText(value) {
+    return value.replace(/\s+/g, ' ').trim();
 }
 function buildMetadata(input) {
     const url = (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["absoluteUrl"])(input.path);
-    const absoluteTitle = input.absoluteTitle ? fitAbsoluteTitle(input.absoluteTitle) : undefined;
-    const title = absoluteTitle ? absoluteTitle : input.title ? fitPageTitle(input.title) : undefined;
+    const absoluteTitle = input.absoluteTitle ? normalizeMetadataText(input.absoluteTitle) : undefined;
+    const title = absoluteTitle ? absoluteTitle : input.title ? normalizeMetadataText(input.title) : undefined;
     const ogTitle = absoluteTitle ? title ?? __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAME"] : title ? `${title}${BRAND_SUFFIX}` : __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_NAME"];
-    const description = fitDescription(input.description);
+    const description = normalizeMetadataText(input.description);
     const images = input.images?.length ? input.images : [
         {
             url: (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["absoluteUrl"])('/opengraph-image'),

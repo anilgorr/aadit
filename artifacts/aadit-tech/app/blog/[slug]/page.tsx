@@ -13,8 +13,9 @@ import { MDXContent } from '@/components/mdx-content'
 import { TableOfContents } from '@/components/table-of-contents'
 import { BlogCard } from '@/components/blog-card'
 import { JsonLd } from '@/components/json-ld'
-import { buildMetadata, articleSchema, webPageSchema } from '@/lib/seo'
+import { buildMetadata, articleSchema, faqSchema, webPageSchema } from '@/lib/seo'
 import { getAuthorForPost } from '@/lib/authors'
+import postFaqs from '@/content/post-faqs.json'
 
 interface PageParams {
   params: Promise<{ slug: string }>
@@ -104,6 +105,7 @@ export default async function BlogPostPage({ params }: PageParams) {
     author.slug === 'srinivas-gadicherla'
       ? { name: 'Anil Gorraladaku', url: '/authors/anil-gorraladaku' }
       : { name: 'Srinivas Gadicherla', url: '/authors/srinivas-gadicherla' }
+  const visibleFaqs = (postFaqs as Record<string, { question: string; answer: string }[]>)[post.slug]
 
   const schemas = [
     webPageSchema({
@@ -124,6 +126,7 @@ export default async function BlogPostPage({ params }: PageParams) {
       articleSection: post.tags[0],
       keywords: post.tags,
     }),
+    ...(visibleFaqs?.length ? [faqSchema(visibleFaqs)] : []),
   ]
 
   return (

@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/generate-llms-full.mjs && velite build && next dev --turbopack",
-    "build": "node scripts/generate-llms-full.mjs && velite build && next build",
+    "dev": "node scripts/generate-llms-full.mjs && node scripts/generate-post-faqs.mjs && velite build && next dev --turbopack",
+    "build": "node scripts/generate-llms-full.mjs && node scripts/generate-post-faqs.mjs && velite build && next build",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

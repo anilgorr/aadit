@@ -46,37 +46,11 @@ interface PageMetaInput {
 }
 
 const BRAND_SUFFIX = ` | ${SITE_NAME}`
-const MAX_TITLE_LENGTH = 65
-const MIN_DESCRIPTION_LENGTH = 120
-// Leave a little room for HTML entities in rendered source (for example, "&" is
-// encoded as "&amp;") while keeping the human-visible description concise.
-const MAX_DESCRIPTION_LENGTH = 150
 
-function trimAtWord(value: string, maxLength: number) {
-  const normalized = value.replace(/\s+/g, ' ').trim()
-  if (normalized.length <= maxLength) return normalized
-
-  const shortened = normalized.slice(0, maxLength - 1)
-  const lastSpace = shortened.lastIndexOf(' ')
-  return `${shortened.slice(0, lastSpace > maxLength * 0.55 ? lastSpace : maxLength - 1)}…`
-}
-
-function fitPageTitle(title: string) {
-  return trimAtWord(title, MAX_TITLE_LENGTH - BRAND_SUFFIX.length)
-}
-
-function fitAbsoluteTitle(title: string) {
-  return trimAtWord(title, MAX_TITLE_LENGTH)
-}
-
-function fitDescription(description: string) {
-  const normalized = description.replace(/\s+/g, ' ').trim()
-  const expanded =
-    normalized.length < MIN_DESCRIPTION_LENGTH
-      ? `${normalized} Explore practical guidance from Aadit Technologies.`
-      : normalized
-
-  return trimAtWord(expanded, MAX_DESCRIPTION_LENGTH)
+// Metadata must be authored to length at the source, not shortened mid-thought
+// in the shared helper. Only normalize whitespace for consistent HTML output.
+function normalizeMetadataText(value: string) {
+  return value.replace(/\s+/g, ' ').trim()
 }
 
 /**
@@ -86,14 +60,14 @@ function fitDescription(description: string) {
  */
 export function buildMetadata(input: PageMetaInput): Metadata {
   const url = absoluteUrl(input.path)
-  const absoluteTitle = input.absoluteTitle ? fitAbsoluteTitle(input.absoluteTitle) : undefined
-  const title = absoluteTitle ? absoluteTitle : input.title ? fitPageTitle(input.title) : undefined
+  const absoluteTitle = input.absoluteTitle ? normalizeMetadataText(input.absoluteTitle) : undefined
+  const title = absoluteTitle ? absoluteTitle : input.title ? normalizeMetadataText(input.title) : undefined
   const ogTitle = absoluteTitle
     ? (title ?? SITE_NAME)
     : title
       ? `${title}${BRAND_SUFFIX}`
       : SITE_NAME
-  const description = fitDescription(input.description)
+  const description = normalizeMetadataText(input.description)
   const images = input.images?.length
     ? input.images
     : [
