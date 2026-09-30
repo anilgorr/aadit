@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/ebook",
   title: "eBooks",
   description:
-    "Practical eBooks and guides on building secure, compliant, and resilient IT from the Aadit Technologies team.",
+    "Browse eBooks and guides from Aadit Technologies on building secure, compliant, and resilient IT systems, with practical guidance for organisations.",
 })
 
 export default function EbookPage() {

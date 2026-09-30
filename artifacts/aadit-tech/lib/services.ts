@@ -56,7 +56,7 @@ export const HUBS: Record<Hub, HubMeta> = {
     slug: "compliance",
     title: "Compliance & Audits",
     metaDescription:
-      "Certification and audit readiness for ISO 27001, ISO 42001, ISO 9001, GDPR, PCI-DSS, HIPAA, and SOC 2.",
+      "Certification and audit readiness for ISO 27001, ISO 42001, ISO 9001, GDPR, PCI-DSS, HIPAA, and SOC 2, with guidance on scope and evidence.",
     intro:
       "Achieve and maintain the certifications your customers and regulators expect. Explore our compliance services below.",
     buyerGuide: {
@@ -86,7 +86,7 @@ export const HUBS: Record<Hub, HubMeta> = {
     slug: "it-managed-services",
     title: "IT Managed Services",
     metaDescription:
-      "Proactive monitoring, management, and support for your entire IT infrastructure — from endpoints to cloud environments.",
+      "Proactive monitoring, management, and support for IT infrastructure, including endpoints and cloud environments, with clear service scope and responsibilities.",
     intro:
       "Aadit Technologies provides 24/7 managed IT services designed to keep your business running reliably while reducing operational overhead. Explore our managed services below.",
     buyerGuide: {

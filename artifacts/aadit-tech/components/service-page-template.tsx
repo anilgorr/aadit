@@ -124,8 +124,8 @@ export function ServicePageTemplate({
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
                 {service.heading ?? service.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              {service.metaDescription}
+            <p className="answer-first mt-6 max-w-3xl text-lg leading-relaxed text-foreground md:text-xl">
+              {service.answerFirst ?? service.metaDescription}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               {/* A document navigation keeps this primary contact CTA reliable in embedded previews. */}
@@ -146,16 +146,6 @@ export function ServicePageTemplate({
             </div>
           </div>
         </Section>
-
-        {service.answerFirst && (
-          <Section className="pb-0">
-            <div className="mx-auto max-w-3xl">
-              <p className="answer-first text-xl leading-relaxed text-foreground">
-                {service.answerFirst}
-              </p>
-            </div>
-          </Section>
-        )}
 
         {service.keyFacts && service.keyFacts.length > 0 && (
           <Section className="pb-0">

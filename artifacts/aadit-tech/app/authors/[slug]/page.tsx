@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
   return buildMetadata({
     path: `/authors/${author.slug}`,
-    title: `${author.name}, ${author.jobTitle}`,
-    description: author.description,
+    title: author.name,
+    description: author.metaDescription ?? author.description,
   })
 }
 

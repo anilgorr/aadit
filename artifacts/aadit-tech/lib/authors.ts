@@ -7,6 +7,7 @@ export interface AuthorProfile {
   name: string
   jobTitle: string
   description: string
+  metaDescription?: string
   expertise: string[]
   bio: string[]
 }
@@ -18,6 +19,8 @@ export const AUTHORS: AuthorProfile[] = [
     jobTitle: "Chief Executive Officer",
     description:
       "Anil Gorraladaku is the Chief Executive Officer of Aadit Technologies, focused on making cybersecurity, compliance, and managed IT practical for growing organisations.",
+    metaDescription:
+      "Anil Gorraladaku is Aadit Technologies' CEO, focused on practical cybersecurity, compliance, and managed IT for growing organisations.",
     expertise: [
       "Compliance strategy",
       "Managed security services",

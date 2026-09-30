@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
   path: '/about',
   title: 'About Our Security Team',
   description:
-    'Aadit Technologies is a Bangalore-based cybersecurity and cloud services company protecting Indian enterprises since 2017 — Managed SOC, VAPT, cloud security, ISO 27001, GRC, and SOC 2.',
+    'Bangalore cybersecurity and cloud services for Indian enterprises: managed SOC, VAPT, cloud security, ISO 27001, GRC, and SOC 2 from Aadit Technologies.',
 })
 
 const STATS = [

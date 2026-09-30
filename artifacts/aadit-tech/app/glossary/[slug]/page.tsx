@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return buildMetadata({
     path: `/glossary/${term.slug}`,
     title: `${term.term}: Definition & Meaning`,
-    description: term.definition.split('. ')[0],
+    description: term.metaDescription ?? term.definition.split('. ')[0],
     images: [
       {
         url: `/glossary/${term.slug}/opengraph-image`,

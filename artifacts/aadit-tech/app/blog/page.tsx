@@ -6,7 +6,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/blog",
   title: "Insights & Blog",
   description:
-    "Practical perspectives on cybersecurity, compliance, and managed IT from the Aadit Technologies team.",
+    "Read Aadit Technologies articles on cybersecurity, compliance and managed IT, including guidance on security operations, testing, standards, and technology.",
 })
 
 export default function BlogPage() {

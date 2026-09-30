@@ -5,6 +5,7 @@ export interface GlossaryTerm {
   category: "Cybersecurity" | "Compliance"
   /** A single clear 40-60 word definition, optimised for featured snippets. */
   definition: string
+  metaDescription?: string
   detail: string[]
   relatedService: { label: string; href: string }
   relatedTerms: string[]
@@ -21,6 +22,8 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "Cybersecurity",
     definition:
       "VAPT (Vulnerability Assessment and Penetration Testing) combines techniques for identifying potential security weaknesses with authorised testing of whether they can be exploited. Assessments can scan or review systems, networks and applications; penetration tests try attack paths within agreed boundaries. Together, their findings help teams prioritise remediation, but neither guarantees that all weaknesses will be found.",
+    metaDescription:
+      "VAPT combines vulnerability assessment to identify weaknesses with authorised penetration testing to test exploitability within agreed boundaries.",
     detail: [
       "The two halves answer different questions. A vulnerability assessment identifies potential weaknesses in a defined environment through scanning and review. A penetration test attempts, within an agreed scope, to validate whether weaknesses or combinations of weaknesses could let an attacker bypass security controls.",
       "Testing may be scheduled before a launch, after a significant change, or as part of a security or contractual assessment. The scope can cover networks, applications, APIs or cloud environments. Confirm the applicable standard's specific testing requirements rather than assuming a VAPT engagement alone establishes compliance.",
@@ -111,6 +114,8 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "Compliance",
     definition:
       "ISO/IEC 27001 is the leading international standard for information security management systems (ISMS). It provides a risk-based framework of policies, procedures, and controls that organisations use to protect the confidentiality, integrity, and availability of information. Certification, issued after an independent audit, shows customers and regulators that security is managed systematically.",
+    metaDescription:
+      "ISO/IEC 27001 is an international standard for information security management systems. It gives organisations a risk-based framework to protect information.",
     detail: [
       "At its heart, ISO 27001 requires organisations to identify information risks and treat them using a set of controls, many of which are drawn from the standard's Annex A. Rather than prescribing specific technologies, it focuses on a repeatable management system — plan, implement, monitor, and improve.",
       "Certification is achieved through a two-stage external audit and maintained with periodic surveillance audits and a full recertification every three years. It is widely requested in enterprise procurement and is often the foundation on which other compliance efforts, such as SOC 2, are built.",
@@ -172,6 +177,8 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "Compliance",
     definition:
       "HIPAA (the Health Insurance Portability and Accountability Act) is a US law whose privacy, security, and breach-notification rules protect health information held by covered entities and their business associates. The rules address permitted uses of protected health information, safeguards for electronic health information, and notification duties for breaches of unsecured protected health information.",
+    metaDescription:
+      "HIPAA is a US law setting privacy, security and breach-notification rules for protected health information handled by covered entities and business associates.",
     detail: [
       "HIPAA is enforced through several rules. The Privacy Rule governs how PHI may be used and disclosed; the Security Rule sets safeguards for electronic PHI; and the Breach Notification Rule dictates how and when breaches must be reported to individuals and regulators.",
       "Compliance applies not only to covered entities such as hospitals and insurers, but also to business associates — vendors and service providers that handle PHI on their behalf. Violations can carry substantial civil and, in some cases, criminal penalties.",
@@ -204,6 +211,8 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "Compliance",
     definition:
       "PCI DSS (Payment Card Industry Data Security Standard) is an industry security standard for organisations that store, process, or transmit cardholder data, and for systems that can affect its security. Maintained by the PCI Security Standards Council, it sets technical and operational requirements for protecting payment account data. Validation obligations depend on the applicable payment-brand and acquirer rules.",
+    metaDescription:
+      "PCI DSS is an industry security standard for organisations that store, process or transmit cardholder data, with requirements to protect payment account data.",
     detail: [
       "The standard is organised around a set of core requirements covering areas like building secure networks, protecting stored cardholder data, managing vulnerabilities, restricting access, and regularly monitoring and testing systems.",
       "The required validation method depends on payment-brand and acquirer rules as well as the merchant or service-provider situation; it may involve a Self-Assessment Questionnaire or a formal assessment. Reducing direct handling of card data can reduce scope, but outsourcing does not automatically eliminate responsibilities.",
@@ -233,6 +242,8 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "Compliance",
     definition:
       "SOC 2 (System and Organization Controls 2) is an independent attestation report on controls at a service organisation relevant to selected Trust Services Criteria. The criteria cover security, availability, processing integrity, confidentiality, and privacy. A licensed CPA firm issues the report for its intended users; it is not a certification or a security operations center.",
+    metaDescription:
+      "SOC 2 is an independent attestation report on service-organisation controls relevant to selected Trust Services Criteria; a licensed CPA firm issues the report.",
     detail: [
       "A Type I report addresses control design at a specified date; a Type II report additionally addresses operating effectiveness over a stated period. The report identifies the system, criteria and period examined. Ask which type and scope a customer requires instead of assuming that any SOC 2 report answers every question.",
       "SOC 2 is relevant to service organisations whose customers need assurance about outsourced services. It differs from ISO 27001 certification, which evaluates an information-security management system. Controls and evidence may overlap, but the two forms of assurance are not interchangeable.",

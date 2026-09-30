@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
     path: `/blog/page/${page}`,
     title: `Insights & Blog — Page ${page}`,
     description:
-      "Practical perspectives on cybersecurity, compliance, and managed IT from the Aadit Technologies team.",
+      "Read Aadit Technologies articles on cybersecurity, compliance and managed IT, including guidance on security operations, testing, standards, and technology.",
     noindex: true,
   })
   metadata.alternates = { canonical: "/blog" }

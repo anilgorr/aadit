@@ -15,7 +15,7 @@ export const metadata: Metadata = buildMetadata({
   path: '/careers',
   title: 'Cybersecurity Careers',
   description:
-    "Build your career in cybersecurity with Aadit Technologies. We don't have any open roles right now, but we're always keen to hear from talented security and IT professionals.",
+    'Explore cybersecurity careers at Aadit Technologies. No roles are open right now, but talented security and IT professionals are welcome to contact the team.',
 })
 
 const WHY_JOIN = [

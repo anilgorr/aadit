@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   path: "/whitepapers",
   title: "Whitepapers",
   description:
-    "In-depth whitepapers on cybersecurity, compliance, and managed IT from the Aadit Technologies team.",
+    "Read in-depth whitepapers from Aadit Technologies on cybersecurity, compliance, and managed IT, with technical guidance for secure and compliant systems.",
 })
 
 export default function WhitepapersPage() {

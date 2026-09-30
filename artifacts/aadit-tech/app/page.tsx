@@ -38,7 +38,7 @@ export const metadata: Metadata = buildMetadata({
   path: '/',
   absoluteTitle: 'Aadit Technologies | Cybersecurity, Compliance & IT Services',
   description:
-    'Aadit Technologies delivers cybersecurity, compliance, and IT managed services — VAPT, ISO 27001, SOC 2, HIPAA & PCI DSS — for regulated businesses. Book a free assessment.',
+    'Aadit Technologies provides cybersecurity, compliance, and IT managed services, including VAPT, ISO 27001, SOC 2, HIPAA, and PCI DSS for regulated businesses.',
 })
 
 export default function Home() {

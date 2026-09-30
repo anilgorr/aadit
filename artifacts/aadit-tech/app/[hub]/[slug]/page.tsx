@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   if (!service) return {}
   return buildMetadata({
     path: service.permalink,
-    title: service.heading ?? service.title,
+    title: service.title,
     description: service.metaDescription,
     images: [
       {
