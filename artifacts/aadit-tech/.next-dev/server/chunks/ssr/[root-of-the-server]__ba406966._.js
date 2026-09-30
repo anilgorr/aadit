@@ -519,8 +519,8 @@ function ServicePageTemplate({ service, related }) {
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl",
-                                    children: service.metaDescription
+                                    className: "answer-first mt-6 max-w-3xl text-lg leading-relaxed text-foreground md:text-xl",
+                                    children: service.answerFirst ?? service.metaDescription
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
                                     lineNumber: 127,
@@ -582,28 +582,6 @@ function ServicePageTemplate({ service, related }) {
                         lineNumber: 115,
                         columnNumber: 9
                     }, this),
-                    service.answerFirst && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
-                        className: "pb-0",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto max-w-3xl",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "answer-first text-xl leading-relaxed text-foreground",
-                                children: service.answerFirst
-                            }, void 0, false, {
-                                fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 153,
-                                columnNumber: 15
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 152,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 151,
-                        columnNumber: 11
-                    }, this),
                     service.keyFacts && service.keyFacts.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
                         className: "pb-0",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -620,7 +598,7 @@ function ServicePageTemplate({ service, related }) {
                                                     children: fact.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 167,
+                                                    lineNumber: 157,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("dd", {
@@ -628,33 +606,33 @@ function ServicePageTemplate({ service, related }) {
                                                     children: fact.value
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 168,
+                                                    lineNumber: 158,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, fact.label, true, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 166,
+                                            lineNumber: 156,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 164,
+                                    lineNumber: 154,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 163,
+                                lineNumber: 153,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 162,
+                            lineNumber: 152,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 161,
+                        lineNumber: 151,
                         columnNumber: 11
                     }, this),
                     service.content && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -665,17 +643,17 @@ function ServicePageTemplate({ service, related }) {
                                 components: mdxComponents
                             }, void 0, false, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 181,
+                                lineNumber: 171,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 180,
+                            lineNumber: 170,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 179,
+                        lineNumber: 169,
                         columnNumber: 11
                     }, this),
                     service.features.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -689,7 +667,7 @@ function ServicePageTemplate({ service, related }) {
                                         children: "What's Included"
                                     }, void 0, false, {
                                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                        lineNumber: 190,
+                                        lineNumber: 180,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -697,13 +675,13 @@ function ServicePageTemplate({ service, related }) {
                                         children: "Comprehensive coverage for your organization."
                                     }, void 0, false, {
                                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                        lineNumber: 191,
+                                        lineNumber: 181,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 189,
+                                lineNumber: 179,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -719,12 +697,12 @@ function ServicePageTemplate({ service, related }) {
                                                     className: "h-7 w-7"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 201,
+                                                    lineNumber: 191,
                                                     columnNumber: 23
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                lineNumber: 200,
+                                                lineNumber: 190,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -732,7 +710,7 @@ function ServicePageTemplate({ service, related }) {
                                                 children: feature.title
                                             }, void 0, false, {
                                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                lineNumber: 203,
+                                                lineNumber: 193,
                                                 columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -740,25 +718,25 @@ function ServicePageTemplate({ service, related }) {
                                                 children: feature.description
                                             }, void 0, false, {
                                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                lineNumber: 204,
+                                                lineNumber: 194,
                                                 columnNumber: 21
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                        lineNumber: 199,
+                                        lineNumber: 189,
                                         columnNumber: 19
                                     }, this);
                                 })
                             }, void 0, false, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 195,
+                                lineNumber: 185,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 188,
+                        lineNumber: 178,
                         columnNumber: 11
                     }, this),
                     service.benefits.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -770,7 +748,7 @@ function ServicePageTemplate({ service, related }) {
                                     children: "Key Benefits"
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 218,
+                                    lineNumber: 208,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -782,7 +760,7 @@ function ServicePageTemplate({ service, related }) {
                                                     className: "h-8 w-8 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 222,
+                                                    lineNumber: 212,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -790,7 +768,7 @@ function ServicePageTemplate({ service, related }) {
                                                     children: benefit.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 213,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -798,29 +776,29 @@ function ServicePageTemplate({ service, related }) {
                                                     children: benefit.description
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 224,
+                                                    lineNumber: 214,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, i, true, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 221,
+                                            lineNumber: 211,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 219,
+                                    lineNumber: 209,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 217,
+                            lineNumber: 207,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 216,
+                        lineNumber: 206,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -835,7 +813,7 @@ function ServicePageTemplate({ service, related }) {
                                             children: "Scope with confidence"
                                         }, void 0, false, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 238,
+                                            lineNumber: 228,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -847,7 +825,7 @@ function ServicePageTemplate({ service, related }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 241,
+                                            lineNumber: 231,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -855,13 +833,13 @@ function ServicePageTemplate({ service, related }) {
                                             children: "A useful engagement begins with a clear view of the systems, owners, business priorities, and evidence that should be in scope. This helps keep the work focused on decisions and improvements your team can act on."
                                         }, void 0, false, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 244,
+                                            lineNumber: 234,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 237,
+                                    lineNumber: 227,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -873,7 +851,7 @@ function ServicePageTemplate({ service, related }) {
                                                     className: "mt-0.5 h-5 w-5 shrink-0 text-primary"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 253,
+                                                    lineNumber: 243,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -888,36 +866,36 @@ function ServicePageTemplate({ service, related }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                            lineNumber: 255,
+                                                            lineNumber: 245,
                                                             columnNumber: 21
                                                         }, this),
                                                         step
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 254,
+                                                    lineNumber: 244,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, step, true, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 252,
+                                            lineNumber: 242,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 250,
+                                    lineNumber: 240,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 236,
+                            lineNumber: 226,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 235,
+                        lineNumber: 225,
                         columnNumber: 9
                     }, this),
                     service.faqs.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -930,25 +908,25 @@ function ServicePageTemplate({ service, related }) {
                                     children: "Frequently Asked Questions"
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 268,
+                                    lineNumber: 258,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$accordion$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Accordion"], {
                                     items: service.faqs
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 271,
+                                    lineNumber: 261,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 267,
+                            lineNumber: 257,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 266,
+                        lineNumber: 256,
                         columnNumber: 11
                     }, this),
                     related.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -958,7 +936,7 @@ function ServicePageTemplate({ service, related }) {
                                 children: "Related Services"
                             }, void 0, false, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 279,
+                                lineNumber: 269,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -974,7 +952,7 @@ function ServicePageTemplate({ service, related }) {
                                                     children: item.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 284,
+                                                    lineNumber: 274,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -982,7 +960,7 @@ function ServicePageTemplate({ service, related }) {
                                                     children: item.metaDescription
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 285,
+                                                    lineNumber: 275,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -993,35 +971,35 @@ function ServicePageTemplate({ service, related }) {
                                                             className: "ml-1 h-4 w-4 transition-transform group-hover:translate-x-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                            lineNumber: 290,
+                                                            lineNumber: 280,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                    lineNumber: 288,
+                                                    lineNumber: 278,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                            lineNumber: 283,
+                                            lineNumber: 273,
                                             columnNumber: 19
                                         }, this)
                                     }, item.href, false, {
                                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                        lineNumber: 282,
+                                        lineNumber: 272,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                lineNumber: 280,
+                                lineNumber: 270,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 278,
+                        lineNumber: 268,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -1038,7 +1016,7 @@ function ServicePageTemplate({ service, related }) {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 302,
+                                    lineNumber: 292,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1046,7 +1024,7 @@ function ServicePageTemplate({ service, related }) {
                                     children: "Speak with our team to discuss your specific requirements."
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 305,
+                                    lineNumber: 295,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1063,29 +1041,29 @@ function ServicePageTemplate({ service, related }) {
                                                 className: "h-4 w-4"
                                             }, void 0, false, {
                                                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                                lineNumber: 314,
+                                                lineNumber: 304,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                        lineNumber: 309,
+                                        lineNumber: 299,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                                    lineNumber: 308,
+                                    lineNumber: 298,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                            lineNumber: 301,
+                            lineNumber: 291,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                        lineNumber: 300,
+                        lineNumber: 290,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1096,7 +1074,7 @@ function ServicePageTemplate({ service, related }) {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/artifacts/aadit-tech/components/service-page-template.tsx",
-                lineNumber: 320,
+                lineNumber: 310,
                 columnNumber: 7
             }, this)
         ]
@@ -1144,7 +1122,7 @@ async function generateMetadata({ params }) {
     if (!service) return {};
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$seo$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["buildMetadata"])({
         path: service.permalink,
-        title: service.heading ?? service.title,
+        title: service.title,
         description: service.metaDescription,
         images: [
             {

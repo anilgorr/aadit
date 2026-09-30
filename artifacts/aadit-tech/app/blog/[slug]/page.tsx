@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, Clock, RefreshCw } from 'lucide-react'
-import { posts } from '@/.velite'
-import { getPost, getRelatedPosts, formatDate } from '@/lib/blog'
+import { getPost, getRelatedPosts, getAllPosts, formatDate } from '@/lib/blog'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Section } from '@/components/ui/section'
@@ -65,7 +64,7 @@ const proseComponents = {
 }
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }))
+  return getAllPosts().map((post) => ({ slug: post.slug }))
 }
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {

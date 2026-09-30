@@ -11,6 +11,7 @@ const excluded = new Set([
   // These two old posts redirect elsewhere and are not rendered as articles.
   "services-vapt-network-vapt",
   "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
+  "soc-services-in-india",
 ])
 
 function plain(value) {

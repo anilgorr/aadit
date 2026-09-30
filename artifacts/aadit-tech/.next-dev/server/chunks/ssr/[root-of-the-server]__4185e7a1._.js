@@ -450,6 +450,7 @@ const AUTHORS = [
         name: "Anil Gorraladaku",
         jobTitle: "Chief Executive Officer",
         description: "Anil Gorraladaku is the Chief Executive Officer of Aadit Technologies, focused on making cybersecurity, compliance, and managed IT practical for growing organisations.",
+        metaDescription: "Anil Gorraladaku is Aadit Technologies' CEO, focused on practical cybersecurity, compliance, and managed IT for growing organisations.",
         expertise: [
             "Compliance strategy",
             "Managed security services",
@@ -516,7 +517,7 @@ function authorSchema(author) {
 }),
 "[project]/artifacts/aadit-tech/content/post-faqs.json (json)", ((__turbopack_context__) => {
 
-__turbopack_context__.v(JSON.parse("{\"best-vapt-tools-for-security-testing-aadit-technologies\":[{\"question\":\"What are VAPT tools used for?\",\"answer\":\"VAPT tools identify, scan, and exploit vulnerabilities across your IT ecosystem to strengthen your organization's security posture.\"},{\"question\":\"Are open-source VAPT tools effective?\",\"answer\":\"Yes. Tools like OWASP ZAP and Nmap are highly reliable when configured properly and supplemented with expert validation.\"},{\"question\":\"How does AI enhance VAPT?\",\"answer\":\"AI automates scanning, reduces false positives, and prioritizes vulnerabilities based on business impact.\"},{\"question\":\"Which is better — manual or automated VAPT?\",\"answer\":\"A combination of both provides comprehensive coverage and accurate, actionable insights.\"},{\"question\":\"Can I integrate VAPT tools into DevSecOps pipelines?\",\"answer\":\"Absolutely. Aadit Technologies can help you integrate VAPT automation into CI/CD for continuous security testing.\"}],\"compliance-audit-services-iso-27001-certification\":[{\"question\":\"What is ISO 27001 certification used for?\",\"answer\":\"It demonstrates that an organization follows a globally recognized framework for managing and protecting sensitive data through a structured ISMS.\"},{\"question\":\"How long does ISO 27001 certification take?\",\"answer\":\"Typically, between 3 to 6 months, depending on organizational size and readiness level.\"},{\"question\":\"Who needs ISO 27001 certification?\",\"answer\":\"Any organization that handles confidential, financial, or customer information, including IT, healthcare, BFSI, SaaS, and e-commerce companies.\"},{\"question\":\"Can ISO 27001 and SOC 2 be achieved together?\",\"answer\":\"Yes, both certifications align closely. Implementing them together enhances security posture and audit efficiency.\"},{\"question\":\"Does Aadit Technologies help with audit documentation?\",\"answer\":\"Absolutely. Our experts assist in creating ISMS policies, evidence registers, and risk management documentation for certification audits.\"}],\"compliance-audit-services-iso-42001-ai-governance\":[{\"question\":\"What is the purpose of ISO 42001?\",\"answer\":\"It sets standards for responsible AI governance and ensures organizations manage AI systems ethically, securely, and transparently.\"},{\"question\":\"Who needs ISO 42001 compliance?\",\"answer\":\"Any enterprise using AI for decision-making or automation, including tech, finance, healthcare, and government, should adopt ISO 42001 to ensure accountability and compliance.\"},{\"question\":\"How is ISO 42001 different from ISO 27001?\",\"answer\":\"ISO 27001 focuses on information security, while ISO 42001 addresses AI ethics, risk management, and governance across the AI lifecycle.\"},{\"question\":\"How does Aadit Technologies support ISO 42001 certification?\",\"answer\":\"We offer end-to-end readiness assessments, framework implementation, policy development, and audit preparation for AI governance certification.\"},{\"question\":\"Can AI automation help maintain compliance?\",\"answer\":\"Yes, with tools like AI Workflow Automation, organizations can track risk metrics, audit logs, and bias corrections in real time for smoother compliance management.\"}],\"compliance-audit-services-soc-2-certification\":[{\"question\":\"What's the difference between SOC 1 and SOC 2?\",\"answer\":\"SOC 1 focuses on financial reporting controls, while SOC 2 focuses on security and operational controls related to data handling.\"},{\"question\":\"How long does SOC 2 certification take?\",\"answer\":\"Typically, 3–6 months for Type I and up to 12 months for Type II, depending on the audit period and readiness level.\"},{\"question\":\"Who needs SOC 2 certification?\",\"answer\":\"Any service organization handling client data, especially SaaS providers, IT firms, cloud service providers, and data processors.\"},{\"question\":\"How much does SOC 2 certification cost?\",\"answer\":\"Costs vary based on organization size, control scope, and audit duration. Aadit offers customized packages for both Type I and Type II readiness.\"},{\"question\":\"Can SOC 2 and ISO 27001 be achieved together?\",\"answer\":\"Yes, SOC 2 and ISO 27001 complement each other. Achieving both provides stronger proof of information security and compliance maturity.\"}],\"cyber-security-companies-bangalore\":[{\"question\":\"What services do cybersecurity companies in Bangalore typically offer?\",\"answer\":\"Network security, cloud security, threat detection and response, vulnerability assessment, penetration testing, security audits, and managed security services are just a few of the many services that cybersecurity firms in Bangalore usually provide.\"},{\"question\":\"How much do cybersecurity services cost in Bangalore?\",\"answer\":\"Depending on the size and complexity of the project, Bangalore cybersecurity services might range greatly in price. Larger companies may invest billions in full security solutions, while small businesses may spend between ₹50,000 and ₹5 lakhs a year.\"},{\"question\":\"Are there any government initiatives supporting cybersecurity in Bangalore?\",\"answer\":\"Yes, the Indian government has launched several initiatives to promote cybersecurity, including the National Cyber Security Policy and the Cyber Swachhta Kendra. Bangalore, as a tech hub, benefits from these national programs and local government support for the IT sector.\"},{\"question\":\"What qualifications should I look for when choosing a cybersecurity company in Bangalore?\",\"answer\":\"Seek out businesses that hold industry certifications such as CERT-In Empanelment, ISO 27001, or CREST. Look for seasoned employees who hold pertinent certifications like CISSP, CEH, or CISM. Take into account their history, customer reviews, and case studies as well.\"},{\"question\":\"How can small businesses in Bangalore protect themselves from cyber threats?\",\"answer\":\"Implementing fundamental security measures like firewalls, antivirus software, and routine software upgrades is a good place for small organizations to start. They ought to think about collaborating with a nearby cybersecurity firm for expert advice and more sophisticated security measures.\"},{\"question\":\"What are the emerging trends in cybersecurity that Bangalore companies are focusing on?\",\"answer\":\"AI and machine learning for threat detection, cloud security, IoT security, and zero-trust architecture are the main areas of concentration for Bangalore's cybersecurity firms. Additionally, cybersecurity is becoming more and more important for mobile devices and remote work settings.\"}],\"cybercrime-in-india-essential-guide\":[{\"question\":\"What should I do if I become a victim of cybercrime?\",\"answer\":\"If you suspect you've been targeted, immediately change your passwords and report the incident to local authorities or cybersecurity agencies.\"},{\"question\":\"How can businesses protect themselves from cyber threats?\",\"answer\":\"Businesses should implement robust cybersecurity policies, conduct regular training for employees, and invest in advanced security technologies.\"},{\"question\":\"Are there any government initiatives aimed at combating cybercrime?\",\"answer\":\"Yes, initiatives like CERT-In and Cyber Surakshit Bharat aim to enhance cybersecurity awareness and response capabilities across India.\"}],\"cybersecurity-consulting-services-ai-consulting-for-enterprises\":[{\"question\":\"What does AI consulting for enterprises include?\",\"answer\":\"It covers AI strategy, implementation, automation design, governance, and ongoing optimization tailored to your business needs.\"},{\"question\":\"How is AI used in cybersecurity?\",\"answer\":\"AI analyzes data patterns to detect anomalies, automate threat response, and strengthen compliance through continuous monitoring.\"},{\"question\":\"Can AI consulting help improve compliance?\",\"answer\":\"Yes, AI supports automated reporting, anomaly detection, and governance models that align with ISO 42001 and SOC 2 standards.\"},{\"question\":\"What tools or platforms does Aadit use for AI integration?\",\"answer\":\"We utilize n8n, Zapier, Azure AI, OpenAI, and custom ML models depending on client needs and infrastructure.\"},{\"question\":\"How long does an AI consulting project take?\",\"answer\":\"Typically between 6 to 12 weeks, depending on project scope, integration complexity, and compliance requirements.\"}],\"essential-siem-tools-for-organizations\":[{\"question\":\"What is the primary function of SIEM tools?\",\"answer\":\"SIEM tools aggregate and analyze security data from various sources to detect potential threats and manage incidents effectively.\"},{\"question\":\"How do I choose the best SIEM solution for my organization?\",\"answer\":\"Consider factors such as your organization's size, budget, specific security needs, and whether you require cloud-based or on-premises solutions.\"},{\"question\":\"Are there any free SIEM tools available?\",\"answer\":\"Yes, several open-source options, such as Graylog, provide basic SIEM functionalities at no cost.\"},{\"question\":\"Can SIEM tools help with compliance?\",\"answer\":\"Absolutely! Most SIEM solutions include features that assist organizations in meeting regulatory compliance requirements through automated reporting and monitoring.\"},{\"question\":\"How do I implement an SIEM solution?\",\"answer\":\"Start by assessing your organization's specific needs, selecting an appropriate tool from the list provided, and then integrating it into your existing IT infrastructure while ensuring staff training on its use. In conclusion, investing in the right SIEM tools is crucial for any organization looking to bolster its cybersecurity defenses. With numerous options available tailored to different needs, understanding what each tool offers will help you make an informed decision. Whether you need a comprehensive solution like IBM QRadar or a more straightforward option like SolarWinds Security Event Manager, there's a perfect fit out there waiting for you.\"}],\"iso-42001-certification-consulting-india\":[{\"question\":\"What is the main purpose of ISO 42001?\",\"answer\":\"ISO 42001 aims to help organizations responsibly manage their AI systems by providing a framework for an AI Management System (AIMS), addressing ethical concerns, risk management, and governance.\"},{\"question\":\"Is ISO 42001 certification mandatory in India?\",\"answer\":\"Currently, ISO 42001 certification is voluntary in India. However, adopting it can provide a significant competitive edge and demonstrate a commitment to responsible AI, which may become increasingly important with evolving regulations.\"},{\"question\":\"How long does it take to get ISO 42001 certified in India?\",\"answer\":\"The timeline varies depending on the organization's size, complexity, and existing AI governance maturity. Aadit Technologies can provide a more specific estimate after an initial assessment.\"},{\"question\":\"What types of organizations in India can benefit from ISO 42001?\",\"answer\":\"Any organization in India that develops, provides, or uses AI systems, regardless of size or sector, can benefit from implementing ISO 42001. This includes tech companies, financial institutions, healthcare providers, manufacturing units, and more.\"},{\"question\":\"How can Aadit Technologies help my Indian business with ISO 42001?\",\"answer\":\"Aadit Technologies offers expert consulting, training, gap analysis, implementation support, and pre-assessment audits to guide your Indian business through the entire ISO 42001 certification process. Ready to lead in responsible AI with ISO 42001 in India? Contact Aadit Technologies today for a free consultation and learn how we can help you implement a robust AI Management System.\"}],\"managed-soc-services-in-india\":[{\"question\":\"Is a Managed SOC suitable for Indian SMEs?\",\"answer\":\"Yes, many providers offer affordable, tiered models suited for small and mid-sized businesses.\"},{\"question\":\"What certifications should a managed SOC provider have?\",\"answer\":\"Look for ISO/IEC 27001, SOC 2, CERT-In empanelment, and qualified analysts (e.g., CISSP, CISA).\"},{\"question\":\"How long does it take to set up a managed SOC?\",\"answer\":\"Typically 4–8 weeks, depending on the complexity of the infrastructure.\"}],\"soc-2-compliance-services-india\":[{\"question\":\"Is SOC 2 mandatory in India?\",\"answer\":\"No, SOC 2 is not legally mandatory in India by government regulation. However, it's often a contractual requirement from clients, especially US-based or global enterprises, making it a de facto necessity for many Indian service providers.\"},{\"question\":\"What is the difference between SOC 2 Type 1 and Type 2?\",\"answer\":\"A SOC 2 Type 1 report assesses the design of controls at a specific point in time. A SOC 2 Type 2 report assesses both the design and operating effectiveness of controls over a period (typically 6-12 months). Type 2 provides greater assurance.\"},{\"question\":\"How long does it take to achieve SOC 2 compliance?\",\"answer\":\"The timeline varies depending on your starting posture, complexity, and chosen report type (Type 1 or Type 2). It can range from 3 months (for a well-prepared Type 1) to over 12 months (for a complex Type 2 starting from scratch).\"},{\"question\":\"What is the cost of SOC 2 compliance in India?\",\"answer\":\"Costs include consulting fees (like Aadit Technologies'), potential investments in security tools/processes, and the CPA firm's audit fees. Depending on complexity and extent, costs can vary considerably. Contact us for a tailored estimate. Ready to build trust and secure your business with SOC 2 Compliance? Don't let compliance complexities hold you back. Partner with Aadit Technologies, India's leading SOC 2 compliance experts.\"}],\"soc-services-in-india\":[{\"question\":\"What is a SOC (Security Operations Center)?\",\"answer\":\"A SOC is a centralised unit or team responsible for continuously monitoring, detecting, analysing, and responding to cybersecurity threats and incidents within an organisation. Aadit Technologies provides this as a managed service for businesses in India.\"},{\"question\":\"Why are SOC services particularly important for businesses in India?\",\"answer\":\"With increasing digitisation, India is a growing target for cyberattacks. SOC services help Indian businesses protect sensitive data, ensure business continuity, and comply with local regulations like CERT-In directives.\"},{\"question\":\"How much do SOC services cost in India?\",\"answer\":\"The cost of SOC services varies based on the scope of services, the size of your infrastructure, and specific requirements. Aadit Technologies offers flexible and cost-effective packages tailored to Indian businesses. Contact us for a custom quote.\"},{\"question\":\"Can Aadit Technologies' SOC help with compliance requirements in India?\",\"answer\":\"Yes, our SOC services include support for various compliance mandates relevant in India, including log management, incident reporting, and vulnerability assessments, helping you meet CERT-In and other regulatory obligations.\"},{\"question\":\"What makes Aadit Technologies different from other SOC providers in India?\",\"answer\":\"Aadit Technologies combines global cybersecurity best practices with deep local expertise of the Indian threat landscape. We offer personalised, proactive, and cost-effective SOC solutions with a strong focus on customer success.\"}],\"top-soc-service-providers-in-india-secure-your-business\":[{\"question\":\"What is a SOC service provider?\",\"answer\":\"A SOC (Security Operations Center) service provider offers comprehensive cybersecurity monitoring, threat detection, and incident response services to organizations, helping them protect their digital assets and data from cyber threats.\"},{\"question\":\"Why should businesses in India consider using SOC services?\",\"answer\":\"Indian businesses face increasing cyber threats, and SOC services provide 24/7 monitoring, expert analysis, and rapid response capabilities that many organizations cannot maintain in-house, enhancing overall security posture cost-effectively.\"},{\"question\":\"How do I choose the right SOC service provider in India?\",\"answer\":\"Consider factors such as the provider's experience, technology stack, certifications, service level agreements (SLAs), scalability, and ability to customize solutions to your specific industry and compliance requirements.\"},{\"question\":\"How much does a SOC service typically cost in India?\",\"answer\":\"Costs vary depending on the scope of services, organization size, and specific requirements. Many providers offer flexible pricing models, including per-device or per-user pricing, making it accessible for businesses of all sizes.\"}],\"vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies\":[{\"question\":\"What is the full form of VAPT?\",\"answer\":\"VAPT stands for Vulnerability Assessment and Penetration Testing\"},{\"question\":\"What is VAPT testing?\",\"answer\":\"VAPT testing is a security exercise that combines vulnerability assessment (identifying weaknesses) and penetration testing (exploiting weaknesses ethically) to evaluate an organization's IT security posture.\"},{\"question\":\"Why do I need VAPT services in India?\",\"answer\":\"Businesses in India require VAPT services to protect against rising cyber threats, comply with local regulations, safeguard sensitive data, and maintain customer trust in an increasingly digital economy.\"},{\"question\":\"How often should VAPT be performed?\",\"answer\":\"It's recommended to perform VAPT at least annually or more frequently if you make significant changes to your IT infrastructure, launch new applications, or face specific compliance requirements.\"},{\"question\":\"How much does VAPT testing cost in India?\",\"answer\":\"The cost of VAPT testing in India varies based on the scope, complexity of the systems, and the depth of the assessment. Contact Aadit Technologies for a customized quote.\"}]}"));}),
+__turbopack_context__.v(JSON.parse("{\"best-vapt-tools-for-security-testing-aadit-technologies\":[{\"question\":\"What are VAPT tools used for?\",\"answer\":\"VAPT tools identify, scan, and exploit vulnerabilities across your IT ecosystem to strengthen your organization's security posture.\"},{\"question\":\"Are open-source VAPT tools effective?\",\"answer\":\"Yes. Tools like OWASP ZAP and Nmap are highly reliable when configured properly and supplemented with expert validation.\"},{\"question\":\"How does AI enhance VAPT?\",\"answer\":\"AI automates scanning, reduces false positives, and prioritizes vulnerabilities based on business impact.\"},{\"question\":\"Which is better — manual or automated VAPT?\",\"answer\":\"A combination of both provides comprehensive coverage and accurate, actionable insights.\"},{\"question\":\"Can I integrate VAPT tools into DevSecOps pipelines?\",\"answer\":\"Absolutely. Aadit Technologies can help you integrate VAPT automation into CI/CD for continuous security testing.\"}],\"compliance-audit-services-iso-27001-certification\":[{\"question\":\"What is ISO 27001 certification used for?\",\"answer\":\"It demonstrates that an organization follows a globally recognized framework for managing and protecting sensitive data through a structured ISMS.\"},{\"question\":\"How long does ISO 27001 certification take?\",\"answer\":\"Typically, between 3 to 6 months, depending on organizational size and readiness level.\"},{\"question\":\"Who needs ISO 27001 certification?\",\"answer\":\"Any organization that handles confidential, financial, or customer information, including IT, healthcare, BFSI, SaaS, and e-commerce companies.\"},{\"question\":\"Can ISO 27001 and SOC 2 be achieved together?\",\"answer\":\"Yes, both certifications align closely. Implementing them together enhances security posture and audit efficiency.\"},{\"question\":\"Does Aadit Technologies help with audit documentation?\",\"answer\":\"Absolutely. Our experts assist in creating ISMS policies, evidence registers, and risk management documentation for certification audits.\"}],\"compliance-audit-services-iso-42001-ai-governance\":[{\"question\":\"What is the purpose of ISO 42001?\",\"answer\":\"It sets standards for responsible AI governance and ensures organizations manage AI systems ethically, securely, and transparently.\"},{\"question\":\"Who needs ISO 42001 compliance?\",\"answer\":\"Any enterprise using AI for decision-making or automation, including tech, finance, healthcare, and government, should adopt ISO 42001 to ensure accountability and compliance.\"},{\"question\":\"How is ISO 42001 different from ISO 27001?\",\"answer\":\"ISO 27001 focuses on information security, while ISO 42001 addresses AI ethics, risk management, and governance across the AI lifecycle.\"},{\"question\":\"How does Aadit Technologies support ISO 42001 certification?\",\"answer\":\"We offer end-to-end readiness assessments, framework implementation, policy development, and audit preparation for AI governance certification.\"},{\"question\":\"Can AI automation help maintain compliance?\",\"answer\":\"Yes, with tools like AI Workflow Automation, organizations can track risk metrics, audit logs, and bias corrections in real time for smoother compliance management.\"}],\"compliance-audit-services-soc-2-certification\":[{\"question\":\"What's the difference between SOC 1 and SOC 2?\",\"answer\":\"SOC 1 focuses on financial reporting controls, while SOC 2 focuses on security and operational controls related to data handling.\"},{\"question\":\"How long does SOC 2 certification take?\",\"answer\":\"Typically, 3–6 months for Type I and up to 12 months for Type II, depending on the audit period and readiness level.\"},{\"question\":\"Who needs SOC 2 certification?\",\"answer\":\"Any service organization handling client data, especially SaaS providers, IT firms, cloud service providers, and data processors.\"},{\"question\":\"How much does SOC 2 certification cost?\",\"answer\":\"Costs vary based on organization size, control scope, and audit duration. Aadit offers customized packages for both Type I and Type II readiness.\"},{\"question\":\"Can SOC 2 and ISO 27001 be achieved together?\",\"answer\":\"Yes, SOC 2 and ISO 27001 complement each other. Achieving both provides stronger proof of information security and compliance maturity.\"}],\"cyber-security-companies-bangalore\":[{\"question\":\"What services do cybersecurity companies in Bangalore typically offer?\",\"answer\":\"Network security, cloud security, threat detection and response, vulnerability assessment, penetration testing, security audits, and managed security services are just a few of the many services that cybersecurity firms in Bangalore usually provide.\"},{\"question\":\"How much do cybersecurity services cost in Bangalore?\",\"answer\":\"Depending on the size and complexity of the project, Bangalore cybersecurity services might range greatly in price. Larger companies may invest billions in full security solutions, while small businesses may spend between ₹50,000 and ₹5 lakhs a year.\"},{\"question\":\"Are there any government initiatives supporting cybersecurity in Bangalore?\",\"answer\":\"Yes, the Indian government has launched several initiatives to promote cybersecurity, including the National Cyber Security Policy and the Cyber Swachhta Kendra. Bangalore, as a tech hub, benefits from these national programs and local government support for the IT sector.\"},{\"question\":\"What qualifications should I look for when choosing a cybersecurity company in Bangalore?\",\"answer\":\"Seek out businesses that hold industry certifications such as CERT-In Empanelment, ISO 27001, or CREST. Look for seasoned employees who hold pertinent certifications like CISSP, CEH, or CISM. Take into account their history, customer reviews, and case studies as well.\"},{\"question\":\"How can small businesses in Bangalore protect themselves from cyber threats?\",\"answer\":\"Implementing fundamental security measures like firewalls, antivirus software, and routine software upgrades is a good place for small organizations to start. They ought to think about collaborating with a nearby cybersecurity firm for expert advice and more sophisticated security measures.\"},{\"question\":\"What are the emerging trends in cybersecurity that Bangalore companies are focusing on?\",\"answer\":\"AI and machine learning for threat detection, cloud security, IoT security, and zero-trust architecture are the main areas of concentration for Bangalore's cybersecurity firms. Additionally, cybersecurity is becoming more and more important for mobile devices and remote work settings.\"}],\"cybercrime-in-india-essential-guide\":[{\"question\":\"What should I do if I become a victim of cybercrime?\",\"answer\":\"If you suspect you've been targeted, immediately change your passwords and report the incident to local authorities or cybersecurity agencies.\"},{\"question\":\"How can businesses protect themselves from cyber threats?\",\"answer\":\"Businesses should implement robust cybersecurity policies, conduct regular training for employees, and invest in advanced security technologies.\"},{\"question\":\"Are there any government initiatives aimed at combating cybercrime?\",\"answer\":\"Yes, initiatives like CERT-In and Cyber Surakshit Bharat aim to enhance cybersecurity awareness and response capabilities across India.\"}],\"cybersecurity-consulting-services-ai-consulting-for-enterprises\":[{\"question\":\"What does AI consulting for enterprises include?\",\"answer\":\"It covers AI strategy, implementation, automation design, governance, and ongoing optimization tailored to your business needs.\"},{\"question\":\"How is AI used in cybersecurity?\",\"answer\":\"AI analyzes data patterns to detect anomalies, automate threat response, and strengthen compliance through continuous monitoring.\"},{\"question\":\"Can AI consulting help improve compliance?\",\"answer\":\"Yes, AI supports automated reporting, anomaly detection, and governance models that align with ISO 42001 and SOC 2 standards.\"},{\"question\":\"What tools or platforms does Aadit use for AI integration?\",\"answer\":\"We utilize n8n, Zapier, Azure AI, OpenAI, and custom ML models depending on client needs and infrastructure.\"},{\"question\":\"How long does an AI consulting project take?\",\"answer\":\"Typically between 6 to 12 weeks, depending on project scope, integration complexity, and compliance requirements.\"}],\"essential-siem-tools-for-organizations\":[{\"question\":\"What is the primary function of SIEM tools?\",\"answer\":\"SIEM tools aggregate and analyze security data from various sources to detect potential threats and manage incidents effectively.\"},{\"question\":\"How do I choose the best SIEM solution for my organization?\",\"answer\":\"Consider factors such as your organization's size, budget, specific security needs, and whether you require cloud-based or on-premises solutions.\"},{\"question\":\"Are there any free SIEM tools available?\",\"answer\":\"Yes, several open-source options, such as Graylog, provide basic SIEM functionalities at no cost.\"},{\"question\":\"Can SIEM tools help with compliance?\",\"answer\":\"Absolutely! Most SIEM solutions include features that assist organizations in meeting regulatory compliance requirements through automated reporting and monitoring.\"},{\"question\":\"How do I implement an SIEM solution?\",\"answer\":\"Start by assessing your organization's specific needs, selecting an appropriate tool from the list provided, and then integrating it into your existing IT infrastructure while ensuring staff training on its use. In conclusion, investing in the right SIEM tools is crucial for any organization looking to bolster its cybersecurity defenses. With numerous options available tailored to different needs, understanding what each tool offers will help you make an informed decision. Whether you need a comprehensive solution like IBM QRadar or a more straightforward option like SolarWinds Security Event Manager, there's a perfect fit out there waiting for you.\"}],\"iso-42001-certification-consulting-india\":[{\"question\":\"What is the main purpose of ISO 42001?\",\"answer\":\"ISO 42001 aims to help organizations responsibly manage their AI systems by providing a framework for an AI Management System (AIMS), addressing ethical concerns, risk management, and governance.\"},{\"question\":\"Is ISO 42001 certification mandatory in India?\",\"answer\":\"Currently, ISO 42001 certification is voluntary in India. However, adopting it can provide a significant competitive edge and demonstrate a commitment to responsible AI, which may become increasingly important with evolving regulations.\"},{\"question\":\"How long does it take to get ISO 42001 certified in India?\",\"answer\":\"The timeline varies depending on the organization's size, complexity, and existing AI governance maturity. Aadit Technologies can provide a more specific estimate after an initial assessment.\"},{\"question\":\"What types of organizations in India can benefit from ISO 42001?\",\"answer\":\"Any organization in India that develops, provides, or uses AI systems, regardless of size or sector, can benefit from implementing ISO 42001. This includes tech companies, financial institutions, healthcare providers, manufacturing units, and more.\"},{\"question\":\"How can Aadit Technologies help my Indian business with ISO 42001?\",\"answer\":\"Aadit Technologies offers expert consulting, training, gap analysis, implementation support, and pre-assessment audits to guide your Indian business through the entire ISO 42001 certification process. Ready to lead in responsible AI with ISO 42001 in India? Contact Aadit Technologies today for a free consultation and learn how we can help you implement a robust AI Management System.\"}],\"managed-soc-services-in-india\":[{\"question\":\"Is a Managed SOC suitable for Indian SMEs?\",\"answer\":\"Yes, many providers offer affordable, tiered models suited for small and mid-sized businesses.\"},{\"question\":\"What certifications should a managed SOC provider have?\",\"answer\":\"Look for ISO/IEC 27001, SOC 2, CERT-In empanelment, and qualified analysts (e.g., CISSP, CISA).\"},{\"question\":\"How long does it take to set up a managed SOC?\",\"answer\":\"Typically 4–8 weeks, depending on the complexity of the infrastructure.\"}],\"soc-2-compliance-services-india\":[{\"question\":\"Is SOC 2 mandatory in India?\",\"answer\":\"No, SOC 2 is not legally mandatory in India by government regulation. However, it's often a contractual requirement from clients, especially US-based or global enterprises, making it a de facto necessity for many Indian service providers.\"},{\"question\":\"What is the difference between SOC 2 Type 1 and Type 2?\",\"answer\":\"A SOC 2 Type 1 report assesses the design of controls at a specific point in time. A SOC 2 Type 2 report assesses both the design and operating effectiveness of controls over a period (typically 6-12 months). Type 2 provides greater assurance.\"},{\"question\":\"How long does it take to achieve SOC 2 compliance?\",\"answer\":\"The timeline varies depending on your starting posture, complexity, and chosen report type (Type 1 or Type 2). It can range from 3 months (for a well-prepared Type 1) to over 12 months (for a complex Type 2 starting from scratch).\"},{\"question\":\"What is the cost of SOC 2 compliance in India?\",\"answer\":\"Costs include consulting fees (like Aadit Technologies'), potential investments in security tools/processes, and the CPA firm's audit fees. Depending on complexity and extent, costs can vary considerably. Contact us for a tailored estimate. Ready to build trust and secure your business with SOC 2 Compliance? Don't let compliance complexities hold you back. Partner with Aadit Technologies, India's leading SOC 2 compliance experts.\"}],\"top-soc-service-providers-in-india-secure-your-business\":[{\"question\":\"What is a SOC service provider?\",\"answer\":\"A SOC (Security Operations Center) service provider offers comprehensive cybersecurity monitoring, threat detection, and incident response services to organizations, helping them protect their digital assets and data from cyber threats.\"},{\"question\":\"Why should businesses in India consider using SOC services?\",\"answer\":\"Indian businesses face increasing cyber threats, and SOC services provide 24/7 monitoring, expert analysis, and rapid response capabilities that many organizations cannot maintain in-house, enhancing overall security posture cost-effectively.\"},{\"question\":\"How do I choose the right SOC service provider in India?\",\"answer\":\"Consider factors such as the provider's experience, technology stack, certifications, service level agreements (SLAs), scalability, and ability to customize solutions to your specific industry and compliance requirements.\"},{\"question\":\"How much does a SOC service typically cost in India?\",\"answer\":\"Costs vary depending on the scope of services, organization size, and specific requirements. Many providers offer flexible pricing models, including per-device or per-user pricing, making it accessible for businesses of all sizes.\"}],\"vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies\":[{\"question\":\"What is the full form of VAPT?\",\"answer\":\"VAPT stands for Vulnerability Assessment and Penetration Testing\"},{\"question\":\"What is VAPT testing?\",\"answer\":\"VAPT testing is a security exercise that combines vulnerability assessment (identifying weaknesses) and penetration testing (exploiting weaknesses ethically) to evaluate an organization's IT security posture.\"},{\"question\":\"Why do I need VAPT services in India?\",\"answer\":\"Businesses in India require VAPT services to protect against rising cyber threats, comply with local regulations, safeguard sensitive data, and maintain customer trust in an increasingly digital economy.\"},{\"question\":\"How often should VAPT be performed?\",\"answer\":\"It's recommended to perform VAPT at least annually or more frequently if you make significant changes to your IT infrastructure, launch new applications, or face specific compliance requirements.\"},{\"question\":\"How much does VAPT testing cost in India?\",\"answer\":\"The cost of VAPT testing in India varies based on the scope, complexity of the systems, and the depth of the assessment. Contact Aadit Technologies for a customized quote.\"}]}"));}),
 "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx [app-rsc] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
@@ -535,8 +536,6 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$ne
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$545$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.545.0_react@19.1.0/node_modules/lucide-react/dist/esm/icons/calendar.js [app-rsc] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$545$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$clock$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Clock$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.545.0_react@19.1.0/node_modules/lucide-react/dist/esm/icons/clock.js [app-rsc] (ecmascript) <export default as Clock>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$545$2e$0_react$40$19$2e$1$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$refresh$2d$cw$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__RefreshCw$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.545.0_react@19.1.0/node_modules/lucide-react/dist/esm/icons/refresh-cw.js [app-rsc] (ecmascript) <export default as RefreshCw>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f2e$velite$2f$index$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/artifacts/aadit-tech/.velite/index.js [app-rsc] (ecmascript) <locals>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f2e$velite$2f$posts$2e$json__$28$json$29$__$3c$export__default__as__posts$3e$__ = __turbopack_context__.i("[project]/artifacts/aadit-tech/.velite/posts.json (json) <export default as posts>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$blog$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/artifacts/aadit-tech/lib/blog.ts [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$header$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/artifacts/aadit-tech/components/header.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/artifacts/aadit-tech/components/footer.tsx [app-rsc] (ecmascript)");
@@ -567,14 +566,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2
 ;
 ;
 ;
-;
 const proseComponents = {
     h2: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
             className: "mt-12 mb-4 scroll-mt-28 text-2xl font-bold tracking-tight text-foreground",
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 26,
+            lineNumber: 25,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     h3: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -582,7 +580,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 32,
+            lineNumber: 31,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     h4: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -590,7 +588,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 35,
+            lineNumber: 34,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     p: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -598,7 +596,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 38,
+            lineNumber: 37,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     ul: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -606,7 +604,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 41,
+            lineNumber: 40,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     ol: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -614,7 +612,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 44,
+            lineNumber: 43,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     li: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -622,7 +620,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 46,
+            lineNumber: 45,
             columnNumber: 43
         }, ("TURBOPACK compile-time value", void 0)),
     a: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -630,7 +628,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 48,
+            lineNumber: 47,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     strong: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -638,7 +636,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 54,
+            lineNumber: 53,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     blockquote: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("blockquote", {
@@ -646,7 +644,7 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 57,
+            lineNumber: 56,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0)),
     code: (props)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
@@ -654,12 +652,12 @@ const proseComponents = {
             ...props
         }, void 0, false, {
             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-            lineNumber: 63,
+            lineNumber: 62,
             columnNumber: 5
         }, ("TURBOPACK compile-time value", void 0))
 };
 function generateStaticParams() {
-    return __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f2e$velite$2f$posts$2e$json__$28$json$29$__$3c$export__default__as__posts$3e$__["posts"].map((post)=>({
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$blog$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["getAllPosts"])().map((post)=>({
             slug: post.slug
         }));
 }
@@ -739,7 +737,7 @@ async function BlogPostPage({ params }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$header$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Header"], {}, void 0, false, {
                 fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                lineNumber: 134,
+                lineNumber: 133,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -749,7 +747,7 @@ async function BlogPostPage({ params }) {
                         data: schemas
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                        lineNumber: 136,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -775,7 +773,7 @@ async function BlogPostPage({ params }) {
                                     ]
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 139,
                                     columnNumber: 13
                                 }, this),
                                 post.tags.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -785,12 +783,12 @@ async function BlogPostPage({ params }) {
                                             children: tag
                                         }, tag, false, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 150,
+                                            lineNumber: 149,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 148,
+                                    lineNumber: 147,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -798,7 +796,7 @@ async function BlogPostPage({ params }) {
                                     children: post.title
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -806,7 +804,7 @@ async function BlogPostPage({ params }) {
                                     children: post.description
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 159,
+                                    lineNumber: 158,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -820,7 +818,7 @@ async function BlogPostPage({ params }) {
                                                     children: author.name.charAt(0)
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                    lineNumber: 163,
+                                                    lineNumber: 162,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -831,7 +829,7 @@ async function BlogPostPage({ params }) {
                                                             children: author.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                            lineNumber: 167,
+                                                            lineNumber: 166,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -839,19 +837,19 @@ async function BlogPostPage({ params }) {
                                                             children: author.jobTitle
                                                         }, void 0, false, {
                                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                            lineNumber: 173,
+                                                            lineNumber: 172,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                    lineNumber: 166,
+                                                    lineNumber: 165,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 161,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -861,14 +859,14 @@ async function BlogPostPage({ params }) {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                    lineNumber: 177,
+                                                    lineNumber: 176,
                                                     columnNumber: 17
                                                 }, this),
                                                 (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$blog$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["formatDate"])(post.publishedAt)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 176,
+                                            lineNumber: 175,
                                             columnNumber: 15
                                         }, this),
                                         post.updatedAt !== post.publishedAt && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -878,7 +876,7 @@ async function BlogPostPage({ params }) {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                    lineNumber: 182,
+                                                    lineNumber: 181,
                                                     columnNumber: 19
                                                 }, this),
                                                 "Updated ",
@@ -886,7 +884,7 @@ async function BlogPostPage({ params }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 180,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -896,7 +894,7 @@ async function BlogPostPage({ params }) {
                                                     className: "h-4 w-4"
                                                 }, void 0, false, {
                                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                                    lineNumber: 187,
+                                                    lineNumber: 186,
                                                     columnNumber: 17
                                                 }, this),
                                                 readingTime,
@@ -904,24 +902,24 @@ async function BlogPostPage({ params }) {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 186,
+                                            lineNumber: 185,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 160,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                            lineNumber: 139,
+                            lineNumber: 138,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                        lineNumber: 138,
+                        lineNumber: 137,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -935,12 +933,12 @@ async function BlogPostPage({ params }) {
                                         components: proseComponents
                                     }, void 0, false, {
                                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                        lineNumber: 197,
+                                        lineNumber: 196,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 195,
                                     columnNumber: 13
                                 }, this),
                                 post.toc.length >= 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("aside", {
@@ -951,28 +949,28 @@ async function BlogPostPage({ params }) {
                                             toc: post.toc
                                         }, void 0, false, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 202,
+                                            lineNumber: 201,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                        lineNumber: 201,
+                                        lineNumber: 200,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 200,
+                                    lineNumber: 199,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                            lineNumber: 195,
+                            lineNumber: 194,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                        lineNumber: 194,
+                        lineNumber: 193,
                         columnNumber: 9
                     }, this),
                     related.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$ui$2f$section$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Section"], {
@@ -985,7 +983,7 @@ async function BlogPostPage({ params }) {
                                     children: "Related Articles"
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 212,
+                                    lineNumber: 211,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -994,40 +992,40 @@ async function BlogPostPage({ params }) {
                                             post: item
                                         }, item.slug, false, {
                                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                            lineNumber: 215,
+                                            lineNumber: 214,
                                             columnNumber: 19
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 212,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                            lineNumber: 211,
+                            lineNumber: 210,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                        lineNumber: 210,
+                        lineNumber: 209,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                lineNumber: 135,
+                lineNumber: 134,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$components$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-                lineNumber: 222,
+                lineNumber: 221,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/artifacts/aadit-tech/app/blog/[slug]/page.tsx",
-        lineNumber: 133,
+        lineNumber: 132,
         columnNumber: 5
     }, this);
 }

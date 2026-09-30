@@ -7,6 +7,7 @@ const SITE_URL = "https://aadit.net"
 const EXCLUDED_POSTS = new Set([
   "services-vapt-network-vapt",
   "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
+  "soc-services-in-india",
 ])
 
 function parseFrontmatter(source) {

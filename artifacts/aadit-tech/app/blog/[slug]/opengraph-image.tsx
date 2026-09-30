@@ -1,12 +1,11 @@
 import { renderOgImage, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og"
-import { posts } from "@/.velite"
-import { getPost } from "@/lib/blog"
+import { getPost, getAllPosts } from "@/lib/blog"
 
 export const size = OG_SIZE
 export const contentType = OG_CONTENT_TYPE
 
 export function generateStaticParams() {
-  return posts.map((post) => ({ slug: post.slug }))
+  return getAllPosts().map((post) => ({ slug: post.slug }))
 }
 
 export default async function BlogOpengraphImage({

@@ -2,8 +2,16 @@ import { posts, type Post } from "@/.velite"
 
 export const POSTS_PER_PAGE = 9
 
+// These retained MDX sources have permanent redirects. Do not promote them in
+// the blog index, related posts, sitemap, or static page generation.
+export const REDIRECTED_POST_SLUGS = new Set([
+  "services-vapt-network-vapt",
+  "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
+  "soc-services-in-india",
+])
+
 export function getAllPosts(): Post[] {
-  return [...posts].sort(
+  return posts.filter((post) => !REDIRECTED_POST_SLUGS.has(post.slug)).sort(
     (a, b) => +new Date(b.publishedAt) - +new Date(a.publishedAt)
   )
 }

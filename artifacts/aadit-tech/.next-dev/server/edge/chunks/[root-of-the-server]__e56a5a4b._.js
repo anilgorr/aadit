@@ -135,6 +135,14 @@ const routeRedirects = [
         destination: '/blog/managed-soc-services-in-india',
         permanent: true
     },
+    // Sales-style article overlaps the managed-SOC service page. Preserve its
+    // indexed URL with a direct 301; retain the informational guide and
+    // provider comparison as separate intents.
+    {
+        source: '/blog/soc-services-in-india',
+        destination: '/cybersecurity/managed-soc',
+        permanent: true
+    },
     // Cybersecurity companies duplicates
     {
         source: '/blog/cyber-security-companies-bangalore-experts',

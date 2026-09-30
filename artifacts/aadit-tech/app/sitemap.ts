@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next"
-import { services, posts } from "@/.velite"
+import { services } from "@/.velite"
 import { absoluteUrl, SITE_URL } from "@/lib/site"
 import { HUB_ORDER } from "@/lib/services"
 import { INDUSTRIES } from "@/lib/industries"
 import { GLOSSARY } from "@/lib/glossary"
+import { getAllPosts } from "@/lib/blog"
 
 /**
  * Single canonical sitemap covering every real, indexable page. There are no
@@ -55,13 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  const postEntries: MetadataRoute.Sitemap = posts
-    .filter(
-      (post) =>
-        post.slug !== "services-vapt-network-vapt" &&
-        post.slug !== "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
-    )
-    .map((post) => ({
+  const postEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: absoluteUrl(post.permalink),
     lastModified: new Date(post.updatedAt ?? post.publishedAt),
     changeFrequency: "monthly",

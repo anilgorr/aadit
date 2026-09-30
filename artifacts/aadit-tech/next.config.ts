@@ -43,6 +43,10 @@ export const routeRedirects = [
       { source: '/blog/managed-soc-services-managed-soc-for-banks', destination: '/blog/managed-soc-services-in-india', permanent: true },
       { source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
       { source: '/blog/managed-soc-services-managed-security-services-with-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
+      // Sales-style article overlaps the managed-SOC service page. Preserve its
+      // indexed URL with a direct 301; retain the informational guide and
+      // provider comparison as separate intents.
+      { source: '/blog/soc-services-in-india', destination: '/cybersecurity/managed-soc', permanent: true },
       // Cybersecurity companies duplicates
       { source: '/blog/cyber-security-companies-bangalore-experts', destination: '/blog/cyber-security-companies-bangalore', permanent: true },
       { source: '/blog/cybersecurity-companies-in-india-top-leaders', destination: '/blog/top-cyber-security-companies-in-india-safeguarding-digital-future', permanent: true },
