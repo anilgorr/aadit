@@ -204,7 +204,7 @@
     },
     {
       "question": "How long does it take to set up a managed SOC?",
-      "answer": "Typically 4–8 weeks, depending on the complexity of the infrastructure."
+      "answer": "Setup time depends on the number of systems to connect, log quality, access approvals, and the escalation process. Ask the provider for a rollout plan that covers onboarding, testing, and the handoff to ongoing monitoring."
     }
   ],
   "soc-2-compliance-services-india": [
