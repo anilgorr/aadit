@@ -1,18 +1,13 @@
 import { readdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
+import redirectedPosts from "../lib/redirected-posts.json" with { type: "json" }
 
 const root = process.cwd()
 const directory = path.join(root, "content", "posts")
 
-// This article's FAQ is about ISO consulting prices, not vulnerability scanning.
-// Do not amplify that mismatched content in structured data.
-const excluded = new Set([
-  "vulnerability-scanning-tools-fix-security-gaps-before-hackers-do",
-  // These two old posts redirect elsewhere and are not rendered as articles.
-  "services-vapt-network-vapt",
-  "understanding-the-digital-personal-data-protection-act-dpdp-act-in-india",
-  "soc-services-in-india",
-])
+// The mismatched vulnerability-scanning FAQ was removed. Once approved,
+// query-backed questions are added, it will use this same extraction pipeline.
+const excluded = new Set(redirectedPosts)
 
 function plain(value) {
   return value

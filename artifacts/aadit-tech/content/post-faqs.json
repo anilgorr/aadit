@@ -193,56 +193,6 @@
       "answer": "Aadit Technologies offers expert consulting, training, gap analysis, implementation support, and pre-assessment audits to guide your Indian business through the entire ISO 42001 certification process. Ready to lead in responsible AI with ISO 42001 in India? Contact Aadit Technologies today for a free consultation and learn how we can help you implement a robust AI Management System."
     }
   ],
-  "managed-soc-services-in-india": [
-    {
-      "question": "Is a Managed SOC suitable for Indian SMEs?",
-      "answer": "Yes, many providers offer affordable, tiered models suited for small and mid-sized businesses."
-    },
-    {
-      "question": "What certifications should a managed SOC provider have?",
-      "answer": "Look for ISO/IEC 27001, SOC 2, CERT-In empanelment, and qualified analysts (e.g., CISSP, CISA)."
-    },
-    {
-      "question": "How long does it take to set up a managed SOC?",
-      "answer": "Setup time depends on the number of systems to connect, log quality, access approvals, and the escalation process. Ask the provider for a rollout plan that covers onboarding, testing, and the handoff to ongoing monitoring."
-    }
-  ],
-  "soc-2-compliance-services-india": [
-    {
-      "question": "Is SOC 2 mandatory in India?",
-      "answer": "No, SOC 2 is not legally mandatory in India by government regulation. However, it's often a contractual requirement from clients, especially US-based or global enterprises, making it a de facto necessity for many Indian service providers."
-    },
-    {
-      "question": "What is the difference between SOC 2 Type 1 and Type 2?",
-      "answer": "A SOC 2 Type 1 report assesses the design of controls at a specific point in time. A SOC 2 Type 2 report assesses both the design and operating effectiveness of controls over a period (typically 6-12 months). Type 2 provides greater assurance."
-    },
-    {
-      "question": "How long does it take to achieve SOC 2 compliance?",
-      "answer": "The timeline varies depending on your starting posture, complexity, and chosen report type (Type 1 or Type 2). It can range from 3 months (for a well-prepared Type 1) to over 12 months (for a complex Type 2 starting from scratch)."
-    },
-    {
-      "question": "What is the cost of SOC 2 compliance in India?",
-      "answer": "Costs include consulting fees (like Aadit Technologies'), potential investments in security tools/processes, and the CPA firm's audit fees. Depending on complexity and extent, costs can vary considerably. Contact us for a tailored estimate. Ready to build trust and secure your business with SOC 2 Compliance? Don't let compliance complexities hold you back. Partner with Aadit Technologies, India's leading SOC 2 compliance experts."
-    }
-  ],
-  "top-soc-service-providers-in-india-secure-your-business": [
-    {
-      "question": "What is a SOC service provider?",
-      "answer": "A SOC (Security Operations Center) service provider offers comprehensive cybersecurity monitoring, threat detection, and incident response services to organizations, helping them protect their digital assets and data from cyber threats."
-    },
-    {
-      "question": "Why should businesses in India consider using SOC services?",
-      "answer": "Indian businesses face increasing cyber threats, and SOC services provide 24/7 monitoring, expert analysis, and rapid response capabilities that many organizations cannot maintain in-house, enhancing overall security posture cost-effectively."
-    },
-    {
-      "question": "How do I choose the right SOC service provider in India?",
-      "answer": "Consider factors such as the provider's experience, technology stack, certifications, service level agreements (SLAs), scalability, and ability to customize solutions to your specific industry and compliance requirements."
-    },
-    {
-      "question": "How much does a SOC service typically cost in India?",
-      "answer": "Costs vary depending on the scope of services, organization size, and specific requirements. Many providers offer flexible pricing models, including per-device or per-user pricing, making it accessible for businesses of all sizes."
-    }
-  ],
   "vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies": [
     {
       "question": "What is the full form of VAPT?",

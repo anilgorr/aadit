@@ -11,6 +11,15 @@
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
 
+# Request the combined host/protocol redirect before app route rules.
+# Netlify's platform HTTPS upgrade can precede redirects on some domain setups;
+# confirm one-hop behavior on the published domain after this config is applied.
+[[redirects]]
+  from = "http://www.aadit.net/*"
+  to = "https://aadit.net/:splat"
+  status = 301
+  force = true
+
 # Required for Next.js App Router (server components / SSR) to run on Netlify.
 [[plugins]]
   package = "@netlify/plugin-nextjs"

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { EditorialSections } from '@/components/editorial-sections'
+import { INDUSTRIES_INDEX_GUIDE } from '@/lib/index-guides'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { INDUSTRIES } from '@/lib/industries'
@@ -69,6 +71,7 @@ export default function IndustriesPage() {
             ))}
           </div>
         </Section>
+        <Section><EditorialSections sections={INDUSTRIES_INDEX_GUIDE} /></Section>
       </main>
       <Footer />
     </div>

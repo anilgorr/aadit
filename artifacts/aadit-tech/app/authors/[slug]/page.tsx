@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import Link from "next/link"
-import { posts } from "@/.velite"
+import { getAllPosts } from "@/lib/blog"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/json-ld"
@@ -37,7 +37,7 @@ export default async function AuthorPage({ params }: PageParams) {
   const author = getAuthor(slug)
   if (!author) notFound()
 
-  const articles = posts.filter((post) => getAuthorForPost(post).slug === author.slug)
+  const articles = getAllPosts().filter((post) => getAuthorForPost(post).slug === author.slug)
   const schemas = [
     authorSchema(author),
     webPageSchema({

@@ -38,6 +38,10 @@ const EXTRA_PROFILES = (process.env.NEXT_PUBLIC_SOCIAL_PROFILES ?? "")
 
 export const SOCIAL_PROFILES: string[] = [
   "https://www.linkedin.com/company/aadit-technologies/",
+  "https://www.crunchbase.com/organization/aadit-technologies",
+  "https://www.designrush.com/agency/profile/aadit-technologies",
+  "https://www.sortlist.com/agency/aadit-technologies",
+  "https://www.g2.com/products/aadit-technologies/reviews",
   ...EXTRA_PROFILES,
 ]
 

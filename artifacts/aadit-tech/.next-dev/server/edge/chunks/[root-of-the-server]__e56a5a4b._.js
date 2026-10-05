@@ -46,6 +46,11 @@ const nextConfig = {
     ]
 };
 const routeRedirects = [
+    {
+        source: '/author/suman-kv',
+        destination: '/authors/suman-kv',
+        permanent: true
+    },
     // ─── Migration and legacy URL recovery ─────────────────────────────────
     ...__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$redirects$2f$legacy$2e$json__$28$json$29$__["default"],
     {
@@ -122,17 +127,17 @@ const routeRedirects = [
     },
     {
         source: '/blog/managed-soc-services-managed-soc-for-banks',
-        destination: '/blog/managed-soc-services-in-india',
+        destination: '/cybersecurity/managed-soc',
         permanent: true
     },
     {
         source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc',
-        destination: '/blog/managed-soc-services-in-india',
+        destination: '/cybersecurity/managed-soc',
         permanent: true
     },
     {
         source: '/blog/managed-soc-services-managed-security-services-with-soc',
-        destination: '/blog/managed-soc-services-in-india',
+        destination: '/cybersecurity/managed-soc',
         permanent: true
     },
     // Sales-style article overlaps the managed-SOC service page. Preserve its
@@ -141,6 +146,22 @@ const routeRedirects = [
     {
         source: '/blog/soc-services-in-india',
         destination: '/cybersecurity/managed-soc',
+        permanent: true
+    },
+    // October on-page fix list: retain useful guidance on the service pages.
+    {
+        source: '/blog/top-soc-service-providers-in-india-secure-your-business',
+        destination: '/cybersecurity/managed-soc',
+        permanent: true
+    },
+    {
+        source: '/blog/managed-soc-services-in-india',
+        destination: '/cybersecurity/managed-soc',
+        permanent: true
+    },
+    {
+        source: '/blog/soc-2-compliance-services-india',
+        destination: '/compliance/soc2',
         permanent: true
     },
     // Cybersecurity companies duplicates
@@ -157,7 +178,7 @@ const routeRedirects = [
     // SOC 2 duplicate
     {
         source: '/blog/soc-2-compliance-services-india-2',
-        destination: '/blog/soc-2-compliance-services-india',
+        destination: '/compliance/soc2',
         permanent: true
     },
     // Cloud cost optimization duplicate
@@ -417,6 +438,17 @@ const LEGACY_SITEMAP_PATHS = new Set([
     "/page-sitemap.xml"
 ]);
 function middleware(request) {
+    // WordPress media attachment pages are permanently retired. This must run
+    // before host, trailing-slash, and legacy redirects to avoid a wasted hop.
+    if (/\/attachment(?:\/|$)/i.test(request.nextUrl.pathname)) {
+        return new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$15$2e$5$2e$19_react$2d$dom$40$19$2e$1$2e$0_react$40$19$2e$1$2e$0_$5f$react$40$19$2e$1$2e$0$2f$node_modules$2f$next$2f$dist$2f$esm$2f$server$2f$web$2f$exports$2f$index$2e$js__$5b$middleware$2d$edge$5d$__$28$ecmascript$29$__["NextResponse"](null, {
+            status: 410,
+            headers: {
+                "Content-Type": "text/plain; charset=utf-8",
+                "Cache-Control": "public, max-age=3600"
+            }
+        });
+    }
     const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim();
     const forwardedProtocol = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim().toLowerCase();
     const host = (forwardedHost ?? request.headers.get("host") ?? request.nextUrl.host).split(":")[0].toLowerCase();

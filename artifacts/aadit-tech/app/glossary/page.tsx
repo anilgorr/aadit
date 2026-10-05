@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { EditorialSections } from '@/components/editorial-sections'
+import { GLOSSARY_INDEX_GUIDE } from '@/lib/index-guides'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { GLOSSARY } from '@/lib/glossary'
@@ -79,6 +81,7 @@ export default function GlossaryPage() {
             ))}
           </div>
         </Section>
+        <Section><EditorialSections sections={GLOSSARY_INDEX_GUIDE} /></Section>
       </main>
       <Footer />
     </div>

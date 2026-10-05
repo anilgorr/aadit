@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer'
 import { Section } from '@/components/ui/section'
 import { Breadcrumbs } from '@/components/ui/breadcrumbs'
 import { BlogCard } from '@/components/blog-card'
+import { BLOG_INTRO } from '@/lib/index-guides'
 import { buttonVariants } from '@/components/ui/button'
 import { getPostsPage, getTotalPages } from '@/lib/blog'
 import { JsonLd } from '@/components/json-ld'
@@ -55,6 +56,7 @@ export function BlogIndex({ page }: { page: number }) {
         </Section>
 
         <Section>
+          {page === 1 && <p className="mb-10 max-w-4xl leading-relaxed text-muted-foreground">{BLOG_INTRO}</p>}
           {posts.length > 0 ? (
             <>
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

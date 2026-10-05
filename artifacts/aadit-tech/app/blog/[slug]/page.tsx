@@ -75,6 +75,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   return buildMetadata({
     path: post.permalink,
     title: post.title,
+    absoluteTitle: post.seoTitle,
     description: post.description,
     type: 'article',
     publishedTime: post.publishedAt,

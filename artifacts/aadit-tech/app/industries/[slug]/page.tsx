@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import { INDUSTRY_GUIDES } from '@/lib/industry-guides'
+import { EditorialSections } from '@/components/editorial-sections'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight, ShieldCheck } from 'lucide-react'
@@ -99,7 +101,8 @@ export default async function IndustryPage({ params }: PageParams) {
 
         <Section background="muted">
           <div className="mx-auto max-w-3xl">
-            <h2 className="mb-8 text-2xl font-bold">Related Services &amp; Resources</h2>
+            <EditorialSections sections={INDUSTRY_GUIDES[industry.slug] ?? []} />
+            <h2 className="mt-12 mb-8 text-2xl font-bold">Related Services &amp; Resources</h2>
             <div className="flex flex-col divide-y divide-border rounded-2xl border border-border bg-card">
               {industry.relatedLinks.map((link) => (
                 <Link

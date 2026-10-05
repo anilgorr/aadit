@@ -168,6 +168,14 @@ function organizationSchema() {
         logo: (0, __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["absoluteUrl"])(__TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ORG_LOGO_PATH"]),
         description: __TURBOPACK__imported__module__$5b$project$5d2f$artifacts$2f$aadit$2d$tech$2f$lib$2f$site$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["SITE_DESCRIPTION"],
         foundingDate: '2017-01-12',
+        areaServed: [
+            'India',
+            'United States',
+            'United Arab Emirates'
+        ].map((name)=>({
+                '@type': 'Country',
+                name
+            })),
         identifier: {
             '@type': 'PropertyValue',
             propertyID: 'CIN',

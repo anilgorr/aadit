@@ -54,6 +54,7 @@ const serviceSchema = {
 
 const postSchema = {
   title: s.string().min(1),
+  seoTitle: s.string().min(1).optional(),
   description: s.string().min(1),
   slug: s.slug('post'),
   publishedAt: s.isodate(),

@@ -28,7 +28,7 @@ export const HUBS: Record<Hub, HubMeta> = {
     metaDescription:
       "Managed cybersecurity services for Indian organisations: SOC, VAPT, risk assessment, incident response, endpoint and network security, and advisory support.",
     intro:
-      "Aadit Technologies helps organisations identify, reduce, and respond to cyber risk through monitoring, testing, incident readiness, endpoint and network security, and practical security guidance.",
+      "Cybersecurity services help organisations identify, reduce and respond to risks affecting their systems, identities and data. Aadit Technologies combines assessment, testing, monitoring and incident readiness with endpoint, network and email security support.",
     buyerGuide: {
       title: "How to prioritise cybersecurity work",
       description:
@@ -58,7 +58,7 @@ export const HUBS: Record<Hub, HubMeta> = {
     metaDescription:
       "Certification and audit readiness for ISO 27001, ISO 42001, ISO 9001, GDPR, PCI-DSS, HIPAA, and SOC 2, with guidance on scope and evidence.",
     intro:
-      "Achieve and maintain the certifications your customers and regulators expect. Explore our compliance services below.",
+      "Compliance readiness translates legal, contractual and assurance requirements into scoped controls and operating evidence. Aadit Technologies supports management-system certification preparation, independent SOC 2 examination readiness, payment security and privacy programmes; each has a different outcome and review process.",
     buyerGuide: {
       title: "How to plan compliance readiness",
       description:
@@ -88,7 +88,7 @@ export const HUBS: Record<Hub, HubMeta> = {
     metaDescription:
       "Proactive monitoring, management, and support for IT infrastructure, including endpoints and cloud environments, with clear service scope and responsibilities.",
     intro:
-      "Aadit Technologies provides 24/7 managed IT services designed to keep your business running reliably while reducing operational overhead. Explore our managed services below.",
+      "Managed IT services provide ongoing support, maintenance and operational oversight for an agreed technology environment. Aadit Technologies supports endpoints, infrastructure, cloud workloads and recovery planning with defined responsibilities, escalation and service coverage.",
     buyerGuide: {
       title: "How to assess managed IT support",
       description:

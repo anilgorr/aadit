@@ -13,6 +13,14 @@ const LEGACY_SITEMAP_PATHS = new Set([
 ])
 
 export function middleware(request: NextRequest) {
+  // WordPress media attachment pages are permanently retired. This must run
+  // before host, trailing-slash, and legacy redirects to avoid a wasted hop.
+  if (/\/attachment(?:\/|$)/i.test(request.nextUrl.pathname)) {
+    return new NextResponse(null, {
+      status: 410,
+      headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "public, max-age=3600" },
+    })
+  }
   const forwardedHost = request.headers.get("x-forwarded-host")?.split(",")[0]?.trim()
   const forwardedProtocol = request.headers.get("x-forwarded-proto")?.split(",")[0]?.trim().toLowerCase()
   const host = (forwardedHost ?? request.headers.get("host") ?? request.nextUrl.host)

@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "4c3c79ea8aa50a0c3282a5dde5104e4a",
-    "previewModeSigningKey": "4cab970a828b5e99af415f2608a2bee146445a84ce59bd7fc3964e2f753a1946",
-    "previewModeEncryptionKey": "5793f0dc3044ce0d93be47405325761370c6dbbb0f86dc87e4552dc90ca8dba0"
-  }
-}
+{"version":4,"routes":{"/cybersecurity":{},"/compliance":{},"/it-managed-services":{},"/glossary/vapt":{},"/glossary/soc":{},"/glossary/siem":{},"/glossary/iso-27001":{},"/glossary/gdpr":{},"/glossary/hipaa":{},"/glossary/pci-dss":{},"/glossary/soc-2":{},"/authors/suman-kv":{},"/authors/anil-gorraladaku":{},"/authors/srinivas-gadicherla":{},"/industries/startups":{},"/industries/healthcare-bfsi":{},"/industries/ecommerce-fintech":{}},"dynamicRoutes":{"/[hub]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/[hub]","routeRegex":"^\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/glossary/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/glossary/[slug]","routeRegex":"^\\/glossary\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/authors/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/authors/[slug]","routeRegex":"^\\/authors\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/industries/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/industries/[slug]","routeRegex":"^\\/industries\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"badbcb0480b5503e890dfdb4ba282268","previewModeSigningKey":"d3daf2b737a300d105b8a9941e5bbec42336da38f11d95f5b4c0c68851ec5753","previewModeEncryptionKey":"2536b747ef3e22125d047eb1dda82456207f83629f495521b8fac1715332577a"}}

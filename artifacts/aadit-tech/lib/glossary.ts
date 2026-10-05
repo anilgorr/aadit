@@ -58,8 +58,8 @@ export const GLOSSARY: GlossaryTerm[] = [
       "A SOC can be operated internally or supported by an external provider. Before choosing a model, define telemetry sources, coverage hours, escalation contacts, investigation responsibilities and who has authority to contain an incident. SOC 2 reporting is a different topic: it evaluates controls at a service organisation.",
     ],
     relatedService: {
-      label: "Explore our Cybersecurity services",
-      href: "/cybersecurity",
+      label: "Explore managed SOC services",
+      href: "/cybersecurity/managed-soc",
     },
     relatedTerms: ["siem", "vapt", "soc-2"],
     comparison: {

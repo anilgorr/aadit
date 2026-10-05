@@ -5,6 +5,7 @@ import { HUB_ORDER } from "@/lib/services"
 import { INDUSTRIES } from "@/lib/industries"
 import { GLOSSARY } from "@/lib/glossary"
 import { getAllPosts } from "@/lib/blog"
+import { AUTHORS } from "@/lib/authors"
 
 /**
  * Single canonical sitemap covering every real, indexable page. There are no
@@ -20,17 +21,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/compare/soc-2-vs-iso-27001"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.6 },
     { url: absoluteUrl("/privacy-policy"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.2 },
     { url: absoluteUrl("/team"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.6 },
-    { url: absoluteUrl("/authors/anil-gorraladaku"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.5 },
-    { url: absoluteUrl("/authors/srinivas-gadicherla"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.5 },
-    { url: absoluteUrl("/industries"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/glossary"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.7 },
-    { url: absoluteUrl("/blog"), lastModified: new Date("2026-08-24"), changeFrequency: "weekly", priority: 0.8 },
+    { url: absoluteUrl("/industries"), lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.8 },
+    { url: absoluteUrl("/glossary"), lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/blog"), lastModified: new Date("2026-10-05"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/whitepapers"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.5 },
   ]
 
   const hubEntries: MetadataRoute.Sitemap = HUB_ORDER.map((hub) => ({
     url: absoluteUrl(`/${hub}`),
-    lastModified: new Date("2026-08-24"),
+    lastModified: new Date("2026-10-05"),
     changeFrequency: "monthly",
     priority: 0.9,
   }))
@@ -44,14 +43,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const industryEntries: MetadataRoute.Sitemap = INDUSTRIES.map((industry) => ({
     url: absoluteUrl(`/industries/${industry.slug}`),
-    lastModified: new Date("2026-08-24"),
+    lastModified: new Date("2026-10-05"),
     changeFrequency: "monthly",
     priority: 0.7,
   }))
 
   const glossaryEntries: MetadataRoute.Sitemap = GLOSSARY.map((term) => ({
     url: absoluteUrl(`/glossary/${term.slug}`),
-    lastModified: new Date("2026-08-24"),
+    lastModified: new Date("2026-10-05"),
     changeFrequency: "yearly",
     priority: 0.6,
   }))
@@ -70,5 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryEntries,
     ...glossaryEntries,
     ...postEntries,
+    ...AUTHORS.map((author) => ({ url: absoluteUrl(`/authors/${author.slug}`), lastModified: new Date("2026-10-05"), changeFrequency: "yearly" as const, priority: 0.5 })),
   ]
 }

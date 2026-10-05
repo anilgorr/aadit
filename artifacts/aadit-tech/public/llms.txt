@@ -14,33 +14,85 @@
 - Headquarters: #21 & 22, AnandAM, 4th Main Road, 3rd Block, Opposite Axis Bank, New BEL Road, Bengaluru 560094, Karnataka, India
 - Frameworks supported: ISO 27001, ISO 42001, ISO 9001, SOC 1, SOC 2, HIPAA, PCI DSS, GDPR, India DPDP Act, RBI cybersecurity guidelines, and CSCRF
 
-## Common questions
+Full plain-text content: /llms-full.txt
 
-- What does a SOC 2 Type 2 audit cost in India? See [SOC 2 readiness](https://aadit.net/compliance/soc2).
-- How long does ISO 27001 certification take? See [ISO 27001 consulting](https://aadit.net/compliance/iso-27001).
-- What does VAPT cost in India? See [VAPT services](https://aadit.net/cybersecurity/vapt).
-- SOC 2 or ISO 27001 first? See [our compliance services](https://aadit.net/compliance).
-
-## Core service areas
-
-- [Cybersecurity](https://aadit.net/cybersecurity): Managed SOC, VAPT (vulnerability assessment & penetration testing), endpoint and network security, security architecture review, and incident response.
-- [Compliance & Audits](https://aadit.net/compliance): Certification and audit readiness for ISO 27001, SOC 2, HIPAA, PCI DSS, GDPR, and India's DPDP Act.
-- [IT Managed Services](https://aadit.net/it-managed-services): 24/7 infrastructure monitoring, cloud operations, help desk, backup, and disaster recovery.
-
-## Industries
-
-- [Startups & Scaleups](https://aadit.net/industries/startups): Right-sized security and SOC 2 / ISO 27001 to close enterprise deals and pass due diligence.
-- [Healthcare & BFSI](https://aadit.net/industries/healthcare-bfsi): HIPAA, RBI cybersecurity guidelines, PCI DSS, and ISO 27001 with continuous monitoring.
-- [E-commerce & Fintech](https://aadit.net/industries/ecommerce-fintech): PCI DSS, GDPR/DPDP, fraud prevention, and application/API security testing.
-
-## Learn
-
-- [Security & Compliance Glossary](https://aadit.net/glossary): Plain-English definitions of VAPT, SOC, SIEM, ISO 27001, GDPR, HIPAA, PCI DSS, and SOC 2.
-- [Insights & Blog](https://aadit.net/blog): Practical guidance on cybersecurity, compliance, and managed IT.
-- [Full plain-text content export](https://aadit.net/llms-full.txt): Substantive service and article content with canonical source URLs.
-
-## Key pages
-
-- [Homepage](https://aadit.net/)
-- [Industries overview](https://aadit.net/industries)
-- [Sitemap](https://aadit.net/sitemap.xml)
+## Canonical pages
+- [Aadit Technologies | Cybersecurity, Compliance & IT Services](https://aadit.net)
+- [About Our Security Team | Aadit Technologies](https://aadit.net/about)
+- [Contact Us | Aadit Technologies](https://aadit.net/contact)
+- [Cybersecurity Careers | Aadit Technologies](https://aadit.net/careers)
+- [Client Case Studies | Aadit Technologies](https://aadit.net/case-studies)
+- [SOC 2 vs ISO 27001: Which Comes First? | Aadit](https://aadit.net/compare/soc-2-vs-iso-27001)
+- [Privacy Policy | Aadit Technologies](https://aadit.net/privacy-policy)
+- [Leadership Team | Aadit Technologies](https://aadit.net/team)
+- [Industries We Serve | Aadit Technologies](https://aadit.net/industries)
+- [Cybersecurity & Compliance Glossary | Aadit Technologies](https://aadit.net/glossary)
+- [Insights & Blog | Aadit Technologies](https://aadit.net/blog)
+- [Whitepapers | Aadit Technologies](https://aadit.net/whitepapers)
+- [Cybersecurity | Aadit Technologies](https://aadit.net/cybersecurity)
+- [Compliance & Audits | Aadit Technologies](https://aadit.net/compliance)
+- [IT Managed Services | Aadit Technologies](https://aadit.net/it-managed-services)
+- [Backup & Disaster Recovery Solutions | Aadit Technologies](https://aadit.net/it-managed-services/backup-disaster-recovery)
+- [Cloud Infrastructure Solutions | Aadit Technologies](https://aadit.net/it-managed-services/cloud-infrastructure)
+- [Cloud Migration, Security & Management | Aadit Technologies](https://aadit.net/it-managed-services/cloud-migration)
+- [Cloud Optimization Services | Aadit Technologies](https://aadit.net/it-managed-services/cloud-optimization)
+- [Cybersecurity Consulting | Aadit Technologies](https://aadit.net/cybersecurity/consulting)
+- [DPDP Act Compliance | Aadit Technologies](https://aadit.net/compliance/dpdp-act)
+- [Email Security Solutions | Aadit Technologies](https://aadit.net/cybersecurity/email-security)
+- [Endpoint Security Solutions | Aadit Technologies](https://aadit.net/cybersecurity/endpoint-security)
+- [Firewall & Network Security | Aadit Technologies](https://aadit.net/cybersecurity/firewall-network-security)
+- [GDPR Compliance Solutions | Aadit Technologies](https://aadit.net/compliance/gdpr)
+- [IT Help Desk & Support Services | Aadit Technologies](https://aadit.net/it-managed-services/helpdesk-support)
+- [HIPAA Compliance Solutions | Aadit Technologies](https://aadit.net/compliance/hipaa)
+- [Incident Response | Aadit Technologies](https://aadit.net/cybersecurity/incident-response)
+- [ISO 27001 Certification & Consulting | Aadit Technologies](https://aadit.net/compliance/iso-27001)
+- [ISO 42001 Certification | Aadit Technologies](https://aadit.net/compliance/iso-42001)
+- [ISO 9001 Certification | Aadit Technologies](https://aadit.net/compliance/iso-9001)
+- [Managed IT Services | Aadit Technologies](https://aadit.net/it-managed-services/managed-it-services)
+- [Managed SOC Services | Aadit Technologies](https://aadit.net/cybersecurity/managed-soc)
+- [PCI DSS Compliance | Aadit Technologies](https://aadit.net/compliance/pci-dss)
+- [Cybersecurity Risk Assessment | Aadit Technologies](https://aadit.net/cybersecurity/risk-assessment)
+- [SOC as a Service | Aadit Technologies](https://aadit.net/cybersecurity/soc-as-a-service)
+- [SOC 2 Readiness & Audit Support | Aadit Technologies](https://aadit.net/compliance/soc2)
+- [VAPT Services | Aadit Technologies](https://aadit.net/cybersecurity/vapt)
+- [Startups & Scaleups | Aadit Technologies](https://aadit.net/industries/startups)
+- [Healthcare & BFSI | Aadit Technologies](https://aadit.net/industries/healthcare-bfsi)
+- [E-commerce & Fintech | Aadit Technologies](https://aadit.net/industries/ecommerce-fintech)
+- [VAPT: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/vapt)
+- [SOC: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/soc)
+- [SIEM: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/siem)
+- [ISO 27001: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/iso-27001)
+- [GDPR: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/gdpr)
+- [HIPAA: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/hipaa)
+- [PCI DSS: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/pci-dss)
+- [SOC 2: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/soc-2)
+- [ISO 27001 Certification Services | Aadit Technologies](https://aadit.net/blog/compliance-audit-services-iso-27001-certification)
+- [SOC 2 Audit Readiness and Support | Aadit Technologies](https://aadit.net/blog/compliance-audit-services-soc-2-certification)
+- [Best VAPT Tools for Security Testing | Aadit Technologies](https://aadit.net/blog/best-vapt-tools-for-security-testing-aadit-technologies)
+- [Security Operations Center (SOC): Guide | Aadit Technologies](https://aadit.net/blog/what-is-a-security-operations-center-soc-a-comprehensive-guide-to-protecting-your-organization)
+- [AI Consulting for Enterprises | Aadit Technologies](https://aadit.net/blog/cybersecurity-consulting-services-ai-consulting-for-enterprises)
+- [ISO 42001 Compliance & AI Governance | Aadit Technologies](https://aadit.net/blog/compliance-audit-services-iso-42001-ai-governance)
+- [SOC as a Service for Indian Businesses | Aadit](https://aadit.net/blog/soc-as-a-service-for-indian-organizations)
+- [Cybersecurity Compliance and SOC Monitoring | Aadit](https://aadit.net/blog/cybersecurity-compliance-next-gen-soc-2025)
+- [Cyber Security Companies in Bangalore | Aadit Technologies](https://aadit.net/blog/cyber-security-companies-bangalore)
+- [Cybercrime in India: Online Safety | Aadit Technologies](https://aadit.net/blog/cybercrime-in-india-essential-guide)
+- [SIEM Tools for Cyber Threat Detection | Aadit Technologies](https://aadit.net/blog/essential-siem-tools-for-organizations)
+- [ISO 42001 Certification Consulting in India | Aadit](https://aadit.net/blog/iso-42001-certification-consulting-india)
+- [Managed IT Services in India | Aadit Technologies](https://aadit.net/blog/managed-it-service-providers-india)
+- [10 Cybersecurity Strategies for Enterprises | Aadit](https://aadit.net/blog/top-10-cybersecurity-strategies-to-strengthen-your-enterprise-security)
+- [Top Cyber Security Companies in India | Aadit](https://aadit.net/blog/top-cyber-security-companies-in-india-safeguarding-digital-future)
+- [VAPT Full Form: What Is VAPT? | Aadit Technologies](https://aadit.net/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies)
+- [Data Migration for Indian Enterprises | Aadit Technologies](https://aadit.net/blog/data-migration-for-indian-enterprises)
+- [Cross-Domain Attacks: Threats and Mitigation | Aadit](https://aadit.net/blog/cross-domain-attacks-threats-mitigation)
+- [Cloud Migration Services in India: A Practical Guide](https://aadit.net/blog/cloud-migration-services-in-india-strategy-benefits-best-practices)
+- [Cloud Cost Optimization in India | Aadit Technologies](https://aadit.net/blog/cloud-cost-optimization-indian-businesses)
+- [Cyber Security in India: Trends and Challenges](https://aadit.net/blog/cyber-security-in-india-trends-challenges-growth)
+- [SOC 1 vs SOC 2: Key Differences | Aadit Technologies](https://aadit.net/blog/soc-1-vs-soc-2-key-differences-for-indian-businesses)
+- [Common Computer Attacks and How to Prevent Them](https://aadit.net/blog/common-computer-attacks-guide)
+- [IT Systems Management Guide | Aadit Technologies](https://aadit.net/blog/it-systems-management-monitoring-support-guide)
+- [CSCRF Explained: SEBI Cyber Resilience Rules | Aadit](https://aadit.net/blog/cscrf-cybersecurity-and-cyber-resilience-framework-india)
+- [Vulnerability Scanning Tools | Aadit Technologies](https://aadit.net/blog/vulnerability-scanning-tools-fix-security-gaps-before-hackers-do)
+- [Aadit's Cybersecurity Mission | Aadit Technologies](https://aadit.net/blog/welcome-to-aadit-technologies)
+- [Suman KV | Aadit Technologies](https://aadit.net/authors/suman-kv)
+- [Anil Gorraladaku | Aadit Technologies](https://aadit.net/authors/anil-gorraladaku)
+- [Srinivas Gadicherla | Aadit Technologies](https://aadit.net/authors/srinivas-gadicherla)

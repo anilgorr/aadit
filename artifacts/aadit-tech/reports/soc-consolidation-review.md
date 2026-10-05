@@ -1,5 +1,7 @@
 # SOC URL and search-intent review
 
+> Historical review. The owner's 5 October on-page fix document supersedes the earlier recommendation to preserve the remaining SOC guide/comparison and SOC 2 articles. See `onpage-technical-fixes.md` for the implemented redirects and outstanding evidence requirements.
+
 Reviewed 30 September 2026 using the user-provided Google Search Console exports in `attached_assets/` (`Pages_1790761769065.csv`, `Queries_1790761769066.csv`, `Filters_1790761769065.csv`), the later `Aadit_Keyword_to_Page_Mapping_1790770620999.xlsx` workbook, and the site's current article copy. The separate CSVs are aggregate page and query exports (Web search, last three months), **not** a query-by-page table. The workbook supplies compiled query-to-page examples for 20 queries, including SOC; its stated date range is 20 June–17 September 2026. The workbook's 113-query total is not independently auditable from its 20 displayed examples. Neither source proves that a 301 will improve rankings. Impressions across URLs are not unique searches.
 
 | URL / intent | Exported clicks | Exported impressions | Decision |

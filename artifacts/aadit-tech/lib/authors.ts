@@ -14,6 +14,14 @@ export interface AuthorProfile {
 
 export const AUTHORS: AuthorProfile[] = [
   {
+    slug: "suman-kv",
+    name: "Suman KV",
+    jobTitle: "Sales & Marketing",
+    description: "Suman KV works in Sales & Marketing at Aadit Technologies, covering cybersecurity, compliance and managed IT service decisions.",
+    expertise: ["Cybersecurity", "Vulnerability Assessment and Penetration Testing", "Security Operations Centre", "ISO 27001", "SOC 2", "PCI DSS", "HIPAA", "GDPR", "Digital Personal Data Protection Act", "Managed IT Services"],
+    bio: ["Suman KV works in Sales & Marketing at Aadit Technologies. This profile brings together articles explicitly bylined to Suman; it does not attribute other authors' work to this profile."],
+  },
+  {
     slug: "anil-gorraladaku",
     name: "Anil Gorraladaku",
     jobTitle: "Chief Executive Officer",
@@ -55,7 +63,9 @@ export function getAuthor(slug: string): AuthorProfile | undefined {
   return AUTHORS.find((author) => author.slug === slug)
 }
 
-export function getAuthorForPost(post: Pick<Post, "slug" | "tags">): AuthorProfile {
+export function getAuthorForPost(post: Pick<Post, "slug" | "tags" | "author">): AuthorProfile {
+  const named = AUTHORS.find((author) => author.name.toLowerCase() === post.author.name.toLowerCase())
+  if (named) return named
   const technicalSignals = [
     "vapt",
     "soc",
@@ -71,8 +81,8 @@ export function getAuthorForPost(post: Pick<Post, "slug" | "tags">): AuthorProfi
   const content = `${post.slug} ${post.tags.join(" ")}`.toLowerCase()
 
   return technicalSignals.some((signal) => content.includes(signal))
-    ? AUTHORS[1]
-    : AUTHORS[0]
+    ? getAuthor("srinivas-gadicherla")!
+    : getAuthor("anil-gorraladaku")!
 }
 
 export function authorSchema(author: AuthorProfile) {
@@ -84,7 +94,7 @@ export function authorSchema(author: AuthorProfile) {
     name: author.name,
     url,
     jobTitle: author.jobTitle,
-    worksFor: { "@id": ORGANIZATION_ID },
+    worksFor: { "@type": "Organization", "@id": ORGANIZATION_ID, name: "Aadit Technologies", url: absoluteUrl("/") },
     description: author.description,
     knowsAbout: author.expertise,
   }

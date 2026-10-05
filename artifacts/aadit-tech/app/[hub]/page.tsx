@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation"
+import { HUB_GUIDES, SERVICE_NOTES } from "@/lib/hub-guides"
+import { EditorialSections } from "@/components/editorial-sections"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
@@ -45,6 +47,9 @@ export default async function HubPage({ params }: PageParams) {
 
   const meta = HUBS[hub]
   const children = getServicesByHub(hub)
+  const faqs = [...meta.buyerGuide.faqs, ...children.flatMap((service) => service.faqs)]
+    .filter((item, index, items) => items.findIndex((other) => other.question === item.question) === index)
+    .slice(0, 6)
   const structuredData = [
     webPageSchema({
       path: `/${hub}`,
@@ -52,7 +57,7 @@ export default async function HubPage({ params }: PageParams) {
       description: meta.intro,
       type: "CollectionPage",
     }),
-    faqSchema(meta.buyerGuide.faqs),
+    faqSchema(faqs),
   ]
 
   return (
@@ -85,10 +90,10 @@ export default async function HubPage({ params }: PageParams) {
                   <Card className="flex h-full flex-col p-8 transition-colors hover:border-primary/50">
                     <h2 className="mb-3 text-xl font-bold">{service.title}</h2>
                     <p className="mb-6 flex-1 leading-relaxed text-muted-foreground">
-                      {service.metaDescription}
+                      {SERVICE_NOTES[service.slug] ?? service.metaDescription}
                     </p>
                     <div className="mt-auto flex items-center text-sm font-semibold text-primary">
-                      Learn more
+                      Explore {service.title}
                       <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </div>
                   </Card>
@@ -128,9 +133,13 @@ export default async function HubPage({ params }: PageParams) {
         </Section>
 
         <Section>
+          <EditorialSections sections={HUB_GUIDES[hub]} />
+        </Section>
+
+        <Section>
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-10 text-center text-3xl font-bold">Common Questions</h2>
-            <Accordion items={meta.buyerGuide.faqs} />
+            <Accordion items={faqs} />
           </div>
         </Section>
       </main>

@@ -14,12 +14,17 @@ description: Durable decisions/constraints for the technical SEO/AEO/GEO layer o
 - **Why:** several pages previously appended the brand manually AND inherited the template → "Foo | Aadit Technologies | Aadit Technologies".
 
 ## No-invention constraints that shape structured data
-- Organization `sameAs` is emitted **only** when `NEXT_PUBLIC_SOCIAL_PROFILES` is set — no real social URLs exist, and inventing them mislinks the brand entity. Same reasoning omits `contactPoint` (no public phone/email).
-- WebSite schema has **no** SearchAction/sitelinks-searchbox: there is no on-site search page and Google deprecated the feature.
-- FAQPage is emitted only where real Q&A exists (service pages with `faqs`). Glossary keeps DefinedTerm (no Q&A to fabricate). The lone service MDX (`consulting.mdx`) has no `faqs`, so it correctly shows no FAQPage.
+- Verify profile URLs identify this company before adding them. Do not substitute placeholders or a similarly named company. Do not publish manually maintained ratings.
+- **Why:** the owner's on-page fixes permit omitting ratings without automatic synchronisation and include profile placeholders that are not usable URLs.
+- **How to apply:** confirm identity and a working profile; leave unverified links and ratings out.
+- New blog FAQ questions must come from page-filtered Search Console queries, and visible answers must match structured data.
+- **Why:** the owner's fix document explicitly prohibits invented blog questions. Separate aggregate exports cannot associate a question with a particular URL.
+- **How to apply:** obtain queries exported with the individual Page filter before adding new blog FAQs. Do not block unrelated fixes while waiting for that evidence.
 
-## Redirects
-- Only `www → apex` (301, host-matched) is implemented in `next.config.ts`; HTTP→HTTPS is automatic on Netlify. **No legacy→new path 301 map exists** because the old site's URL inventory was never provided — add entries to `next.config.ts` `redirects()` when available.
+## Hosted redirects
+- Verify host and protocol redirect behaviour after the Netlify deployment, not solely in the development server.
+- **Why:** hosting-level HTTPS handling can occur before application middleware and introduce an extra redirect.
+- **How to apply:** distinguish a tested application-level one-hop redirect from an unverified production hosting sequence.
 
 ## next/og images
 - Shared renderer in `lib/og.tsx`. **satori (next/og) does not support `oklch()`** — the site's Tailwind tokens are OKLCH, so OG images use hand-picked hex approximations of the midnight/cyan palette. No remote fonts (keeps build fast/safe).

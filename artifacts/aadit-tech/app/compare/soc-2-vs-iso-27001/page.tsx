@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { EditorialSections } from '@/components/editorial-sections'
+import { COMPARISON_GUIDE } from '@/lib/comparison-guide'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
@@ -11,7 +13,7 @@ import { buildMetadata, faqSchema, webPageSchema } from '@/lib/seo'
 
 export const metadata: Metadata = buildMetadata({
   path: '/compare/soc-2-vs-iso-27001',
-  title: 'SOC 2 vs ISO 27001: Which Do You Need First?',
+  absoluteTitle: 'SOC 2 vs ISO 27001: Which Comes First? | Aadit',
   description:
     'Compare SOC 2 and ISO 27001 by scope, issuer, validity, buyer expectations, and practical sequencing for Indian SaaS companies.',
 })
@@ -184,6 +186,7 @@ export default function Soc2VsIso27001Page() {
 
         <Section background="muted">
           <div className="mx-auto max-w-3xl">
+            <div className="mb-12"><EditorialSections sections={COMPARISON_GUIDE} /></div>
             <h2 className="mb-8 text-2xl font-bold text-foreground">Frequently asked questions</h2>
             <Accordion items={FAQs} />
           </div>

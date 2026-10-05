@@ -127,6 +127,10 @@ export function organizationSchema() {
     logo: absoluteUrl(ORG_LOGO_PATH),
     description: SITE_DESCRIPTION,
     foundingDate: '2017-01-12',
+    areaServed: ['India', 'United States', 'United Arab Emirates'].map((name) => ({
+      '@type': 'Country',
+      name,
+    })),
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'CIN',

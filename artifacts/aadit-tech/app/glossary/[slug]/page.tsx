@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import { GLOSSARY_GUIDES } from '@/lib/glossary-guides'
+import { EditorialSections } from '@/components/editorial-sections'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -60,6 +62,7 @@ export default async function GlossaryTermPage({ params }: PageParams) {
         ]
 
   const path = `/glossary/${term.slug}`
+  const guide = GLOSSARY_GUIDES[term.slug]
   const schemas = [
     webPageSchema({ path, name: term.term, description: term.definition }),
     definedTermSchema({
@@ -124,7 +127,8 @@ export default async function GlossaryTermPage({ params }: PageParams) {
 
         <Section>
           <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight">{term.comparison.heading}</h2>
+            {guide && <EditorialSections sections={guide.sections} />}
+            <h2 className="mt-12 text-3xl font-bold tracking-tight">{term.comparison.heading}</h2>
             <div className="mt-6 overflow-x-auto rounded-xl border">
               <table className="w-full min-w-[560px] text-left">
                 <thead className="bg-muted text-sm">
@@ -141,6 +145,7 @@ export default async function GlossaryTermPage({ params }: PageParams) {
                 </tbody>
               </table>
             </div>
+            {guide && <section className="mt-12"><h2 className="text-3xl font-bold tracking-tight">Common misconceptions</h2><ul className="mt-6 list-disc space-y-4 pl-6 leading-relaxed text-muted-foreground">{guide.misconceptions.map((item) => <li key={item}>{item}</li>)}</ul></section>}
             <h2 className="mt-12 text-3xl font-bold tracking-tight">Frequently asked questions</h2>
             <div className="mt-6 space-y-6">
               {term.faqs.map(({ question, answer }) => (

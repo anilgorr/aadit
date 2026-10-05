@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
 // Middleware uses the legacy mapping to issue one-hop 301s for both slash and
 // non-slash source URLs. Next's `permanent: true` would instead issue 308s.
 export const routeRedirects = [
+      { source: '/author/suman-kv', destination: '/authors/suman-kv', permanent: true },
       // ─── Migration and legacy URL recovery ─────────────────────────────────
       ...legacyRedirects,
       { source: '/category/:slug*', destination: '/blog', permanent: true },
@@ -40,18 +41,22 @@ export const routeRedirects = [
       { source: '/blog/services-vapt-network-vapt', destination: '/blog/vapt-full-form-comprehensive-vapt-testing-services-in-india-aadit-technologies', permanent: true },
       // Managed SOC cluster → canonical Managed SOC post
       { source: '/blog/understanding-the-digital-personal-data-protection-act-dpdp-act-in-india', destination: '/compliance/dpdp-act', permanent: true },
-      { source: '/blog/managed-soc-services-managed-soc-for-banks', destination: '/blog/managed-soc-services-in-india', permanent: true },
-      { source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
-      { source: '/blog/managed-soc-services-managed-security-services-with-soc', destination: '/blog/managed-soc-services-in-india', permanent: true },
+      { source: '/blog/managed-soc-services-managed-soc-for-banks', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/blog/managed-soc-services-comprehensive-cybersecurity-with-managed-soc', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/blog/managed-soc-services-managed-security-services-with-soc', destination: '/cybersecurity/managed-soc', permanent: true },
       // Sales-style article overlaps the managed-SOC service page. Preserve its
       // indexed URL with a direct 301; retain the informational guide and
       // provider comparison as separate intents.
       { source: '/blog/soc-services-in-india', destination: '/cybersecurity/managed-soc', permanent: true },
+      // October on-page fix list: retain useful guidance on the service pages.
+      { source: '/blog/top-soc-service-providers-in-india-secure-your-business', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/blog/managed-soc-services-in-india', destination: '/cybersecurity/managed-soc', permanent: true },
+      { source: '/blog/soc-2-compliance-services-india', destination: '/compliance/soc2', permanent: true },
       // Cybersecurity companies duplicates
       { source: '/blog/cyber-security-companies-bangalore-experts', destination: '/blog/cyber-security-companies-bangalore', permanent: true },
       { source: '/blog/cybersecurity-companies-in-india-top-leaders', destination: '/blog/top-cyber-security-companies-in-india-safeguarding-digital-future', permanent: true },
       // SOC 2 duplicate
-      { source: '/blog/soc-2-compliance-services-india-2', destination: '/blog/soc-2-compliance-services-india', permanent: true },
+      { source: '/blog/soc-2-compliance-services-india-2', destination: '/compliance/soc2', permanent: true },
       // Cloud cost optimization duplicate
       { source: '/blog/cloud-optimization-strategies', destination: '/blog/cloud-cost-optimization-indian-businesses', permanent: true },
       // ISO 27001 consulting post had wrong body (generic managed-IT copy) → service page

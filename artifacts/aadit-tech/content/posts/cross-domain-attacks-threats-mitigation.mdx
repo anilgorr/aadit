@@ -2,8 +2,9 @@
 title: "Cross-Domain Attacks: Emerging Threats & How to Combat Them"
 description: "Explore cross-domain attacks—how adversaries exploit multiple domains, the risks facing organisations, and effective strategies to defend and mitigate."
 slug: cross-domain-attacks-threats-mitigation
+seoTitle: "Cross-Domain Attacks: Threats and Mitigation | Aadit"
 publishedAt: 2025-10-20
-updatedAt: 2026-07-02
+updatedAt: 2026-10-05
 author:
   name: "Aadit Technologies"
   role: "Editorial Team"
@@ -40,3 +41,21 @@ Zero Trust Security Framework: Implementing a Zero Trust model that requires con
 **Cross-Disciplinary Collaboration:** Encouraging cooperation between IT, OT, and physical security teams to ensure comprehensive risk management and response strategies.
 
 **Employee Training and Awareness:** Regularly educating employees on the latest cyber threats and best practices to prevent social engineering and other types of attacks.
+
+## Map the trust boundaries before selecting controls
+
+Begin with the connections that let a user, device or supplier move from one environment into another. Record shared identities, remote-access routes, service accounts and integrations between business applications and operational systems. A network diagram alone may miss the fact that the same administrator account can reach both environments. Assign an owner to each connection so changes, access reviews and unexpected activity have a clear point of responsibility.
+
+Treat third-party access as part of that map. Document what the supplier can reach, how authentication works and how access is revoked when work ends. Separate routine support permissions from exceptional administrative access. Where legacy equipment cannot support a modern authentication control, consider the surrounding network restrictions and supervised access process rather than assuming it can be upgraded without affecting operations.
+
+## Coordinate detection and containment
+
+Teams need enough shared context to understand an alert that spans domains. An unusual identity login may matter differently if the account also manages building access or a production controller. Agree which logs can be collected safely, which analysts review them and when they should involve operational owners. Monitoring should not introduce unapproved scanning or agents into equipment whose availability or safety could be affected.
+
+Containment decisions require the same coordination. Disabling a user or isolating a system may interrupt a business process, clinical workflow or industrial operation. Set out who can approve those actions and which alternatives are available while approval is pending. Rehearse a realistic scenario with the relevant teams and record decisions, communication gaps and follow-up actions. A tabletop exercise tests the process; it is not evidence that every attack can be prevented.
+
+## Turn findings into an improvement plan
+
+Prioritise weaknesses by business impact and the attack paths they enable, not solely by scanner severity. Address unnecessary cross-domain access, unsupported systems and unclear incident ownership. Validate changes with authorised testing and review whether monitoring still covers the revised architecture. Keep an exception register where a control cannot yet be implemented, including compensating measures, an owner and a review date.
+
+Use a [cybersecurity risk assessment](/cybersecurity/risk-assessment) to establish priorities, [VAPT](/cybersecurity/vapt) for agreed testing boundaries and [managed SOC monitoring](/cybersecurity/managed-soc) for ongoing investigation. These activities complement one another; none replaces an organisation's responsibility for safe operations and incident decisions.
