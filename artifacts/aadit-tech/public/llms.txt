@@ -16,6 +16,10 @@
 
 Full plain-text content: /llms-full.txt
 
+## Common questions
+- What are managed IT services? See [managed IT services](https://aadit.net/glossary/managed-it-services).
+- What do we need for SOC 2? See [SOC 2 readiness checklist](https://aadit.net/resources/soc-2-checklist).
+
 ## Canonical pages
 - [Aadit Technologies | Cybersecurity, Compliance & IT Services](https://aadit.net)
 - [About Our Security Team | Aadit Technologies](https://aadit.net/about)
@@ -58,6 +62,7 @@ Full plain-text content: /llms-full.txt
 - [Startups & Scaleups | Aadit Technologies](https://aadit.net/industries/startups)
 - [Healthcare & BFSI | Aadit Technologies](https://aadit.net/industries/healthcare-bfsi)
 - [E-commerce & Fintech | Aadit Technologies](https://aadit.net/industries/ecommerce-fintech)
+- [What Are Managed IT Services? | Aadit Technologies](https://aadit.net/glossary/managed-it-services)
 - [VAPT: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/vapt)
 - [SOC: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/soc)
 - [SIEM: Definition & Meaning | Aadit Technologies](https://aadit.net/glossary/siem)
@@ -93,6 +98,7 @@ Full plain-text content: /llms-full.txt
 - [CSCRF Explained: SEBI Cyber Resilience Rules | Aadit](https://aadit.net/blog/cscrf-cybersecurity-and-cyber-resilience-framework-india)
 - [Vulnerability Scanning Tools | Aadit Technologies](https://aadit.net/blog/vulnerability-scanning-tools-fix-security-gaps-before-hackers-do)
 - [Aadit's Cybersecurity Mission | Aadit Technologies](https://aadit.net/blog/welcome-to-aadit-technologies)
+- [SOC 2 Readiness Checklist | Aadit Technologies](https://aadit.net/resources/soc-2-checklist)
 - [Suman KV | Aadit Technologies](https://aadit.net/authors/suman-kv)
 - [Anil Gorraladaku | Aadit Technologies](https://aadit.net/authors/anil-gorraladaku)
 - [Srinivas Gadicherla | Aadit Technologies](https://aadit.net/authors/srinivas-gadicherla)

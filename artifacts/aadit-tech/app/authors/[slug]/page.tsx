@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { getAllPosts } from "@/lib/blog"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -38,6 +39,7 @@ export default async function AuthorPage({ params }: PageParams) {
   if (!author) notFound()
 
   const articles = getAllPosts().filter((post) => getAuthorForPost(post).slug === author.slug)
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   const schemas = [
     authorSchema(author),
     webPageSchema({
@@ -63,9 +65,9 @@ export default async function AuthorPage({ params }: PageParams) {
               ]}
             />
             <div className="mt-8 flex flex-col gap-6 sm:flex-row sm:items-center">
-              <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-primary/10 text-3xl font-bold text-primary">
-                {author.name.charAt(0)}
-              </div>
+              {author.image ? <Image src={author.image} alt={author.name} width={96} height={96} className="h-24 w-24 shrink-0 rounded-full object-cover" /> : (
+                <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-primary/10 text-3xl font-bold text-primary">{author.name.charAt(0)}</div>
+              )}
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary">
                   {author.jobTitle}
@@ -90,9 +92,11 @@ export default async function AuthorPage({ params }: PageParams) {
                   {paragraph}
                 </p>
               ))}
+              {author.location && <p className="mt-4 leading-relaxed text-muted-foreground">Based in {author.location}.</p>}
+              {author.linkedIn && <a href={author.linkedIn} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-primary underline underline-offset-4">Connect with {author.name} on LinkedIn</a>}
             </div>
             <Card className="h-fit p-6">
-              <h2 className="font-bold text-foreground">Areas of expertise</h2>
+              <h2 className="font-bold text-foreground">{author.slug === "suman-kv" ? "Areas of focus" : "Areas of expertise"}</h2>
               <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                 {author.expertise.map((topic) => (
                   <li key={topic}>{topic}</li>
@@ -110,7 +114,8 @@ export default async function AuthorPage({ params }: PageParams) {
 
         <Section background="muted">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-2xl font-bold text-foreground">Articles by {author.name}</h2>
+            <h2 className="text-2xl font-bold text-foreground">Published articles by {author.name}</h2>
+            {!articles.length && <p className="mt-5 text-muted-foreground">No articles currently carry {author.name}&apos;s byline. Published articles will appear here when their authorship is confirmed.</p>}
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {articles.map((post) => (
                 <BlogCard key={post.slug} post={post} />

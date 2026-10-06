@@ -1,22 +1,14 @@
 {
   "app": {
-    "[project]/artifacts/aadit-tech/app/[hub]/page": [
-      "static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2",
-      "static/media/797e433ab948586e-s.p.29207c2f.woff2"
-    ],
-    "[project]/artifacts/aadit-tech/app/authors/[slug]/page": [
-      "static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2",
-      "static/media/797e433ab948586e-s.p.29207c2f.woff2"
-    ],
     "[project]/artifacts/aadit-tech/app/glossary/[slug]/page": [
       "static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2",
       "static/media/797e433ab948586e-s.p.29207c2f.woff2"
     ],
-    "[project]/artifacts/aadit-tech/app/industries/[slug]/page": [
+    "[project]/artifacts/aadit-tech/app/page": [
       "static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2",
       "static/media/797e433ab948586e-s.p.29207c2f.woff2"
     ],
-    "[project]/artifacts/aadit-tech/app/page": [
+    "[project]/artifacts/aadit-tech/app/resources/[slug]/page": [
       "static/media/caa3a2e1cccd8315-s.p.3b6cae6d.woff2",
       "static/media/797e433ab948586e-s.p.29207c2f.woff2"
     ]

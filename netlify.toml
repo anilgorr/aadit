@@ -11,11 +11,18 @@
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
 
-# Request the combined host/protocol redirect before app route rules.
-# Netlify's platform HTTPS upgrade can precede redirects on some domain setups;
-# confirm one-hop behavior on the published domain after this config is applied.
+# Canonical host rules precede application routes. Netlify upgrades HTTP to
+# HTTPS on the SAME host before these rules; http://www therefore still takes
+# two hops. Reordering these rules cannot override that platform behaviour.
+# https://answers.netlify.com/t/how-to-group-https-and-www-redirects-to-one-redirect/117170/4
 [[redirects]]
   from = "http://www.aadit.net/*"
+  to = "https://aadit.net/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.aadit.net/*"
   to = "https://aadit.net/:splat"
   status = 301
   force = true

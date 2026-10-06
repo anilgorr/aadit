@@ -1,9 +1,6 @@
 {
-  "/[hub]/page": "app/[hub]/page.js",
-  "/authors/[slug]/page": "app/authors/[slug]/page.js",
   "/glossary/[slug]/page": "app/glossary/[slug]/page.js",
   "/icon.png/route": "app/icon.png/route.js",
-  "/industries/[slug]/page": "app/industries/[slug]/page.js",
   "/page": "app/page.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+  "/resources/[slug]/page": "app/resources/[slug]/page.js"
 }

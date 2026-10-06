@@ -2,7 +2,7 @@ export interface GlossaryTerm {
   slug: string
   term: string
   fullForm?: string
-  category: "Cybersecurity" | "Compliance"
+  category: "Cybersecurity" | "Compliance" | "Managed IT"
   /** A single clear 40-60 word definition, optimised for featured snippets. */
   definition: string
   metaDescription?: string
@@ -12,9 +12,23 @@ export interface GlossaryTerm {
   comparison: { heading: string; rows: { aspect: string; first: string; second: string }[] }
   faqs: { question: string; answer: string }[]
   sources: { label: string; href: string }[]
+  updatedAt?: string
 }
 
 export const GLOSSARY: GlossaryTerm[] = [
+  {
+    slug: "managed-it-services",
+    term: "Managed IT services",
+    category: "Managed IT",
+    updatedAt: "2026-10-06",
+    definition: "Managed IT services means outsourcing the day-to-day running of an organisation’s IT — monitoring, user support, patching, account and device management, backup and infrastructure operations — to a provider under an ongoing agreement with defined service levels, rather than paying for help each time something breaks.",
+    detail: [],
+    relatedService: { label: "Explore managed IT services", href: "/it-managed-services/managed-it-services" },
+    relatedTerms: ["soc"],
+    comparison: { heading: "Managed IT services vs. break-fix support", rows: [] },
+    faqs: [],
+    sources: [],
+  },
   {
     slug: "vapt",
     term: "VAPT",

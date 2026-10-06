@@ -17,14 +17,14 @@ description: Durable decisions/constraints for the technical SEO/AEO/GEO layer o
 - Verify profile URLs identify this company before adding them. Do not substitute placeholders or a similarly named company. Do not publish manually maintained ratings.
 - **Why:** the owner's on-page fixes permit omitting ratings without automatic synchronisation and include profile placeholders that are not usable URLs.
 - **How to apply:** confirm identity and a working profile; leave unverified links and ratings out.
-- New blog FAQ questions must come from page-filtered Search Console queries, and visible answers must match structured data.
-- **Why:** the owner's fix document explicitly prohibits invented blog questions. Separate aggregate exports cannot associate a question with a particular URL.
-- **How to apply:** obtain queries exported with the individual Page filter before adding new blog FAQs. Do not block unrelated fixes while waiting for that evidence.
+- Use explicitly supplied, owner-approved blog FAQ copy when available. For newly authored questions, use page-filtered Search Console queries; visible answers must match structured data.
+- **Why:** the 2026-10-06 implementation pack supplies approved FAQ copy and supersedes the previous evidence blocker for those questions. It does not establish that the supplied copy came from Search Console.
+- **How to apply:** implement supplied approved copy without demanding another query export. Do not invent other questions or misrepresent their provenance. Separate aggregate exports still cannot map questions to pages.
 
 ## Hosted redirects
-- Verify host and protocol redirect behaviour after the Netlify deployment, not solely in the development server.
-- **Why:** hosting-level HTTPS handling can occur before application middleware and introduce an extra redirect.
-- **How to apply:** distinguish a tested application-level one-hop redirect from an unverified production hosting sequence.
+- Netlify enforces HTTP-to-HTTPS on the same host before primary-domain redirects. Site rules or Next middleware cannot override that platform sequence.
+- **Why:** Netlify's support explanation explicitly requires this ordering; the live HTTP-www request still shows two redirects even with the combined rule first.
+- **How to apply:** verify production rather than reporting development middleware as a live fix. A one-hop requirement needs a separately approved HTTP edge/hosting change; do not downgrade HTTPS or change DNS without informed consent.
 
 ## next/og images
 - Shared renderer in `lib/og.tsx`. **satori (next/og) does not support `oklch()`** — the site's Tailwind tokens are OKLCH, so OG images use hand-picked hex approximations of the midnight/cyan palette. No remote fonts (keeps build fast/safe).

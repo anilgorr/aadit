@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { services } from "@/.velite"
+import { services, resourcePages } from "@/.velite"
 import { absoluteUrl, SITE_URL } from "@/lib/site"
 import { HUB_ORDER } from "@/lib/services"
 import { INDUSTRIES } from "@/lib/industries"
@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/privacy-policy"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.2 },
     { url: absoluteUrl("/team"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.6 },
     { url: absoluteUrl("/industries"), lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.8 },
-    { url: absoluteUrl("/glossary"), lastModified: new Date("2026-10-05"), changeFrequency: "monthly", priority: 0.7 },
+    { url: absoluteUrl("/glossary"), lastModified: new Date("2026-10-06"), changeFrequency: "monthly", priority: 0.7 },
     { url: absoluteUrl("/blog"), lastModified: new Date("2026-10-05"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/whitepapers"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.5 },
   ]
@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const glossaryEntries: MetadataRoute.Sitemap = GLOSSARY.map((term) => ({
     url: absoluteUrl(`/glossary/${term.slug}`),
-    lastModified: new Date("2026-10-05"),
+    lastModified: new Date(term.updatedAt ?? "2026-10-05"),
     changeFrequency: "yearly",
     priority: 0.6,
   }))
@@ -69,6 +69,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryEntries,
     ...glossaryEntries,
     ...postEntries,
-    ...AUTHORS.map((author) => ({ url: absoluteUrl(`/authors/${author.slug}`), lastModified: new Date("2026-10-05"), changeFrequency: "yearly" as const, priority: 0.5 })),
+    ...resourcePages.filter((page) => page.permalink.startsWith("/resources/"))
+      .map((page) => ({ url: absoluteUrl(page.permalink), lastModified: new Date(page.updatedAt ?? page.publishedAt), changeFrequency: "monthly" as const, priority: 0.7 })),
+    ...AUTHORS.map((author) => ({ url: absoluteUrl(`/authors/${author.slug}`), lastModified: new Date(author.updatedAt ?? "2026-10-05"), changeFrequency: "yearly" as const, priority: 0.5 })),
   ]
 }

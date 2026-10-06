@@ -1,5 +1,7 @@
 import { defineConfig, s } from 'velite'
 import rehypeSlug from 'rehype-slug'
+import approvedBlogFaqs from './content/approved-blog-faqs.json'
+import { remarkApprovedFaqs } from './lib/remark-approved-faqs'
 
 const serviceSchema = {
   title: s.string().min(1),
@@ -80,9 +82,27 @@ export default defineConfig({
     clean: true,
   },
   mdx: {
+    remarkPlugins: [remarkApprovedFaqs],
     rehypePlugins: [rehypeSlug],
   },
   collections: {
+    resourcePages: {
+      name: 'ResourcePage',
+      pattern: 'resources/**/*.mdx',
+      schema: s.object({
+        title: s.string().min(1),
+        seoTitle: s.string().min(1),
+        metaDescription: s.string().min(1).max(200),
+        slug: s.slug('resource-page'),
+        permalink: s.string().regex(/^\/(?:glossary|resources)\/[a-z0-9-]+$/),
+        schemaType: s.enum(['DefinedTerm', 'Article']),
+        definition: s.string().optional(),
+        publishedAt: s.isodate(),
+        updatedAt: s.isodate().optional(),
+        faqs: s.array(s.object({ question: s.string(), answer: s.string() })),
+        content: s.mdx(),
+      }),
+    },
     services: {
       name: 'Service',
       pattern: 'services/**/*.mdx',
@@ -102,8 +122,9 @@ export default defineConfig({
           ...data,
           // The bulk migration date was never an editorial revision. Do not
           // present it to users or crawlers as a meaningful modification date.
-          updatedAt:
-            data.updatedAt === "2026-07-02T00:00:00.000Z"
+          updatedAt: Object.prototype.hasOwnProperty.call(approvedBlogFaqs, data.slug)
+            ? "2026-10-06T00:00:00.000Z"
+            : data.updatedAt === "2026-07-02T00:00:00.000Z"
               ? data.publishedAt
               : (data.updatedAt ?? data.publishedAt),
           permalink: `/blog/${data.slug}`,

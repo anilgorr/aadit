@@ -1,4 +1,6 @@
 import { notFound } from 'next/navigation'
+import { resourcePages } from '@/.velite'
+import { EditorialPage } from '@/components/editorial-page'
 import { GLOSSARY_GUIDES } from '@/lib/glossary-guides'
 import { EditorialSections } from '@/components/editorial-sections'
 import type { Metadata } from 'next'
@@ -25,6 +27,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
   const { slug } = await params
+  const editorial = resourcePages.find((page) => page.permalink === `/glossary/${slug}`)
+  if (editorial) return buildMetadata({ path: editorial.permalink, title: editorial.title, absoluteTitle: editorial.seoTitle, description: editorial.metaDescription })
   const term = getTerm(slug)
   if (!term) return {}
   return buildMetadata({
@@ -44,6 +48,8 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
 
 export default async function GlossaryTermPage({ params }: PageParams) {
   const { slug } = await params
+  const editorial = resourcePages.find((page) => page.permalink === `/glossary/${slug}`)
+  if (editorial) return <EditorialPage page={editorial} />
   const term = getTerm(slug)
   if (!term) notFound()
 

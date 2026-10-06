@@ -1,12 +1,13 @@
 import { readdir, readFile, writeFile } from "node:fs/promises"
 import path from "node:path"
 import redirectedPosts from "../lib/redirected-posts.json" with { type: "json" }
+import approvedFaqs from "../content/approved-blog-faqs.json" with { type: "json" }
 
 const root = process.cwd()
 const directory = path.join(root, "content", "posts")
 
-// The mismatched vulnerability-scanning FAQ was removed. Once approved,
-// query-backed questions are added, it will use this same extraction pipeline.
+// The October implementation pack supplies owner-approved replacement FAQs.
+// The MDX compiler renders this same data, replacing any historical FAQ block.
 const excluded = new Set(redirectedPosts)
 
 function plain(value) {
@@ -68,8 +69,11 @@ const results = {}
 for (const file of (await readdir(directory)).filter((name) => name.endsWith(".mdx")).sort()) {
   const slug = file.slice(0, -4)
   if (excluded.has(slug)) continue
-  const faqs = extractFaqs(await readFile(path.join(directory, file), "utf8"))
+  const faqs = approvedFaqs[slug] ?? extractFaqs(await readFile(path.join(directory, file), "utf8"))
   if (faqs.length) results[slug] = faqs
+}
+for (const slug of Object.keys(approvedFaqs)) {
+  if (!results[slug]) throw new Error(`Approved FAQ source has no active post: ${slug}`)
 }
 
 await writeFile(path.join(root, "content", "post-faqs.json"), `${JSON.stringify(results, null, 2)}\n`)

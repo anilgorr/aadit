@@ -10,6 +10,10 @@ export interface AuthorProfile {
   metaDescription?: string
   expertise: string[]
   bio: string[]
+  location?: string
+  image?: string
+  linkedIn?: string
+  updatedAt?: string
 }
 
 export const AUTHORS: AuthorProfile[] = [
@@ -17,9 +21,15 @@ export const AUTHORS: AuthorProfile[] = [
     slug: "suman-kv",
     name: "Suman KV",
     jobTitle: "Sales & Marketing",
-    description: "Suman KV works in Sales & Marketing at Aadit Technologies, covering cybersecurity, compliance and managed IT service decisions.",
-    expertise: ["Cybersecurity", "Vulnerability Assessment and Penetration Testing", "Security Operations Centre", "ISO 27001", "SOC 2", "PCI DSS", "HIPAA", "GDPR", "Digital Personal Data Protection Act", "Managed IT Services"],
-    bio: ["Suman KV works in Sales & Marketing at Aadit Technologies. This profile brings together articles explicitly bylined to Suman; it does not attribute other authors' work to this profile."],
+    description: "Suman KV works with companies going through cybersecurity and compliance programmes at Aadit Technologies, a cybersecurity, compliance and managed IT services company operating since 2017.",
+    metaDescription: "Suman KV works in Sales & Marketing at Aadit Technologies, covering cybersecurity, compliance programmes, managed SOC and enterprise buyer requirements.",
+    expertise: ["Vulnerability assessment and penetration testing", "Security operations and managed SOC", "ISO 27001 and SOC 2 certification programmes", "GDPR and India’s DPDP Act", "Managed IT services and cloud operations"],
+    bio: [
+      "His work spans the three questions buyers ask before they sign: whether a security programme will survive contact with an enterprise vendor review, what certification actually costs in time and internal effort, and which framework a given buyer will accept. That covers VAPT and penetration testing engagements, 24/7 managed SOC operations, and certification programmes across ISO 27001, SOC 2, PCI DSS, HIPAA, GDPR and India’s Digital Personal Data Protection Act.",
+      "He writes about what happens after the certificate is issued — where security programmes decay once the auditor leaves, why controls with no named owner stop running, and how Indian businesses should prepare for DPDP enforcement rather than wait for it.",
+    ],
+    location: "Bengaluru, India",
+    updatedAt: "2026-10-06",
   },
   {
     slug: "anil-gorraladaku",
@@ -97,5 +107,8 @@ export function authorSchema(author: AuthorProfile) {
     worksFor: { "@type": "Organization", "@id": ORGANIZATION_ID, name: "Aadit Technologies", url: absoluteUrl("/") },
     description: author.description,
     knowsAbout: author.expertise,
+    ...(author.image ? { image: absoluteUrl(author.image) } : {}),
+    ...(author.linkedIn ? { sameAs: [author.linkedIn] } : {}),
+    ...(author.location ? { homeLocation: { "@type": "Place", name: author.location } } : {}),
   }
 }

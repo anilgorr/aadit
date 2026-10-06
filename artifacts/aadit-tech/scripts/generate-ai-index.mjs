@@ -23,7 +23,11 @@ function plain(html) {
 // Preserve the existing, approved entity disambiguation independently of the
 // automatically discovered inventory. Both exports use the same identity facts.
 const identity = (await readFile(path.join(root, "content/company-identity.md"), "utf8")).trim()
-const index = [identity, "", "Full plain-text content: /llms-full.txt", "", "## Canonical pages"]
+const origin = new URL(urls[0]).origin
+const index = [identity, "", "Full plain-text content: /llms-full.txt", "", "## Common questions",
+  `- What are managed IT services? See [managed IT services](${origin}/glossary/managed-it-services).`,
+  `- What do we need for SOC 2? See [SOC 2 readiness checklist](${origin}/resources/soc-2-checklist).`,
+  "", "## Canonical pages"]
 const full = [identity.replace(/^# Aadit Technologies/, "# Aadit Technologies — Full Content Export"), "", "> Canonical page inventory and rendered content from the same build as sitemap.xml.", ""]
 for (const url of urls) {
   const pathname = new URL(url).pathname
