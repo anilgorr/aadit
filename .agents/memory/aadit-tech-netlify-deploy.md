@@ -16,6 +16,10 @@ Config lives in root `netlify.toml`:
 
 **Why:** monorepo with the app in a subfolder — Netlify won't build it correctly without telling it the workspace filter, publish path, and Next.js runtime plugin.
 
-**How to apply:** git write ops are blocked for the agent; the user must commit/push `netlify.toml` + `package.json` from the Replit Git pane for Netlify to pick up changes. Verify prod builds locally with an isolated dist dir (`NEXT_DIST_DIR` override) to avoid clobbering the running dev server's `.next`.
+**How to apply:** use the existing Git-connected Netlify pipeline, not a separate Replit Publish deployment. A configured remote does not establish that GitHub authentication works. Verify prod builds locally with an isolated dist dir (`NEXT_DIST_DIR` override) to avoid clobbering the running dev server's `.next`.
+
+For GitHub authentication failures, reconnect GitHub under Replit account settings → Git Providers, then push through the Git pane. Reconnecting only under Connected Services does not repair Git-pane authentication.
+
+**Why:** a non-mutating push check reached GitHub but failed authentication; the earlier claim that all Git write commands were blocked was not established. Replit's official Git-pane documentation distinguishes Git Providers from Connected Services.
 
 Known non-fatal build warning: `next build` reports `Cannot find package '@eslint/eslintrc'` (referenced by eslint.config.mjs but not installed). It does NOT fail the build. Install `@eslint/eslintrc` as a devDependency if a clean lint pass is wanted.
