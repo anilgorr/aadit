@@ -22,4 +22,10 @@ For GitHub authentication failures, reconnect GitHub under Replit account settin
 
 **Why:** a non-mutating push check reached GitHub but failed authentication; the earlier claim that all Git write commands were blocked was not established. Replit's official Git-pane documentation distinguishes Git Providers from Connected Services.
 
+Saving a PAT as the `GITHUB_TOKEN` secret does not automatically replace Git's existing credential helper. Select the token explicitly with a command-scoped helper restricted to the intended GitHub repository, clearing stale helpers for that command.
+
+**Why:** the ordinary push check rejected cached credentials, while the same non-mutating check authenticated successfully when explicitly using the saved secret.
+
+**How to apply:** confirm secret existence through the secrets tool, never inspect its value, and let Git consume it internally from the environment. Do not embed it in remote URLs or enable credential-bearing HTTP traces. A successful dry run is not an actual push or a completed publication.
+
 Known non-fatal build warning: `next build` reports `Cannot find package '@eslint/eslintrc'` (referenced by eslint.config.mjs but not installed). It does NOT fail the build. Install `@eslint/eslintrc` as a devDependency if a clean lint pass is wanted.

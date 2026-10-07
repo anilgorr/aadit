@@ -7,6 +7,6 @@
 - [Aadit content sections](aadit-content-sections.md) — blog/glossary/industries/resources; Velite s.toc()+s.metadata()+rehype-slug for TOC anchors; /contact now exists, /about intentionally NOT built (its nav links removed)
 - [Netlify Forms in Next.js](netlify-forms-nextjs.md) — /contact needs static public/__forms.html for detection + client fetch to /__forms.html; only works on deployed Netlify, needs dashboard notification-email step
 - [Aadit service-page architecture](aadit-service-architecture.md) — hub-based `/{hub}/{slug}` routes, MDX+frontmatter content model, conditional template sections, Velite MDX renderer
-- [Aadit Technologies Netlify deploy](aadit-tech-netlify-deploy.md) — deploys to Netlify from the pnpm monorepo via root netlify.toml + @netlify/plugin-nextjs; user must push from Git pane
+- [Netlify publishing and Git auth](aadit-tech-netlify-deploy.md) — existing Git-connected pipeline; a secure PAT fallback must be selected explicitly.
 - [Aadit blog migration](aadit-blog-migration.md) — legacy posts → MDX; near-dup clusters collapsed to one canonical + 301 the rest in next.config.ts; part2 dates assigned (placeholders); whitepaper/ebook gated (PDFs missing)
 - [Search cannibalisation evidence](search-cannibalisation-evidence.md) — separate Search Console Pages and Queries exports cannot show which URLs compete for the same query
