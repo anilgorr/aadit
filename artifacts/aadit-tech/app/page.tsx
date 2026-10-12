@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { JsonLd } from '@/components/json-ld'
-import { buildMetadata, webPageSchema } from '@/lib/seo'
+import { buildMetadata, webPageSchema, faqSchema } from '@/lib/seo'
 import { Section } from '@/components/ui/section'
 import { StatBlock } from '@/components/ui/stat-block'
 import { Button, buttonVariants } from '@/components/ui/button'
@@ -12,24 +12,28 @@ import { Card } from '@/components/ui/card'
 import { ShieldCheck, FileCheck, Server, ArrowRight, Lock, Activity, Radar } from 'lucide-react'
 import { LogoCloud } from '@/components/logo-cloud'
 import { TestimonialCarousel } from '@/components/testimonial-carousel'
+import home from '@/content/homepage.json'
+import { HomepageText, HomepageReasons, HomepageEngagement, HomepageFaqs } from '@/components/homepage-copy'
+import { KeyTakeaways } from '@/components/key-takeaways'
 
 const SERVICES = [
   {
     icon: ShieldCheck,
     title: 'Cybersecurity',
-    desc: 'Penetration testing, vulnerability assessments, and 24/7 incident response to keep your data secure against evolving threats.',
+    copy: home.sections.Cybersecurity,
     href: '/cybersecurity',
   },
   {
     icon: FileCheck,
-    title: 'Compliance',
-    desc: 'Streamlined certification for ISO 27001, SOC 2, HIPAA, PCI-DSS, and regional frameworks like the DPDP Act.',
+    title: 'Compliance and audit readiness',
+    copy: home.sections['Compliance and audit readiness'].slice(0, -1),
+    closing: home.sections['Compliance and audit readiness'].at(-1),
     href: '/compliance',
   },
   {
     icon: Server,
-    title: 'IT Managed Services',
-    desc: 'Cloud operations, help desk support, disaster recovery, and proactive infrastructure management for growing organizations.',
+    title: 'Managed IT services',
+    copy: home.sections['Managed IT services'],
     href: '/it-managed-services',
   },
 ]
@@ -45,13 +49,16 @@ export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <JsonLd
-        data={webPageSchema({
+        data={{
+          ...webPageSchema({
           path: '/',
-          name: 'The security partner you trust before regulators knock.',
-          description:
-            'Technically precise, clean, and trustworthy cybersecurity, compliance, and IT managed services for the modern enterprise.',
-        })}
+          name: home.heading,
+          description: home.intro,
+          }),
+          dateModified: home.updatedAt,
+        }}
       />
+      <JsonLd data={faqSchema(home.faqs)} />
       <Header />
 
       <main className="w-full flex-1">
@@ -79,20 +86,19 @@ export default function Home() {
                 New: Comprehensive DPDP Act Compliance Services
               </div>
 
-              <h1 className="mt-8 text-5xl leading-[1.05] font-bold tracking-tight md:text-7xl">
-                The security partner you <span className="text-gradient">trust before</span>{' '}
-                regulators knock.
+              <h1 className="mt-8 text-4xl leading-[1.05] font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                {home.heading.split(' — ')[0]}{' — '}
+                <span className="text-gradient">{home.heading.split(' — ')[1]}</span>
               </h1>
 
               <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white/65 md:mx-0 md:text-xl">
-                Technically precise, clean, and trustworthy cybersecurity, compliance, and IT
-                managed services for the modern enterprise.
+                {home.intro}
               </p>
 
               <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
                 <Link href="/contact">
                   <Button size="lg" variant="light" className="w-full sm:w-auto">
-                    Get a Free Assessment
+                    Talk to our team
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
@@ -164,6 +170,10 @@ export default function Home() {
           </div>
         </section>
 
+        <Section>
+          <KeyTakeaways id="homepage-takeaways" items={home.keyTakeaways} />
+        </Section>
+
         <LogoCloud />
 
         {/* ---------- STATS ---------- */}
@@ -179,6 +189,8 @@ export default function Home() {
           </div>
         </Section>
 
+        <HomepageReasons />
+
         {/* ---------- SERVICES ---------- */}
         <Section>
           <div className="relative">
@@ -188,7 +200,7 @@ export default function Home() {
                 What we do
               </span>
               <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">
-                Comprehensive protection, end to end
+                What we do
               </h2>
               <p className="mt-4 text-muted-foreground">
                 Everything you need to secure your infrastructure, pass audits, and run IT
@@ -202,7 +214,13 @@ export default function Home() {
                     <service.icon className="h-7 w-7" />
                   </div>
                   <h3 className="text-xl font-bold">{service.title}</h3>
-                  <p className="flex-1 leading-relaxed text-muted-foreground">{service.desc}</p>
+                  <p className="leading-relaxed text-muted-foreground">{service.copy[0]}</p>
+                  <ul className="flex-1 list-disc space-y-4 pl-5 text-sm leading-relaxed text-muted-foreground">
+                    {service.copy.slice(1).map((text) => (
+                      <li key={text}><HomepageText text={text} /></li>
+                    ))}
+                  </ul>
+                  {service.closing && <p className="text-sm leading-relaxed text-muted-foreground"><HomepageText text={service.closing} /></p>}
                   <Link
                     href={service.href}
                     className="mt-2 flex items-center font-semibold text-primary"
@@ -216,6 +234,9 @@ export default function Home() {
             </div>
           </div>
         </Section>
+
+        <HomepageEngagement />
+        <HomepageFaqs />
 
         {/* ---------- TESTIMONIALS ---------- */}
         <Section background="muted" className="border-y border-border">
@@ -239,7 +260,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
               <Link href="/contact" className={buttonVariants({ variant: 'light', size: 'lg' })}>
-                Book a Free Consultation
+                Book an assessment
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link

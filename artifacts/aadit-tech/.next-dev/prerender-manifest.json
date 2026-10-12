@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/resources/soc-2-checklist":{},"/glossary/managed-it-services":{},"/glossary/vapt":{},"/glossary/soc":{},"/glossary/siem":{},"/glossary/iso-27001":{},"/glossary/gdpr":{},"/glossary/hipaa":{},"/glossary/pci-dss":{},"/glossary/soc-2":{}},"dynamicRoutes":{"/resources/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/resources/[slug]","routeRegex":"^\\/resources\\/([^/]+?)(?:\\/)?$","allowHeader":[]},"/glossary/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/glossary/[slug]","routeRegex":"^\\/glossary\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"5aa3c15325a1b4ebdaf1a4a1bca51142","previewModeSigningKey":"5f36e27b3fdec49e29f7ca1e57d3c2ebe9b30330147b35f2a83cb6a157f068de","previewModeEncryptionKey":"99525a7786e75e212baae0adc6bdcd796f55580c94ddb7e77ede9922c815739b"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "66f993de02c50e9caec19567167d8e94",
+    "previewModeSigningKey": "0745efa937bb84c3fbd6e7150f0a0a8aae7c1a64d8556eedabc687f32d1ea481",
+    "previewModeEncryptionKey": "2ec4e3b58e3474cdfb83a28cf96facece5970173637c7815e07ad623fac505fc"
+  }
+}

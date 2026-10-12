@@ -1,5 +1,6 @@
 - [Next.js config top-level await](nextjs-config-toplevel-await.md) — next.config.ts cannot use top-level await; Next.js loads it via require() which breaks async modules
 - [Next.js build-to-dev cache](nextjs-build-dev-cache.md) — clear .next before restarting Turbopack after a production build; stale prerender manifests can break development routes
+- [Next.js dev compilation](nextjs-dev-compilation.md) — a Ready log is not a working preview; default Webpack served the root when Turbopack stalled.
 - [Velite + Next.js integration](velite-nextjs-integration.md) — Velite build must run via npm scripts (prebuild/predev), not inside next.config.ts
 - [Aadit Technologies project](aadit-tech-project.md) — Next.js 15 app at artifacts/aadit-tech/, workflow "Aadit Technologies" on port 3000, not a registered Replit artifact
 - [Lighthouse in Replit](lighthouse-in-replit.md) — install system chromium; audit a FRESH prod build in one bash call; desktop Perf/A11y/SEO trustworthy but mobile Perf is noisy/TBT-bound; link-text audit ignores aria-label

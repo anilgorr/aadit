@@ -8,6 +8,8 @@ const nextConfig: NextConfig = {
   skipTrailingSlashRedirect: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   allowedDevOrigins: [
+    'localhost',
+    '127.0.0.1',
     '*.replit.dev',
     '*.repl.co',
     ...(replitDevDomain ? [replitDevDomain] : []),

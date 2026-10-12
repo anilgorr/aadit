@@ -6,6 +6,7 @@ import { INDUSTRIES } from "@/lib/industries"
 import { GLOSSARY } from "@/lib/glossary"
 import { getAllPosts } from "@/lib/blog"
 import { AUTHORS } from "@/lib/authors"
+import home from "@/content/homepage.json"
 
 /**
  * Single canonical sitemap covering every real, indexable page. There are no
@@ -13,7 +14,7 @@ import { AUTHORS } from "@/lib/authors"
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticEntries: MetadataRoute.Sitemap = [
-    { url: SITE_URL, lastModified: new Date("2026-08-24"), changeFrequency: "weekly", priority: 1 },
+    { url: SITE_URL, lastModified: new Date(home.updatedAt), changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/about"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.7 },
     { url: absoluteUrl("/contact"), lastModified: new Date("2026-08-24"), changeFrequency: "yearly", priority: 0.7 },
     { url: absoluteUrl("/careers"), lastModified: new Date("2026-08-24"), changeFrequency: "monthly", priority: 0.4 },
