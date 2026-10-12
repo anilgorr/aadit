@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "verify:seo": "node scripts/verify-seo-fixes.mjs && node scripts/verify-homepage.mjs",
+    "verify:seo": "node scripts/verify-seo-fixes.mjs && node scripts/verify-homepage.mjs && node scripts/verify-compliance-guides.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "velite": "velite build"

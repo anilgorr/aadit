@@ -94,13 +94,20 @@ export default defineConfig({
         seoTitle: s.string().min(1),
         metaDescription: s.string().min(1).max(200),
         slug: s.slug('resource-page'),
-        permalink: s.string().regex(/^\/(?:glossary|resources)\/[a-z0-9-]+$/),
+        permalink: s.string().regex(/^\/(?:(?:glossary|resources)\/[a-z0-9-]+|compliance\/iso-27001\/(?:india|cost))$/),
+        eyebrow: s.string().min(1).optional(),
+        breadcrumbs: s.array(s.object({
+          label: s.string().min(1),
+          href: s.string().regex(/^\/[a-z0-9/-]*$/),
+        })).optional(),
         schemaType: s.enum(['DefinedTerm', 'Article']),
         definition: s.string().optional(),
         publishedAt: s.isodate(),
         updatedAt: s.isodate().optional(),
         faqs: s.array(s.object({ question: s.string(), answer: s.string() })),
         content: s.mdx(),
+      }).refine((page) => page.permalink.split("/").at(-1) === page.slug, {
+        message: "Editorial slug must match the last permalink segment",
       }),
     },
     services: {

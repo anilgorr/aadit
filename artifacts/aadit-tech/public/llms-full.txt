@@ -2750,6 +2750,10 @@ Service offerings — consider the range of support they provide.
 
 Aadit Technologies helps you choose the right certification body and guides you through the entire audit process.
 
+Plan Your Certification
+
+Read our ISO 27001 certification guide for India for scoping, evidence and the independent audit process. Use the ISO 27001 certification cost guide to separate preparation, remediation, certification-body fees and ongoing costs before requesting an estimate.
+
 What's Included
 Comprehensive coverage for your organization.
 
@@ -4011,6 +4015,10 @@ ISO 27001 (Information Security Management)
 
 SOC 2 (System and Organization Controls)
 
+Understand the Report
+
+Our illustrative VAPT report sample explains scope, evidence, remediation and retest status using a clearly labelled fictional example. It is not a real client report or a security certificate.
+
 VAPT Pricing
 
 VAPT pricing depends on the assets in scope, the complexity of your environment, testing depth, access, reporting and retesting. We agree these requirements before pricing an engagement; no fixed package rate applies to every environment. Get in touch for a custom quote .
@@ -4302,6 +4310,7 @@ Glossary
 What Are Managed IT Services?
 Managed IT glossary
 What Are Managed IT Services?
+Last updated: 6 October 2026
 
 Managed IT services means outsourcing the day-to-day running of an organisation’s IT — monitoring, user support, patching, account and device management, backup and infrastructure operations — to a provider under an ongoing agreement with defined service levels, rather than paying for help each time something breaks.
 
@@ -9259,6 +9268,273 @@ November 21, 2025 2 min read
 
 
 
+## ISO 27001 Certification Cost in India | Aadit
+
+URL: https://aadit.net/compliance/iso-27001/cost
+
+
+
+Home
+Compliance & Audits
+ISO 27001
+ISO 27001 Certification Cost in India
+ISO 27001 budgeting guide
+ISO 27001 Certification Cost in India
+Last updated: 12 October 2026
+
+ISO 27001 certification cost in India is the combined cost of preparing and operating an ISMS, correcting relevant gaps and obtaining an independent certification assessment. The certification audit fee is only one part of the budget. Internal staff time, technical remediation and ongoing maintenance can materially change the total.
+
+No universal price or unverified price range is quoted here. Aadit has not supplied a rate card for this guide, and certification bodies price against their own assessment of scope and audit effort. Use the checklist below to obtain a written, scoped estimate rather than treating a headline package as the final cost.
+
+For the implementation sequence, read our ISO 27001 certification guide for India . For preparation support, see ISO 27001 consulting .
+
+Separate the budget into five parts
+
+Readiness and consulting
+
+Readiness support can include gap assessment, scope definition, risk assessment, policy development, control planning, training and assistance organising evidence. The fee depends on which tasks the consultant performs and which remain with your team.
+
+Ask for deliverables and responsibilities in writing. A policy pack, a facilitated risk assessment and hands-on implementation support are different services. A proposal should say whether internal audit, management-review preparation and external-audit support are included, and define any limits on revisions or support hours.
+
+Technical and operational remediation
+
+Some gaps require configuration changes rather than a new purchase. Others may need engineering time, access-management improvements, logging, backup changes or supplier-management work. Their cost depends on your starting point and the risks in scope.
+
+Do not assume every Annex A control requires a separate product. Select controls according to the ISMS requirements and risk treatment, then evaluate whether existing systems can meet the need. Conversely, do not count a control as implemented simply because a licence has been bought.
+
+Independent certification-body fees
+
+Request a separate proposal for the external certification process. Ask how the body has determined audit effort, which sites and activities are covered, and how Stage 1 and Stage 2 are priced. Confirm the relevant accreditation and how the certificate can be verified.
+
+Check travel, taxes, additional assessment time, follow-up activity and cancellation or rescheduling terms. Confirm what happens if nonconformities require further work. A headline audit price may omit items that become relevant once the actual scope or schedule is agreed.
+
+Internal staff effort
+
+Your own team must make decisions, implement changes, operate controls and respond to audit questions. Include time for programme management, engineering, IT, HR, procurement, legal review and leadership. Outsourced consulting does not remove these responsibilities.
+
+Estimate staff effort by workstream instead of applying an arbitrary multiplier to the consultant fee. Identify the control owner, expected actions and evidence required. If a project has a hard customer deadline, consider competing priorities and the effect of implementation work on product delivery.
+
+Ongoing operation and renewal
+
+Certification is not a one-time documentation project. Controls must continue operating, evidence must be maintained and changes must be assessed. Plan for internal audits, management reviews, awareness work, appropriate technical assurance and corrective actions.
+
+The certification body will also have surveillance and recertification arrangements. Obtain its proposed schedule and charges rather than assuming the first invoice covers the entire certificate cycle. Recurring software or managed-service subscriptions belong in the ongoing budget, not only the implementation cost.
+
+What changes the total cost?
+
+Factor Why it affects the budget
+Scope More services, processes or sites can increase preparation and assessment effort
+Existing maturity Operating controls and reliable evidence can reduce new work; undocumented assumptions may not
+Technical complexity Multiple environments, legacy systems and shared dependencies can require additional analysis and remediation
+Workforce and suppliers Distributed teams and critical third parties add coordination and evidence requirements
+Customer requirements A buyer may require a specific certificate scope, accredited body or additional assurance
+Audit readiness Unresolved gaps, unavailable evidence or missed appointments may create further effort
+Support model Advisory-only support and hands-on delivery allocate different amounts of work to your team
+
+These factors explain why a startup with one defined service cannot be priced by copying the budget for a multi-site enterprise. Headcount is relevant, but it is not a complete description of risk, scope or operating complexity.
+
+A quote-comparison checklist
+
+Send the same brief to each provider. Include your business activities, intended scope, locations, workforce, hosting model, key suppliers, existing controls and the customer requirement. Ask providers to make assumptions and exclusions explicit.
+
+Compare written proposals using these questions:
+
+What activities and locations are included, and what is excluded?
+
+What will the provider deliver, and what must our team implement?
+
+Are gap assessment, risk assessment and the Statement of Applicability covered?
+
+What internal-audit and external-audit support is included?
+
+Are independent certification fees separate, and who selects the body?
+
+Which technical changes, testing or software are outside the quote?
+
+What taxes, travel charges or additional assessment fees may apply?
+
+What recurring charges and renewal obligations should we expect?
+
+How are delays, scope changes and further remediation handled?
+
+What evidence marks a deliverable as complete?
+
+The aim is not to force every proposal into an identical package. It is to understand the difference between a low initial fee and a lower total cost for the programme your organisation actually needs.
+
+Build a budget without inventing a price
+
+Use a worksheet with separate rows for one-off and recurring costs. For each row, record a quoted amount, its source, the scope assumptions, an owner and whether tax is included. Mark unquoted items as “estimate needed” rather than zero.
+
+Budget line Evidence to obtain
+Readiness support Written proposal with deliverables and client responsibilities
+Remediation Work estimates from the owners of identified gaps
+Technical testing Scoped proposal where the risk treatment calls for testing
+Certification Independent body's proposal with audit stages and additional charges
+Staff effort Workstream plan with accountable people and expected time
+Recurring operation Subscription, support and ongoing assessment terms
+Contingency A documented allowance tied to known uncertainty, not an invented fixed percentage
+
+Agree contingency after the initial gap assessment. Unknown scope, unresolved supplier access and legacy remediation are specific uncertainties that can be discussed. A budget becomes more reliable when those assumptions are checked, not when a generic online number is made more precise.
+
+Where savings are reasonable—and where they are not
+
+Reuse existing control evidence where it is relevant and reliable. Coordinate overlapping assurance work, such as SOC 2 and ISO 27001 programmes , while recognising that the audit outputs differ. Assign owners early so work is not repeatedly rewritten by different teams.
+
+Avoid savings that remove necessary security work or conceal scope. A certificate covering an unrelated office may be cheaper but fail the buyer's requirement. Skipping a needed recovery test, risk assessment or control implementation does not make the programme efficient; it leaves the underlying gap unresolved.
+
+If testing is part of the remediation plan, define assets, depth, evidence and retest terms before comparing fees. Our illustrative VAPT report sample explains the deliverable to evaluate. It is not proof of a client engagement or a promise that one assessment guarantees certification.
+
+Frequently asked questions
+
+How much does ISO 27001 certification cost in India?
+
+There is no universal price for every organisation. The total depends on scope, existing controls, remediation, internal effort, readiness support and independent certification-body fees. This guide does not quote an unverified price range. Request separate, written estimates for preparation and certification against the same scope.
+
+Are consulting and certification audit fees the same?
+
+No. Consulting fees pay for agreed readiness support, such as gap assessment, risk assessment or internal-audit preparation. Certification-body fees pay for the independent external assessment and its certification process. Confirm which activities are included, who performs them and whether each fee is one-off or recurring.
+
+What recurring costs should we budget for?
+
+Budget for continued control operation, staff effort, internal audit, training, technical testing where needed and certification-body surveillance or recertification activities. Software subscriptions and managed services may also recur. The amounts and schedule depend on your ISMS and contracts; the first-year quote is not necessarily the full ongoing cost.
+
+Can existing security tools reduce the cost?
+
+Existing tools and processes can reduce additional work if they meet the requirements of your chosen scope and produce usable evidence. Check configuration, ownership and actual operation before counting them as complete. Buying a new compliance platform is not automatically necessary, and a platform cannot replace accountable control owners.
+
+Does a lower-cost package guarantee certification?
+
+No package price guarantees an independent certification decision. Compare scope, deliverables, responsibilities, accreditation, exclusions and ongoing obligations rather than price alone. A document bundle or limited assessment may leave implementation work with your team. The certification body must still evaluate the management system and relevant findings.
+
+Sources and a scoped estimate
+
+ISO's standard overview explains the ISMS standard. Its certification guidance distinguishes ISO from the independent bodies that perform certification. Neither source supplies an Aadit price list.
+
+Request a scoped estimate from Aadit with your intended boundary, current controls and deadline. Ask for preparation costs and certification-body charges to be identified separately, along with the work your own team will need to undertake.
+
+
+
+## ISO 27001 Certification in India: A Guide | Aadit
+
+URL: https://aadit.net/compliance/iso-27001/india
+
+
+
+Home
+Compliance & Audits
+ISO 27001
+ISO 27001 Certification in India
+ISO 27001 guide
+ISO 27001 Certification in India
+Last updated: 12 October 2026
+
+ISO 27001 certification in India is an independent assessment of an organisation's information security management system, or ISMS, against ISO/IEC 27001. The standard is international: an Indian organisation follows the same management-system requirements, while addressing the legal, contractual and operational context relevant to its own business.
+
+Certification is not a product purchased from a consultant. Your organisation owns and operates the ISMS; a consultant can support readiness; an independent certification body decides whether certification requirements have been met. Aadit's ISO 27001 consulting service supports preparation and audit readiness, rather than issuing certificates.
+
+Start with the customer requirement and scope
+
+Ask why certification is needed. An enterprise vendor review may require a certificate covering a particular SaaS service. A tender may specify an accredited certificate, named locations or a particular standard edition. Record the requirement before choosing a boundary that is convenient but commercially irrelevant.
+
+Scope identifies the activities, people, locations, technology and interfaces covered by the ISMS. Include relevant dependencies: a cloud-hosted application still depends on identity, engineering access, suppliers and incident handling. Outsourcing infrastructure does not outsource your responsibility to manage the associated risks.
+
+Check that remote workers, shared services and outsourced processes are represented appropriately. If some activities are outside the scope, explain the boundary and the controls governing interactions with them. A certificate with a limited scope should not be presented as assurance over the entire group or every product.
+
+The certification process
+
+1. Assess gaps and assign responsibility
+
+Compare current practices with the standard's requirements and identify missing controls or evidence. Assign a programme owner with management support and authority to coordinate engineering, IT, HR, legal and procurement. Each action needs an accountable person and a realistic completion date.
+
+Distinguish between missing documentation and missing operation. An access-review policy does not demonstrate that access was reviewed, and a backup schedule does not prove that recovery works. A gap assessment should identify both problems rather than treating certification as a document-writing exercise.
+
+2. Assess risks and plan treatment
+
+Establish a consistent risk assessment method and use it to evaluate the information your organisation needs to protect. Identify relevant threats, existing controls, consequences and treatment decisions. Record risk owners and how residual risks are accepted.
+
+Prepare the Statement of Applicability to explain the controls considered necessary, their implementation status and the rationale for inclusion or exclusion. ISO/IEC 27001:2022 contains 93 Annex A reference controls; the management-system clauses also matter. Selecting controls is a risk-based exercise, not a decision to buy every listed technology.
+
+3. Implement and operate the ISMS
+
+Implement policies and processes alongside the technical work that makes them effective. Depending on scope, evidence may include access reviews, joiner and leaver records, supplier assessments, vulnerability handling, restore tests, security awareness and incident exercises.
+
+Keep evidence attributable and dated, with appropriate access restrictions. Existing IT and security systems may already produce useful records; validate that they actually demonstrate the control you are claiming. VAPT reporting can support technical risk management, but a test report alone is not an ISMS.
+
+4. Complete internal audit and management review
+
+Internal audit evaluates whether the ISMS conforms to planned requirements and operates effectively. Plan an audit that covers the relevant scope and preserves auditor objectivity. Document results, corrective actions and how their effectiveness is checked.
+
+Management review is a leadership activity, not simply a signature on the policy pack. Review performance, audit findings, changing risks, resources and improvement opportunities. Record decisions and follow through on them before presenting the programme for external assessment.
+
+5. Undergo Stage 1 and Stage 2
+
+Stage 1 assesses readiness for the next stage, including the management-system documentation and relevant preparation. Use any findings to address gaps rather than assuming that a booked Stage 2 date proves readiness.
+
+Stage 2 evaluates implementation and effectiveness within the agreed scope. The certification body examines evidence and may interview control owners. It determines the treatment of nonconformities and the certification decision under its process. Consulting support cannot guarantee the outcome or remove the need for independent assessment.
+
+Choosing a certification body in India
+
+Verify accreditation for ISMS certification rather than relying on an “ISO certified” logo on a sales page. Check the certification body's entry with its accreditation body and confirm that the relevant standard is covered. In India, NABCB provides accreditation information; bodies accredited elsewhere should be checked through the relevant authority.
+
+Ask how your proposed scope, workforce, sites and operating complexity affect audit planning. Confirm auditor competence, availability, certificate verification and the process for handling findings. Independence matters: preparation and certification should not be sold as the same unqualified promise.
+
+Compare written proposals on the same basis. Separate certification-body fees from consultant fees, technical remediation and internal effort. Our ISO 27001 cost guide provides a budgeting checklist without presenting an unverified India-wide price.
+
+Indian legal and regulatory context
+
+ISO 27001 helps organise security governance, but it does not replace legal analysis. Map the obligations relevant to your organisation, including customer contracts, privacy requirements and applicable sector rules. Financial services, healthcare and service providers may have different duties even when they use the same standard.
+
+Treat India's DPDP Act , CERT-In directions and relevant RBI or SEBI requirements as separate sources to review where applicable. Do not assume a certificate proves compliance with every provision. Implementation and commencement details can change, so use current official materials and appropriate legal or regulatory advice.
+
+For companies selling internationally, confirm which assurance the buyer accepts. SOC 2 and ISO 27001 have overlapping control themes but produce different outputs. A customer asking for a SOC 2 report may not accept an ISO certificate as a substitute.
+
+Evidence to prepare before the audit
+
+Area Examples to organise
+Governance Scope, responsibilities, approved policies, objectives and management-review records
+Risk Assessment method, risk register, treatment plan and Statement of Applicability
+Operations Access reviews, change records, supplier assessments and incident records
+Technical assurance Vulnerability handling, testing evidence and recovery verification relevant to the scope
+Improvement Internal-audit results, corrective actions and effectiveness checks
+
+This is a planning guide, not an exhaustive audit checklist. Tailor the evidence to the actual requirements and controls in your ISMS. Avoid collecting sensitive records into an unrestricted shared folder simply to make an audit easier.
+
+After certification
+
+Keep the management system operating between external assessments. Review risks when services, suppliers or locations change; maintain evidence; and resolve issues through the corrective-action process. Plan for the certification body's surveillance and recertification activities rather than treating the first certificate as the end of the programme.
+
+Confirm certificate validity and scope when sharing it with customers. If the business changes materially, discuss the implications with the certification body. A certificate is evidence of an assessed management system within a stated scope, not a guarantee that a breach can never happen.
+
+Frequently asked questions
+
+How does a company get ISO 27001 certified in India?
+
+Define the ISMS scope, assess information security risks, implement and operate the management system, and complete internal audit and management review. An independent certification body then conducts Stage 1 and Stage 2 audits. Certification depends on its assessment and the resolution of relevant nonconformities, not on buying a consulting package.
+
+Does ISO issue the certificate?
+
+No. ISO develops standards but does not perform certification or issue ISO 27001 certificates. An independent certification body assesses the organisation. Check the body's accreditation for the relevant standard, the proposed certificate scope and the verification route before appointing it.
+
+Is ISO 27001 mandatory for every Indian company?
+
+No blanket requirement makes ISO 27001 certification mandatory for every Indian company. A customer contract, tender or sector-specific obligation may require it. Review the requirements that apply to your organisation separately; certification does not replace compliance with Indian privacy law or sector regulations.
+
+How long does certification take?
+
+Timing depends on the ISMS scope, existing controls, remediation work, available staff and audit scheduling. The organisation must demonstrate an operating management system, not only completed documents. Build a schedule after a gap assessment and confirm audit availability with the certification body rather than relying on a universal deadline.
+
+Does certification cover every company location and product?
+
+Only the activities, locations and services stated in the certificate's scope are covered. Dependencies outside that boundary still need to be considered in the ISMS. Make sure the proposed scope corresponds to the service your customer buys; a narrow certificate may not answer a broader vendor-review requirement.
+
+Sources and next steps
+
+Read ISO's ISO/IEC 27001 overview and its explanation of certification and independent certification bodies . Use the published standard and the certification body's process for the definitive requirements.
+
+Discuss your scope and readiness with Aadit . Bring the buyer's requirement, a description of the service, your locations and current security practices so the preparation plan addresses the right boundary.
+
+
+
 ## SOC 2 Readiness Checklist | Aadit Technologies
 
 URL: https://aadit.net/resources/soc-2-checklist
@@ -9271,6 +9547,7 @@ SOC 2 readiness
 SOC 2 Readiness Checklist
 Compliance resource
 SOC 2 Readiness Checklist
+Last updated: 6 October 2026
 
 A SOC 2 audit examines whether your controls were designed appropriately and, in a Type II, whether they operated effectively across a defined period. Readiness is therefore two things: having the controls, and being able to evidence that they ran. Most organisations have more of the first than the second.
 
@@ -9466,6 +9743,132 @@ You do not fail in the sense of a pass or fail grade. The auditor issues a repor
 Is SOC 2 better than ISO 27001?
 
 Neither is better — they answer different questions for different audiences. US buyers usually ask for SOC 2; European, Indian and Middle Eastern buyers usually ask for ISO 27001. See our comparison of SOC 2 and ISO 27001 .
+
+
+
+## VAPT Report Sample: What to Look For | Aadit
+
+URL: https://aadit.net/resources/vapt-report-sample
+
+
+
+Home
+Cybersecurity
+VAPT
+VAPT Report Sample: Findings, Evidence and Retesting
+Security testing resource
+VAPT Report Sample: Findings, Evidence and Retesting
+Last updated: 12 October 2026
+
+A VAPT report records what was tested, which weaknesses were validated, how they could affect the organisation and what needs to change. A useful report supports both management decisions and engineering work: leadership needs a clear risk summary, while developers need enough detail to reproduce and fix each finding.
+
+Illustrative example only. This is a fictional teaching sample, not a redacted client report, a record of an Aadit engagement or a security certificate. The application, observations and retest below are invented to demonstrate reporting structure. No actual client data or testing results are included.
+
+For the assessment itself, see our VAPT services . For terminology, start with vulnerability assessment and penetration testing explained .
+
+What a complete report should cover
+
+The report begins with scope and authorisation, not a vulnerability count. It should name the systems and environments included, the test window, the access supplied and the agreed rules of engagement. A reader must be able to distinguish an authenticated application test from a perimeter scan or an internal network assessment.
+
+Record exclusions explicitly. If a payment integration, production environment or privileged role was excluded, say so. If access failed or a test could not be completed safely, include the limitation. Otherwise, a buyer may read an absence of findings as evidence that an untested area was secure.
+
+The remaining sections should include:
+
+An executive summary explaining the important risks, business consequences and remediation priorities.
+
+A methodology describing automated checks, manual validation and the types of testing performed.
+
+A findings register with unique identifiers, affected assets and a consistent rating method.
+
+Detailed findings containing observations, sanitised evidence and recommended corrective actions.
+
+A remediation tracker with accountable owners and agreed target dates.
+
+A separate retest record showing which fixes were verified and which remain unresolved.
+
+Fictional report overview
+
+The sample below describes an authenticated test of a fictional customer portal in a non-production environment. It uses synthetic accounts and records. It does not represent a tested product or promise a particular result from an engagement.
+
+Report field Illustrative entry
+Assessment reference DEMO-VAPT-001
+System in scope Fictional customer portal and its application API
+Environment Isolated test environment with synthetic records
+Access Two ordinary user accounts in separate fictional customer organisations
+Activities Automated discovery, manual authorisation checks and validation within agreed boundaries
+Exclusions Production systems, denial-of-service testing and third-party payment services
+Important limitation Administrative workflows were not tested because privileged access was not supplied
+Output Executive summary, findings, remediation guidance and a separate retest record
+
+In a real report, the test and report dates, version, authorisation reference and handling classification would also be recorded. Keep sensitive identifiers out of public copies and share the full report only with authorised recipients.
+
+Sample executive summary
+
+In this fictional scenario, a server-side authorisation weakness allowed one synthetic user to view a record belonging to another synthetic customer organisation. The example demonstrates a confidentiality risk at the tenant boundary. No production data was accessed, and no conclusion is made about systems outside the stated scope.
+
+The immediate recommendation is to enforce tenant ownership checks on the server before returning a record. The wider remediation should review related endpoints, add negative authorisation tests and verify that the same design error does not recur elsewhere. A successful retest of this finding would not establish coverage of every endpoint.
+
+An executive summary should separate observed evidence from possible consequences. “A test account could read another tenant's synthetic record” describes an observation. “All customer data has been stolen” would be an unsupported claim.
+
+Sample detailed finding
+
+DEMO-01: Missing tenant-level authorisation
+
+Affected asset: The fictional portal's record-viewing API.
+
+Observation: In the isolated example, a request made using customer A's authenticated account returned a synthetic record assigned to customer B. Authentication succeeded, but the application did not enforce ownership of the requested record.
+
+Evidence: A real report would attach a sanitised request and response, identify the two test roles and show the expected versus observed result. Remove tokens, cookies, personal data and unnecessary secrets from shared copies. This educational page does not contain live requests or an exploit against a real service.
+
+Risk reasoning: Cross-tenant access can expose confidential information. Prioritisation depends on reachable records, access prerequisites, data sensitivity and existing controls. No numerical CVSS score is assigned here because there is no real technical assessment to support one. A real score should include its version, vector and assumptions, alongside business context.
+
+Remediation: Enforce ownership and permission checks in the server-side data access path. Do not rely on a hidden user-interface control or an identifier that is difficult to guess. Add automated tests that attempt access across tenant boundaries, and review equivalent endpoints for the same weakness.
+
+Acceptance criterion: Customer A must not receive customer B's record, including through alternative supported request paths. The application should handle the rejected access consistently without exposing sensitive details.
+
+Sample remediation and retest register
+
+The following rows describe a fictional sequence, not work performed for a customer.
+
+Record Status Meaning
+Initial finding Open The issue was reproduced in the illustrative test scenario
+Engineering update Fix submitted A code change was reported; verification was still pending
+Retest result Verified closed for the tested path The original cross-tenant access was no longer reproducible under the same example conditions
+Residual limitation Additional endpoints not assessed Closure of one finding does not imply that untested paths are secure
+
+In an actual engagement, the retest record should include dates, environment, report version and supporting evidence. If the tester cannot access the changed system, use “not retested” rather than “closed”. If only part of the issue was corrected, describe the remaining behaviour.
+
+How to assess a report before accepting it
+
+Check whether the scope matches your purchase order and the systems your customer or auditor expects to see. Ask which authenticated roles were covered, which manual checks were performed and how false positives were validated. Findings should be actionable without requiring developers to guess what the tester meant.
+
+Review the rating method, not just the number of critical issues. A report with no critical findings may still describe important business risks. Conversely, a scanner's severe rating may need contextual explanation before it determines remediation priority.
+
+Agree report handling and retest terms before commissioning work. Full technical reports may contain sensitive architecture and exploit evidence, so restrict access and use a sanitised summary where appropriate. For audit planning, connect the report to your ISO 27001 programme or SOC 2 readiness work ; a test does not by itself confer certification.
+
+Frequently asked questions
+
+What should a VAPT report contain?
+
+A VAPT report should define the authorised scope, testing dates, methods and limitations, then present validated findings with affected assets, risk reasoning, evidence and remediation guidance. It should include an executive summary and distinguish the original findings from subsequent retest results. A scanner export alone does not show the full testing process.
+
+Is this a real client VAPT report?
+
+No. This page contains an illustrative, fictional example created to explain report structure. It is not a redacted client report, proof of an engagement or a certificate. No client data or actual testing results are shown.
+
+How is a vulnerability scan different from a VAPT report?
+
+A vulnerability scan lists potential weaknesses found by automated checks. A VAPT report should explain which issues were validated, what manual testing covered, the observed impact and the limits of the assessment. Automated results can contribute to the report, but they do not replace contextual analysis or evidence of penetration testing.
+
+What does a retest show?
+
+A retest checks whether a previously reported issue can still be reproduced after remediation. The report should record what was retested, when, under which conditions and with what result. A closed finding is not a guarantee that the entire application is secure, and an untested fix should not be labelled verified.
+
+Sources and next steps
+
+NIST SP 800-115 describes technical security assessment planning, execution and reporting. FIRST's CVSS documentation explains vulnerability scoring; scoring should not be presented as a substitute for business risk assessment.
+
+Contact Aadit to discuss your assessment scope , reporting requirements and retest arrangements. This page is available to read without submitting personal details; no client-report download is claimed.
 
 
 

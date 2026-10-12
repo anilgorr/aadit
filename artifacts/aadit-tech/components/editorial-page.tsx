@@ -23,7 +23,11 @@ const components = {
 
 export function EditorialPage({ page }: { page: ResourcePage }) {
   const isTerm = page.schemaType === "DefinedTerm"
-  const pageSchema = webPageSchema({ path: page.permalink, name: page.title, description: page.metaDescription })
+  const pageSchema = {
+    ...webPageSchema({ path: page.permalink, name: page.title, description: page.metaDescription }),
+    datePublished: page.publishedAt,
+    dateModified: page.updatedAt ?? page.publishedAt,
+  }
   const subjectSchema = isTerm
     ? definedTermSchema({ term: "Managed IT services", definition: page.definition!, path: page.permalink })
     : {
@@ -35,9 +39,9 @@ export function EditorialPage({ page }: { page: ResourcePage }) {
         publisher: { "@id": ORGANIZATION_ID }, mainEntityOfPage: { "@id": absoluteUrl(`${page.permalink}#webpage`) },
         image: absoluteUrl("/opengraph.jpg"), inLanguage: "en", isAccessibleForFree: true,
       }
-  const parents = isTerm
+  const parents = page.breadcrumbs ?? (isTerm
     ? [{ label: "Glossary", href: "/glossary" }]
-    : [{ label: "Compliance & Audits", href: "/compliance" }, { label: "SOC 2 readiness", href: "/compliance/soc2" }]
+    : [{ label: "Compliance & Audits", href: "/compliance" }, { label: "SOC 2 readiness", href: "/compliance/soc2" }])
   return (
     <div className="flex min-h-screen w-full flex-col">
       <Header />
@@ -46,8 +50,11 @@ export function EditorialPage({ page }: { page: ResourcePage }) {
         <Section background="muted" className="border-b">
           <div className="mx-auto max-w-3xl">
             <Breadcrumbs items={[{ label: "Home", href: "/" }, ...parents, { label: page.title, href: page.permalink }]} />
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-primary">{isTerm ? "Managed IT glossary" : "Compliance resource"}</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.16em] text-primary">{page.eyebrow ?? (isTerm ? "Managed IT glossary" : "Compliance resource")}</p>
             <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">{page.title}</h1>
+            <p className="mt-5 text-sm text-muted-foreground">
+              Last updated: <time dateTime={page.updatedAt ?? page.publishedAt}>{new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(page.updatedAt ?? page.publishedAt))}</time>
+            </p>
           </div>
         </Section>
         <Section>

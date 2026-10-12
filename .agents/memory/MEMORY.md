@@ -11,3 +11,4 @@
 - [Netlify publishing and Git auth](aadit-tech-netlify-deploy.md) — existing Git-connected pipeline; a secure PAT fallback must be selected explicitly.
 - [Aadit blog migration](aadit-blog-migration.md) — legacy posts → MDX; near-dup clusters collapsed to one canonical + 301 the rest in next.config.ts; part2 dates assigned (placeholders); whitepaper/ebook gated (PDFs missing)
 - [Search cannibalisation evidence](search-cannibalisation-evidence.md) — separate Search Console Pages and Queries exports cannot show which URLs compete for the same query
+- [Aadit draft content approval](aadit-draft-content.md) — new VAPT/ISO guide copy and FAQs permitted; sample must be fictional and prices need an approved rate card.

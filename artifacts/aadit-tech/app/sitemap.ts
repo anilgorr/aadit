@@ -70,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryEntries,
     ...glossaryEntries,
     ...postEntries,
-    ...resourcePages.filter((page) => page.permalink.startsWith("/resources/"))
+    ...resourcePages.filter((page) => !page.permalink.startsWith("/glossary/"))
       .map((page) => ({ url: absoluteUrl(page.permalink), lastModified: new Date(page.updatedAt ?? page.publishedAt), changeFrequency: "monthly" as const, priority: 0.7 })),
     ...AUTHORS.map((author) => ({ url: absoluteUrl(`/authors/${author.slug}`), lastModified: new Date(author.updatedAt ?? "2026-10-05"), changeFrequency: "yearly" as const, priority: 0.5 })),
   ]
