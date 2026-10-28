@@ -42,6 +42,7 @@ export const SOCIAL_PROFILES: string[] = [
   "https://www.designrush.com/agency/profile/aadit-technologies",
   "https://www.sortlist.com/agency/aadit-technologies",
   "https://www.g2.com/products/aadit-technologies/reviews",
+  "https://maps.google.com/?cid=6536167827096443015",
   ...EXTRA_PROFILES,
 ]
 

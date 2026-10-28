@@ -100,6 +100,7 @@ for (const url of urls) {
   const org = data.find((s) => [].concat(s["@type"]).includes("Organization"))
   assert.ok(org && org.areaServed.length === 3)
   assert.ok(org.sameAs.includes("https://www.crunchbase.com/organization/aadit-technologies"))
+  assert.ok(org.sameAs.includes("https://maps.google.com/?cid=6536167827096443015"))
   assert.ok(!org.sameAs.some((u) => /PLACE_ID|LINKEDIN_PROFILE|ensun.io\/search/.test(u)))
   assert.ok(!org.aggregateRating, "Do not publish a manually maintained review rating.")
   checked++
